@@ -1,0 +1,41 @@
+article#relative-absolute
+  .container
+    h2 Горизонтальное и вертикальное центрирование блока
+    p Эта техника применяется, в основном, для вёрстки модальных окон
+    h3 Пример:
+  .ex3-container
+    .ex3-block
+  .container
+    p Код:
+    pre(data-lang="html")
+      | <div class="ex3-container">
+      |     <div class="ex3-block"></div>
+      | </div>
+
+    pre(data-lang="css")
+      | .ex3-container {
+      |     position: relative;
+      |     width: 100%;
+      |     height: 300px;
+      |     background: lightblue;
+      | }
+      | 
+      | .ex3-block {
+      |     position: absolute; /* позволяет двигать блок относительно родительского релятивного контейнера */
+      |     top: 50%; /* смещаем блок на 50% от высоты родителя */
+      |     left: 50%; /* смещаем блок на 50% от ширины родителя */
+      |     transform: translate(-50%, -50%); /* смещаем блок на 50% от ширины и высоты этого блока */
+      |     width: 120px;
+      |     height: 80px;
+      |     background: teal;
+      | }
+
+  .container
+    h3 Задача
+    p Сделать просмотр изображений как на dns-shop.ru
+    ul
+      li Размер внешнего контейнера: 100%*600px
+      li Вместо картинок можно использовать цветные блоки
+      li Вместо стрелочек можно использовать &lt; и &gt;
+  .image
+    img(src="./images/dns.png" alt="")

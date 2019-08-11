@@ -1,0 +1,204 @@
+:root {
+  --white-dark: #f2f2f2;
+  --grey-light: #d5dddf;
+  --grey: #999;
+  --grey-dark: #323436;
+  --accent: #3f51b5;
+  --accent-dark: #324090;
+  --accent-light: #6573c3;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "-apple-system", BlinkMacSystemFont, Arial, sans-serif;
+  font-size: 16px;
+}
+
+.container {
+  max-width: 1164px;
+  padding: 0 32px;
+  margin: 0 auto;
+}
+
+article {
+  padding: 50px 0 150px;
+  page-break-after: always;
+  border-bottom: 1px solid var(--grey-light);
+  min-height: 100vh;
+}
+
+header .services {
+  background-color: var(--white-dark);
+  border-bottom: 1px solid var(--grey-light);
+  font-size: 12px;
+  padding: 7px 12px;
+}
+
+header .services a {
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+header .services span {
+  margin-left: 90px;
+  color: #999;
+}
+
+header .services a.active {
+  color: black;
+}
+
+a {
+  color: var(--accent);
+}
+
+a:hover {
+  color: var(--accent-dark);
+}
+
+pre {
+  border-radius: 4px;
+  position: relative;
+  white-space: pre-wrap;
+  background-color: aliceblue !important;
+  border: 1px solid darkgray;
+}
+
+pre:before {
+  content: attr(data-lang);
+  display: block;
+  position: absolute;
+  font-size: 12px;
+  text-transform: uppercase;
+  top: 1px;
+  right: 2px;
+}
+
+h1 {
+  margin: 25vh 0 2em !important;
+  font-size: 42px;
+  text-align: center;
+}
+
+h1 .logo {
+  font-size: 72px;
+}
+
+h2 {
+  font-size: 36px;
+  margin-top: 0 !important;
+}
+
+h3 {
+  font-size: 24px;
+}
+
+h4 {
+  font-size: 20px;
+}
+
+h5 {
+  font-size: 18px;
+}
+
+h6 {
+  font-size: 16px;
+}
+
+p {
+  font-size: 16px;
+  color: var(--grey-dark);
+  margin: 2em 0 1em;
+  font-weight: 400;
+  word-break: break-word;
+  line-height: 1.4;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--grey-dark);
+  font-family: 'Philosopher', sans-serif;
+  margin: 2em 0 1em;
+  font-weight: 400;
+}
+
+ul {
+  padding-left: 16px;
+  color: var(--grey-dark);
+  line-height: 1.4;
+}
+
+.image {
+  text-align: center;
+}
+
+.image img {
+  max-width: 100%;
+}
+
+.logo {
+  display: inline-block;
+  font-family: 'Philosopher', sans-serif !important;
+  font-size: 30px;
+  padding: 2px;
+  line-height: 1;
+  color: var(--grey-dark) !important;
+  text-align: center !important;
+  text-transform: uppercase;
+}
+
+.logo .top {
+  display: block;
+  font-weight: normal;
+  border-bottom: 1px solid var(--grey-dark);
+  padding: 0 5px;
+}
+
+.logo .bottom {
+  display: block;
+  border-bottom: .1em solid var(--grey-dark);
+  padding: 1px 5px;
+  font-size: .7em;
+}
+
+.aspect16-9 {
+  width: 100%;
+  height: 56vw;
+  max-height: 620px;
+  min-height: 240px;
+}
+
+@media (max-width:600px) {
+  .container {
+    padding: 0 8px;
+  }
+}
+
+@media print {
+  .no-print {
+    display: none;
+  }
+
+  header {
+    display: none;
+  }
+
+  article {
+    min-height: auto;
+    border-bottom: none;
+    padding: 0;
+  }
+
+  a[target="_blank"]:after {
+    content: attr(href);
+    margin-left: 20px;
+  }
+}

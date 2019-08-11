@@ -1,0 +1,252 @@
+/* #margin-0-auto */
+
+.ex1-container {
+  padding: 10px;
+  background: lightblue;
+}
+
+.ex1-content {
+  height: 100px;
+  max-width: 500px;
+  background: teal;
+  margin: 0 auto;
+}
+
+.sol1 {
+  background-color: #f7f7f7;
+  font-size: 14px;
+  border-bottom: 1px solid #d8d8d8;
+  border-top: 1px solid #d8d8d8;
+  overflow-x: auto;
+}
+
+.sol1 .content {
+  min-width: 700px;
+  margin: 0 auto;
+  max-width: 1000px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 18px;
+}
+
+.sol1 .content .left {
+  padding: 14px 0;
+}
+
+.sol1 .content .left a {
+  margin-right: 18px;
+}
+
+.sol1 .content .right {
+  padding: 7px 0;
+}
+
+.sol1 .content .right a.button {
+  margin-left: 29px;
+}
+
+.sol1 a {
+  color: #a1a1a1;
+  text-decoration: none;
+}
+
+.sol1 a:hover {
+  color: #ff6163;
+}
+
+.sol1 .button {
+  display: inline-block;
+  padding: 6px 13px;
+  border-radius: 3px;
+  border: 1px solid transparent;
+}
+
+.sol1 a.primary {
+  color: #0091d9;
+}
+
+.sol1 a.primary:hover {
+  color: #ff6163;
+}
+
+.sol1 .button.primary {
+  background-color: #01aaff;
+  color: white;
+}
+
+.sol1 .button.primary:hover {
+  color: white;
+  background-color: #0099e6;
+}
+
+/* #flex */
+
+.ex2-container {
+  display: flex;
+  background: lightblue;
+  justify-content: space-between;
+  padding: 5px;
+}
+
+.ex2-box-left {
+  background: teal;
+}
+
+.ex2-box-right {
+  background: blueviolet;
+}
+
+.ex2-container span {
+  display: inline-block;
+  padding: 10px 20px;
+  background: rgba(255, 255, 255, .5);
+  margin: 5px;
+}
+
+.sol2 {
+  border-bottom: 1px solid #d5dddf;
+  border-top: 1px solid #d5dddf;
+  font-size: 15px;
+  overflow-x: auto;
+}
+
+.sol2 .content {
+  min-width: 900px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 32px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.sol2 .left {}
+
+.sol2 .right {
+  padding: 16px;
+}
+
+.sol2 .right .button {
+  margin: 0 0 0 10px;
+}
+
+.sol2 a {
+  display: inline-block;
+  padding: 23px 0;
+  margin-right: 28px;
+  text-decoration: none;
+  color: #838a92;
+}
+
+.sol2 a:hover {
+  color: #5096b1;
+}
+
+.sol2 a.current {
+  color: #464646;
+}
+
+.sol2 .button {
+  padding: 8px 13px;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  font-size: 13px;
+}
+
+.sol2 .button.default {
+  border-color: #a4afba;
+  background-color: white;
+}
+
+.sol2 .button.default:hover {
+  border-color: #65a3be;
+}
+
+.sol2 .button.primary {
+  background-color: #65a3be;
+  border-color: transparent;
+  color: white;
+}
+
+.sol2 .button.primary:hover {
+  background-color: #4986a1;
+}
+
+/* #relative-absolute */
+
+.ex3-container {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  background: lightblue;
+}
+
+.ex3-block {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: 100px;
+  background: teal;
+}
+
+/* #custom-checkbox */
+
+.ex4 label.custom-checkbox {
+  position: relative;
+  border: 1px solid teal;
+  display: inline-block;
+  margin-right: 20px;
+  width: 20px;
+  height: 20px;
+  font-size: 18px;
+  line-height: 1;
+  border-radius: 4px;
+  user-select: none;
+  cursor: pointer;
+}
+
+.ex4 label.custom-checkbox .checker {
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  text-align: center;
+  font-weight: bold;
+}
+
+.ex4 label.custom-checkbox .checker:after {
+  content: '✓';
+  display: none;
+}
+
+.ex4 label.custom-checkbox input[type='checkbox'] {
+  position: absolute;
+  right: 100%;
+  top: 0;
+}
+
+.ex4 label.custom-checkbox input[type='checkbox']:checked+.checker {
+  display: block;
+  background-color: teal;
+  color: white;
+}
+
+.ex4 label.custom-checkbox input[type='checkbox']:checked+.checker:after {
+  display: block;
+}
+
+.ex4 label.custom-checkbox input[type='checkbox']:focus+.checker {
+  box-shadow: 0 0 5px 0 teal;
+  display: block;
+}
+
+.visually-hidden {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+}

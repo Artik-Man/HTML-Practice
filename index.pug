@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+html(lang="ru")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    link(rel="apple-touch-icon", sizes="180x180" ,href="./icons/apple-touch-icon.png")
+    link(rel="icon" ,type="image/png", sizes="32x32" ,href="./icons/favicon-32x32.png")
+    link(rel="icon" ,type="image/png" ,sizes="16x16", href="./icons/favicon-16x16.png")
+    link(rel="manifest", href="./icons/site.webmanifest")
+    link(rel="mask-icon" ,href="./icons/favicon.svg", color="#5bbad5")
+    link(rel="shortcut icon", href="./icons/favicon.ico")
+    meta(name="msapplication-TileColor", content="#ffffff")
+    meta(name="msapplication-config", content="./icons/browserconfig.xml")
+    meta(name="theme-color", content="#ffffff")
+    link(rel="stylesheet" ,href="./lib/hihglight/github-gist.css")
+    link(rel="stylesheet" ,href="./styles/template.css")
+    link(rel="stylesheet", href="./styles/examples.css")
+    link(href="https://fonts.googleapis.com/css?family=Philosopher&display=swap&subset=cyrillic", rel="stylesheet")
+
+    title HTML Practice
+  body
+    article
+      .container
+        h1
+          span.logo
+            span.top HTML
+            span.bottom Practice
+        p
+    
+
+    include articles/contents.pug
+    include articles/git.pug
+    include articles/margin-0-auto.pug
+    include articles/flex.pug
+    include articles/relative-absolute.pug
+    include articles/custom-checkbox.pug
+
+    script(src="./lib/hihglight/highlight.pack.js")
+    script(src="./lib/script.js")
+
+
+

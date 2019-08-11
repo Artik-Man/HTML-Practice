@@ -1,0 +1,136 @@
+
+article#custom-checkbox
+  .container
+    h2 Вёрстка чекбоксов
+    p
+      | Вёрстка почти каждой формы предполагает изменение вида стандартных чекбоксов. Изначально, они выглядят
+      | вот так: 
+      input(type="checkbox")
+      |  и редко когда вписываются в дизайн. Поэтому каждый верстальщик знает,
+      |                 как кастомизировать чекбоксы. Сейчас и мы научимся это делать.
+    p
+      | В кратце, наша задача - использовать label со скрытым внутри чекбоксом. Дело в том, что в HTML клик по
+      | label переадресует его на внутенний элемент input. Кроме того, label можно использовать с атрибутом for,
+      | значением которого выступает id элемента input, находящегося снаружи нашего label, но применения этой
+      | конструкции я нашел лишь пару раз в своей практике.
+    p
+      | В этом видео Вадим Макеев подробно рассказывает об этой технике вёрстки чекбокса: 
+      a(href="https://youtu.be/E6kLaaQFctU" target="_blank") Смотреть на YouTube
+    iframe.aspect16-9.no-print(src="https://www.youtube.com/embed/E6kLaaQFctU" frameborder="0" allowfullscreen="")
+    h3 Пример:
+    .ex4
+      label.custom-checkbox
+        input.visually-hidden(type="checkbox")
+        span.checker
+      label.custom-checkbox
+        input.visually-hidden(type="checkbox" checked="")
+        span.checker
+    p Код:
+    pre(data-lang="html")
+      | <label class="custom-checkbox">
+      |     <input type="checkbox" class="visually-hidden">
+      |     <span class="checker"></span>
+      | </label>
+
+    pre(data-lang="css")
+      | .ex4 label.custom-checkbox {
+      |     /* Контейнер должен быть релятивным, так как внутри него мы разместим два абсолютно спозиционированных элемента */
+      |     position: relative;
+      |     /* скрываем элементы, попадающие за границы label */
+      |     overflow: hidden;
+      |     border: 1px solid teal;
+      |     /* По умолчанию, label - это строчный элемент. С высокой вероятностью, нам нужно будет добавлять вертикальный margin, поэтому сразу сделаем его строчно-блочным*/
+      |     display: inline-block;
+      |     width: 20px;
+      |     height: 20px;
+      |     font-size: 18px;
+      |     line-height: 1;
+      |     border-radius: 4px;
+      |     /* Делаем так, чтобы чек-бокс нельзя было выделить курсором, а только нажать */
+      |     user-select: none;
+      |     /* Я приверженец того, что все интерактивные элементы должны иметь cursor: pointer, поэтому задаём и его */
+      |     cursor: pointer;
+      | }
+      | 
+      | /* указываем селектор на наш конкретный инпут с типом чекбокс */
+      | .ex4 label.custom-checkbox input[type='checkbox'] {
+      |     /* Выводим стандартный чекбокс за границы label */
+      |     position: absolute;
+      |     right: 100%;
+      |     top: 0;
+      | }
+      | 
+      | /* Задаем кастомную галочку для чекбокса и скрываем её по умолчанию */
+      | .ex4 label.custom-checkbox .checker {
+      |     display: none;
+      |     position: absolute;
+      |     width: 100%;
+      |     height: 100%;
+      |     top: 0;
+      |     left: 0;
+      |     text-align: center;
+      |     font-weight: bold;
+      | }
+      | 
+      | /* В псевдо-элементе допишем саму галочку */
+      | .ex4 label.custom-checkbox .checker:after {
+      |     content: '✓';
+      |     display: none;
+      | }
+      | 
+      | /* Несколько сложноее CSS правило: когда чекбокс будет иметь атрибут checked, его сосед снизу (селектор +) с классом .checker, примет эти стили */
+      | .ex4 label.custom-checkbox input[type='checkbox']:checked+.checker {
+      |     /* Показываем наш элемент с галочкой */
+      |     display: block;
+      |     background-color: teal;
+      |     color: white;
+      | }
+      | 
+      | /* Когда чекбокс :checked, after-элемент у соседа снизу с классом .checker, должен появиться */
+      | .ex4 label.custom-checkbox input[type='checkbox']:checked+.checker:after {
+      |     display: block;
+      | }
+      | 
+      | /* Не все люди используют для просмотра веб-страниц мышь, а некоторые из них используют вообще только клавиатуру. Так вот, чтобы интерактивные элементы подсвечивались, когда фокус клавиатуры попадал на них, им нужно задать отдельные стили. */
+      | /* Когда скрытый инпут окажется в фокусе, его сосед с классом .checker примет стили */
+      | .ex4 label.custom-checkbox input[type='checkbox']:focus+.checker {
+      |     box-shadow: 0 0 5px 0 teal;
+      |     display: block;
+      | }
+      | 
+      | /* Этот класс позволяет правильно скрыть элемент с экрана так, чтобы он был доступен для скринридеров */
+      | .visually-hidden {
+      |     position: absolute;
+      |     clip: rect(0 0 0 0);
+      |     width: 1px;
+      |     height: 1px;
+      |     margin: -1px;
+      | }
+
+    p
+      | Подробнее о visually-hidden можно почитать здесь:
+      a(href="https://htmlacademy.ru/blog/useful/css/short-12" target="_blank") Как прятать [элементы]
+    h3 Задача
+    p Сверстать чекбоксы как в gmail.
+    .image
+      img(src="./images/gmail-checkboxes.png" alt="")
+    p Картинки для чекбоксов взять отсюда:
+    ul
+      li
+        a(target="_blank" href="https://www.gstatic.com/images/icons/material/system/1x/check_box_outline_blank_black_20dp.png")
+          | Unchecked checkbox
+      li
+        a(target="_blank" href="https://ssl.gstatic.com/ui/v1/menu/checkmark.png")
+          | Checked checkbox
+      li
+        a(target="_blank" href="https://www.gstatic.com/images/icons/material/system/1x/star_border_black_20dp.png")
+          | Unchecked star
+      li
+        a(target="_blank" href="https://www.gstatic.com/images/icons/material/system/1x/star_googyellow500_20dp.png")
+          | Checked star
+      li
+        a(target="_blank" href="https://www.gstatic.com/images/icons/material/system/1x/label_important_outline_black_20dp.png")
+          | Unchecked label
+      li
+        a(target="_blank" href="https://www.gstatic.com/images/icons/material/system/1x/label_important_googyellow500_20dp.png")
+          | Checked label

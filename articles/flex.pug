@@ -1,0 +1,70 @@
+
+article#flex
+  .container
+    h2 Самый правильный способ разнести блоки в разные стороны
+    p 
+      | Используется, в основном, для построения "шапки" сайта
+      | Для полного понимания работы flex-box, рекомендую поиграть в игру 
+      a(href="https://flexboxfroggy.com/" target="_blank") Flexbox Froggy
+    p Пример:
+    .ex2-container
+      .ex2-box-left
+        span Brand
+        span Stores
+        span Actions
+        span Contacts
+      .ex2-box-right
+        span Settings
+        span Account
+    p Код:
+    pre(data-lang="html")
+      | <div class="ex2-container">
+      |     <div class="ex2-box-left">
+      |        <span>Brand</span>
+      |        <span>Stores</span>
+      |        <span>Actions</span>
+      |        <span>Contacts</span>
+      |     </div>
+      |     <div class="example3-box-right">
+      |        <span>Settings</span>
+      |        <span>Account</span>
+      |     </div>
+      | </div>
+
+
+    pre(data-lang="css")
+      | .ex2-container {
+      |   /* Задаём флекс-бокс (позволяет влиять на расположение дочерних элементов) */
+      |   display: flex;
+      |   /* Говорим элементам встать так, чтобы между ними, по возможности, образовывалось расстояние */
+      |   justify-content: space-between; 
+      |   padding: 5px;
+      |   background: lightblue;
+      | }
+      | 
+      | .ex2-box-left {
+      |     background: teal;
+      | }
+      | 
+      | .ex2-box-right {
+      |     background: blueviolet;
+      | }
+
+  .container
+    h3 Задача
+    p
+      | Сделать шапку для сайта habr.com так, чтобы правая и левая часть меню были разнесены при помощи
+      | флекс-бокса
+
+  .sol2
+    .content
+      .left
+        a.current(href="#") Публикации
+        a(href="#") Новости
+        a(href="#") Пользователи
+        a(href="#") Хабы
+        a(href="#") Компании
+        a(href="#") Песочница
+      .right
+        a.button.default(href="#") Войти
+        a.button.primary(href="#") Регистрация

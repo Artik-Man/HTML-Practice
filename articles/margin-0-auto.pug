@@ -1,0 +1,44 @@
+article#margin-0-auto
+  .container
+    h2 Выравнивание блока по центру
+    p
+      | Этот фокус позволяет центрировать блок заранее определенной ширины независимо от ширины экрана. Кроме
+      | того, если использовать max-width вместо width, то, если размер экрана пользователя окажется меньше
+      | ширины этого блока, то блок не выйдет за границы экрана, а будет равен ширине экрана. Это весьма
+      | распространенная практика
+    h3 Пример:
+  .ex1-container
+    .ex1-content
+  .container
+    p Код:
+    pre(data-lang="html")
+      | <div class="example1-container">
+      |    <div class="example1-content"></div>
+      | </div>
+
+    pre(data-lang="css")
+      | .ex1-container {
+      |     padding: 10px;
+      |     border: 2px solid lightblue;
+      | }
+      | 
+      | .ex1-content {
+      |   height: 100px;
+      |   max-width: 500px;
+      |   border: 2px solid teal;
+      |   margin: 0 auto; /* центрирует блок так, что правый и левый маргин становятся одинаковыми */
+      | }
+
+  .container
+    h3 Задача
+    p Сделать шапку для сайта avito.ru. Серый фон шапки должен быть растянут на всю страницу, а элементы меню должны быть в центре, не зависимо от ширины экрана пользователя
+  .sol1
+    .content
+      .left
+        a(href="#") Объявления
+        a(href="#") Магазины
+        a(href="#") Бизнес
+        a(href="#") Помощь
+      .right
+        a.primary(href="#") Вход и регистрация
+        a.button.primary(href="#") Подать объявление
