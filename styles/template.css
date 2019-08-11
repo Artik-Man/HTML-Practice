@@ -173,7 +173,7 @@ ul {
   width: 100%;
   height: 56vw;
   max-height: 620px;
-  min-height: 240px;
+  min-height: 180px;
 }
 
 @media (max-width:600px) {

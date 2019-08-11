@@ -2,7 +2,7 @@
 <html lang="ru">
   <head>
     <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="viewport" content="width=device-width initial-scale=1.0"/>
     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
     <link rel="apple-touch-icon" sizes="180x180" href="./icons/apple-touch-icon.png"/>
     <link rel="icon" type="image/png" sizes="32x32" href="./icons/favicon-32x32.png"/>
@@ -321,7 +321,7 @@ git config --global user.email myEmail@example.com</pre>
 }
  
 /* Несколько сложноее CSS правило: когда чекбокс будет иметь атрибут checked, его сосед снизу (селектор +) с классом .checker, примет эти стили */
-.ex4 label.custom-checkbox input[type='checkbox']:checked+.checker {
+.ex4 label.custom-checkbox input[type='checkbox']:checked + .checker {
     /* Показываем наш элемент с галочкой */
     display: block;
     background-color: teal;
@@ -329,13 +329,13 @@ git config --global user.email myEmail@example.com</pre>
 }
  
 /* Когда чекбокс :checked, after-элемент у соседа снизу с классом .checker, должен появиться */
-.ex4 label.custom-checkbox input[type='checkbox']:checked+.checker:after {
+.ex4 label.custom-checkbox input[type='checkbox']:checked + .checker:after {
     display: block;
 }
  
 /* Не все люди используют для просмотра веб-страниц мышь, а некоторые из них используют вообще только клавиатуру. Так вот, чтобы интерактивные элементы подсвечивались, когда фокус клавиатуры попадал на них, им нужно задать отдельные стили. */
 /* Когда скрытый инпут окажется в фокусе, его сосед с классом .checker примет стили */
-.ex4 label.custom-checkbox input[type='checkbox']:focus+.checker {
+.ex4 label.custom-checkbox input[type='checkbox']:focus + .checker {
     box-shadow: 0 0 5px 0 teal;
     display: block;
 }
