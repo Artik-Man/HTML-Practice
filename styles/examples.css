@@ -223,55 +223,53 @@
 
 /* #custom-checkbox */
 
-.ex4 label.custom-checkbox {
+.ex4 .custom-checkbox {
+  padding: 0 1em 0 1.4em;
   position: relative;
-  border: 1px solid teal;
-  display: inline-block;
-  margin-right: 20px;
-  width: 20px;
-  height: 20px;
-  font-size: 18px;
-  line-height: 1;
-  border-radius: 4px;
-  user-select: none;
   cursor: pointer;
+  user-select: none;
+  display: inline-block;
+  min-height: 1em;
 }
 
-.ex4 label.custom-checkbox .checker {
-  display: none;
+.ex4 .custom-checkbox .checker {
   position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
+  margin-top: 0;
+  margin-left: -1.2em;
+  width: 1em;
+  height: 1em;
+  overflow: hidden;
   text-align: center;
-  font-weight: bold;
+  font-size: 1em;
+  line-height: 1;
+  border: 1px solid teal;
+  border-radius: 3px;
+  background-color: white;
+  color: transparent;
 }
 
-.ex4 label.custom-checkbox .checker:after {
+.ex4 .custom-checkbox .checker:after {
   content: '✓';
-  display: none;
 }
 
-.ex4 label.custom-checkbox input[type='checkbox'] {
+.ex4 .custom-checkbox input[type='checkbox'] {
   position: absolute;
   right: 100%;
   top: 0;
 }
 
-.ex4 label.custom-checkbox input[type='checkbox']:checked+.checker {
-  display: block;
+.ex4 .custom-checkbox input[type='checkbox']:checked+.checker {
   background-color: teal;
   color: white;
 }
 
-.ex4 label.custom-checkbox input[type='checkbox']:checked+.checker:after {
-  display: block;
+.ex4 .custom-checkbox input[type='checkbox']:focus+.checker {
+  box-shadow: 0 0 5px 0 teal;
 }
 
-.ex4 label.custom-checkbox input[type='checkbox']:focus+.checker {
-  box-shadow: 0 0 5px 0 teal;
-  display: block;
+.ex4 .custom-checkbox input[type='checkbox']:disabled+.checker {
+  background-color: #999;
+  border-color: #999;
 }
 
 .visually-hidden {
@@ -280,4 +278,66 @@
   width: 1px;
   height: 1px;
   margin: -1px;
+}
+
+.sol4 {
+  text-align: center;
+  margin-bottom: -1px;
+}
+
+.sol4 .ex4 {
+  border-bottom: 1px solid lightgray;
+  border-top: 1px solid lightgray;
+  padding: 8px;
+  display: inline-block;
+  line-height: 1;
+}
+
+.sol4 .custom-checkbox {
+  padding-right: 0;
+  vertical-align: middle;
+}
+
+.sol4 .custom-checkbox .checker:after {
+  display: none;
+}
+
+.sol4 .custom-checkbox input[type='checkbox']:focus+.checker {
+  box-shadow: none;
+}
+
+.sol4 .custom-checkbox .checker {
+  background-repeat: no-repeat;
+  background-position: center center;
+  border: none;
+  opacity: .3;
+}
+
+.sol4 .custom-checkbox input[type='checkbox']:checked+.checker {
+  background-color: transparent;
+  opacity: 1;
+}
+
+.sol4 .custom-checkbox.default .checker {
+  background-image: url('https://www.gstatic.com/images/icons/material/system/1x/check_box_outline_blank_black_20dp.png');
+}
+
+.sol4 .custom-checkbox.default input[type='checkbox']:checked+.checker {
+  background-image: url('https://www.gstatic.com/images/icons/material/system/1x/check_box_black_20dp.png');
+}
+
+.sol4 .custom-checkbox.star .checker {
+  background-image: url('https://www.gstatic.com/images/icons/material/system/1x/star_border_black_20dp.png');
+}
+
+.sol4 .custom-checkbox.star input[type='checkbox']:checked+.checker {
+  background-image: url('https://www.gstatic.com/images/icons/material/system/1x/star_googyellow500_20dp.png');
+}
+
+.sol4 .custom-checkbox.label .checker {
+  background-image: url('https://www.gstatic.com/images/icons/material/system/1x/label_important_outline_black_20dp.png');
+}
+
+.sol4 .custom-checkbox.label input[type='checkbox']:checked+.checker {
+  background-image: url('https://www.gstatic.com/images/icons/material/system/1x/label_important_googyellow500_20dp.png');
 }
