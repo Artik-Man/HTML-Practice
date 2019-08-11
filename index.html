@@ -36,6 +36,13 @@
           <li><a href="#relative-absolute">Горизонтальное и вертикальное центрирование блока</a></li>
           <li> <a href="#custom-checkbox">Вёрстка чекбоксов</a></li>
         </ul>
+        <p><br/></p>
+        <h2>Планы</h2>
+        <ul>
+          <li>Вёрстка модальных окон</li>
+          <li>Вёрстка туллтипов </li>
+          <li>Вёрстка выпадающего меню</li>
+        </ul>
       </div>
     </article>
     <article id="git">
@@ -264,82 +271,91 @@ git config --global user.email myEmail@example.com</pre>
         <h3>Пример:</h3>
         <div class="ex4">
           <label class="custom-checkbox">
-            <input class="visually-hidden" type="checkbox"/><span class="checker"></span>
+            <input class="visually-hidden" type="checkbox"/><span class="checker"></span>Checkbox
           </label>
           <label class="custom-checkbox">
-            <input class="visually-hidden" type="checkbox" checked=""/><span class="checker"></span>
+            <input class="visually-hidden" type="checkbox" checked="checked"/><span class="checker"></span>Checked
+          </label>
+          <label class="custom-checkbox">
+            <input class="visually-hidden" type="checkbox" disabled="disabled"/><span class="checker"></span>Disabled
+          </label>
+          <label class="custom-checkbox">
+            <input class="visually-hidden" type="checkbox" checked="checked" disabled="disabled"/><span class="checker"></span>Checked disabled
           </label>
         </div>
         <p>Код:</p>
         <pre data-lang="html"><label class="custom-checkbox">
     <input type="checkbox" class="visually-hidden">
     <span class="checker"></span>
+    Отметка
 </label></pre>
-        <pre data-lang="css">.ex4 label.custom-checkbox {
+        <pre data-lang="css">.custom-checkbox {
     /* Контейнер должен быть релятивным, так как внутри него мы разместим два абсолютно спозиционированных элемента */
     position: relative;
     /* скрываем элементы, попадающие за границы label */
     overflow: hidden;
-    border: 1px solid teal;
     /* По умолчанию, label - это строчный элемент. С высокой вероятностью, нам нужно будет добавлять вертикальный margin, поэтому сразу сделаем его строчно-блочным*/
     display: inline-block;
-    width: 20px;
-    height: 20px;
-    font-size: 18px;
-    line-height: 1;
-    border-radius: 4px;
-    /* Делаем так, чтобы чек-бокс нельзя было выделить курсором, а только нажать */
+    /* Делаем так, чтобы чекбокс нельзя было выделить курсором, а только нажать */
     user-select: none;
     /* Я приверженец того, что все интерактивные элементы должны иметь cursor: pointer, поэтому задаём и его */
     cursor: pointer;
+    /* Отодвигаем левую часть так, чтобы влез кастомный чекбокс*/
+    padding: 0 1em 0 1.4em;
+}
+ 
+ 
+/* Задаем кастомную галочку для чекбокса и скрываем её по умолчанию */
+.custom-checkbox .checker {
+   position: absolute;
+   margin-top: 0;
+   /* Выдвигаем чекбокс левее так, чтобы он не наезжал на текст */
+   margin-left: -1.2em;
+   width: 1em;
+   height: 1em;
+   overflow: hidden;
+   text-align: center;
+   font-size: 1em;
+   line-height: 1;
+   border: 1px solid teal;
+   border-radius: 3px;
+   background-color: white;
+   /* Делаем галочку прозрачной */
+   color: transparent;
+}
+ 
+/* В псевдо-элементе допишем саму галочку */
+.custom-checkbox .checker:after {
+    content: '✓';
 }
  
 /* указываем селектор на наш конкретный инпут с типом чекбокс */
-.ex4 label.custom-checkbox input[type='checkbox'] {
+.custom-checkbox input[type='checkbox'] {
     /* Выводим стандартный чекбокс за границы label */
     position: absolute;
     right: 100%;
     top: 0;
 }
- 
-/* Задаем кастомную галочку для чекбокса и скрываем её по умолчанию */
-.ex4 label.custom-checkbox .checker {
-    display: none;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    text-align: center;
-    font-weight: bold;
-}
- 
-/* В псевдо-элементе допишем саму галочку */
-.ex4 label.custom-checkbox .checker:after {
-    content: '✓';
-    display: none;
-}
- 
+
 /* Несколько сложноее CSS правило: когда чекбокс будет иметь атрибут checked, его сосед снизу (селектор +) с классом .checker, примет эти стили */
-.ex4 label.custom-checkbox input[type='checkbox']:checked + .checker {
-    /* Показываем наш элемент с галочкой */
-    display: block;
+.custom-checkbox input[type='checkbox']:checked + .checker {
+    /* Перекрашиваем фон чекбокса и галочку */
     background-color: teal;
     color: white;
 }
  
-/* Когда чекбокс :checked, after-элемент у соседа снизу с классом .checker, должен появиться */
-.ex4 label.custom-checkbox input[type='checkbox']:checked + .checker:after {
-    display: block;
-}
  
 /* Не все люди используют для просмотра веб-страниц мышь, а некоторые из них используют вообще только клавиатуру. Так вот, чтобы интерактивные элементы подсвечивались, когда фокус клавиатуры попадал на них, им нужно задать отдельные стили. */
 /* Когда скрытый инпут окажется в фокусе, его сосед с классом .checker примет стили */
-.ex4 label.custom-checkbox input[type='checkbox']:focus + .checker {
+.custom-checkbox input[type='checkbox']:focus + .checker {
     box-shadow: 0 0 5px 0 teal;
-    display: block;
 }
  
+/* Когда скрытый интуп нельзя изменить, его сосед с классом .checker примет стили */
+.custom-checkbox input[type='checkbox']:disabled+.checker {
+  background-color: #999;
+  border-color: #999;
+}
 /* Этот класс позволяет правильно скрыть элемент с экрана так, чтобы он был доступен для скринридеров */
 .visually-hidden {
     position: absolute;
@@ -351,11 +367,36 @@ git config --global user.email myEmail@example.com</pre>
         <p>Подробнее о visually-hidden можно почитать здесь:<a href="https://htmlacademy.ru/blog/useful/css/short-12" target="_blank">Как прятать [элементы]</a></p>
         <h3>Задача</h3>
         <p>Сверстать чекбоксы как в gmail.</p>
-        <div class="image"><img src="./images/gmail-checkboxes.png" alt=""/></div>
+        <div class="sol4">
+          <div class="ex4">
+            <label class="custom-checkbox default">
+              <input class="visually-hidden" type="checkbox"/><span class="checker"></span>
+            </label>
+            <label class="custom-checkbox star">
+              <input class="visually-hidden" type="checkbox"/><span class="checker"></span>
+            </label>
+            <label class="custom-checkbox label">
+              <input class="visually-hidden" type="checkbox"/><span class="checker"></span>
+            </label>
+          </div>
+        </div>
+        <div class="sol4">
+          <div class="ex4">
+            <label class="custom-checkbox default">
+              <input class="visually-hidden" type="checkbox" checked="checked"/><span class="checker"></span>
+            </label>
+            <label class="custom-checkbox star">
+              <input class="visually-hidden" type="checkbox" checked="checked"/><span class="checker"></span>
+            </label>
+            <label class="custom-checkbox label">
+              <input class="visually-hidden" type="checkbox" checked="checked"/><span class="checker"></span>
+            </label>
+          </div>
+        </div>
         <p>Картинки для чекбоксов взять отсюда:</p>
         <ul>
           <li><a target="_blank" href="https://www.gstatic.com/images/icons/material/system/1x/check_box_outline_blank_black_20dp.png">Unchecked checkbox</a></li>
-          <li><a target="_blank" href="https://ssl.gstatic.com/ui/v1/menu/checkmark.png">Checked checkbox</a></li>
+          <li><a target="_blank" href="https://www.gstatic.com/images/icons/material/system/1x/check_box_black_20dp.png">Checked checkbox</a></li>
           <li><a target="_blank" href="https://www.gstatic.com/images/icons/material/system/1x/star_border_black_20dp.png">Unchecked star</a></li>
           <li><a target="_blank" href="https://www.gstatic.com/images/icons/material/system/1x/star_googyellow500_20dp.png">Checked star</a></li>
           <li><a target="_blank" href="https://www.gstatic.com/images/icons/material/system/1x/label_important_outline_black_20dp.png">Unchecked label</a></li>
