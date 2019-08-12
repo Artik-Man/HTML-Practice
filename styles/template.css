@@ -206,6 +206,16 @@ ul {
   width: 100%;
 }
 
+.flex-content {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.flex-content>* {
+  margin-right: 40px;
+}
+
 @media (max-width:600px) {
   .container {
     padding: 0 8px;
@@ -228,7 +238,8 @@ ul {
   }
 
   a[target="_blank"]:after {
-    content: attr(href);
-    margin-left: 20px;
+    content: '[ 'attr(href)' ]';
+    margin: 0 1em;
+    font-size: .8em;
   }
 }
