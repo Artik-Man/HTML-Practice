@@ -250,10 +250,10 @@ git config --global user.email myEmail@example.com</pre>
         <div class="image-container"><img src="./images/iphonexsmax-1.jpg" alt="iPhone Xs Max"/></div>
         <div class="slider-container">
           <button class="button left"></button>
-          <div class="thumb active"><img src="./images/iphonexsmax-2.jpg" alt="Next"/></div>
-          <div class="thumb"><img src="./images/iphonexsmax-3.jpg" alt="Next"/></div>
-          <div class="thumb"><img src="./images/iphonexsmax-4.jpg" alt="Next"/></div>
-          <div class="thumb"><img src="./images/iphonexsmax-5.jpg" alt="Next"/></div>
+          <button class="thumb active"><img src="./images/iphonexsmax-2.jpg" alt="Next"/></button>
+          <button class="thumb"><img src="./images/iphonexsmax-3.jpg" alt="Next"/></button>
+          <button class="thumb"><img src="./images/iphonexsmax-4.jpg" alt="Next"/></button>
+          <button class="thumb"><img src="./images/iphonexsmax-5.jpg" alt="Next"/></button>
           <button class="button right"></button>
         </div>
       </div>
@@ -309,7 +309,6 @@ git config --global user.email myEmail@example.com</pre>
     padding: 0 1em 0 1.4em;
 }
  
- 
 /* Задаем кастомную галочку для чекбокса и скрываем её по умолчанию */
 .custom-checkbox .checker {
    position: absolute;
@@ -349,7 +348,6 @@ git config --global user.email myEmail@example.com</pre>
     color: white;
 }
  
- 
 /* Не все люди используют для просмотра веб-страниц мышь, а некоторые из них используют вообще только клавиатуру. Так вот, чтобы интерактивные элементы подсвечивались, когда фокус клавиатуры попадал на них, им нужно задать отдельные стили. */
 /* Когда скрытый инпут окажется в фокусе, его сосед с классом .checker примет стили */
 .custom-checkbox input[type='checkbox']:focus + .checker {
@@ -361,15 +359,19 @@ git config --global user.email myEmail@example.com</pre>
   background-color: #999;
   border-color: #999;
 }
+
 /* Этот класс позволяет правильно скрыть элемент с экрана так, чтобы он был доступен для скринридеров */
 .visually-hidden {
-    position: absolute;
-    clip: rect(0 0 0 0);
-    width: 1px;
-    height: 1px;
-    margin: -1px;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }</pre>
-        <p>Подробнее о visually-hidden можно почитать здесь:<a href="https://htmlacademy.ru/blog/useful/css/short-12" target="_blank">Как прятать [элементы]</a></p>
+        <p>Подробнее о visually-hidden можно почитать здесь: <a href="https://allyjs.io/tutorials/hiding-elements.html#how-to-hide-elements-visually" target="_blank">How to hide elements visually</a></p>
         <h3>Задача</h3>
         <p>Сверстать чекбоксы как в gmail.</p>
         <div class="sol4">

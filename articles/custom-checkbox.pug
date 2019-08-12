@@ -59,7 +59,6 @@ article#custom-checkbox
       |     padding: 0 1em 0 1.4em;
       | }
       | 
-      | 
       | /* Задаем кастомную галочку для чекбокса и скрываем её по умолчанию */
       | .custom-checkbox .checker {
       |    position: absolute;
@@ -99,7 +98,6 @@ article#custom-checkbox
       |     color: white;
       | }
       | 
-      | 
       | /* Не все люди используют для просмотра веб-страниц мышь, а некоторые из них используют вообще только клавиатуру. Так вот, чтобы интерактивные элементы подсвечивались, когда фокус клавиатуры попадал на них, им нужно задать отдельные стили. */
       | /* Когда скрытый инпут окажется в фокусе, его сосед с классом .checker примет стили */
       | .custom-checkbox input[type='checkbox']:focus + .checker {
@@ -111,18 +109,22 @@ article#custom-checkbox
       |   background-color: #999;
       |   border-color: #999;
       | }
+      |
       | /* Этот класс позволяет правильно скрыть элемент с экрана так, чтобы он был доступен для скринридеров */
       | .visually-hidden {
-      |     position: absolute;
-      |     clip: rect(0 0 0 0);
-      |     width: 1px;
-      |     height: 1px;
-      |     margin: -1px;
+      |   position: absolute;
+      |   width: 1px;
+      |   height: 1px;
+      |   margin: -1px;
+      |   border: 0;
+      |   padding: 0;
+      |   clip: rect(0 0 0 0);
+      |   overflow: hidden;
       | }
 
     p
-      | Подробнее о visually-hidden можно почитать здесь:
-      a(href="https://htmlacademy.ru/blog/useful/css/short-12" target="_blank") Как прятать [элементы]
+      | Подробнее о visually-hidden можно почитать здесь: 
+      a(href="https://allyjs.io/tutorials/hiding-elements.html#how-to-hide-elements-visually" target="_blank") How to hide elements visually
     h3 Задача
     p Сверстать чекбоксы как в gmail.
     .sol4

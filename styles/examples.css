@@ -275,13 +275,15 @@
   border: 1px solid #d8d8d8;
   margin: 5px;
   width: 70px;
+  height: 70px;
   border-radius: 4px;
   cursor: pointer;
 }
 
 .sol3 .slider-container .thumb img {
   display: inline-block;
-  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
   opacity: .7;
 }
 
@@ -404,10 +406,13 @@
 
 .visually-hidden {
   position: absolute;
-  clip: rect(0 0 0 0);
   width: 1px;
   height: 1px;
   margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }
 
 .sol4 {
