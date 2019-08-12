@@ -36,13 +36,6 @@
           <li><a href="#relative-absolute">Горизонтальное и вертикальное центрирование блока</a></li>
           <li> <a href="#custom-checkbox">Вёрстка чекбоксов</a></li>
         </ul>
-        <p><br/></p>
-        <h2>Планы</h2>
-        <ul>
-          <li>Вёрстка модальных окон</li>
-          <li>Вёрстка туллтипов </li>
-          <li>Вёрстка выпадающего меню</li>
-        </ul>
       </div>
     </article>
     <article id="git">
@@ -244,21 +237,32 @@ git config --global user.email myEmail@example.com</pre>
         <h3>Задача</h3>
         <p>Сделать просмотр изображений как на dns-shop.ru</p>
         <ul>
-          <li>Размер внешнего контейнера: 100%*600px</li>
+          <li>Размер внешнего контейнера: 100% * 80vh</li>
           <li>Вместо картинок можно использовать цветные блоки</li>
-          <li>Вместо стрелочек можно использовать &lt; и &gt;</li>
+          <li>Стрелочки: <a href="./images/angle-left-sm.svg" target="_blank">arrow-left</a>, <a href="./images/angle-right-sm.svg" target="_blank">arrow-right</a>; изображение кнопки "закрыть": <a href="./images/times-sm.svg" target="_blank">close</a>.</li>
         </ul>
       </div>
-      <div class="image"><img src="./images/dns.png" alt=""/></div>
+      <div class="sol3">
+        <div class="title">iPhone Xs Max</div>
+        <button class="button close"></button>
+        <button class="button left"></button>
+        <button class="button right"></button>
+        <div class="image-container"><img src="./images/iphonexsmax-1.jpg" alt="iPhone Xs Max"/></div>
+        <div class="slider-container">
+          <button class="button left"></button>
+          <div class="thumb active"><img src="./images/iphonexsmax-2.jpg" alt="Next"/></div>
+          <div class="thumb"><img src="./images/iphonexsmax-3.jpg" alt="Next"/></div>
+          <div class="thumb"><img src="./images/iphonexsmax-4.jpg" alt="Next"/></div>
+          <div class="thumb"><img src="./images/iphonexsmax-5.jpg" alt="Next"/></div>
+          <button class="button right"></button>
+        </div>
+      </div>
     </article>
     <article id="custom-checkbox">
       <div class="container">
         <h2>Вёрстка чекбоксов</h2>
-        <p>
-          Вёрстка почти каждой формы предполагает изменение вида стандартных чекбоксов. Изначально, они выглядят
-          вот так: 
-          <input type="checkbox"/> и редко когда вписываются в дизайн. Поэтому каждый верстальщик знает,
-                          как кастомизировать чекбоксы. Сейчас и мы научимся это делать.
+        <p>Вёрстка почти каждой формы предполагает изменение вида стандартных чекбоксов. Изначально, они выглядят вот так: 
+          <input type="checkbox"/> и редко когда вписываются в дизайн. Поэтому каждый верстальщик знает, как кастомизировать чекбоксы. Сейчас и мы научимся это делать.
         </p>
         <p>
           В кратце, наша задача - использовать label со скрытым внутри чекбоксом. Дело в том, что в HTML клик по
@@ -266,8 +270,9 @@ git config --global user.email myEmail@example.com</pre>
           значением которого выступает id элемента input, находящегося снаружи нашего label, но применения этой
           конструкции я нашел лишь пару раз в своей практике.
         </p>
+        <p> <a href="http://htmlbook.ru/html/label" target="_blank">Немного подробнее о label можно почитать здесь</a></p>
         <p>В этом видео Вадим Макеев подробно рассказывает об этой технике вёрстки чекбокса: <a href="https://youtu.be/E6kLaaQFctU" target="_blank">Смотреть на YouTube</a></p>
-        <iframe class="aspect16-9 no-print" src="https://www.youtube.com/embed/E6kLaaQFctU" frameborder="0" allowfullscreen=""></iframe>
+        <div class="youtube" data-video="E6kLaaQFctU"></div>
         <h3>Пример:</h3>
         <div class="ex4">
           <label class="custom-checkbox">

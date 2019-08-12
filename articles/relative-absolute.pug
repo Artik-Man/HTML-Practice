@@ -34,8 +34,30 @@ article#relative-absolute
     h3 Задача
     p Сделать просмотр изображений как на dns-shop.ru
     ul
-      li Размер внешнего контейнера: 100%*600px
+      li Размер внешнего контейнера: 100% * 80vh
       li Вместо картинок можно использовать цветные блоки
-      li Вместо стрелочек можно использовать &lt; и &gt;
-  .image
-    img(src="./images/dns.png" alt="")
+      li Стрелочки: 
+        a(href="./images/angle-left-sm.svg" target="_blank") arrow-left
+        |, 
+        a(href="./images/angle-right-sm.svg" target="_blank") arrow-right
+        |; изображение кнопки "закрыть": 
+        a(href="./images/times-sm.svg" target="_blank") close
+        |.
+  .sol3
+    .title iPhone Xs Max
+    button.button.close
+    button.button.left
+    button.button.right
+    .image-container
+      img(src="./images/iphonexsmax-1.jpg" alt="iPhone Xs Max")
+    .slider-container
+      button.button.left
+      .thumb.active
+        img(src="./images/iphonexsmax-2.jpg" alt="Next")
+      .thumb
+        img(src="./images/iphonexsmax-3.jpg" alt="Next")
+      .thumb
+        img(src="./images/iphonexsmax-4.jpg" alt="Next")
+      .thumb
+        img(src="./images/iphonexsmax-5.jpg" alt="Next")
+      button.button.right
