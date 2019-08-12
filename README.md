@@ -15,3 +15,5 @@
 
 Задачи:
 * Улучшить описание для тега label, добавить ссылку http://htmlbook.ru/html/label
+* Посмотреть задачи здесь: https://ru.learnlayout.com/toc.html
+* Придумать задачи, согласно этому посту: https://habr.com/ru/post/346010/
