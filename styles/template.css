@@ -29,7 +29,6 @@ article {
   page-break-after: always;
   border-bottom: 1px solid var(--grey-light);
   min-height: 100vh;
-  scroll-snap-align: start;
 }
 
 header .services {
@@ -206,14 +205,8 @@ ul {
   width: 100%;
 }
 
-.flex-content {
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-}
-
-.flex-content>* {
-  margin-right: 40px;
+.columns-2 {
+  column-count: 2;
 }
 
 @media (max-width:600px) {
@@ -237,9 +230,14 @@ ul {
     padding: 0;
   }
 
+  a[target="_blank"] {
+    display: inline-block;
+  }
+
   a[target="_blank"]:after {
     content: '[ 'attr(href)' ]';
     margin: 0 1em;
     font-size: .8em;
+    display: inline-block;
   }
 }
