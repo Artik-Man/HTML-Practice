@@ -170,12 +170,40 @@ git config --global user.email myEmail@example.com</pre>
         </ul>
       </div>
     </article>
+    <article id="display">
+      <div class="container">
+        <h2>Свойство display</h2>
+        <p>Одним из важнейший CSS-свойств является свойство display. Оно позволяет переопределять тип отображения элемента не изменяя семантику кода. Рассмотрим основные значения этого свойства:</p>
+        <ol>
+          <li>none &mdash; скрывает элемент</li>
+          <li>block &mdash; определяет элемент как "блочный", является стандартным значением элементов div, p, ul, article, section, ...</li>
+          <li>inline &mdash; определяет элемент как "строчный", является стандартным значением элементов span, a, s, b, ...</li>
+          <li>inline-block &mdash; смесь строчного и блочного. Фактически, являясь блочным, элемент получает возможность обтекаться строчными элементами, как тег img</li>
+          <li>flex &mdash; превращает элемент в flex-контейнер. Это означает, что внутренние элементы выстраиваются так, как мы зададим с помощью свойств <a target="_blank" href="https://developer.mozilla.org/ru/docs/Web/CSS/flex">flex, </a><a target="_blank" href="https://developer.mozilla.org/ru/docs/Web/CSS/flex-direction">flex-direction, </a><a target="_blank" href="https://developer.mozilla.org/ru/docs/Web/CSS/flex-wrap">flex-wrap, </a><a target="_blank" href="https://developer.mozilla.org/ru/docs/Web/CSS/align-items">align-items, </a><a target="_blank" href="https://developer.mozilla.org/ru/docs/Web/CSS/justify-content">justify-content</a> и других. Более подробно о flex-контейнерах стоит прочитать тут: <a target="_blank" href="https://developer.mozilla.org/ru/docs/Web/CSS/CSS_Flexible_Box_Layout/Выравнивание_элементов_в_Flex_контейнере">Выравнивание элементов в Flex контейнере</a></li>
+          <li>grid &mdash; превращает элемент в grid-контейнер. Гриды это новая технология построения сеток. При помощи свойств управления сетками, например, <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-columns">grid-template-columns</a>, мы можем управлять отображением содержимого внутри грида. Более подробно о гридах можно почитать здесь: <a target="_blank" href="https://developer.mozilla.org/ru/docs/Web/CSS/CSS_Grid_Layout/Basic_Concepts_of_Grid_Layout">Основные понятия Grid Layout</a></li>
+        </ol>
+        <h3>Задачи</h3>
+        <p>Задачи на добавление всего одной строки кода. Смотрите HTML-код, подумайте, какое CSS-свойство спасёт ситуацию. Поиграйтесь со значениями этого свойства. Вне необходимые для выполнения задачи знания описаны в этой главе.</p>
+        <p>1. Напишите CSS-код, позволяющий скрыть этот элемент </p>
+        <p class="codepen" data-id="gOYPNzd"></p>
+        <p>2. Не меняя HTML-кода, сделайте так, чтобы каждое предложение начиналось с новой строки</p>
+        <p class="codepen" data-id="JjPGQBN"></p>
+        <p>3. Сделайте так, чтобы все элементы списка шли в одну строку</p>
+        <p class="codepen" data-id="xxKVKKm"></p>
+        <p>4. Добавьте одно свойство так, чтобы меню стало широким </p>
+        <p class="codepen" data-id="vYBGBLE" data-height="400"></p>
+        <p>5. Сделайте так, чтобы счёт шёл слева направо, а не снизу вверх</p>
+        <p class="codepen" data-id="ExYKYWM" data-height="400"></p>
+        <p>6. Добавьте одну строку так, чтобы получилась таблица</p>
+        <p class="codepen" data-id="yLBOBpq"></p>
+      </div>
+    </article>
     <article id="margin-0-auto">
       <div class="container">
         <h2>Выравнивание блока по центру</h2>
         <p>
-          Этот фокус позволяет центрировать блок заранее определенной ширины независимо от ширины экрана. Кроме
-          того, если использовать max-width вместо width, то, если размер экрана пользователя окажется меньше
+          Этот фокус позволяет центрировать блок заранее определённой ширины, независимо от ширины экрана. Кроме
+          того, если использовать max-width вместо width, то, даже если размер экрана пользователя окажется меньше
           ширины этого блока, то блок не выйдет за границы экрана, а будет равен ширине экрана. Это весьма
           распространенная практика
         </p>
@@ -308,7 +336,7 @@ git config --global user.email myEmail@example.com</pre>
           <li>Стрелочки: <a href="./images/angle-left-sm.svg" target="_blank">arrow-left</a>, <a href="./images/angle-right-sm.svg" target="_blank">arrow-right</a>; изображение кнопки "закрыть": <a href="./images/times-sm.svg" target="_blank">close</a>.</li>
         </ul>
       </div>
-      <div class="sol3">
+      <div class="sol3 print-break">
         <div class="title">iPhone Xs Max</div>
         <button class="button close"></button>
         <button class="button left"></button>
@@ -479,5 +507,6 @@ git config --global user.email myEmail@example.com</pre>
     </article>
     <script src="./lib/hihglight/highlight.pack.js"></script>
     <script src="./lib/script.js"></script>
+    <script async="async" src="https://static.codepen.io/assets/embed/ei.js"></script>
   </body>
 </html>

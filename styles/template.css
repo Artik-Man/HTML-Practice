@@ -31,27 +31,6 @@ article {
   min-height: 100vh;
 }
 
-header .services {
-  background-color: var(--white-dark);
-  border-bottom: 1px solid var(--grey-light);
-  font-size: 12px;
-  padding: 7px 12px;
-}
-
-header .services a {
-  margin: 0 10px;
-  text-decoration: none;
-}
-
-header .services span {
-  margin-left: 90px;
-  color: #999;
-}
-
-header .services a.active {
-  color: black;
-}
-
 a {
   color: var(--accent);
 }
@@ -130,7 +109,8 @@ h6 {
   font-weight: 400;
 }
 
-ul {
+ul,
+ol {
   padding-left: 16px;
   color: var(--grey-dark);
   line-height: 1.4;
@@ -176,6 +156,10 @@ ul {
   min-height: 180px;
 }
 
+.print-break {
+  page-break-before: always;
+}
+
 .youtube a {
   display: block;
   position: relative;
@@ -209,18 +193,38 @@ ul {
   column-count: 2;
 }
 
+.codepen {
+  height: 265px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid;
+  margin: 1em 0;
+  padding: 1em;
+}
+
 @media (max-width:600px) {
   .container {
     padding: 0 8px;
   }
 }
 
+.print-only {
+  display: none;
+}
+
 @media print {
+  .print-only {
+    display: block;
+  }
+
   .no-print {
     display: none;
   }
 
-  header {
+  .codepen,
+  .cp_embed_wrapper {
     display: none;
   }
 
