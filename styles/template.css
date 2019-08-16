@@ -58,9 +58,10 @@ pre:before {
 }
 
 h1 {
-  margin: 25vh 0 2em !important;
   font-size: 42px;
   text-align: center;
+  height: 100vh;
+  padding-top: 25vh;
 }
 
 h1 .logo {

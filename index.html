@@ -20,12 +20,10 @@
     <title>HTML Practice</title>
   </head>
   <body>
-    <article>
-      <div class="container">
-        <h1><span class="logo"><span class="top">HTML</span><span class="bottom">Practice</span></span></h1>
-        <p></p>
-      </div>
-    </article>
+    <div class="container">
+      <h1><span class="logo"><span class="top">HTML</span><span class="bottom">Practice</span></span></h1>
+      <p></p>
+    </div>
     <article id="contents">
       <div class="container">
         <h2>Содержание</h2>
@@ -196,10 +194,10 @@ git config --global user.email myEmail@example.com</pre>
           <li>none &mdash; скрывает элемент;</li>
           <li>
             block &mdash; определяет элемент как "блочный", что означает, что элемент не обтекается другими объектами, а переносится на новую строку и заполняет её полностью. Следующий элемент будет отрисован под блочным элементом. 
-            Является стандартным значением элементов div, p, ul, article, section и другие;
+            Является стандартным значением элементов div, p, ul, article, section и других;
           </li>
           <li>
-            inline &mdash; определяет элемент как "строчный", что означает, что элемент ведёт себя как текст. Является стандартным значением элементов span, a, s, b и другие;</li>
+            inline &mdash; определяет элемент как "строчный", что означает, что элемент ведёт себя как текст. Является стандартным значением элементов span, a, s, b и других;</li>
           <li>inline-block &mdash; смесь строчного и блочного. Фактически, являясь блочным, элемент получает возможность обтекаться строчными элементами, как тег img;</li>
           <li>flex &mdash; превращает элемент в flex-контейнер. Это означает, что внутренние элементы выстраиваются так, как мы зададим с помощью свойств <a target="_blank" href="https://developer.mozilla.org/ru/docs/Web/CSS/flex">flex, </a><a target="_blank" href="https://developer.mozilla.org/ru/docs/Web/CSS/flex-direction">flex-direction, </a><a target="_blank" href="https://developer.mozilla.org/ru/docs/Web/CSS/flex-wrap">flex-wrap, </a><a target="_blank" href="https://developer.mozilla.org/ru/docs/Web/CSS/align-items">align-items, </a><a target="_blank" href="https://developer.mozilla.org/ru/docs/Web/CSS/justify-content">justify-content</a> и других. Более подробно о flex-контейнерах стоит прочитать тут: <a target="_blank" href="https://developer.mozilla.org/ru/docs/Web/CSS/CSS_Flexible_Box_Layout/Выравнивание_элементов_в_Flex_контейнере">Выравнивание элементов в Flex контейнере</a>;</li>
           <li>grid &mdash; превращает элемент в grid-контейнер. Гриды это новая технология построения сеток. При помощи свойств управления сетками, например, <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-columns">grid-template-columns</a>, мы можем управлять отображением содержимого внутри грида. Более подробно о гридах можно почитать здесь: <a target="_blank" href="https://developer.mozilla.org/ru/docs/Web/CSS/CSS_Grid_Layout/Basic_Concepts_of_Grid_Layout">Основные понятия Grid Layout</a>.</li>
@@ -595,6 +593,18 @@ git config --global user.email myEmail@example.com</pre>
           <li><a target="_blank" href="https://www.gstatic.com/images/icons/material/system/1x/label_important_outline_black_20dp.png">Unchecked label</a></li>
           <li><a target="_blank" href="https://www.gstatic.com/images/icons/material/system/1x/label_important_googyellow500_20dp.png">Checked label</a></li>
         </ul>
+      </div>
+    </article>
+    <article id="do-u-know">
+      <div class="container">
+        <h2>Знаете ли вы?</h2>
+        <p>В этой статье приведены нестандартные и неоднозначные решения тех или иных проблем, связанных с вёрсткой.</p>
+        <section>
+          <h3>Знаете ли вы, что картинки можно хранить прямо в css-файле?</h3>
+          <p>
+            Небольшие картинки, используемые, например, в свойстве background-image, можно хранить прямо в css. Лучше всего это работает с SVG-графикой. Для того, чтобы вставить картинку в css, нам придется воспользоваться <a target="_blank" href="http://yoksel.github.io/url-encoder/ru/">простеньким энкодером</a>, который, к тому же, сразу же сгенерирует код для вставки в css. </p>
+          <p>Если же у вас растровая иконка и вы используете <a target="_blank" href="https://lesscss.ru/">LESS</a>, то обратите внимание на <a target="_blank" href="https://lesscss.ru/functions/#misc-functions-data-uri">функцию data-uri</a>, которая принимает в качестве параметра путь к файлу с картинкой, а скомпилированный css-файл уже будет содержать закодированную картинку. </p>
+        </section>
       </div>
     </article>
     <script src="./lib/hihglight/highlight.pack.js"></script>
