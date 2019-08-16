@@ -1,0 +1,78 @@
+article#box-sizing
+  .container
+    h2 Блочная модель и box-sizing
+    p  Элементы в CSS представляют собой набор слоёв: ширина и высота самого элемента (
+      a(target="_blank" href="http://htmlbook.ru/css/width") width
+      |  и 
+      a(target="_blank" href="http://htmlbook.ru/css/height") height
+      | ), поля элемента (
+      a(target="_blank" href="http://htmlbook.ru/css/padding") padding
+      | ), граница элемента (
+      a(target="_blank" href="http://htmlbook.ru/css/border") border
+      | ) и отступы (
+      a(target="_blank" href="http://htmlbook.ru/css/margin") margin
+      | ). 
+      a(href="http://htmlbook.ru/samlayout/blochnaya-verstka/blochnaya-model" target="_blank") Подробнее о блочной модели стоит почитать здесь.
+
+    .ex5.print-break
+      .margin margin
+        .border border
+          .padding padding
+            .size width
+
+    p Долгое время в CSS изменение padding приводило к изменению width у элементов, из-за чего два одинаковых по ширине элемента 
+      | с разными по ширине полями, в реальности имели разную ширину. Пример ниже демонстрирует этот недуг:
+
+    pre(data-lang="html")
+      | <div class="one">padding: 0</div>
+      | <div class="two">padding: 40px</div>
+    pre(data-lang="css")
+      | .one {
+      |   width: 200px;
+      |   height: 100px;
+      |   padding: 0;
+      | }
+      | .two {
+      |   width: 200px;
+      |   height: 100px;
+      |   padding: 40px;
+      | }
+
+    .ex6.print-break
+      .one padding: 0
+      .two padding: 50px
+
+    p На помощь в борьбе с этим нелогичным, казалось бы, поведением пришел 
+      a(href="http://htmlbook.ru/css/box-sizing" target="_blank") box-sizing
+      | . Добавим в наши блоки всего по одной строчке кода:
+
+    pre(data-lang="html")
+      | <div class="one">padding: 0</div>
+      | <div class="two">padding: 40px</div>
+    pre(data-lang="css")
+      | .one {
+      |   width: 200px;
+      |   height: 100px;
+      |   padding: 0;
+      |   box-sizing: border-box;
+      | }
+      | .two {
+      |   width: 200px;
+      |   height: 100px;
+      |   padding: 40px;
+      |   box-sizing: border-box;
+      | }
+
+    .ex6.border-box
+      .one padding: 0
+      .two padding: 50px
+
+    p Так стало гораздо проще работать с CSS, поэтому многие добавляют 
+      | box-sizing: border-box всем элементам на сайте при помощи этого кода:
+    pre(data-lang="css")
+      | * {
+      |   box-sizing: border-box;
+      | }
+    p Это стало хорошей и распространённой практикой, однако по умолчанию значением свойства 
+      | box-sizing является стандартная модель content-box, возвращающий нас в те времена,
+      | когда приходилось вычислять ширину элемента по его полям.

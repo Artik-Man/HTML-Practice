@@ -2,9 +2,19 @@
 article#flex
   .container
     h2 Самый правильный способ разнести блоки в разные стороны
-    p 
-      | Используется, в основном, для построения "шапки" сайта
-      | Для полного понимания работы flex-box, рекомендую поиграть в игру 
+    p Способ основывается на применении 
+      a(href="https://developer.mozilla.org/ru/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox" target="_blank") флекс-контейнера
+      | , внутри которого находятся два блока. Оперируя свойством 
+      a(href="http://htmlbook.ru/css/justify-content" target="_blank") justify-content
+      | , можно добиться различных вариантов размещения этих двух блоков внутри флекс-контейнера. Нас же сейчас интересует
+      | значение "space-between", равномерно распределяющее блоки по ширине флекс-контейнера, прижимая к его краям первый и последний блоки. 
+      | Ширина блоков будет выбираться автоматически, в зависимости от контента, содержащегося внутри блока. 
+      | Кроме того, ширину блока, при необходимости, можно зафиксировать свойством 
+      a(href="http://htmlbook.ru/css/width" target="_blank") width
+      | , если это потребуется. 
+    p Этот метод используется, в основном, для построения "шапки" сайта, но может быть использован и в других частях сайта или 
+      nobr веб-приложения. 
+      | Для полного понимания работы флекс-контейнеров, рекомендую поиграть в игру 
       a(href="https://flexboxfroggy.com/" target="_blank") Flexbox Froggy
     p Пример:
     .ex2-container
@@ -18,14 +28,14 @@ article#flex
         span Account
     p Код:
     pre(data-lang="html")
-      | <div class="ex2-container">
-      |     <div class="ex2-box-left">
+      | <div class="container">
+      |     <div class="box-left">
       |        <span>Brand</span>
       |        <span>Stores</span>
       |        <span>Actions</span>
       |        <span>Contacts</span>
       |     </div>
-      |     <div class="example3-box-right">
+      |     <div class="box-right">
       |        <span>Settings</span>
       |        <span>Account</span>
       |     </div>
@@ -33,21 +43,19 @@ article#flex
 
 
     pre(data-lang="css")
-      | .ex2-container {
+      | .container {
       |   /* Задаём флекс-бокс (позволяет влиять на расположение дочерних элементов) */
       |   display: flex;
       |   /* Говорим элементам встать так, чтобы между ними, по возможности, образовывалось расстояние */
       |   justify-content: space-between; 
-      |   padding: 5px;
-      |   background: lightblue;
       | }
       | 
-      | .ex2-box-left {
-      |     background: teal;
+      | .box-left {
+      |   /* Здесь можно задать какие-то стили для левого блока */
       | }
       | 
-      | .ex2-box-right {
-      |     background: blueviolet;
+      | .box-right {
+      |   /* Здесь можно задать какие-то стили для правого блока */
       | }
 
   .container

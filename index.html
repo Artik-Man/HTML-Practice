@@ -29,7 +29,26 @@
     <article id="contents">
       <div class="container">
         <h2>Содержание</h2>
-        <ul></ul>
+        <ul>
+        </ul>
+        <ul>
+          <li>Единицы измерения</li>
+          <li>Позиционирование</li>
+          <li>Форматирование текста, шрифты и google-fonts</li>
+          <li>Многоколоночный текст: olumn-count и column-gap</li>
+          <li>Картинка в тексте и float + https://ru.learnlayout.com/clearfix.html</li>
+          <li>Псевдоклассы и псевдоэлементы</li>
+          <li>Способы создания сеток</li>
+          <li>Вёрстка тултипов </li>
+          <li>Вёрстка выпадающего меню</li>
+          <li>Вёрстка модальных окон</li>
+          <li>Градиенты, тени и фильтры</li>
+          <li>Трансформации</li>
+          <li>Анимации</li>
+          <li>Аудио и видео</li>
+          <li>Отзывчивый дизайн и медиа-выражения</li>
+          <li>Поговорим о семантике</li>
+        </ul>
       </div>
     </article>
     <article id="introduction">
@@ -37,7 +56,7 @@
         <h2>Введение</h2>
         <p>
            Это практическое руководство создано для начинающих верстальщиков и frontend-разработчиков, которые уже успели познакомиться с множеством HTML-тегов и CSS-свойств. 
-          Как минимум, вы должны быть знакомы со следующими HTML-тегами:
+          Как минимум, вы должны быть знакомы со следующими тегами:
         </p>
         <ul class="columns-2">
           <li><a href="http://htmlbook.ru/html/a" target="_blank">A</a></li>
@@ -62,8 +81,7 @@
           <li><a href="http://htmlbook.ru/html/title" target="_blank">TITLE</a></li>
           <li><a href="http://htmlbook.ru/html/ul" target="_blank">UL </a></li>
         </ul>
-        <p>Кроме того, вы должны быть знакомы с <a href="http://htmlbook.ru/samlayout/blochnaya-verstka/blochnaya-model" target="_blank">блочной моделью</a> и <a href="http://htmlbook.ru/css/box-sizing" target="_blank">box-sizing</a>.  Было бы неплохо, если бы вы могли оперировать такими единицами измерения, как px, %, em, rem, vw, vh, vmin и vmax. <a href="https://developer.mozilla.org/ru/docs/Learn/CSS/Introduction_to_CSS/Values_and_units" target="_blank">О единицах измерения стоит почитать здесь.</a></p>
-        <p>Также вы должны знать основные css-свойства, перечисленные в списке ниже, и другие.</p>
+        <p>Было бы неплохо, если бы вы могли оперировать такими единицами измерения, как px, %, em, rem, vw, vh, vmin и vmax. <a href="https://developer.mozilla.org/ru/docs/Learn/CSS/Introduction_to_CSS/Values_and_units" target="_blank">О единицах измерения стоит почитать здесь</a>. А перед тем, как вы приступите к этому руководству, вы должны понимать, <a href="https://developer.mozilla.org/ru/docs/Web/CSS/CSS_Селекторы" target="_blank">Как писать селекторы</a>. Для закрепления этих знаний предлагаю  <a href="https://flukeout.github.io/" target="_blank">поиграть в эту игру</a>. Кроме того, вы должны знать основные css-свойства, перечисленные в списке ниже, и другие.</p>
         <ul class="columns-2">
           <li><a href="http://htmlbook.ru/css/background" target="_blank">background</a></li>
           <li><a href="http://htmlbook.ru/css/border" target="_blank">border</a></li>
@@ -101,7 +119,6 @@
           <li><a href="http://htmlbook.ru/css/width" target="_blank">width</a></li>
           <li><a href="http://htmlbook.ru/css/z-index" target="_blank">z-index</a></li>
         </ul>
-        <p>Ну а для того чтобы понимать, как писать селекторы, <a href="https://developer.mozilla.org/ru/docs/Web/CSS/CSS_Селекторы" target="_blank">стоит почитать это</a> и <a href="https://flukeout.github.io/" target="_blank">поиграть в это</a>.</p>
       </div>
     </article>
     <article id="git">
@@ -173,17 +190,23 @@ git config --global user.email myEmail@example.com</pre>
     <article id="display">
       <div class="container">
         <h2>Свойство display</h2>
-        <p>Одним из важнейший CSS-свойств является свойство display. Оно позволяет переопределять тип отображения элемента не изменяя семантику кода. Рассмотрим основные значения этого свойства:</p>
+        <p>
+          Одним из важнейший CSS-свойств является display. Оно позволяет переопределять тип отображения элемента не изменяя семантику кода. Рассмотрим основные значения этого свойства:</p>
         <ol>
-          <li>none &mdash; скрывает элемент</li>
-          <li>block &mdash; определяет элемент как "блочный", является стандартным значением элементов div, p, ul, article, section, ...</li>
-          <li>inline &mdash; определяет элемент как "строчный", является стандартным значением элементов span, a, s, b, ...</li>
-          <li>inline-block &mdash; смесь строчного и блочного. Фактически, являясь блочным, элемент получает возможность обтекаться строчными элементами, как тег img</li>
-          <li>flex &mdash; превращает элемент в flex-контейнер. Это означает, что внутренние элементы выстраиваются так, как мы зададим с помощью свойств <a target="_blank" href="https://developer.mozilla.org/ru/docs/Web/CSS/flex">flex, </a><a target="_blank" href="https://developer.mozilla.org/ru/docs/Web/CSS/flex-direction">flex-direction, </a><a target="_blank" href="https://developer.mozilla.org/ru/docs/Web/CSS/flex-wrap">flex-wrap, </a><a target="_blank" href="https://developer.mozilla.org/ru/docs/Web/CSS/align-items">align-items, </a><a target="_blank" href="https://developer.mozilla.org/ru/docs/Web/CSS/justify-content">justify-content</a> и других. Более подробно о flex-контейнерах стоит прочитать тут: <a target="_blank" href="https://developer.mozilla.org/ru/docs/Web/CSS/CSS_Flexible_Box_Layout/Выравнивание_элементов_в_Flex_контейнере">Выравнивание элементов в Flex контейнере</a></li>
-          <li>grid &mdash; превращает элемент в grid-контейнер. Гриды это новая технология построения сеток. При помощи свойств управления сетками, например, <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-columns">grid-template-columns</a>, мы можем управлять отображением содержимого внутри грида. Более подробно о гридах можно почитать здесь: <a target="_blank" href="https://developer.mozilla.org/ru/docs/Web/CSS/CSS_Grid_Layout/Basic_Concepts_of_Grid_Layout">Основные понятия Grid Layout</a></li>
+          <li>none &mdash; скрывает элемент;</li>
+          <li>
+            block &mdash; определяет элемент как "блочный", что означает, что элемент не обтекается другими объектами, а переносится на новую строку и заполняет её полностью. Следующий элемент будет отрисован под блочным элементом. 
+            Является стандартным значением элементов div, p, ul, article, section и другие;
+          </li>
+          <li>
+            inline &mdash; определяет элемент как "строчный", что означает, что элемент ведёт себя как текст. Является стандартным значением элементов span, a, s, b и другие;</li>
+          <li>inline-block &mdash; смесь строчного и блочного. Фактически, являясь блочным, элемент получает возможность обтекаться строчными элементами, как тег img;</li>
+          <li>flex &mdash; превращает элемент в flex-контейнер. Это означает, что внутренние элементы выстраиваются так, как мы зададим с помощью свойств <a target="_blank" href="https://developer.mozilla.org/ru/docs/Web/CSS/flex">flex, </a><a target="_blank" href="https://developer.mozilla.org/ru/docs/Web/CSS/flex-direction">flex-direction, </a><a target="_blank" href="https://developer.mozilla.org/ru/docs/Web/CSS/flex-wrap">flex-wrap, </a><a target="_blank" href="https://developer.mozilla.org/ru/docs/Web/CSS/align-items">align-items, </a><a target="_blank" href="https://developer.mozilla.org/ru/docs/Web/CSS/justify-content">justify-content</a> и других. Более подробно о flex-контейнерах стоит прочитать тут: <a target="_blank" href="https://developer.mozilla.org/ru/docs/Web/CSS/CSS_Flexible_Box_Layout/Выравнивание_элементов_в_Flex_контейнере">Выравнивание элементов в Flex контейнере</a>;</li>
+          <li>grid &mdash; превращает элемент в grid-контейнер. Гриды это новая технология построения сеток. При помощи свойств управления сетками, например, <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-columns">grid-template-columns</a>, мы можем управлять отображением содержимого внутри грида. Более подробно о гридах можно почитать здесь: <a target="_blank" href="https://developer.mozilla.org/ru/docs/Web/CSS/CSS_Grid_Layout/Basic_Concepts_of_Grid_Layout">Основные понятия Grid Layout</a>.</li>
         </ol>
         <h3>Задачи</h3>
-        <p>Задачи на добавление всего одной строки кода. Смотрите HTML-код, подумайте, какое CSS-свойство спасёт ситуацию. Поиграйтесь со значениями этого свойства. Вне необходимые для выполнения задачи знания описаны в этой главе.</p>
+        <p>
+          Задачи на добавление всего одной строки кода. Смотрите HTML-код, подумайте, какое CSS-свойство спасёт ситуацию. Поиграйтесь со значениями этого свойства. Все необходимые для выполнения задачи знания описаны в этой главе.</p>
         <p>1. Напишите CSS-код, позволяющий скрыть этот элемент </p>
         <p class="codepen" data-id="gOYPNzd"></p>
         <p>2. Не меняя HTML-кода, сделайте так, чтобы каждое предложение начиналось с новой строки</p>
@@ -196,6 +219,67 @@ git config --global user.email myEmail@example.com</pre>
         <p class="codepen" data-id="ExYKYWM" data-height="400"></p>
         <p>6. Добавьте одну строку так, чтобы получилась таблица</p>
         <p class="codepen" data-id="yLBOBpq"></p>
+      </div>
+    </article>
+    <article id="box-sizing">
+      <div class="container">
+        <h2>Блочная модель и box-sizing</h2>
+        <p> Элементы в CSS представляют собой набор слоёв: ширина и высота самого элемента (<a target="_blank" href="http://htmlbook.ru/css/width">width</a> и <a target="_blank" href="http://htmlbook.ru/css/height">height</a>), поля элемента (<a target="_blank" href="http://htmlbook.ru/css/padding">padding</a>), граница элемента (<a target="_blank" href="http://htmlbook.ru/css/border">border</a>) и отступы (<a target="_blank" href="http://htmlbook.ru/css/margin">margin</a>). <a href="http://htmlbook.ru/samlayout/blochnaya-verstka/blochnaya-model" target="_blank">Подробнее о блочной модели стоит почитать здесь.</a></p>
+        <div class="ex5 print-break">
+          <div class="margin">margin
+            <div class="border">border
+              <div class="padding">padding
+                <div class="size">width</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p>
+          Долгое время в CSS изменение padding приводило к изменению width у элементов, из-за чего два одинаковых по ширине элемента с разными по ширине полями, в реальности имели разную ширину. Пример ниже демонстрирует этот недуг:</p>
+        <pre data-lang="html"><div class="one">padding: 0</div>
+<div class="two">padding: 40px</div></pre>
+        <pre data-lang="css">.one {
+  width: 200px;
+  height: 100px;
+  padding: 0;
+}
+.two {
+  width: 200px;
+  height: 100px;
+  padding: 40px;
+}</pre>
+        <div class="ex6 print-break">
+          <div class="one">padding: 0</div>
+          <div class="two">padding: 50px</div>
+        </div>
+        <p>На помощь в борьбе с этим нелогичным, казалось бы, поведением пришел <a href="http://htmlbook.ru/css/box-sizing" target="_blank">box-sizing</a>. Добавим в наши блоки всего по одной строчке кода:</p>
+        <pre data-lang="html"><div class="one">padding: 0</div>
+<div class="two">padding: 40px</div></pre>
+        <pre data-lang="css">.one {
+  width: 200px;
+  height: 100px;
+  padding: 0;
+  box-sizing: border-box;
+}
+.two {
+  width: 200px;
+  height: 100px;
+  padding: 40px;
+  box-sizing: border-box;
+}</pre>
+        <div class="ex6 border-box">
+          <div class="one">padding: 0</div>
+          <div class="two">padding: 50px</div>
+        </div>
+        <p>
+          Так стало гораздо проще работать с CSS, поэтому многие добавляют box-sizing: border-box всем элементам на сайте при помощи этого кода:</p>
+        <pre data-lang="css">* {
+  box-sizing: border-box;
+}</pre>
+        <p>
+          Это стало хорошей и распространённой практикой, однако по умолчанию значением свойства box-sizing является стандартная модель content-box, возвращающий нас в те времена,
+          когда приходилось вычислять ширину элемента по его полям.
+        </p>
       </div>
     </article>
     <article id="margin-0-auto">
@@ -214,18 +298,9 @@ git config --global user.email myEmail@example.com</pre>
       </div>
       <div class="container">
         <p>Код:</p>
-        <pre data-lang="html"><div class="example1-container">
-   <div class="example1-content"></div>
-</div></pre>
-        <pre data-lang="css">.ex1-container {
-    padding: 10px;
-    border: 2px solid lightblue;
-}
- 
-.ex1-content {
-  height: 100px;
+        <pre data-lang="html"> <div class="block"></div></pre>
+        <pre data-lang="css">.block {
   max-width: 500px;
-  border: 2px solid teal;
   margin: 0 auto; /* центрирует блок так, что правый и левый маргин становятся одинаковыми */
 }</pre>
       </div>
@@ -243,9 +318,13 @@ git config --global user.email myEmail@example.com</pre>
     <article id="flex">
       <div class="container">
         <h2>Самый правильный способ разнести блоки в разные стороны</h2>
-        <p>
-           Используется, в основном, для построения "шапки" сайта
-          Для полного понимания работы flex-box, рекомендую поиграть в игру <a href="https://flexboxfroggy.com/" target="_blank">Flexbox Froggy</a>
+        <p>Способ основывается на применении <a href="https://developer.mozilla.org/ru/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox" target="_blank">флекс-контейнера</a>, внутри которого находятся два блока. Оперируя свойством <a href="http://htmlbook.ru/css/justify-content" target="_blank">justify-content</a>, можно добиться различных вариантов размещения этих двух блоков внутри флекс-контейнера. Нас же сейчас интересует
+          значение "space-between", равномерно распределяющее блоки по ширине флекс-контейнера, прижимая к его краям первый и последний блоки. 
+          Ширина блоков будет выбираться автоматически, в зависимости от контента, содержащегося внутри блока. 
+          Кроме того, ширину блока, при необходимости, можно зафиксировать свойством <a href="http://htmlbook.ru/css/width" target="_blank">width</a>, если это потребуется. 
+        </p>
+        <p>Этот метод используется, в основном, для построения "шапки" сайта, но может быть использован и в других частях сайта или 
+          <nobr>веб-приложения. </nobr>Для полного понимания работы флекс-контейнеров, рекомендую поиграть в игру <a href="https://flexboxfroggy.com/" target="_blank">Flexbox Froggy</a>
         </p>
         <p>Пример:</p>
         <div class="ex2-container">
@@ -253,33 +332,31 @@ git config --global user.email myEmail@example.com</pre>
           <div class="ex2-box-right"><span>Settings</span><span>Account</span></div>
         </div>
         <p>Код:</p>
-        <pre data-lang="html"><div class="ex2-container">
-    <div class="ex2-box-left">
+        <pre data-lang="html"><div class="container">
+    <div class="box-left">
        <span>Brand</span>
        <span>Stores</span>
        <span>Actions</span>
        <span>Contacts</span>
     </div>
-    <div class="example3-box-right">
+    <div class="box-right">
        <span>Settings</span>
        <span>Account</span>
     </div>
 </div></pre>
-        <pre data-lang="css">.ex2-container {
+        <pre data-lang="css">.container {
   /* Задаём флекс-бокс (позволяет влиять на расположение дочерних элементов) */
   display: flex;
   /* Говорим элементам встать так, чтобы между ними, по возможности, образовывалось расстояние */
   justify-content: space-between; 
-  padding: 5px;
-  background: lightblue;
 }
  
-.ex2-box-left {
-    background: teal;
+.box-left {
+  /* Здесь можно задать какие-то стили для левого блока */
 }
  
-.ex2-box-right {
-    background: blueviolet;
+.box-right {
+  /* Здесь можно задать какие-то стили для правого блока */
 }</pre>
       </div>
       <div class="container">
@@ -299,7 +376,24 @@ git config --global user.email myEmail@example.com</pre>
     <article id="relative-absolute">
       <div class="container">
         <h2>Горизонтальное и вертикальное центрирование блока</h2>
-        <p>Эта техника применяется, в основном, для вёрстки модальных окон</p>
+        <p>
+          Эта техника применяется, в основном, для вёрстки модальных окон. Основывается на том, что блок с position: absolute смещается относительно ближайшего родителя с position: relative | absolute | fixed. 
+          Смещение задаётся при помощи CSS-свойств 
+        </p>
+        <ul>
+          <li><a href="http://htmlbook.ru/css/top" target="_blank">top</a></li>
+          <li><a href="http://htmlbook.ru/css/right" target="_blank">right</a></li>
+          <li><a href="http://htmlbook.ru/css/bottom" target="_blank">bottom</a></li>
+          <li><a href="http://htmlbook.ru/css/left" target="_blank">left</a></li>
+        </ul>
+        <p>
+          Если мы используем единицу измерения % для задания смещения, важно помнить, что процент берётся относительно родительского контейнера. Это значит, что left: 50% сместит блок на 50% от ширины родителя, а не от собственной ширины. 
+          Для того, чтобы сместить блок на 50% относительно собственной ширины, необходимо использовать свойство <a href="http://htmlbook.ru/css/transform" target="_blank">transform</a> с функцией translateX(50%) - движение по оси X, translateY(50%) - движение по оси Y или translate(50%, 50%) - движение по обеим осям.
+        </p>
+        <p>
+          В примере ниже показано, как мы сначала смещаем абсолютно спозиционированный блок на 50% слева направо (left) и на 50% сверху вниз (top) относительно контейнера, а затем, смещаем на 50% вверх и на 50% вправо относительно самого себя (transform: translate(-50%, -50%)), чтобы блок встал ровно по центру контейнера.</p>
+        <p>
+          Дело в том, что в CSS, началом координат является верхняя левая точка элемента, а не центр элемента. Поэтому нам не достаточно просто подвинуть блок на 50% вниз и вправо, так как тогда в центре контейнера окажется левый верхний угол блока, а не центр блока.</p>
         <h3>Пример:</h3>
       </div>
       <div class="ex3-container">
@@ -307,24 +401,22 @@ git config --global user.email myEmail@example.com</pre>
       </div>
       <div class="container">
         <p>Код:</p>
-        <pre data-lang="html"><div class="ex3-container">
-    <div class="ex3-block"></div>
+        <pre data-lang="html"><div class="container">
+    <div class="block"></div>
 </div></pre>
-        <pre data-lang="css">.ex3-container {
-    position: relative;
-    width: 100%;
-    height: 300px;
-    background: lightblue;
+        <pre data-lang="css">.container {
+  position: relative;
+  width: 100%;
+  height: 300px;
 }
  
-.ex3-block {
-    position: absolute; /* позволяет двигать блок относительно родительского релятивного контейнера */
-    top: 50%; /* смещаем блок на 50% от высоты родителя */
-    left: 50%; /* смещаем блок на 50% от ширины родителя */
-    transform: translate(-50%, -50%); /* смещаем блок на 50% от ширины и высоты этого блока */
-    width: 120px;
-    height: 80px;
-    background: teal;
+.block {
+  position: absolute; /* позволяет двигать блок относительно родительского релятивного контейнера */
+  top: 50%; /* смещаем блок на 50% от высоты родителя */
+  left: 50%; /* смещаем блок на 50% от ширины родителя */
+  transform: translate(-50%, -50%); /* смещаем блок на 50% от ширины и высоты этого блока */
+  width: 120px;
+  height: 80px;
 }</pre>
       </div>
       <div class="container">

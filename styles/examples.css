@@ -513,3 +513,64 @@
 .sol4 .custom-checkbox.label input[type='checkbox']:checked+.checker {
   background-image: url('https://www.gstatic.com/images/icons/material/system/1x/label_important_googyellow500_20dp.png');
 }
+
+.ex5 {
+  display: flex;
+  justify-content: center;
+}
+
+.ex5 * {
+  text-align: center;
+  border: 1px dashed black;
+  padding: 10px;
+  margin: 10px 24px 24px;
+  font-size: 14px;
+  font-family: monospace;
+}
+
+.ex5 .margin {
+  background: lightsalmon;
+}
+
+.ex5 .border {
+  background: navajowhite;
+}
+
+.ex5 .padding {
+  background: lightgreen;
+}
+
+.ex5 .size {
+  background: lightblue;
+  width: 90px;
+  height: 80px;
+  position: relative;
+  padding: 0 10px;
+  text-align: left;
+}
+
+.ex5 .size:after {
+  content: 'height';
+  position: absolute;
+  writing-mode: vertical-lr;
+  top: 10px;
+  right: 0;
+}
+
+.ex6 div {
+  width: 200px;
+  height: 100px;
+  padding: 0;
+  box-sizing: content-box;
+  background: teal;
+  color: white;
+  margin: 20px auto;
+}
+
+.ex6 .two {
+  padding: 40px;
+}
+
+.ex6.border-box div {
+  box-sizing: border-box;
+}
