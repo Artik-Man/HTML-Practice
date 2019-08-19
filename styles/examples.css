@@ -569,6 +569,7 @@
 
 .ex6 .two {
   padding: 40px;
+  box-shadow: inset 0 0 0 40px darkcyan;
 }
 
 .ex6.border-box div {

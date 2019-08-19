@@ -40,8 +40,10 @@ article#box-sizing
 
     .ex6.print-break
       .one padding: 0
-      .two padding: 50px
+      .two padding: 40px
 
+    p 
+      i Для визуализации, padding был окрашен с помощью свойства box-shadow. В действительности же, задать цвет для padding невозможно!
     p На помощь в борьбе с этим нелогичным, казалось бы, поведением пришел 
       a(href="http://htmlbook.ru/css/box-sizing" target="_blank") box-sizing
       | . Добавим в наши блоки всего по одной строчке кода:
@@ -65,7 +67,7 @@ article#box-sizing
 
     .ex6.border-box
       .one padding: 0
-      .two padding: 50px
+      .two padding: 40px
 
     p Так стало гораздо проще работать с CSS, поэтому многие добавляют 
       | box-sizing: border-box всем элементам на сайте при помощи этого кода:
