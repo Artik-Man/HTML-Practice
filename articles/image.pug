@@ -1,0 +1,103 @@
+article#image
+  .container
+    h2 Картинка в тексте
+    p Часто, бывает нужно вставить картинку в текст. Но работает это не всегда так, как мы это задумывали. 
+      | Попробуем вставть картинку без стилей и посмотрим, что получится.
+    p Код примера предельно прост: 
+    pre(data-lang="html")
+      | <p>
+      |    <img src="../images/image.svg" alt="Just image">
+      |    Lorem ipsum dolor sit amet consectetur adipisicing elit...
+      | </p>
+      | <p>Itaque voluptates eum nihil minima quo iure voluptas, atque amet molestias,...</p>
+      | <p>Soluta, laudantium in. Dolorem laboriosam nobis nihil iste eum sapiente maxime,...</p>
+
+    .ex7
+      p 
+        img(src="../images/image.svg" alt="Just image") 
+        | Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic commodi maiores excepturi dolore cupiditate sit obcaecati, 
+        | repellat doloribus rerum! Dicta eius aliquid eaque sed sequi obcaecati debitis quos veniam placeat.
+      p Itaque voluptates eum nihil minima quo iure voluptas, atque amet molestias, perspiciatis sed cupiditate nemo inventore velit 
+        | soluta iste ut nesciunt! Qui fuga nesciunt accusantium magnam officiis corrupti, quibusdam amet.
+      p Soluta, laudantium in. Dolorem laboriosam nobis nihil iste eum sapiente maxime, facilis minus atque debitis corporis quasi, 
+        | molestias delectus magni placeat ipsum iure perspiciatis doloremque repudiandae rem tenetur, in dolorum.    
+
+    p Как видите, картинка стала частью первой строки текста. Нам редко нужно, чтобы поведение было именно таким. 
+      | Чаще нам необходимо сделать так, чтобы картинка обтекалась текстом. Для этого существует свойство float. 
+    
+    p Добавим к нашему примеру float: left и посмотрим, что получится
+    pre(data-lang="css")
+      | img {
+      |   float: left;
+      | }
+    .ex7
+      p 
+        img.float-left(src="../images/image.svg" alt="Just image") 
+        | Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic commodi maiores excepturi dolore cupiditate sit obcaecati, 
+        | repellat doloribus rerum! Dicta eius aliquid eaque sed sequi obcaecati debitis quos veniam placeat.
+      p Itaque voluptates eum nihil minima quo iure voluptas, atque amet molestias, perspiciatis sed cupiditate nemo inventore velit
+        |  soluta iste ut nesciunt! Qui fuga nesciunt accusantium magnam officiis corrupti, quibusdam amet.
+      p Soluta, laudantium in. Dolorem laboriosam nobis nihil iste eum sapiente maxime, facilis minus atque debitis corporis quasi, 
+        | molestias delectus magni placeat ipsum iure perspiciatis doloremque repudiandae rem tenetur, in dolorum.
+
+    p Здесь мы видим, что картинка стала обтекаться текстом. Правда, из-за того, что текста много, мы не видим одного подводного камня этого решения.
+      |  Давайте уберём последние два абзаца и посмотрим, что будет
+    .ex7
+      p 
+        img.float-left(src="../images/image.svg" alt="Just image") 
+        | Lorem ipsum dolor... 
+    p Обратите внимание, что-то пошло не так и даже этот абзац, не относящийся к примеру, всё равно обтекается картинкой. Явно не то, чего мы ожидали. 
+      | Всё дело в том, что флоаты (поплавки) "всплывают" над родительским элементом, поэтому его высота больше не зависит от нашей картинки. 
+    p Для того, чтобы исправить подобное поведение, нужно воспользоваться "очисткой". Изменим наш код следующим образом:
+    pre(data-lang="html")
+      | <p>
+      |    <img src="../images/image.svg" alt="Just image">
+      |    Lorem ipsum dolor sit amet consectetur adipisicing elit...
+      | </p>
+      | <p>Itaque voluptates eum nihil minima quo iure voluptas, atque amet molestias,...</p>
+      | <p>Soluta, laudantium in. Dolorem laboriosam nobis nihil iste eum sapiente maxime,...</p>
+      | <div class="clear"></div>
+    pre(data-lang="css")
+      | img {
+      |   float: left;
+      | }
+      | .clear {
+      |   clear: both;
+      | }
+
+    .ex7
+      p 
+        img.float-left(src="../images/image.svg" alt="Just image") 
+        | Lorem ipsum dolor... 
+      .clear
+    p Как видите, этот абзац находится уже за пределами примера. Добавив такой чистящий элемент в самый конец родительского контейнера, 
+      | мы смогли вернуть высоту контейнера к нормальному уровню. 
+    p В предыдущих примерах мы увидели, как задать обтекание картинки текстом так, чтобы картинка оказалась слева. 
+      | Точно так же мы можем обтекать её и с другой стороны. 
+    pre(data-lang="css")
+      | img {
+      |   float: right;
+      | }
+    .ex7
+      p 
+        img.float-right(src="../images/image.svg" alt="Just image") 
+        | Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic commodi maiores excepturi dolore cupiditate sit obcaecati,
+        | repellat doloribus rerum! Dicta eius aliquid eaque sed sequi obcaecati debitis quos veniam placeat.
+      p Itaque voluptates eum nihil minima quo iure voluptas, atque amet molestias, perspiciatis sed cupiditate nemo inventore velit
+        | soluta iste ut nesciunt! Qui fuga nesciunt accusantium magnam officiis corrupti, quibusdam amet.
+      p Soluta, laudantium in. Dolorem laboriosam nobis nihil iste eum sapiente maxime, facilis minus atque debitis corporis quasi,
+        | molestias delectus magni placeat ipsum iure perspiciatis doloremque repudiandae rem tenetur, in dolorum. Quas dolorem excepturi expedita ipsa veniam?
+    
+    p И если мы не уверены, что текста будет достаточно, не забудем добавить в конец контейнера clear: both.
+    .ex7
+      p 
+        img.float-right(src="../images/image.svg" alt="Just image") 
+        | Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic commodi maiores excepturi dolore cupiditate sit obcaecati, 
+        | repellat doloribus rerum! Dicta eius aliquid eaque sed sequi obcaecati debitis quos veniam placeat.
+      .clear
+    
+    p Подведём итоги. Для того, чтобы вставить картинку в текст и сделать так, чтобы она обтекалась, нужно воспользоваться свойством 
+     b float
+     | , а для того, чтобы восстановить размер контейнера в том случае, если картинка стала вылезать за его пределы, нужно использовать свойство 
+     b clear
+     | .
