@@ -84,6 +84,7 @@
           <li><a href="http://htmlbook.ru/css/border" target="_blank">border</a></li>
           <li><a href="http://htmlbook.ru/css/box-shadow" target="_blank">box-shadow</a></li>
           <li><a href="http://htmlbook.ru/css/display" target="_blank">display</a></li>
+          <li><a href="http://htmlbook.ru/css/clear" target="_blank">clear</a></li>
           <li><a href="http://htmlbook.ru/css/cursor" target="_blank">cursor</a></li>
           <li><a href="http://htmlbook.ru/css/color" target="_blank">color</a></li>
           <li><a href="http://htmlbook.ru/css/float" target="_blank">float</a></li>
@@ -411,7 +412,7 @@ git config --global user.email myEmail@example.com</pre>
         </div>
         <p>
           Как видите, картинка стала частью первой строки текста. Нам редко нужно, чтобы поведение было именно таким. Чаще нам необходимо сделать так, чтобы картинка обтекалась текстом. Для этого существует свойство float. </p>
-        <p>Добавим к нашему примеру float: left и посмотрим, что получится</p>
+        <p>Добавим к нашему примеру <a href="http://htmlbook.ru/css/float" target="_blank">float</a>: left и посмотрим, что получится</p>
         <pre data-lang="css">img {
   float: left;
 }</pre>
@@ -431,7 +432,7 @@ git config --global user.email myEmail@example.com</pre>
         </div>
         <p>
           Обратите внимание, что-то пошло не так и даже этот абзац, не относящийся к примеру, всё равно обтекается картинкой. Явно не то, чего мы ожидали. Всё дело в том, что флоаты (поплавки) "всплывают" над родительским элементом, поэтому его высота больше не зависит от нашей картинки. </p>
-        <p>Для того, чтобы исправить подобное поведение, нужно воспользоваться "очисткой". Изменим наш код следующим образом:</p>
+        <p>Для того, чтобы исправить подобное поведение, нужно воспользоваться "очисткой" &mdash; <a href="http://htmlbook.ru/css/clear" target="_blank">clear</a>. Изменим наш код следующим образом:</p>
         <pre data-lang="html"><p>
    <img src="../images/image.svg" alt="Just image">
    Lorem ipsum dolor sit amet consectetur adipisicing elit...
