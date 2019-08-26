@@ -69,6 +69,7 @@ code {
   background: var(--grey-light);
   margin: 0 8px;
   font-size: 14px;
+  display: inline-block;
 }
 
 h1 {
@@ -204,16 +205,20 @@ ol {
   column-count: 2;
 }
 
-.codepen {
+.button,
+button {
+  background: var(--accent);
+  color: white;
   display: inline-block;
   text-decoration: none;
-  background: darkcyan;
+  border: none;
   padding: 0.5em 1em;
   border-radius: 4px;
-  color: white;
 }
-.codepen:hover {
-  background: black;
+
+.button:hover,
+button:hover {
+  background: var(--accent-dark);
   color: white;
 }
 
@@ -236,7 +241,6 @@ ol {
     display: none;
   }
 
-  .codepen,
   .cp_embed_wrapper {
     display: none;
   }
@@ -253,8 +257,8 @@ ol {
 
   a[target='_blank']:after {
     content: '[ ' attr(href) ' ]';
-    margin: 0 1em;
     font-size: 0.8em;
+    margin: 0 1ex;
     display: inline-block;
   }
 }
