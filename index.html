@@ -30,7 +30,6 @@
         <ul>
         </ul>
         <ul>
-          <li>Многоколоночный текст: column-count и column-gap</li>
           <li>Псевдоклассы и псевдоэлементы</li>
           <li>CSS переменные</li>
           <li>Способы создания сеток</li>
@@ -88,6 +87,7 @@
           <li><a href="http://htmlbook.ru/css/clear" target="_blank">clear</a></li>
           <li><a href="http://htmlbook.ru/css/cursor" target="_blank">cursor</a></li>
           <li><a href="http://htmlbook.ru/css/color" target="_blank">color</a></li>
+          <li><a href="http://htmlbook.ru/css/column-count" target="_blank">column-count</a></li>
           <li><a href="http://htmlbook.ru/css/float" target="_blank">float</a></li>
           <li><a href="http://htmlbook.ru/css/font-family" target="_blank">font-family</a></li>
           <li><a href="http://htmlbook.ru/css/font-size" target="_blank">font-size</a></li>
@@ -250,10 +250,11 @@ git config --global user.email myEmail@example.com</pre>
     <article id="fonts">
       <div class="container">
         <h2>Форматирование текста</h2>
-        <p>Для форматирования текста используется следующий основной набор свойств: </p>
-        <ul> 
-          <li> <a href="http://htmlbook.ru/css/font-family" target="_blank">font-family</a><br/>Задаёт шрифт для элемента. К примеру, <code>font-family: Arial, sans-serif;</code>Изменяет шрифт на Arial, а если этого шрифта в системе нет, то берёт любой из установленных шрифтов семейства sans-sefif. </li>
-          <li> <a href="http://htmlbook.ru/css/font-size" target="_blank">font-size</a><br/>Задаёт кегль для текста (размер шрифта). <code>font-size: 18px;</code>Задаёт размер шрифта в 18px. Могут быть использованы относительные значения: "larger" и "smaller", указывающие, что размер должен быть больше или меньше стандартного значения. </li>
+        <p>
+          Знаете ли вы, что CSS имеет средства форматирования текста не хуже чем у Microsoft Word? Вы можете задать свой шрифт, жирность, начертание, цвет, тень, размер и еще множество параметров, чтобы получить идеально отформатированный текст. Для форматирования текста используется следующий основной набор свойств: </p>
+        <ul class="can-print-break">
+          <li> <a href="http://htmlbook.ru/css/font-family" target="_blank">font-family</a><br/>Задаёт шрифт для элемента. К примеру, <code>font-family: Arial, sans-serif; </code>Изменяет шрифт на Arial, а если этого шрифта в системе нет, то берёт любой из установленных шрифтов семейства sans-serif. </li>
+          <li> <a href="http://htmlbook.ru/css/font-size" target="_blank">font-size</a><br/>Задаёт кегль для текста (размер шрифта). <code>font-size: 18px; </code>Задаёт размер шрифта в 18px. Могут быть использованы относительные значения: "larger" и "smaller", указывающие, что размер должен быть больше или меньше стандартного значения. </li>
           <li> <a href="http://htmlbook.ru/css/font-weight" target="_blank">font-weight</a><br/>Устанавливает насыщенность (жирность) шрифта. Значением могут быть числа от 100 до 900 с шагом 100, а также bold, bolder, lighter и normal. <br/><b>Примечание:</b> значения должны поддерживаться шрифтом! Если шрифт не поддерживает какие-то значения насыщенности, то вы не сможете задать эти значения и будет выбрано ближайшее поддерживающееся. </li>
           <li> <a href="http://htmlbook.ru/css/font-style" target="_blank">font-style</a><br/>Определяет начертание шрифта. Может быть обычным (normal), курсивным (italic) и наклонным (oblique). <br/>Наклонное начертание хоть и похоже на курсивной, однако, это разные вещи. Курсивным текст станет только в том случае, если шрифт поддерживает курсивное начертание. 
             Наклонный текст образуется путём программного наклона букв обычного шрифта.  
@@ -268,6 +269,7 @@ git config --global user.email myEmail@example.com</pre>
           </li>
           <li> <a href="http://htmlbook.ru/css/text-align" target="_blank">text-align</a><br/>Выравнивание текста. Доступные значения: <b>center </b>(по центру), <b>justify </b>(по ширине строки), <b>start </b>(по левому краю, для тех языков, где текст идёт слева направо), <b>end </b>(по правому краю, для тех языков, где текст идёт слева направо)</li>
           <li> <a href="http://htmlbook.ru/css/text-shadow" target="_blank">text-shadow</a><br/>Добавляет тень тексту. К примеру, <code>text-shadow: 1px 2px 3px black;</code>, где <br/>первое значение (1px) &mdash; сдвиг по оси x, <br/>второе значение (2px) &mdash; сдвиг по оси y,<br/>третье значение (3px) &mdash; радиус размытия тени,<br/>четвертое значение (black) &mdash; цвет тени. <br/>Кроме того, таких групп значений может быть сколько угодно. К примеру, <code>text-shadow: 1px 2px 3px black, 0 0 1em red;</code></li>
+          <li> <a href="http://htmlbook.ru/css/column-count" target="_blank">column-count</a><br/>Задаёт количество колонок в тексте. Применяется, в основном, для газетной вёрстки.</li>
           <li> <a href="http://htmlbook.ru/css/line-height" target="_blank">line-height</a><br/>Задаёт высоту строки. Если задавать без единиц измерения, например, <code>line-height: 2;</code>, значение будет воспринято как множитель. </li>
         </ul>
         <h3>Собственные шрифты</h3>
@@ -294,6 +296,75 @@ git config --global user.email myEmail@example.com</pre>
 &lt;/head></pre>
       </div>
     </article>
+    <article id="column-count">
+      <div class="container">
+        <h2>Многоколоночный текст</h2>
+        <p>
+          Время от времени возникает задача расположить список или текст в две колонки. Годы идут, CSS развивается, поколения верстальщиков сменяют поколения, но свои костыли люди как делали, так и делают. Мало кто знает, но в CSS появилось свойство <br/><a href="http://htmlbook.ru/css/column-count" target="_blank">column-count</a>, позволяющее задать количество колонок для списка или текста. Также есть свойство <br/><a href="http://htmlbook.ru/css/column-width" target="_blank">column-width</a>, которое задаёт минимальную ширину для колонки, <br/><a href="http://htmlbook.ru/css/column-rule" target="_blank">column-rule</a>, отрисовывающее линию между колонками словно border,<br/><a href="http://htmlbook.ru/css/column-gap" target="_blank">column-gap</a>, задающее расстояние между колонками и <br/><a href="http://htmlbook.ru/css/columns" target="_blank">columns</a>, объединяющее в себе column-width и column-count. 
+          <p>Разберемся на примерах из жизни. Простой пример: нужно сделать так, чтобы список был в две колонки. </p>
+          <div class="ex8">
+            <ul>
+              <li>Lorem</li>
+              <li>ipsum</li>
+              <li>dolor</li>
+              <li>sit</li>
+              <li>amet</li>
+              <li>consectetur</li>
+              <li>adipisicing</li>
+              <li>elit</li>
+            </ul>
+          </div>
+          <p>Добавим следующий CSS-код:</p>
+          <pre data-lang="css">ul {
+  column-count: 2;
+}</pre>
+          <p>В результате получим это:</p>
+          <div class="ex8">
+            <ul class="col-2">
+              <li>Lorem</li>
+              <li>ipsum</li>
+              <li>dolor</li>
+              <li>sit</li>
+              <li>amet</li>
+              <li>consectetur</li>
+              <li>adipisicing</li>
+              <li>elit</li>
+            </ul>
+          </div>
+          <p>
+            Просто, не правда ли? А теперь посмотрим на немного более сложный пример. Итак, наши клиенты - люди с планшетами. Наше веб-приложение похоже на газету и листать её нужно вправо, а не вниз, как остальные сайты. Текст должен располагаться в три колонки на экран, 
+            кроме того, четвертая колонка должна быть отчасти видна. Общее количество колонок неизвестно, также, как и количество текста. 
+          </p>
+          <p>Из задания лишь понятно, что высота приложения должна быть равна высоте экрана пользователя, а за раз на экране должно быть отображено три колонки. </p>
+          <div class="ex8">
+            <div class="overflow-container">
+              <p class="col-w">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis rem, ipsa iste ipsum possimus beatae provident praesentium adipisci ad pariatur dicta eligendi! Eos quasi fuga nostrum. Tenetur consequatur omnis facilis!
+                Corrupti incidunt rerum porro consequatur, aliquam quia fugit, eveniet in voluptatem quasi nihil omnis? Magnam maxime officia labore? Recusandae rem consectetur libero voluptates at mollitia quam esse beatae blanditiis est.
+                Ipsum esse accusantium nesciunt et doloribus pariatur, perspiciatis labore rerum? Placeat error earum accusantium? Tenetur exercitationem eum id similique quas magni enim, earum error ex quidem at necessitatibus dolores laudantium.
+                Accusantium consequuntur libero omnis illum fugiat quas iure aspernatur voluptates tenetur unde. Animi excepturi fugit accusantium. Esse vel, tempore deserunt dolorum nam quibusdam non sed quae culpa hic quidem voluptas?
+                Rem, enim quo veniam incidunt tenetur ad non aperiam excepturi sequi ab minus deserunt repudiandae accusantium tempore placeat nam nisi? Eveniet beatae repellendus odio saepe consectetur, qui porro unde nulla!
+                A, et quidem corrupti cumque dolorum perferendis sed officiis autem? Quibusdam dolores maiores non omnis illo totam natus, error itaque quia quidem! Laudantium accusamus dolorum fugiat quia, iusto aperiam. Dolorum.
+                Officia reprehenderit dignissimos molestiae et placeat aperiam rerum sunt laborum pariatur, harum eos amet accusantium corrupti perspiciatis voluptates, obcaecati quae voluptatibus minus nam explicabo cumque, similique voluptas? Maiores, facere eveniet.
+                Iure minus non deleniti autem quos debitis illo culpa doloribus ullam sint. Explicabo, illo maxime fuga cupiditate nostrum magni quisquam nam quaerat numquam porro tenetur error, quia autem. Impedit, architecto.
+                Commodi dolorem soluta id aperiam vel accusamus exercitationem sunt sint expedita odit ipsum, quo quisquam maxime perspiciatis iure, assumenda officiis, suscipit amet consequatur labore iusto laboriosam! Magni minima error ad.
+                Placeat sequi quia aliquid eum! At a blanditiis voluptatibus cum? Laudantium doloremque architecto officiis modi sint necessitatibus quia, aspernatur recusandae laborum repellendus! Excepturi illum quaerat fugit eveniet dicta molestias esse?
+                Quas doloribus, dicta sint aut delectus dolore aspernatur rem ut corrupti expedita! Iste expedita et cupiditate eum, porro doloremque magni nemo in quas recusandae dolore modi similique, praesentium commodi fugit!
+                Ad nam beatae sint, sequi delectus cumque illo iure natus aperiam at sapiente repellat omnis praesentium ipsa mollitia tenetur culpa, maiores est odio rem ullam? Laborum eveniet excepturi autem sint.
+                Id ea tempora, dicta quo magnam eius sunt facilis quisquam veniam consequuntur, adipisci earum iste. Corrupti quae, animi, et consequuntur non ullam earum maxime accusantium a illum fugiat molestiae voluptatum!
+                Quibusdam impedit dignissimos dolores laudantium accusantium in expedita natus porro quis laboriosam totam provident, ab architecto consequuntur odit eligendi, error numquam sunt ipsa qui ex suscipit, inventore adipisci! Dolores, nostrum!
+                Id quisquam nam necessitatibus unde et qui consectetur alias fugiat, facere laudantium perspiciatis fuga maiores laborum consequatur labore minus atque cumque odit ipsa provident iure illum? Error vel eveniet quo.
+                Eius aliquid, nobis laborum reprehenderit ea repellendus velit animi impedit voluptate? Eaque optio harum at modi autem ut rem, nemo labore laborum repellendus dicta vero ducimus consequatur, non, omnis voluptas.
+                Cupiditate non libero voluptas aperiam quia veniam. Nostrum dignissimos eos qui reprehenderit incidunt beatae. Vel hic doloribus provident dolore amet, at explicabo facilis alias sunt ipsum ex sit tempore quam?
+                Dolores illum eius totam ipsa nemo corrupti, maiores consequuntur molestias repellendus fugiat cumque deleniti pariatur voluptates vero quam cum sed aperiam debitis odio praesentium earum! Odit labore dolorum blanditiis doloremque.
+                Reprehenderit dicta provident, odio eveniet praesentium itaque molestiae ducimus atque, corrupti sit facere laudantium sint? Necessitatibus repellat distinctio ab perspiciatis ad earum quo ratione a dicta! Ad debitis et iusto.
+                Nam corporis nostrum, consequatur voluptate est doloremque quis labore placeat possimus amet accusamus? Corporis ad repudiandae consequuntur delectus alias reprehenderit ab, velit aliquid eligendi laboriosam exercitationem itaque impedit nobis quae?
+              </p>
+            </div>
+          </div>
+        </p>
+      </div>
+    </article>
     <article id="display">
       <div class="container">
         <h2>Свойство display</h2>
@@ -315,12 +386,12 @@ git config --global user.email myEmail@example.com</pre>
           <h3>Задачи</h3>
           <p>
             Задачи на добавление всего одной строки кода. Смотрите HTML-код, подумайте, какое CSS-свойство спасёт ситуацию. Поиграйтесь со значениями этого свойства. Все необходимые для выполнения задачи знания описаны в этой главе.</p>
-          <p>1. Напишите CSS-код, позволяющий скрыть этот элемент </p><a class="codepen" data-id="gOYPNzd"></a>
-          <p>2. Не меняя HTML-кода, сделайте так, чтобы каждое предложение начиналось с новой строки</p><a class="codepen" data-id="JjPGQBN"></a>
-          <p>3. Сделайте так, чтобы все элементы списка шли в одну строку</p><a class="codepen" data-id="xxKVKKm"></a>
-          <p>4. Добавьте одно свойство так, чтобы меню стало широким </p><a class="codepen" data-id="vYBGBLE" data-height="400"></a>
-          <p>5. Сделайте так, чтобы счёт шёл слева направо, а не снизу вверх</p><a class="codepen" data-id="ExYKYWM" data-height="400"></a>
-          <p>6. Добавьте одну строку так, чтобы получилась таблица</p><a class="codepen" data-id="yLBOBpq"></a>
+          <p>1. Напишите CSS-код, позволяющий скрыть этот элемент </p><a class="codepen button" data-id="gOYPNzd">Посмотреть задание</a>
+          <p>2. Не меняя HTML-кода, сделайте так, чтобы каждое предложение начиналось с новой строки</p><a class="codepen button" data-id="JjPGQBN">Посмотреть задание</a>
+          <p>3. Сделайте так, чтобы все элементы списка шли в одну строку</p><a class="codepen button" data-id="xxKVKKm">Посмотреть задание</a>
+          <p>4. Добавьте одно свойство так, чтобы меню стало широким </p><a class="codepen button" data-id="vYBGBLE" data-height="400">Посмотреть задание</a>
+          <p>5. Сделайте так, чтобы счёт шёл слева направо, а не снизу вверх</p><a class="codepen button" data-id="ExYKYWM" data-height="400">Посмотреть задание</a>
+          <p>6. Добавьте одну строку так, чтобы получилась таблица</p><a class="codepen button" data-id="yLBOBpq">Посмотреть задание</a>
         </div>
       </div>
     </article>
@@ -401,8 +472,8 @@ git config --global user.email myEmail@example.com</pre>
           <li>
             sticky - "прилипает" к границам экрана в том случае, если выходит за границы экрана. Также устанавливается при помощи top, right, bottom и left.Подробнее тут: <a target="_blank" href="https://medium.com/web-standards/sticky-bc7ff7088693">Как на самом деле работает position: sticky в CSS</a></li>
         </ul>
-        <p>Поэкспериментировать с position: absolute можно здесь:</p><a class="codepen" data-id="gOYwLmY" data-height="400"></a>
-        <p>Поэкспериментировать с position: sticky можно тут:</p><a class="codepen" data-id="rNBMWzp" data-height="400"></a>
+        <p>Поэкспериментировать с position: absolute можно здесь:</p><a class="codepen button" data-id="gOYwLmY" data-height="400">Запустить пример</a>
+        <p>Поэкспериментировать с position: sticky можно тут:</p><a class="codepen button" data-id="rNBMWzp" data-height="400">Запустить пример</a>
         <h3>Смещение блока: top, right, bottom и left</h3>
         <p>
           По умолчанию значением этих свойств является auto. Мы можем использовать для задания положения, например, px или %. Используются в купе с нестатично спозиционированными блоками. </p>
@@ -425,14 +496,14 @@ git config --global user.email myEmail@example.com</pre>
         </p>
         <p>
           Если вы работали с фотошопом или какими-то другими графическими редакторами, то вам знакомо понятие "слои". Мы можем распологать различные изображенияна этих слоях, а в случае перекрытия, показан будет тот слой, что находится выше. И это тоже z-index. </p>
-        <p>Раскомментируйте строку с z-index, чтобы понять, как работает это свойство.</p><a class="codepen" data-id="KKPgNrX" data-height="400"></a>
+        <p>Раскомментируйте строку с z-index, чтобы понять, как работает это свойство.</p><a class="codepen button" data-id="KKPgNrX" data-height="400">Посмотреть задание</a>
       </div>
     </article>
     <article id="image">
       <div class="container">
         <h2>Картинка в тексте</h2>
         <p>
-          Часто, бывает нужно вставить картинку в текст. Но работает это не всегда так, как мы это задумывали. Попробуем вставть картинку без стилей и посмотрим, что получится.</p>
+          Часто, бывает нужно вставить картинку в текст. Но работает это не всегда так, как мы это задумывали. Попробуем вставить картинку без стилей и посмотрим, что получится.</p>
         <p>Код примера предельно прост: </p>
         <pre data-lang="html"><p>
    <img src="../images/image.svg" alt="Just image">

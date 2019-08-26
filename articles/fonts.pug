@@ -1,19 +1,20 @@
 article#fonts
   .container
     h2 Форматирование текста
-    p Для форматирования текста используется следующий основной набор свойств: 
-    ul 
+    p Знаете ли вы, что CSS имеет средства форматирования текста не хуже чем у Microsoft Word? Вы можете задать свой шрифт, жирность, начертание, цвет, тень, 
+      | размер и еще множество параметров, чтобы получить идеально отформатированный текст. Для форматирования текста используется следующий основной набор свойств: 
+    ul.can-print-break
       li 
         a(href="http://htmlbook.ru/css/font-family" target="_blank") font-family
         br
         | Задаёт шрифт для элемента. К примеру, 
-        code font-family: Arial, sans-serif;
-        | Изменяет шрифт на Arial, а если этого шрифта в системе нет, то берёт любой из установленных шрифтов семейства sans-sefif. 
+        code font-family: Arial, sans-serif; 
+        | Изменяет шрифт на Arial, а если этого шрифта в системе нет, то берёт любой из установленных шрифтов семейства sans-serif. 
       li 
         a(href="http://htmlbook.ru/css/font-size" target="_blank") font-size
         br
         | Задаёт кегль для текста (размер шрифта). 
-        code font-size: 18px;
+        code font-size: 18px; 
         | Задаёт размер шрифта в 18px. Могут быть использованы относительные значения: "larger" и "smaller", указывающие, что размер должен быть больше или меньше стандартного значения. 
       li 
         a(href="http://htmlbook.ru/css/font-weight" target="_blank") font-weight
@@ -83,6 +84,10 @@ article#fonts
         br 
         | Кроме того, таких групп значений может быть сколько угодно. К примеру, 
         code text-shadow: 1px 2px 3px black, 0 0 1em red;
+      li 
+        a(href="http://htmlbook.ru/css/column-count" target="_blank") column-count
+        br 
+        | Задаёт количество колонок в тексте. Применяется, в основном, для газетной вёрстки.
       li 
         a(href="http://htmlbook.ru/css/line-height" target="_blank") line-height
         br 

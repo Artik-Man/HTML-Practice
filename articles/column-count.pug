@@ -1,0 +1,79 @@
+article#column-count
+  .container
+    h2 Многоколоночный текст
+    p Время от времени возникает задача расположить список или текст в две колонки. Годы идут, CSS развивается, поколения верстальщиков сменяют поколения, 
+      | но свои костыли люди как делали, так и делают. Мало кто знает, но в CSS появилось свойство 
+      br
+      a(href="http://htmlbook.ru/css/column-count" target="_blank") column-count
+      | , позволяющее задать количество колонок для списка или текста. Также есть свойство 
+      br
+      a(href="http://htmlbook.ru/css/column-width" target="_blank") column-width
+      | , которое задаёт минимальную ширину для колонки, 
+      br
+      a(href="http://htmlbook.ru/css/column-rule" target="_blank") column-rule
+      | , отрисовывающее линию между колонками словно border,
+      br
+      a(href="http://htmlbook.ru/css/column-gap" target="_blank") column-gap
+      | , задающее расстояние между колонками и 
+      br
+      a(href="http://htmlbook.ru/css/columns" target="_blank") columns
+      | , объединяющее в себе column-width и column-count. 
+
+      p Разберемся на примерах из жизни. Простой пример: нужно сделать так, чтобы список был в две колонки. 
+      .ex8
+        ul
+            li Lorem
+            li ipsum
+            li dolor
+            li sit
+            li amet
+            li consectetur
+            li adipisicing
+            li elit
+
+      p Добавим следующий CSS-код:
+      pre(data-lang="css")
+        | ul {
+        |   column-count: 2;
+        | }
+      p В результате получим это:
+      .ex8
+        ul.col-2
+            li Lorem
+            li ipsum
+            li dolor
+            li sit
+            li amet
+            li consectetur
+            li adipisicing
+            li elit
+
+      p Просто, не правда ли? А теперь посмотрим на немного более сложный пример. Итак, наши клиенты - люди с планшетами. 
+        | Наше веб-приложение похоже на газету и листать её нужно вправо, а не вниз, как остальные сайты. Текст должен располагаться в три колонки на экран, 
+        | кроме того, четвертая колонка должна быть отчасти видна. Общее количество колонок неизвестно, также, как и количество текста. 
+      p Из задания лишь понятно, что высота приложения должна быть равна высоте экрана пользователя, а за раз на экране должно быть отображено три колонки. 
+
+
+      .ex8
+        .overflow-container
+          p.col-w
+            | Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis rem, ipsa iste ipsum possimus beatae provident praesentium adipisci ad pariatur dicta eligendi! Eos quasi fuga nostrum. Tenetur consequatur omnis facilis!
+            | Corrupti incidunt rerum porro consequatur, aliquam quia fugit, eveniet in voluptatem quasi nihil omnis? Magnam maxime officia labore? Recusandae rem consectetur libero voluptates at mollitia quam esse beatae blanditiis est.
+            | Ipsum esse accusantium nesciunt et doloribus pariatur, perspiciatis labore rerum? Placeat error earum accusantium? Tenetur exercitationem eum id similique quas magni enim, earum error ex quidem at necessitatibus dolores laudantium.
+            | Accusantium consequuntur libero omnis illum fugiat quas iure aspernatur voluptates tenetur unde. Animi excepturi fugit accusantium. Esse vel, tempore deserunt dolorum nam quibusdam non sed quae culpa hic quidem voluptas?
+            | Rem, enim quo veniam incidunt tenetur ad non aperiam excepturi sequi ab minus deserunt repudiandae accusantium tempore placeat nam nisi? Eveniet beatae repellendus odio saepe consectetur, qui porro unde nulla!
+            | A, et quidem corrupti cumque dolorum perferendis sed officiis autem? Quibusdam dolores maiores non omnis illo totam natus, error itaque quia quidem! Laudantium accusamus dolorum fugiat quia, iusto aperiam. Dolorum.
+            | Officia reprehenderit dignissimos molestiae et placeat aperiam rerum sunt laborum pariatur, harum eos amet accusantium corrupti perspiciatis voluptates, obcaecati quae voluptatibus minus nam explicabo cumque, similique voluptas? Maiores, facere eveniet.
+            | Iure minus non deleniti autem quos debitis illo culpa doloribus ullam sint. Explicabo, illo maxime fuga cupiditate nostrum magni quisquam nam quaerat numquam porro tenetur error, quia autem. Impedit, architecto.
+            | Commodi dolorem soluta id aperiam vel accusamus exercitationem sunt sint expedita odit ipsum, quo quisquam maxime perspiciatis iure, assumenda officiis, suscipit amet consequatur labore iusto laboriosam! Magni minima error ad.
+            | Placeat sequi quia aliquid eum! At a blanditiis voluptatibus cum? Laudantium doloremque architecto officiis modi sint necessitatibus quia, aspernatur recusandae laborum repellendus! Excepturi illum quaerat fugit eveniet dicta molestias esse?
+            | Quas doloribus, dicta sint aut delectus dolore aspernatur rem ut corrupti expedita! Iste expedita et cupiditate eum, porro doloremque magni nemo in quas recusandae dolore modi similique, praesentium commodi fugit!
+            | Ad nam beatae sint, sequi delectus cumque illo iure natus aperiam at sapiente repellat omnis praesentium ipsa mollitia tenetur culpa, maiores est odio rem ullam? Laborum eveniet excepturi autem sint.
+            | Id ea tempora, dicta quo magnam eius sunt facilis quisquam veniam consequuntur, adipisci earum iste. Corrupti quae, animi, et consequuntur non ullam earum maxime accusantium a illum fugiat molestiae voluptatum!
+            | Quibusdam impedit dignissimos dolores laudantium accusantium in expedita natus porro quis laboriosam totam provident, ab architecto consequuntur odit eligendi, error numquam sunt ipsa qui ex suscipit, inventore adipisci! Dolores, nostrum!
+            | Id quisquam nam necessitatibus unde et qui consectetur alias fugiat, facere laudantium perspiciatis fuga maiores laborum consequatur labore minus atque cumque odit ipsa provident iure illum? Error vel eveniet quo.
+            | Eius aliquid, nobis laborum reprehenderit ea repellendus velit animi impedit voluptate? Eaque optio harum at modi autem ut rem, nemo labore laborum repellendus dicta vero ducimus consequatur, non, omnis voluptas.
+            | Cupiditate non libero voluptas aperiam quia veniam. Nostrum dignissimos eos qui reprehenderit incidunt beatae. Vel hic doloribus provident dolore amet, at explicabo facilis alias sunt ipsum ex sit tempore quam?
+            | Dolores illum eius totam ipsa nemo corrupti, maiores consequuntur molestias repellendus fugiat cumque deleniti pariatur voluptates vero quam cum sed aperiam debitis odio praesentium earum! Odit labore dolorum blanditiis doloremque.
+            | Reprehenderit dicta provident, odio eveniet praesentium itaque molestiae ducimus atque, corrupti sit facere laudantium sint? Necessitatibus repellat distinctio ab perspiciatis ad earum quo ratione a dicta! Ad debitis et iusto.
+            | Nam corporis nostrum, consequatur voluptate est doloremque quis labore placeat possimus amet accusamus? Corporis ad repudiandae consequuntur delectus alias reprehenderit ab, velit aliquid eligendi laboriosam exercitationem itaque impedit nobis quae?
