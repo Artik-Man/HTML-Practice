@@ -5,7 +5,7 @@
   --grey-dark: #323436;
   --accent: #3f51b5;
   --accent-dark: #324090;
-  --accent-light: #6573c3;
+  --accent-light: #5565bf;
 }
 
 * {
@@ -66,7 +66,7 @@ pre:before {
 }
 
 code {
-  background: var(--grey-light);
+  background: aliceblue;
   margin: 0 8px;
   font-size: 14px;
   display: inline-block;
@@ -177,11 +177,11 @@ ol {
   position: relative;
 }
 
-.youtube a:hover:after {
+.youtube a:hover::after {
   filter: none;
 }
 
-.youtube a:after {
+.youtube a::after {
   content: '';
   display: block;
   background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEQAAAAwCAYAAACooNxlAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAOwQAADsEBuJFr7QAAABl0RVh0U29mdHdhcmUAcGFpbnQubmV0IDQuMC4xMzQDW3oAAANaSURBVGhD7Zvba9NQHMfzX9jGJu0SvIAwBFGRKQwUJmyICiLik4Ii6IMwZciGIshkKF5eRYdDZNZpRXzYzfmgTdvNgdsQde7B2zZ3ERQVwafj7xsbV+vPTdamOVn8wYeT9fzO7cNOmpZT5W/RH9JNotbhcUg/aanRcz2Ly1q6IsbdTs3sadfMDDFAPE+Ho98oT3gBxsYcsnPJdGrGA8wRc02q0fOYO+X9WgthZpc5dyCZOqh7pMZG6JqdgN/B2rKSZheDBEp+ktt4IfNQjQ1SyUtBBckYz20QBGjN76n8XQpeIFvPchODBEkZpnJGSm9Yb8xPChp0Y26yZdAfZlKNTeUnBA16B/1IpQkheBtikwJIrdIb0k8xFYEkHdZPK/cjRpyrDCLdmnFHKcVb7XBdvfhwKyGmWm8Ka00FmyMD5GIS9xC2slhkqqrF97Fx4QSuRxpOsLky4LqQoWMNWRUzASn4j+nfsYtt4yWeCHECYiZb48IqX8W29QJPhTgBMS+O1LHtS40UQhDONuqt3sr2UyqkEeIExIy3XBPW8nK2P7eRTogTEPP00GG2TzeRVgjC3kZtCZHeWMX27QZSC3ECYt5dbhbpsmXsGMXEF0KcgJjBvfvZcYqFr4QgIGU63iZS6zaw4xWK74Q4ATEv64+zYxaCb4UgIMVau54dd774XkiqopIdd774esu8bmxixywEX95U7Uf8mm3seIXiKyGQ4faHQF8IgYiJ6zeEtXI1O0YxkVqIsz36d+5m+3YDaYVAhhdfNUonBCLsL6OL/Hzxr0glBDIG9uxj+ykVUgiBiLeXrtCn2aVsH6XEUyH2TbMtIVKVm9i2XuCZEMgYOnCQbeMlrgvp27LdXrwTuB5tvipSS1aw+V6jJNXoNFdRTPCZA88TILO5hs2RgaQam1C6NOMeVxlEuiPGbcUKR89wlUEEJ6lwD/l/YGaGWggxU+Ho17yKwEE75ROVPw/e0Y31Qn5C0CAhZ20ZCHoBZ1RH85OCAq39DZV/nlUN4tah/4wvVM56mhm22MYLDVrrKyp5GU4gAYdYS/HA5hU4l5sK6U10PbuM3EAyYf+com+RdpRsXuyJlLXSg1xHh2ZY7bo5QFvsMwaQCcwJc8McMVfMGXPHGqh+jp+HKMoPg5XHKtJNDT8AAAAASUVORK5CYII=');
@@ -214,12 +214,15 @@ button {
   border: none;
   padding: 0.5em 1em;
   border-radius: 4px;
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  transition: all 150ms ease-in-out;
 }
 
 .button:hover,
 button:hover {
-  background: var(--accent-dark);
+  background: var(--accent-light);
   color: white;
+  box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2), 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12);
 }
 
 @media (max-width: 600px) {
@@ -255,7 +258,7 @@ button:hover {
     display: inline-block;
   }
 
-  a[target='_blank']:after {
+  a[target='_blank']::after {
     content: '[ ' attr(href) ' ]';
     font-size: 0.8em;
     margin: 0 1ex;
@@ -266,7 +269,7 @@ button:hover {
     text-align: justify;
   }
 
-  p a{
+  p a {
     text-align: left;
   }
 }

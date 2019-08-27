@@ -417,7 +417,7 @@
   color: transparent;
 }
 
-.ex4 .custom-checkbox .checker:after {
+.ex4 .custom-checkbox .checker::after {
   content: '✓';
 }
 
@@ -470,7 +470,7 @@
   vertical-align: middle;
 }
 
-.sol4 .custom-checkbox .checker:after {
+.sol4 .custom-checkbox .checker::after {
   display: none;
 }
 
@@ -549,7 +549,7 @@
   text-align: left;
 }
 
-.ex5 .size:after {
+.ex5 .size::after {
   content: 'height';
   position: absolute;
   writing-mode: vertical-lr;
