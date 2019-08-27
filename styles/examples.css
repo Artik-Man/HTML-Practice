@@ -309,6 +309,7 @@
   height: 70px;
   border-radius: 4px;
   cursor: pointer;
+  box-shadow: none;
 }
 
 .sol3 .slider-container .thumb img {
@@ -358,6 +359,7 @@
   background-size: contain;
   width: 80px;
   height: 80px;
+  box-shadow: none;
 }
 
 .sol3 .button:hover {
