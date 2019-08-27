@@ -261,4 +261,12 @@ button:hover {
     margin: 0 1ex;
     display: inline-block;
   }
+
+  p {
+    text-align: justify;
+  }
+
+  p a{
+    text-align: left;
+  }
 }

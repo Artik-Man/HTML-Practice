@@ -606,18 +606,4 @@
   column-count: 2;
 }
 
-.ex8 .overflow-container {
-  overflow-x: auto;
-  overflow-y: hidden;
-}
-
-.ex8 .col-w {
-  column-width: 25vw;
-  max-height: 90vh;
-}
-
-@media (min-width: 1160px) {
-  .ex8 .col-w {
-    column-width: 330px;
-  }
-}
+ 
