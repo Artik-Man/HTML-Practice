@@ -244,18 +244,18 @@ main > .main-menu {
   left: 0;
   height: 100vh;
   max-width: 370px;
-  padding: 3em 0;
+  padding: 1em 0;
   margin-top: 210vh;
   overflow-y: auto;
 }
 
-main > .main-menu ul {
+main > .main-menu menu {
   margin: 0;
   list-style: none;
   padding: 0;
 }
 
-main > .main-menu ul li a {
+main > .main-menu menu li a {
   text-decoration: none;
   padding: 0.5em 1em;
   border-left: 0.3em solid transparent;
@@ -263,35 +263,32 @@ main > .main-menu ul li a {
   color: var(--grey);
 }
 
-main > .main-menu ul li a:hover {
+main > .main-menu menu li a:hover {
   color: var(--accent);
 }
 
-main > .main-menu ul li a.active {
+main > .main-menu menu li a.active {
   border-left-color: var(--accent);
   color: var(--accent);
 }
 
-main > #menu-switch-button {
+main > .main-menu > #menu-switch-button {
   background-image: url(../images/angle-left-sm.svg);
   background-color: transparent;
   background-repeat: no-repeat;
   background-size: contain;
-  position: fixed;
-  top: 1em;
-  z-index: 999;
-  left: 1em;
+  margin-left: 1em;
+  margin-bottom: 1em;
   width: 2em;
   height: 2em;
   opacity: 0.7;
-  display: none;
 }
 
-main.without-menu > #menu-switch-button {
+main.without-menu > .main-menu > #menu-switch-button {
   background-image: url(../images/angle-right-sm.svg);
 }
 
-main > #menu-switch-button:not(:hover) {
+main > .main-menu > #menu-switch-button:not(:hover) {
   box-shadow: none;
 }
 
@@ -300,6 +297,9 @@ main.without-menu {
 }
 
 main.without-menu > .main-menu {
+  width: 3em;
+}
+main.without-menu > .main-menu > menu {
   display: none;
 }
 
@@ -308,8 +308,7 @@ main.without-menu > .main-menu {
     display: flex;
   }
 
-  main > .main-menu,
-  main > #menu-switch-button {
+  main > .main-menu {
     display: block;
   }
 }
@@ -333,7 +332,7 @@ main.without-menu > .main-menu {
   .no-print,
   .cp_embed_wrapper,
   main > .main-menu,
-  main > #menu-switch-button {
+  main > .main-menu > #menu-switch-button {
     display: none;
   }
 
