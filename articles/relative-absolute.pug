@@ -22,46 +22,47 @@ article#relative-absolute
       | а затем, смещаем на 50% вверх и на 50% вправо относительно самого себя (transform: translate(-50%, -50%)), чтобы блок встал ровно по центру контейнера.
     p Дело в том, что в CSS, началом координат является верхняя левая точка элемента, а не центр элемента. 
       | Поэтому нам не достаточно просто подвинуть блок на 50% вниз и вправо, так как тогда в центре контейнера окажется левый верхний угол блока, а не центр блока.
-    h3 Пример:
-  .ex3-container
-    .ex3-block
-  .container
-    p Код:
-    pre(data-lang="html")
-      | <div class="container">
-      |     <div class="block"></div>
-      | </div>
+    section
+      h3 Пример:
+      .ex3-container
+        .ex3-block 
+      p Код:
+      pre(data-lang="html")
+        | <div class="container">
+        |     <div class="block"></div>
+        | </div>
 
-    pre(data-lang="css")
-      | .container {
-      |   position: relative;
-      |   width: 100%;
-      |   height: 300px;
-      | }
-      | 
-      | .block {
-      |   position: absolute; /* позволяет двигать блок относительно родительского релятивного контейнера */
-      |   top: 50%; /* смещаем блок на 50% от высоты родителя */
-      |   left: 50%; /* смещаем блок на 50% от ширины родителя */
-      |   transform: translate(-50%, -50%); /* смещаем блок на 50% от ширины и высоты этого блока */
-      |   width: 120px;
-      |   height: 80px;
-      | }
+      pre(data-lang="css")
+        | .container {
+        |   position: relative;
+        |   width: 100%;
+        |   height: 250px;
+        | }
+        | 
+        | .block {
+        |   position: absolute; /* позволяет двигать блок относительно родительского релятивного контейнера */
+        |   top: 50%; /* смещаем блок на 50% от высоты родителя */
+        |   left: 50%; /* смещаем блок на 50% от ширины родителя */
+        |   transform: translate(-50%, -50%); /* смещаем блок на 50% от ширины и высоты этого блока */
+        |   width: 120px;
+        |   height: 80px;
+        | }
 
   .container
-    h3 Задача
-    p Сделать просмотр изображений как на dns-shop.ru
-    ul
-      li Размер внешнего контейнера: 100% * 100vh
-      li Вместо картинок можно использовать цветные блоки
-      li Стрелочки: 
-        a(href="./images/angle-left-sm.svg" target="_blank") arrow-left
-        |, 
-        a(href="./images/angle-right-sm.svg" target="_blank") arrow-right
-        |; изображение кнопки "закрыть": 
-        a(href="./images/times-sm.svg" target="_blank") close
-        |.
-  .sol3
+    section
+      h3 Задача
+      p Сделать просмотр изображений как на dns-shop.ru
+      ul
+        li Размер внешнего контейнера: 100% * 100vh
+        li Вместо картинок можно использовать цветные блоки
+        li Стрелочки: 
+          a(href="./images/angle-left-sm.svg" target="_blank") arrow-left
+          |, 
+          a(href="./images/angle-right-sm.svg" target="_blank") arrow-right
+          |; изображение кнопки "закрыть": 
+          a(href="./images/times-sm.svg" target="_blank") close
+          |.
+  .sol3.no-print-break
     .title iPhone Xs Max
     button.button.close
     button.button.left

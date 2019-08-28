@@ -275,28 +275,32 @@ git config --global user.email myEmail@example.com</pre>
               <li> <a href="http://htmlbook.ru/css/column-count" target="_blank">column-count</a><br/>Задаёт количество колонок в тексте. Применяется, в основном, для газетной вёрстки.</li>
               <li> <a href="http://htmlbook.ru/css/line-height" target="_blank">line-height</a><br/>Задаёт высоту строки. Если задавать без единиц измерения, например, <code>line-height: 2;</code>, значение будет воспринято как множитель. </li>
             </ul>
-            <h3>Собственные шрифты</h3>
-            <p>Для подключения собственного шрифта используется правило <a href="http://htmlbook.ru/css/font-face" target="_blank">@font-face.</a></p>
-            <pre data-lang="css">@font-face {
+            <section>
+              <h3>Собственные шрифты</h3>
+              <p>Для подключения собственного шрифта используется правило <a href="http://htmlbook.ru/css/font-face" target="_blank">@font-face.</a></p>
+              <pre data-lang="css">@font-face {
   font-family: 'Philosopher'; /* Название шрифта*/
   font-style: normal;         /* Начертание */
   font-weight: 400;           /* Насыщенность */
   src: url(./fonts/philosopher.woff2) format('woff2'); /* Путь к файлу шрифта и его формат */
 }</pre>
-            <p>Для подключение такого шрифта к элементу, используют код:</p>
-            <pre data-lang="css">.selector {
+              <p>Для подключение такого шрифта к элементу, используют код:</p>
+              <pre data-lang="css">.selector {
   font-family: 'Philosopher', sans-serif;
 }</pre>
-            <h3>Google Fonts </h3>
-            <p>Для упрощения подключения шрифтов, используют различные библиотеки шрифтов. К примеру, <a target="_blank" href="https://fonts.google.com/">Google Fonts</a>. Такие библиотеки содержат сотни шрифтов, а так же оптимизаторы для браузеров. 
-              Всё что нам нужено &mdash; выбрать требуемый шрифт, выбрать, какие начертания и языки нам требуются (для русского языка Cyrillic),
-              подключить в <code>&lt;head&gt;</code>стиль шрифта, имеющий примерно такой вид:
-            </p>
-            <pre data-lang="html">&lt;head>
+            </section>
+            <section>
+              <h3>Google Fonts </h3>
+              <p>Для упрощения подключения шрифтов, используют различные библиотеки шрифтов. К примеру, <a target="_blank" href="https://fonts.google.com/">Google Fonts</a>. Такие библиотеки содержат сотни шрифтов, а так же оптимизаторы для браузеров. 
+                Всё что нам нужено &mdash; выбрать требуемый шрифт, выбрать, какие начертания и языки нам требуются (для русского языка Cyrillic),
+                подключить в <code>&lt;head&gt;</code>стиль шрифта, имеющий примерно такой вид:
+              </p>
+              <pre data-lang="html">&lt;head>
  ...
  &lt;link href="https://fonts.googleapis.com/css?family=Philosopher:400,700&display=swap&subset=cyrillic" rel="stylesheet">
  ...
 &lt;/head></pre>
+            </section>
           </div>
         </article>
         <article id="column-count">
@@ -382,7 +386,7 @@ git config --global user.email myEmail@example.com</pre>
               <li>flex &mdash; превращает элемент в flex-контейнер. Это означает, что внутренние элементы выстраиваются так, как мы зададим с помощью свойств <a target="_blank" href="https://developer.mozilla.org/ru/docs/Web/CSS/flex">flex, </a><a target="_blank" href="https://developer.mozilla.org/ru/docs/Web/CSS/flex-direction">flex-direction, </a><a target="_blank" href="https://developer.mozilla.org/ru/docs/Web/CSS/flex-wrap">flex-wrap, </a><a target="_blank" href="https://developer.mozilla.org/ru/docs/Web/CSS/align-items">align-items, </a><a target="_blank" href="https://developer.mozilla.org/ru/docs/Web/CSS/justify-content">justify-content</a> и других. Более подробно о flex-контейнерах стоит прочитать тут: <a target="_blank" href="https://developer.mozilla.org/ru/docs/Web/CSS/CSS_Flexible_Box_Layout/Выравнивание_элементов_в_Flex_контейнере">Выравнивание элементов в Flex контейнере</a>;</li>
               <li>grid &mdash; превращает элемент в grid-контейнер. Гриды это новая технология построения сеток. При помощи свойств управления сетками, например, <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-columns">grid-template-columns</a>, мы можем управлять отображением содержимого внутри грида. Более подробно о гридах можно почитать здесь: <a target="_blank" href="https://developer.mozilla.org/ru/docs/Web/CSS/CSS_Grid_Layout/Basic_Concepts_of_Grid_Layout">Основные понятия Grid Layout</a>.</li>
             </ol>
-            <div>
+            <section>
               <h3>Задачи</h3>
               <p>
                 Задачи на добавление всего одной строки кода. Смотрите HTML-код, подумайте, какое CSS-свойство спасёт ситуацию. Поиграйтесь со значениями этого свойства. Все необходимые для выполнения задачи знания описаны в этой главе.</p>
@@ -392,7 +396,7 @@ git config --global user.email myEmail@example.com</pre>
               <p>4. Добавьте одно свойство так, чтобы меню стало широким </p><a class="codepen button" data-id="vYBGBLE" data-height="400">Посмотреть задание</a>
               <p>5. Сделайте так, чтобы счёт шёл слева направо, а не снизу вверх</p><a class="codepen button" data-id="ExYKYWM" data-height="400">Посмотреть задание</a>
               <p>6. Добавьте одну строку так, чтобы получилась таблица</p><a class="codepen button" data-id="yLBOBpq">Посмотреть задание</a>
-            </div>
+            </section>
           </div>
         </article>
         <article id="box-sizing">
@@ -408,11 +412,12 @@ git config --global user.email myEmail@example.com</pre>
                 </div>
               </div>
             </div>
-            <p>
-              Долгое время в CSS изменение padding приводило к изменению width у элементов, из-за чего два одинаковых по ширине элемента с разными по ширине полями, в реальности имели разную ширину. Пример ниже демонстрирует этот недуг:</p>
-            <pre data-lang="html"><div class="one">padding: 0</div>
+            <section>
+              <p>
+                Долгое время в CSS изменение padding приводило к изменению width у элементов, из-за чего два одинаковых по ширине элемента с разными по ширине полями, в реальности имели разную ширину. Пример ниже демонстрирует этот недуг:</p>
+              <pre data-lang="html"><div class="one">padding: 0</div>
 <div class="two">padding: 40px</div></pre>
-            <pre data-lang="css">.one {
+              <pre data-lang="css">.one {
   width: 200px;
   height: 100px;
   padding: 0;
@@ -422,15 +427,17 @@ git config --global user.email myEmail@example.com</pre>
   height: 100px;
   padding: 40px;
 }</pre>
-            <div class="ex6">
-              <div class="one">padding: 0</div>
-              <div class="two">padding: 40px</div>
-            </div>
-            <p> <i>Для визуализации, padding был окрашен с помощью свойства box-shadow. В действительности же, задать цвет для padding невозможно!</i></p>
-            <p>На помощь в борьбе с этим нелогичным, казалось бы, поведением пришел <a href="http://htmlbook.ru/css/box-sizing" target="_blank">box-sizing</a>. Добавим в наши блоки всего по одной строчке кода:</p>
-            <pre data-lang="html"><div class="one">padding: 0</div>
+              <div class="ex6">
+                <div class="one">padding: 0</div>
+                <div class="two">padding: 40px</div>
+              </div>
+              <p> <i>Для визуализации, padding был окрашен с помощью свойства box-shadow. В действительности же, задать цвет для padding невозможно!</i></p>
+            </section>
+            <section>
+              <p>На помощь в борьбе с этим нелогичным, казалось бы, поведением пришел <a href="http://htmlbook.ru/css/box-sizing" target="_blank">box-sizing</a>. Добавим в наши блоки всего по одной строчке кода:</p>
+              <pre data-lang="html"><div class="one">padding: 0</div>
 <div class="two">padding: 40px</div></pre>
-            <pre data-lang="css">.one {
+              <pre data-lang="css">.one {
   width: 200px;
   height: 100px;
   padding: 0;
@@ -442,19 +449,22 @@ git config --global user.email myEmail@example.com</pre>
   padding: 40px;
   box-sizing: border-box;
 }</pre>
-            <div class="ex6 border-box">
-              <div class="one">padding: 0</div>
-              <div class="two">padding: 40px</div>
-            </div>
-            <p>
-              Так стало гораздо проще работать с CSS, поэтому многие добавляют box-sizing: border-box всем элементам на сайте при помощи этого кода:</p>
-            <pre data-lang="css">* {
+              <div class="ex6 border-box">
+                <div class="one">padding: 0</div>
+                <div class="two">padding: 40px</div>
+              </div>
+            </section>
+            <section>
+              <p>
+                Так стало гораздо проще работать с CSS, поэтому многие добавляют box-sizing: border-box всем элементам на сайте при помощи этого кода:</p>
+              <pre data-lang="css">* {
   box-sizing: border-box;
 }</pre>
-            <p>
-              Это стало хорошей и распространённой практикой, однако по умолчанию значением свойства box-sizing является стандартная модель content-box, возвращающий нас в те времена,
-              когда приходилось вычислять ширину элемента по его полям.
-            </p>
+              <p>
+                Это стало хорошей и распространённой практикой, однако по умолчанию значением свойства box-sizing является стандартная модель content-box, возвращающий нас в те времена,
+                когда приходилось вычислять ширину элемента по его полям.
+              </p>
+            </section>
           </div>
         </article>
         <article id="position">
@@ -474,29 +484,32 @@ git config --global user.email myEmail@example.com</pre>
             </ul>
             <p>Поэкспериментировать с position: absolute можно здесь:</p><a class="codepen button" data-id="gOYwLmY" data-height="400">Запустить пример</a>
             <p>Поэкспериментировать с position: sticky можно тут:</p><a class="codepen button" data-id="rNBMWzp" data-height="400">Запустить пример</a>
-            <h3>Смещение блока: top, right, bottom и left</h3>
-            <p>
-              По умолчанию значением этих свойств является auto. Мы можем использовать для задания положения, например, px или %. Используются в купе с нестатично спозиционированными блоками. </p>
-            <ul>
-              <li>top смещает блок сверху вниз;</li>
-              <li>bottom смещает блок снизу вверх;</li>
-              <li>left смещает блок слева направо;</li>
-              <li>right смещает блок справа налево.</li>
-            </ul>
-            <h3>Слои и z-index</h3>
-            <p>
-              Иногда, сместив один блок относительно другого, они начинают "наезжать" друг на друга. Причём, не всегда так, как мы этого хотим. Что если мы хотим, чтобы блок, который отрисовался "под" вторым блоком, был отрисован "над" ним? 
-              Для этого на помощь приходит свойство z-index. Значением этого свойства может быть просто любое число, без единиц измерения. 
-              Установив z-index: 2 для первого блока и z-index: 1 для второго, мы точно будем знать, что первый блок будет отрисован "над" вторым, так как
-              его z-index больше. По умолчанию же, "над" отрисовывается тот блок, который в структуре HTML был ближе к концу документа. 
-            </p>
-            <p>
-              Если вы математик, то вам будет понятно следующее объяснение: наш экран имеет две координаты: X и Y. Координаты начинаются из верхнего левого угла. X направлен вправо. Y &mdash; вниз. А теперь представим себе ещё одну координату &mdash; Z. 
-              Она направлена из той же точки, но перпендикулярно экрану, на зрителя. Это и есть z-index. 
-            </p>
-            <p>
-              Если вы работали с фотошопом или какими-то другими графическими редакторами, то вам знакомо понятие "слои". Мы можем распологать различные изображенияна этих слоях, а в случае перекрытия, показан будет тот слой, что находится выше. И это тоже z-index. </p>
-            <p>Раскомментируйте строку с z-index, чтобы понять, как работает это свойство.</p><a class="codepen button" data-id="KKPgNrX" data-height="400">Посмотреть задание</a>
+            <section>
+              <h3>Смещение блока: top, right, bottom и left</h3>
+              <p>По умолчанию значением этих свойств является auto. Мы можем использовать для задания положения, например, px или %. </p>Используются в купе с нестатично спозиционированными блоками. 
+              <ul>
+                <li>top смещает блок сверху вниз;</li>
+                <li>bottom смещает блок снизу вверх;</li>
+                <li>left смещает блок слева направо;</li>
+                <li>right смещает блок справа налево.</li>
+              </ul>
+            </section>
+            <section>
+              <h3>Слои и z-index</h3>
+              <p>
+                Иногда, сместив один блок относительно другого, они начинают "наезжать" друг на друга. Причём, не всегда так, как мы этого хотим. Что если мы хотим, чтобы блок, который отрисовался "под" вторым блоком, был отрисован "над" ним? 
+                Для этого на помощь приходит свойство z-index. Значением этого свойства может быть просто любое число, без единиц измерения. 
+                Установив z-index: 2 для первого блока и z-index: 1 для второго, мы точно будем знать, что первый блок будет отрисован "над" вторым, так как
+                его z-index больше. По умолчанию же, "над" отрисовывается тот блок, который в структуре HTML был ближе к концу документа. 
+              </p>
+              <p>
+                Если вы математик, то вам будет понятно следующее объяснение: наш экран имеет две координаты: X и Y. Координаты начинаются из верхнего левого угла. X направлен вправо. Y &mdash; вниз. А теперь представим себе ещё одну координату &mdash; Z. 
+                Она направлена из той же точки, но перпендикулярно экрану, на зрителя. Это и есть z-index. 
+              </p>
+              <p>
+                Если вы работали с фотошопом или какими-то другими графическими редакторами, то вам знакомо понятие "слои". Мы можем распологать различные изображенияна этих слоях, а в случае перекрытия, показан будет тот слой, что находится выше. И это тоже z-index. </p>
+              <p>Раскомментируйте строку с z-index, чтобы понять, как работает это свойство.</p><a class="codepen button" data-id="KKPgNrX" data-height="400">Посмотреть задание</a>
+            </section>
           </div>
         </article>
         <article id="pseudo">
@@ -537,13 +550,15 @@ git config --global user.email myEmail@example.com</pre>
                   }</code>В этом примере, перед каждой ссылкой на сайте будет добавляться сердечко. </li>
               <li><a href="https://developer.mozilla.org/ru/docs/Web/CSS/::after" target="_blank">::after</a><br/>Работает точно так же, как и ::before, но псевдоэлемент создаётся в самом конце и будет являться последним потомком.  </li>
             </ul>
-            <p>С остальными псевдоэлементами вы познакомитесь позже, на личной практике. Они используются заметно реже. Конечно, ссылки на них я приведу:</p>
-            <ul>
-              <li><a href="https://developer.mozilla.org/ru/docs/Web/CSS/::first-letter" target="_blank">::first-letter</a></li>
-              <li><a href="https://developer.mozilla.org/ru/docs/Web/CSS/::first-line" target="_blank">::first-line</a></li>
-              <li><a href="https://developer.mozilla.org/ru/docs/Web/CSS/::selection" target="_blank">::selection</a></li>
-              <li><a href="https://developer.mozilla.org/ru/docs/Web/CSS/::backdrop" target="_blank">::backdrop </a></li>
-            </ul>
+            <div class="no-print-break">
+              <p>С остальными псевдоэлементами вы познакомитесь позже, на личной практике. Они используются заметно реже. Конечно, ссылки на них я приведу:</p>
+              <ul>
+                <li><a href="https://developer.mozilla.org/ru/docs/Web/CSS/::first-letter" target="_blank">::first-letter</a></li>
+                <li><a href="https://developer.mozilla.org/ru/docs/Web/CSS/::first-line" target="_blank">::first-line</a></li>
+                <li><a href="https://developer.mozilla.org/ru/docs/Web/CSS/::selection" target="_blank">::selection</a></li>
+                <li><a href="https://developer.mozilla.org/ru/docs/Web/CSS/::backdrop" target="_blank">::backdrop </a></li>
+              </ul>
+            </div>
           </div>
         </article>
         <article id="image">
@@ -551,86 +566,100 @@ git config --global user.email myEmail@example.com</pre>
             <h2>Картинка в тексте</h2>
             <p>
               Часто, бывает нужно вставить картинку в текст. Но работает это не всегда так, как мы это задумывали. Попробуем вставить картинку без стилей и посмотрим, что получится.</p>
-            <p>Код примера предельно прост: </p>
-            <pre data-lang="html"><p>
+            <section>
+              <p>Код примера предельно прост: </p>
+              <pre data-lang="html"><p>
    <img src="../images/image.svg" alt="Just image">
    Lorem ipsum dolor sit amet consectetur adipisicing elit...
 </p>
 <p>Itaque voluptates eum nihil minima quo iure voluptas, atque amet molestias,...</p>
 <p>Soluta, laudantium in. Dolorem laboriosam nobis nihil iste eum sapiente maxime,...</p></pre>
-            <div class="ex7">
-              <p> <img src="../images/image.svg" alt="Just image"/>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic commodi maiores excepturi dolore cupiditate sit obcaecati, 
-                repellat doloribus rerum! Dicta eius aliquid eaque sed sequi obcaecati debitis quos veniam placeat.
-              </p>
+              <div class="ex7">
+                <p> <img src="../images/image.svg" alt="Just image"/>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic commodi maiores excepturi dolore cupiditate sit obcaecati, 
+                  repellat doloribus rerum! Dicta eius aliquid eaque sed sequi obcaecati debitis quos veniam placeat.
+                </p>
+                <p>
+                  Itaque voluptates eum nihil minima quo iure voluptas, atque amet molestias, perspiciatis sed cupiditate nemo inventore velit soluta iste ut nesciunt! Qui fuga nesciunt accusantium magnam officiis corrupti, quibusdam amet.</p>
+                <p>
+                  Soluta, laudantium in. Dolorem laboriosam nobis nihil iste eum sapiente maxime, facilis minus atque debitis corporis quasi, molestias delectus magni placeat ipsum iure perspiciatis doloremque repudiandae rem tenetur, in dolorum.    </p>
+              </div>
+            </section>
+            <section>
               <p>
-                Itaque voluptates eum nihil minima quo iure voluptas, atque amet molestias, perspiciatis sed cupiditate nemo inventore velit soluta iste ut nesciunt! Qui fuga nesciunt accusantium magnam officiis corrupti, quibusdam amet.</p>
-              <p>
-                Soluta, laudantium in. Dolorem laboriosam nobis nihil iste eum sapiente maxime, facilis minus atque debitis corporis quasi, molestias delectus magni placeat ipsum iure perspiciatis doloremque repudiandae rem tenetur, in dolorum.    </p>
-            </div>
-            <p>
-              Как видите, картинка стала частью первой строки текста. Нам редко нужно, чтобы поведение было именно таким. Чаще нам необходимо сделать так, чтобы картинка обтекалась текстом. Для этого существует свойство float. </p>
-            <p>Добавим к нашему примеру <a href="http://htmlbook.ru/css/float" target="_blank">float</a>: left и посмотрим, что получится</p>
-            <pre data-lang="css">img {
+                Как видите, картинка стала частью первой строки текста. Нам редко нужно, чтобы поведение было именно таким. Чаще нам необходимо сделать так, чтобы картинка обтекалась текстом. Для этого существует свойство float. </p>
+              <p>Добавим к нашему примеру <a href="http://htmlbook.ru/css/float" target="_blank">float</a>: left и посмотрим, что получится</p>
+              <pre data-lang="css">img {
   float: left;
 }</pre>
-            <div class="ex7">
-              <p> <img class="float-left" src="../images/image.svg" alt="Just image"/>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic commodi maiores excepturi dolore cupiditate sit obcaecati, 
-                repellat doloribus rerum! Dicta eius aliquid eaque sed sequi obcaecati debitis quos veniam placeat.
-              </p>
+              <div class="ex7">
+                <p> <img class="float-left" src="../images/image.svg" alt="Just image"/>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic commodi maiores excepturi dolore cupiditate sit obcaecati, 
+                  repellat doloribus rerum! Dicta eius aliquid eaque sed sequi obcaecati debitis quos veniam placeat.
+                </p>
+                <p>
+                  Itaque voluptates eum nihil minima quo iure voluptas, atque amet molestias, perspiciatis sed cupiditate nemo inventore velit soluta iste ut nesciunt! Qui fuga nesciunt accusantium magnam officiis corrupti, quibusdam amet.</p>
+                <p>
+                  Soluta, laudantium in. Dolorem laboriosam nobis nihil iste eum sapiente maxime, facilis minus atque debitis corporis quasi, molestias delectus magni placeat ipsum iure perspiciatis doloremque repudiandae rem tenetur, in dolorum.</p>
+              </div>
+              <p>Здесь мы видим, что картинка стала обтекаться текстом. Правда, из-за того, что текста много, мы не видим одного подводного камня этого решения.</p>
+            </section>
+            <section>
+              <p>Давайте уберём последние два абзаца и посмотрим, что будет</p>
+              <div class="ex7">
+                <p> <img class="float-left" src="../images/image.svg" alt="Just image"/>Lorem ipsum dolor... </p>
+              </div>
               <p>
-                Itaque voluptates eum nihil minima quo iure voluptas, atque amet molestias, perspiciatis sed cupiditate nemo inventore velit soluta iste ut nesciunt! Qui fuga nesciunt accusantium magnam officiis corrupti, quibusdam amet.</p>
-              <p>
-                Soluta, laudantium in. Dolorem laboriosam nobis nihil iste eum sapiente maxime, facilis minus atque debitis corporis quasi, molestias delectus magni placeat ipsum iure perspiciatis doloremque repudiandae rem tenetur, in dolorum.</p>
-            </div>
-            <p>
-              Здесь мы видим, что картинка стала обтекаться текстом. Правда, из-за того, что текста много, мы не видим одного подводного камня этого решения. Давайте уберём последние два абзаца и посмотрим, что будет</p>
-            <div class="ex7">
-              <p> <img class="float-left" src="../images/image.svg" alt="Just image"/>Lorem ipsum dolor... </p>
-            </div>
-            <p>
-              Обратите внимание, что-то пошло не так и даже этот абзац, не относящийся к примеру, всё равно обтекается картинкой. Явно не то, чего мы ожидали. Всё дело в том, что флоаты (поплавки) "всплывают" над родительским элементом, поэтому его высота больше не зависит от нашей картинки. </p>
-            <p>Для того, чтобы исправить подобное поведение, нужно воспользоваться "очисткой" &mdash; <a href="http://htmlbook.ru/css/clear" target="_blank">clear</a>. Изменим наш код следующим образом:</p>
-            <pre data-lang="html"><p>
+                Обратите внимание, что-то пошло не так и даже этот абзац, не относящийся к примеру, всё равно обтекается картинкой. Явно не то, чего мы ожидали. Всё дело в том, что флоаты (поплавки) "всплывают" над родительским элементом, поэтому его высота больше не зависит от нашей картинки. </p>
+            </section>
+            <section>
+              <p>Для того, чтобы исправить подобное поведение, нужно воспользоваться "очисткой" &mdash; <a href="http://htmlbook.ru/css/clear" target="_blank">clear</a>. Изменим наш код следующим образом:</p>
+              <pre data-lang="html"><p>
    <img src="../images/image.svg" alt="Just image">
    Lorem ipsum dolor sit amet consectetur adipisicing elit...
 </p>
 <p>Itaque voluptates eum nihil minima quo iure voluptas, atque amet molestias,...</p>
 <p>Soluta, laudantium in. Dolorem laboriosam nobis nihil iste eum sapiente maxime,...</p>
 <div class="clear"></div></pre>
-            <pre data-lang="css">img {
+              <pre data-lang="css">img {
   float: left;
 }
 .clear {
   clear: both;
 }</pre>
-            <div class="ex7">
-              <p> <img class="float-left" src="../images/image.svg" alt="Just image"/>Lorem ipsum dolor... </p>
-              <div class="clear"></div>
-            </div>
-            <p>
-              Как видите, абзац, который вы сейчас читаете, находится уже за пределами примера. Добавив такой чистящий элемент в самый конец родительского контейнера, мы смогли вернуть высоту контейнера к нормальному уровню. </p>
-            <p>
-              В предыдущих примерах мы увидели, как задать обтекание картинки текстом так, чтобы картинка оказалась слева. Точно так же мы можем обтекать её и с другой стороны. </p>
-            <pre data-lang="css">img {
+            </section>
+            <section>
+              <div class="ex7">
+                <p> <img class="float-left" src="../images/image.svg" alt="Just image"/>Lorem ipsum dolor... </p>
+                <div class="clear"></div>
+              </div>
+              <p>
+                Как видите, абзац, который вы сейчас читаете, находится уже за пределами примера. Добавив такой чистящий элемент в самый конец родительского контейнера, мы смогли вернуть высоту контейнера к нормальному уровню. </p>
+            </section>
+            <section>
+              <p>
+                В предыдущих примерах мы увидели, как задать обтекание картинки текстом так, чтобы картинка оказалась слева. Точно так же мы можем обтекать её и с другой стороны. </p>
+              <pre data-lang="css">img {
   float: right;
 }</pre>
-            <div class="ex7">
-              <p> <img class="float-right" src="../images/image.svg" alt="Just image"/>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic commodi maiores excepturi dolore cupiditate sit obcaecati,
-                repellat doloribus rerum! Dicta eius aliquid eaque sed sequi obcaecati debitis quos veniam placeat.
-              </p>
-              <p>
-                Itaque voluptates eum nihil minima quo iure voluptas, atque amet molestias, perspiciatis sed cupiditate nemo inventore velitsoluta iste ut nesciunt! Qui fuga nesciunt accusantium magnam officiis corrupti, quibusdam amet.</p>
-              <p>
-                Soluta, laudantium in. Dolorem laboriosam nobis nihil iste eum sapiente maxime, facilis minus atque debitis corporis quasi,molestias delectus magni placeat ipsum iure perspiciatis doloremque repudiandae rem tenetur, in dolorum. Quas dolorem excepturi expedita ipsa veniam?</p>
-            </div>
-            <p>И если мы не уверены, что текста будет достаточно, не забудем добавить в конец контейнера clear: both.</p>
-            <div class="ex7">
-              <p> <img class="float-right" src="../images/image.svg" alt="Just image"/>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic commodi maiores excepturi dolore cupiditate sit obcaecati, 
-                repellat doloribus rerum! Dicta eius aliquid eaque sed sequi obcaecati debitis quos veniam placeat.
-              </p>
-              <div class="clear"></div>
-            </div>
-            <p>Подведём итоги. Для того, чтобы вставить картинку в текст и сделать так, чтобы она обтекалась, нужно воспользоваться свойством <a href="http://htmlbook.ru/css/float" target="_blank">float</a>, а для того, чтобы восстановить размер контейнера в том случае, если картинка стала вылезать за его пределы, нужно использовать свойство <a href="http://htmlbook.ru/css/clear" target="_blank">clear</a>.</p>
+              <div class="ex7">
+                <p> <img class="float-right" src="../images/image.svg" alt="Just image"/>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic commodi maiores excepturi dolore cupiditate sit obcaecati,
+                  repellat doloribus rerum! Dicta eius aliquid eaque sed sequi obcaecati debitis quos veniam placeat.
+                </p>
+                <p>
+                  Itaque voluptates eum nihil minima quo iure voluptas, atque amet molestias, perspiciatis sed cupiditate nemo inventore velitsoluta iste ut nesciunt! Qui fuga nesciunt accusantium magnam officiis corrupti, quibusdam amet.</p>
+                <p>
+                  Soluta, laudantium in. Dolorem laboriosam nobis nihil iste eum sapiente maxime, facilis minus atque debitis corporis quasi,molestias delectus magni placeat ipsum iure perspiciatis doloremque repudiandae rem tenetur, in dolorum. Quas dolorem excepturi expedita ipsa veniam?</p>
+              </div>
+              <p>И если мы не уверены, что текста будет достаточно, не забудем добавить в конец контейнера clear: both.</p>
+              <div class="ex7">
+                <p> <img class="float-right" src="../images/image.svg" alt="Just image"/>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic commodi maiores excepturi dolore cupiditate sit obcaecati, 
+                  repellat doloribus rerum! Dicta eius aliquid eaque sed sequi obcaecati debitis quos veniam placeat.
+                </p>
+                <div class="clear"></div>
+              </div>
+            </section>
+            <section>
+              <p>Подведём итоги. Для того, чтобы вставить картинку в текст и сделать так, чтобы она обтекалась, нужно воспользоваться свойством </p><a href="http://htmlbook.ru/css/float" target="_blank">float</a>, а для того, чтобы восстановить размер контейнера в том случае, если картинка стала вылезать за его пределы, нужно использовать свойство <a href="http://htmlbook.ru/css/clear" target="_blank">clear</a>.
+            </section>
           </div>
         </article>
         <article id="margin-0-auto">
@@ -677,13 +706,14 @@ git config --global user.email myEmail@example.com</pre>
             <p>Этот метод используется, в основном, для построения "шапки" сайта, но может быть использован и в других частях сайта или 
               <nobr>веб-приложения. </nobr>Для полного понимания работы флекс-контейнеров, рекомендую поиграть в игру <a href="https://flexboxfroggy.com/" target="_blank">Flexbox Froggy</a>
             </p>
-            <p>Пример:</p>
-            <div class="ex2-container">
-              <div class="ex2-box-left"><span>Brand</span><span>Stores</span><span>Actions</span><span>Contacts</span></div>
-              <div class="ex2-box-right"><span>Settings</span><span>Account</span></div>
-            </div>
-            <p>Код:</p>
-            <pre data-lang="html"><div class="container">
+            <section>
+              <p>Пример:</p>
+              <div class="ex2-container">
+                <div class="ex2-box-left"><span>Brand</span><span>Stores</span><span>Actions</span><span>Contacts</span></div>
+                <div class="ex2-box-right"><span>Settings</span><span>Account</span></div>
+              </div>
+              <p>Код:</p>
+              <pre data-lang="html"><div class="container">
     <div class="box-left">
        <span>Brand</span>
        <span>Stores</span>
@@ -695,7 +725,7 @@ git config --global user.email myEmail@example.com</pre>
        <span>Account</span>
     </div>
 </div></pre>
-            <pre data-lang="css">.container {
+              <pre data-lang="css">.container {
   /* Задаём флекс-бокс (позволяет влиять на расположение дочерних элементов) */
   display: flex;
   /* Говорим элементам встать так, чтобы между ними, по возможности, образовывалось расстояние */
@@ -709,13 +739,14 @@ git config --global user.email myEmail@example.com</pre>
 .box-right {
   /* Здесь можно задать какие-то стили для правого блока */
 }</pre>
-          </div>
-          <div class="container">
-            <h3>Задача</h3>
-            <p>
-              Сделать шапку для сайта habr.com так, чтобы правая и левая часть меню были разнесены при помощи
-              флекс-бокса
-            </p>
+            </section>
+            <section>
+              <h3>Задача</h3>
+              <p>
+                Сделать шапку для сайта habr.com так, чтобы правая и левая часть меню были разнесены при помощи
+                флекс-бокса
+              </p>
+            </section>
           </div>
           <div class="sol2">
             <div class="content">
@@ -745,20 +776,19 @@ git config --global user.email myEmail@example.com</pre>
               В примере ниже показано, как мы сначала смещаем абсолютно спозиционированный блок на 50% слева направо (left) и на 50% сверху вниз (top) относительно контейнера, а затем, смещаем на 50% вверх и на 50% вправо относительно самого себя (transform: translate(-50%, -50%)), чтобы блок встал ровно по центру контейнера.</p>
             <p>
               Дело в том, что в CSS, началом координат является верхняя левая точка элемента, а не центр элемента. Поэтому нам не достаточно просто подвинуть блок на 50% вниз и вправо, так как тогда в центре контейнера окажется левый верхний угол блока, а не центр блока.</p>
-            <h3>Пример:</h3>
-          </div>
-          <div class="ex3-container">
-            <div class="ex3-block"></div>
-          </div>
-          <div class="container">
-            <p>Код:</p>
-            <pre data-lang="html"><div class="container">
+            <section>
+              <h3>Пример:</h3>
+              <div class="ex3-container">
+                <div class="ex3-block"> </div>
+              </div>
+              <p>Код:</p>
+              <pre data-lang="html"><div class="container">
     <div class="block"></div>
 </div></pre>
-            <pre data-lang="css">.container {
+              <pre data-lang="css">.container {
   position: relative;
   width: 100%;
-  height: 300px;
+  height: 250px;
 }
  
 .block {
@@ -769,17 +799,20 @@ git config --global user.email myEmail@example.com</pre>
   width: 120px;
   height: 80px;
 }</pre>
+            </section>
           </div>
           <div class="container">
-            <h3>Задача</h3>
-            <p>Сделать просмотр изображений как на dns-shop.ru</p>
-            <ul>
-              <li>Размер внешнего контейнера: 100% * 100vh</li>
-              <li>Вместо картинок можно использовать цветные блоки</li>
-              <li>Стрелочки: <a href="./images/angle-left-sm.svg" target="_blank">arrow-left</a>, <a href="./images/angle-right-sm.svg" target="_blank">arrow-right</a>; изображение кнопки "закрыть": <a href="./images/times-sm.svg" target="_blank">close</a>.</li>
-            </ul>
+            <section>
+              <h3>Задача</h3>
+              <p>Сделать просмотр изображений как на dns-shop.ru</p>
+              <ul>
+                <li>Размер внешнего контейнера: 100% * 100vh</li>
+                <li>Вместо картинок можно использовать цветные блоки</li>
+                <li>Стрелочки: <a href="./images/angle-left-sm.svg" target="_blank">arrow-left</a>, <a href="./images/angle-right-sm.svg" target="_blank">arrow-right</a>; изображение кнопки "закрыть": <a href="./images/times-sm.svg" target="_blank">close</a>.</li>
+              </ul>
+            </section>
           </div>
-          <div class="sol3">
+          <div class="sol3 no-print-break">
             <div class="title">iPhone Xs Max</div>
             <button class="button close"></button>
             <button class="button left"></button>
@@ -810,28 +843,29 @@ git config --global user.email myEmail@example.com</pre>
             <p> <a href="http://htmlbook.ru/html/label" target="_blank">Немного подробнее о label можно почитать здесь</a></p>
             <p>В этом видео Вадим Макеев подробно рассказывает об этой технике вёрстки чекбокса: <a href="https://youtu.be/E6kLaaQFctU" target="_blank">Смотреть на YouTube</a></p>
             <div class="youtube" data-video="E6kLaaQFctU"></div>
-            <h3>Пример:</h3>
-            <p class="ex4">
-              <label class="custom-checkbox">
-                <input class="visually-hidden" type="checkbox"/><span class="checker"></span>Checkbox
-              </label>
-              <label class="custom-checkbox">
-                <input class="visually-hidden" type="checkbox" checked="checked"/><span class="checker"></span>Checked
-              </label>
-              <label class="custom-checkbox">
-                <input class="visually-hidden" type="checkbox" disabled="disabled"/><span class="checker"></span>Disabled
-              </label>
-              <label class="custom-checkbox">
-                <input class="visually-hidden" type="checkbox" checked="checked" disabled="disabled"/><span class="checker"></span>Checked disabled
-              </label>
-            </p>
-            <p>Код:</p>
-            <pre data-lang="html"><label class="custom-checkbox">
+            <section>
+              <h3>Пример:</h3>
+              <p class="ex4">
+                <label class="custom-checkbox">
+                  <input class="visually-hidden" type="checkbox"/><span class="checker"></span>Checkbox
+                </label>
+                <label class="custom-checkbox">
+                  <input class="visually-hidden" type="checkbox" checked="checked"/><span class="checker"></span>Checked
+                </label>
+                <label class="custom-checkbox">
+                  <input class="visually-hidden" type="checkbox" disabled="disabled"/><span class="checker"></span>Disabled
+                </label>
+                <label class="custom-checkbox">
+                  <input class="visually-hidden" type="checkbox" checked="checked" disabled="disabled"/><span class="checker"></span>Checked disabled
+                </label>
+              </p>
+              <p>Код:</p>
+              <pre data-lang="html"><label class="custom-checkbox">
     <input type="checkbox" class="visually-hidden">
     <span class="checker"></span>
     Отметка
 </label></pre>
-            <pre data-lang="css">.custom-checkbox {
+              <pre data-lang="css">.custom-checkbox {
     /* Контейнер должен быть релятивным, так как внутри него мы разместим два абсолютно спозиционированных элемента */
     position: relative;
     /* скрываем элементы, попадающие за границы label */
@@ -908,44 +942,47 @@ git config --global user.email myEmail@example.com</pre>
   clip: rect(0 0 0 0);
   overflow: hidden;
 }</pre>
-            <p>Подробнее о visually-hidden можно почитать здесь: <a href="https://allyjs.io/tutorials/hiding-elements.html#how-to-hide-elements-visually" target="_blank">How to hide elements visually</a></p>
-            <h3>Задача</h3>
-            <p>Сверстать чекбоксы как в gmail.</p>
-            <div class="sol4">
-              <div class="ex4">
-                <label class="custom-checkbox default">
-                  <input class="visually-hidden" type="checkbox"/><span class="checker"></span>
-                </label>
-                <label class="custom-checkbox star">
-                  <input class="visually-hidden" type="checkbox"/><span class="checker"></span>
-                </label>
-                <label class="custom-checkbox label">
-                  <input class="visually-hidden" type="checkbox"/><span class="checker"></span>
-                </label>
+              <p>Подробнее о visually-hidden можно почитать здесь: <a href="https://allyjs.io/tutorials/hiding-elements.html#how-to-hide-elements-visually" target="_blank">How to hide elements visually</a></p>
+            </section>
+            <section>
+              <h3>Задача</h3>
+              <p>Сверстать чекбоксы как в gmail.</p>
+              <div class="sol4">
+                <div class="ex4">
+                  <label class="custom-checkbox default">
+                    <input class="visually-hidden" type="checkbox"/><span class="checker"></span>
+                  </label>
+                  <label class="custom-checkbox star">
+                    <input class="visually-hidden" type="checkbox"/><span class="checker"></span>
+                  </label>
+                  <label class="custom-checkbox label">
+                    <input class="visually-hidden" type="checkbox"/><span class="checker"></span>
+                  </label>
+                </div>
               </div>
-            </div>
-            <div class="sol4">
-              <div class="ex4">
-                <label class="custom-checkbox default">
-                  <input class="visually-hidden" type="checkbox" checked="checked"/><span class="checker"></span>
-                </label>
-                <label class="custom-checkbox star">
-                  <input class="visually-hidden" type="checkbox" checked="checked"/><span class="checker"></span>
-                </label>
-                <label class="custom-checkbox label">
-                  <input class="visually-hidden" type="checkbox" checked="checked"/><span class="checker"></span>
-                </label>
+              <div class="sol4">
+                <div class="ex4">
+                  <label class="custom-checkbox default">
+                    <input class="visually-hidden" type="checkbox" checked="checked"/><span class="checker"></span>
+                  </label>
+                  <label class="custom-checkbox star">
+                    <input class="visually-hidden" type="checkbox" checked="checked"/><span class="checker"></span>
+                  </label>
+                  <label class="custom-checkbox label">
+                    <input class="visually-hidden" type="checkbox" checked="checked"/><span class="checker"></span>
+                  </label>
+                </div>
               </div>
-            </div>
-            <p>Картинки для чекбоксов взять отсюда:</p>
-            <ul>
-              <li><a target="_blank" href="https://www.gstatic.com/images/icons/material/system/1x/check_box_outline_blank_black_20dp.png">Unchecked checkbox</a></li>
-              <li><a target="_blank" href="https://www.gstatic.com/images/icons/material/system/1x/check_box_black_20dp.png">Checked checkbox</a></li>
-              <li><a target="_blank" href="https://www.gstatic.com/images/icons/material/system/1x/star_border_black_20dp.png">Unchecked star</a></li>
-              <li><a target="_blank" href="https://www.gstatic.com/images/icons/material/system/1x/star_googyellow500_20dp.png">Checked star</a></li>
-              <li><a target="_blank" href="https://www.gstatic.com/images/icons/material/system/1x/label_important_outline_black_20dp.png">Unchecked label</a></li>
-              <li><a target="_blank" href="https://www.gstatic.com/images/icons/material/system/1x/label_important_googyellow500_20dp.png">Checked label</a></li>
-            </ul>
+              <p>Картинки для чекбоксов взять отсюда:</p>
+              <ul>
+                <li><a target="_blank" href="https://www.gstatic.com/images/icons/material/system/1x/check_box_outline_blank_black_20dp.png">Unchecked checkbox</a></li>
+                <li><a target="_blank" href="https://www.gstatic.com/images/icons/material/system/1x/check_box_black_20dp.png">Checked checkbox</a></li>
+                <li><a target="_blank" href="https://www.gstatic.com/images/icons/material/system/1x/star_border_black_20dp.png">Unchecked star</a></li>
+                <li><a target="_blank" href="https://www.gstatic.com/images/icons/material/system/1x/star_googyellow500_20dp.png">Checked star</a></li>
+                <li><a target="_blank" href="https://www.gstatic.com/images/icons/material/system/1x/label_important_outline_black_20dp.png">Unchecked label</a></li>
+                <li><a target="_blank" href="https://www.gstatic.com/images/icons/material/system/1x/label_important_googyellow500_20dp.png">Checked label</a></li>
+              </ul>
+            </section>
           </div>
         </article>
         <article id="do-u-know">

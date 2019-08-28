@@ -94,33 +94,34 @@ article#fonts
         | Задаёт высоту строки. Если задавать без единиц измерения, например, 
         code line-height: 2;
         |, значение будет воспринято как множитель. 
-
-    h3 Собственные шрифты
-    p Для подключения собственного шрифта используется правило 
-       a(href="http://htmlbook.ru/css/font-face" target="_blank") @font-face.
-    pre(data-lang="css")
-        | @font-face {
-        |   font-family: 'Philosopher'; /* Название шрифта*/
-        |   font-style: normal;         /* Начертание */
-        |   font-weight: 400;           /* Насыщенность */
-        |   src: url(./fonts/philosopher.woff2) format('woff2'); /* Путь к файлу шрифта и его формат */
-        | }
-    p Для подключение такого шрифта к элементу, используют код:
-    pre(data-lang="css")
-        | .selector {
-        |   font-family: 'Philosopher', sans-serif;
-        | }
-    h3 Google Fonts 
-    p Для упрощения подключения шрифтов, используют различные библиотеки шрифтов. К примеру, 
-      a(target="_blank" href="https://fonts.google.com/") Google Fonts
-      | . Такие библиотеки содержат сотни шрифтов, а так же оптимизаторы для браузеров. 
-      | Всё что нам нужено &mdash; выбрать требуемый шрифт, выбрать, какие начертания и языки нам требуются (для русского языка Cyrillic),
-      | подключить в 
-      code &lt;head&gt;
-      | стиль шрифта, имеющий примерно такой вид:
-    pre(data-lang="html")
-        | &lt;head>
-        |  ...
-        |  &lt;link href="https://fonts.googleapis.com/css?family=Philosopher:400,700&display=swap&subset=cyrillic" rel="stylesheet">
-        |  ...
-        | &lt;/head>
+    section
+      h3 Собственные шрифты
+      p Для подключения собственного шрифта используется правило 
+        a(href="http://htmlbook.ru/css/font-face" target="_blank") @font-face.
+      pre(data-lang="css")
+          | @font-face {
+          |   font-family: 'Philosopher'; /* Название шрифта*/
+          |   font-style: normal;         /* Начертание */
+          |   font-weight: 400;           /* Насыщенность */
+          |   src: url(./fonts/philosopher.woff2) format('woff2'); /* Путь к файлу шрифта и его формат */
+          | }
+      p Для подключение такого шрифта к элементу, используют код:
+      pre(data-lang="css")
+          | .selector {
+          |   font-family: 'Philosopher', sans-serif;
+          | }
+    section
+      h3 Google Fonts 
+      p Для упрощения подключения шрифтов, используют различные библиотеки шрифтов. К примеру, 
+        a(target="_blank" href="https://fonts.google.com/") Google Fonts
+        | . Такие библиотеки содержат сотни шрифтов, а так же оптимизаторы для браузеров. 
+        | Всё что нам нужено &mdash; выбрать требуемый шрифт, выбрать, какие начертания и языки нам требуются (для русского языка Cyrillic),
+        | подключить в 
+        code &lt;head&gt;
+        | стиль шрифта, имеющий примерно такой вид:
+      pre(data-lang="html")
+          | &lt;head>
+          |  ...
+          |  &lt;link href="https://fonts.googleapis.com/css?family=Philosopher:400,700&display=swap&subset=cyrillic" rel="stylesheet">
+          |  ...
+          | &lt;/head>

@@ -16,53 +16,55 @@ article#flex
       nobr веб-приложения. 
       | Для полного понимания работы флекс-контейнеров, рекомендую поиграть в игру 
       a(href="https://flexboxfroggy.com/" target="_blank") Flexbox Froggy
-    p Пример:
-    .ex2-container
-      .ex2-box-left
-        span Brand
-        span Stores
-        span Actions
-        span Contacts
-      .ex2-box-right
-        span Settings
-        span Account
-    p Код:
-    pre(data-lang="html")
-      | <div class="container">
-      |     <div class="box-left">
-      |        <span>Brand</span>
-      |        <span>Stores</span>
-      |        <span>Actions</span>
-      |        <span>Contacts</span>
-      |     </div>
-      |     <div class="box-right">
-      |        <span>Settings</span>
-      |        <span>Account</span>
-      |     </div>
-      | </div>
 
+    section
+      p Пример:
+      .ex2-container
+        .ex2-box-left
+          span Brand
+          span Stores
+          span Actions
+          span Contacts
+        .ex2-box-right
+          span Settings
+          span Account
 
-    pre(data-lang="css")
-      | .container {
-      |   /* Задаём флекс-бокс (позволяет влиять на расположение дочерних элементов) */
-      |   display: flex;
-      |   /* Говорим элементам встать так, чтобы между ними, по возможности, образовывалось расстояние */
-      |   justify-content: space-between; 
-      | }
-      | 
-      | .box-left {
-      |   /* Здесь можно задать какие-то стили для левого блока */
-      | }
-      | 
-      | .box-right {
-      |   /* Здесь можно задать какие-то стили для правого блока */
-      | }
+      p Код:
+      pre(data-lang="html")
+        | <div class="container">
+        |     <div class="box-left">
+        |        <span>Brand</span>
+        |        <span>Stores</span>
+        |        <span>Actions</span>
+        |        <span>Contacts</span>
+        |     </div>
+        |     <div class="box-right">
+        |        <span>Settings</span>
+        |        <span>Account</span>
+        |     </div>
+        | </div>
 
-  .container
-    h3 Задача
-    p
-      | Сделать шапку для сайта habr.com так, чтобы правая и левая часть меню были разнесены при помощи
-      | флекс-бокса
+      pre(data-lang="css")
+        | .container {
+        |   /* Задаём флекс-бокс (позволяет влиять на расположение дочерних элементов) */
+        |   display: flex;
+        |   /* Говорим элементам встать так, чтобы между ними, по возможности, образовывалось расстояние */
+        |   justify-content: space-between; 
+        | }
+        | 
+        | .box-left {
+        |   /* Здесь можно задать какие-то стили для левого блока */
+        | }
+        | 
+        | .box-right {
+        |   /* Здесь можно задать какие-то стили для правого блока */
+        | }
+
+    section
+      h3 Задача
+      p
+        | Сделать шапку для сайта habr.com так, чтобы правая и левая часть меню были разнесены при помощи
+        | флекс-бокса
 
   .sol2
     .content

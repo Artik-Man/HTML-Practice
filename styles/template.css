@@ -24,12 +24,15 @@ body {
   margin: 0 auto;
 }
 
-.container > * {
+section,
+.no-print-break,
+ul li,
+ol li {
   page-break-inside: avoid;
 }
 
 .can-print-break {
-  page-break-inside: auto;
+  page-break-inside: auto !important;
 }
 
 article {
@@ -240,7 +243,7 @@ main > .main-menu {
   top: 0;
   left: 0;
   height: 100vh;
-  max-width: 350px;
+  max-width: 370px;
   padding: 3em 0;
   margin-top: 210vh;
   overflow-y: auto;
@@ -349,6 +352,14 @@ main.without-menu > .main-menu {
     font-size: 0.8em;
     margin: 0 1ex;
     display: inline-block;
+  }
+
+  a.button {
+    background-color: white;
+    color: var(--accent);
+    box-shadow: none;
+    border: none;
+    padding: 0;
   }
 
   p {
