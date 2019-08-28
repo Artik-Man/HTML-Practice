@@ -3,9 +3,9 @@
   --grey-light: #d5dddf;
   --grey: #999;
   --grey-dark: #323436;
-  --accent: #3f51b5;
-  --accent-dark: #324090;
-  --accent-light: #5565bf;
+  --accent: #0086b3;
+  --accent-dark: #086180;
+  --accent-light: #249bc3;
 }
 
 * {
@@ -208,7 +208,7 @@ ol {
 
 .button,
 button {
-  background: var(--accent);
+  background-color: var(--accent);
   color: white;
   display: inline-block;
   text-decoration: none;
@@ -216,7 +216,8 @@ button {
   padding: 0.5em 1em;
   border-radius: 4px;
   box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
-  transition: all 150ms ease-in-out;
+  transition: background-color, box-shadow 150ms ease-in-out;
+  cursor: pointer;
 }
 
 .button:hover,
@@ -228,25 +229,68 @@ button:hover {
 
 main {
   display: block;
+  position: relative;
 }
 
-main .main-menu {
+main > .main-menu {
   display: none;
   position: sticky;
   top: 0;
   left: 0;
   height: 100vh;
   width: 350px;
-  padding: 50px 1em;
+  padding: 3em 0;
   margin-top: 210vh;
+  overflow-y: auto;
 }
 
-main .main-content {
+main > .main-menu ul {
+  margin: 0;
+  list-style: none;
+  padding: 0;
+}
+
+main > .main-menu ul li a {
+  text-decoration: none;
+  padding: 0.5em 1em;
+  border-left: 0.3em solid transparent;
+  display: inline-block;
+  color: var(--grey);
+}
+
+main > .main-menu ul li a:hover {
+  color: var(--accent);
+}
+
+main > .main-menu ul li a.active {
+  border-left-color: var(--accent);
+  color: var(--accent);
+}
+
+main > #menu-switch-button {
+  background-image: url(../images/angle-left-sm.svg);
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: fixed;
+  top: 1em;
+  z-index: 999;
+  left: 1em;
+  width: 2em;
+  height: 2em;
+  display: none;
+}
+
+main.without-menu > #menu-switch-button {
+  background-image: url(../images/angle-right-sm.svg);
+}
+
+main.without-menu {
   display: block;
 }
 
-main .main-menu ul {
-  margin: 0;
+main.without-menu > .main-menu {
+  display: none;
 }
 
 @media (min-width: 1400px) {
@@ -254,11 +298,8 @@ main .main-menu ul {
     display: flex;
   }
 
-  main .main-menu {
-    display: block;
-  }
-
-  main .main-content {
+  main > .main-menu,
+  main > #menu-switch-button {
     display: block;
   }
 }
@@ -274,15 +315,15 @@ main .main-menu ul {
 }
 
 @media print {
-  .print-only {
+  .print-only,
+  main {
     display: block;
   }
 
-  .no-print {
-    display: none;
-  }
-
-  .cp_embed_wrapper {
+  .no-print,
+  .cp_embed_wrapper,
+  main > .main-menu,
+  main > #menu-switch-button {
     display: none;
   }
 
