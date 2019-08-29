@@ -100,7 +100,7 @@ article#custom-checkbox
     .youtube(data-video="E6kLaaQFctU")
     section
       h3 Пример:
-      div(data-run="custom-checkbox" data-height="100px")
+      div(data-run="custom-checkbox")
       p Код:
       pre(data-lang="html" data-code="custom-checkbox")
         :escape
@@ -130,14 +130,11 @@ article#custom-checkbox
       pre(data-lang="css" data-code="custom-checkbox-gmail" hidden)=customCheckboxCSS
       pre(data-lang="css" data-code="custom-checkbox-gmail" hidden)
         :escape
-          body{
-            text-align: center;
-            font-size: 16px;
-            margin: 10px 0;
-          }
+
           .sol4 {
-            text-align: center;
-            display: inline-block;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
           }
 
           .sol4 .row {
@@ -227,7 +224,7 @@ article#custom-checkbox
             </div>
           </div>
       
-      div(data-run="custom-checkbox-gmail" data-height="100px")
+      div(data-run="custom-checkbox-gmail")
 
       p Картинки для чекбоксов взять отсюда:
       ul
