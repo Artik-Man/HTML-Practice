@@ -15,28 +15,39 @@ html(lang="ru")
     meta(name="theme-color" content="#ffffff")
     link(rel="stylesheet" href="./lib/hihglight/github-gist.css")
     link(rel="stylesheet" href="./styles/template.css")
-    link(rel="stylesheet" href="./styles/examples.css")
     link(href="https://fonts.googleapis.com/css?family=Philosopher&display=swap&subset=cyrillic" rel="stylesheet")
     title HTML Practice
   body
     
-    .container
-      h1
-        span.logo
-          span.top HTML
-          span.bottom Practice
-      p
+    main
+      .main-menu
+        button#menu-switch-button(title="Меню")
+        menu#menu
+      .main-content
 
-    include articles/contents.pug
-    include articles/introduction.pug
-    include articles/git.pug
-    include articles/display.pug
-    include articles/box-sizing.pug
-    include articles/margin-0-auto.pug
-    include articles/flex.pug
-    include articles/relative-absolute.pug
-    include articles/custom-checkbox.pug
-    include articles/do-u-know.pug
+        .container
+          h1
+            a.logo(href="https://artik-man.github.io/HTML-Practice/")
+              span.top HTML
+              span.bottom Practice
+          p
+
+        include articles/contents.pug
+        include articles/introduction.pug
+        include articles/git.pug
+        include articles/units.pug
+        include articles/fonts.pug
+        include articles/column-count.pug
+        include articles/display.pug
+        include articles/box-sizing.pug
+        include articles/position.pug
+        include articles/pseudo.pug
+        include articles/image.pug
+        include articles/margin-0-auto.pug
+        include articles/flex.pug
+        include articles/relative-absolute.pug
+        include articles/custom-checkbox.pug
+        include articles/do-u-know.pug
 
     script(src="./lib/hihglight/highlight.pack.js")
     script(src="./lib/script.js")
