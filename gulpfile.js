@@ -5,7 +5,16 @@ const connect = require('gulp-connect');
 gulp.task('pug', () => {
   return gulp
     .src('./index.pug')
-    .pipe(pug({ pretty: true }))
+    .pipe(
+      pug({
+        pretty: true,
+        filters: {
+          escape: code => {
+            return code.replace(/\</g, '&lt;').replace(/\>/g, '&gt;');
+          },
+        },
+      }),
+    )
     .pipe(gulp.dest(file => './'));
 });
 
@@ -15,7 +24,7 @@ gulp.task('webserver', () =>
     livereload: true,
     port: parseInt(process.env.PORT) || 8080,
     host: 'localhost',
-  })
+  }),
 );
 
 gulp.task('watch', () => {

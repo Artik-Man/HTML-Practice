@@ -6,12 +6,13 @@ article#image
     section
       p Код примера предельно прост: 
       pre(data-lang="html")
-        | <p>
-        |    <img src="../images/image.svg" alt="Just image">
-        |    Lorem ipsum dolor sit amet consectetur adipisicing elit...
-        | </p>
-        | <p>Itaque voluptates eum nihil minima quo iure voluptas, atque amet molestias,...</p>
-        | <p>Soluta, laudantium in. Dolorem laboriosam nobis nihil iste eum sapiente maxime,...</p>
+        :escape
+         <p>
+            <img src="../images/image.svg" alt="Just image">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit...
+         </p>
+         <p>Itaque voluptates eum nihil minima quo iure voluptas, atque amet molestias,...</p>
+         <p>Soluta, laudantium in. Dolorem laboriosam nobis nihil iste eum sapiente maxime,...</p>
 
       .ex7
         p 
@@ -30,9 +31,10 @@ article#image
         a(href="http://htmlbook.ru/css/float" target="_blank") float
         | : left и посмотрим, что получится
       pre(data-lang="css")
-        | img {
-        |   float: left;
-        | }
+        :escape
+         img {
+           float: left;
+         }
       .ex7
         p 
           img.float-left(src="../images/image.svg" alt="Just image") 
@@ -57,20 +59,22 @@ article#image
         a(href="http://htmlbook.ru/css/clear" target="_blank") clear
         | . Изменим наш код следующим образом:
       pre(data-lang="html")
-        | <p>
-        |    <img src="../images/image.svg" alt="Just image">
-        |    Lorem ipsum dolor sit amet consectetur adipisicing elit...
-        | </p>
-        | <p>Itaque voluptates eum nihil minima quo iure voluptas, atque amet molestias,...</p>
-        | <p>Soluta, laudantium in. Dolorem laboriosam nobis nihil iste eum sapiente maxime,...</p>
-        | <div class="clear"></div>
+        :escape
+          <p>
+            <img src="../images/image.svg" alt="Just image">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit...
+          </p>
+          <p>Itaque voluptates eum nihil minima quo iure voluptas, atque amet molestias,...</p>
+          <p>Soluta, laudantium in. Dolorem laboriosam nobis nihil iste eum sapiente maxime,...</p>
+          <div class="clear"></div>
       pre(data-lang="css")
-        | img {
-        |   float: left;
-        | }
-        | .clear {
-        |   clear: both;
-        | }
+        :escape
+          img {
+            float: left;
+          }
+          .clear {
+            clear: both;
+          }
     section
       .ex7
         p 
@@ -83,9 +87,10 @@ article#image
       p В предыдущих примерах мы увидели, как задать обтекание картинки текстом так, чтобы картинка оказалась слева. 
         | Точно так же мы можем обтекать её и с другой стороны. 
       pre(data-lang="css")
-        | img {
-        |   float: right;
-        | }
+        :escape
+          img {
+            float: right;
+          }
       .ex7
         p 
           img.float-right(src="../images/image.svg" alt="Just image") 

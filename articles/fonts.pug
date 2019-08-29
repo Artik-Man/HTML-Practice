@@ -99,17 +99,19 @@ article#fonts
       p Для подключения собственного шрифта используется правило 
         a(href="http://htmlbook.ru/css/font-face" target="_blank") @font-face.
       pre(data-lang="css")
-          | @font-face {
-          |   font-family: 'Philosopher'; /* Название шрифта*/
-          |   font-style: normal;         /* Начертание */
-          |   font-weight: 400;           /* Насыщенность */
-          |   src: url(./fonts/philosopher.woff2) format('woff2'); /* Путь к файлу шрифта и его формат */
-          | }
+        :escape
+          @font-face {
+            font-family: 'Philosopher'; /* Название шрифта*/
+            font-style: normal;         /* Начертание */
+            font-weight: 400;           /* Насыщенность */
+            src: url(./fonts/philosopher.woff2) format('woff2'); /* Путь к файлу шрифта и его формат */
+          }
       p Для подключение такого шрифта к элементу, используют код:
       pre(data-lang="css")
-          | .selector {
-          |   font-family: 'Philosopher', sans-serif;
-          | }
+        :escape
+           .selector {
+             font-family: 'Philosopher', sans-serif;
+           }
     section
       h3 Google Fonts 
       p Для упрощения подключения шрифтов, используют различные библиотеки шрифтов. К примеру, 
@@ -120,8 +122,9 @@ article#fonts
         code &lt;head&gt;
         | стиль шрифта, имеющий примерно такой вид:
       pre(data-lang="html")
-          | &lt;head>
-          |  ...
-          |  &lt;link href="https://fonts.googleapis.com/css?family=Philosopher:400,700&display=swap&subset=cyrillic" rel="stylesheet">
-          |  ...
-          | &lt;/head>
+        :escape
+           <head>
+            ...
+            <link href="https://fonts.googleapis.com/css?family=Philosopher:400,700&display=swap&subset=cyrillic" rel="stylesheet">
+            ...
+           </head>

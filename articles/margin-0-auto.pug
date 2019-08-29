@@ -12,13 +12,15 @@ article#margin-0-auto
   .container
     p Код:
     pre(data-lang="html")
-      |  <div class="block"></div>
+      :escape
+        <div class="block"></div>
 
     pre(data-lang="css")
-      | .block {
-      |   max-width: 500px;
-      |   margin: 0 auto; /* центрирует блок так, что правый и левый маргин становятся одинаковыми */
-      | }
+      :escape
+        .block {
+          max-width: 500px;
+          margin: 0 auto; /* центрирует блок так, что правый и левый маргин становятся одинаковыми */
+        }
 
   .container
     h3 Задача

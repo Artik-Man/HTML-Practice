@@ -24,19 +24,21 @@ article#box-sizing
         | с разными по ширине полями, в реальности имели разную ширину. Пример ниже демонстрирует этот недуг:
 
       pre(data-lang="html")
-        | <div class="one">padding: 0</div>
-        | <div class="two">padding: 40px</div>
+        :escape
+          <div class="one">padding: 0</div>
+          <div class="two">padding: 40px</div>
       pre(data-lang="css")
-        | .one {
-        |   width: 200px;
-        |   height: 100px;
-        |   padding: 0;
-        | }
-        | .two {
-        |   width: 200px;
-        |   height: 100px;
-        |   padding: 40px;
-        | }
+        :escape
+          .one {
+            width: 200px;
+            height: 100px;
+            padding: 0;
+          }
+          .two {
+            width: 200px;
+            height: 100px;
+            padding: 40px;
+          }
 
       .ex6
         .one padding: 0
@@ -51,21 +53,23 @@ article#box-sizing
         | . Добавим в наши блоки всего по одной строчке кода:
 
       pre(data-lang="html")
-        | <div class="one">padding: 0</div>
-        | <div class="two">padding: 40px</div>
+        :escape
+         <div class="one">padding: 0</div>
+         <div class="two">padding: 40px</div>
       pre(data-lang="css")
-        | .one {
-        |   width: 200px;
-        |   height: 100px;
-        |   padding: 0;
-        |   box-sizing: border-box;
-        | }
-        | .two {
-        |   width: 200px;
-        |   height: 100px;
-        |   padding: 40px;
-        |   box-sizing: border-box;
-        | }
+        :escape
+         .one {
+           width: 200px;
+           height: 100px;
+           padding: 0;
+           box-sizing: border-box;
+         }
+         .two {
+           width: 200px;
+           height: 100px;
+           padding: 40px;
+           box-sizing: border-box;
+         }
 
       .ex6.border-box
         .one padding: 0
@@ -75,9 +79,10 @@ article#box-sizing
       p Так стало гораздо проще работать с CSS, поэтому многие добавляют 
         | box-sizing: border-box всем элементам на сайте при помощи этого кода:
       pre(data-lang="css")
-        | * {
-        |   box-sizing: border-box;
-        | }
+        :escape
+          * {
+            box-sizing: border-box;
+          }
       p Это стало хорошей и распространённой практикой, однако по умолчанию значением свойства 
         | box-sizing является стандартная модель content-box, возвращающий нас в те времена,
         | когда приходилось вычислять ширину элемента по его полям.

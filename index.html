@@ -297,11 +297,11 @@ git config --global user.email myEmail@example.com</pre>
                 Всё что нам нужено &mdash; выбрать требуемый шрифт, выбрать, какие начертания и языки нам требуются (для русского языка Cyrillic),
                 подключить в <code>&lt;head&gt;</code>стиль шрифта, имеющий примерно такой вид:
               </p>
-              <pre data-lang="html">&lt;head>
+              <pre data-lang="html">&lt;head&gt;
  ...
- &lt;link href="https://fonts.googleapis.com/css?family=Philosopher:400,700&display=swap&subset=cyrillic" rel="stylesheet">
+ &lt;link href="https://fonts.googleapis.com/css?family=Philosopher:400,700&display=swap&subset=cyrillic" rel="stylesheet"&gt;
  ...
-&lt;/head></pre>
+&lt;/head&gt;</pre>
             </section>
           </div>
         </article>
@@ -417,8 +417,8 @@ git config --global user.email myEmail@example.com</pre>
             <section>
               <p>
                 Долгое время в CSS изменение padding приводило к изменению width у элементов, из-за чего два одинаковых по ширине элемента с разными по ширине полями, в реальности имели разную ширину. Пример ниже демонстрирует этот недуг:</p>
-              <pre data-lang="html"><div class="one">padding: 0</div>
-<div class="two">padding: 40px</div></pre>
+              <pre data-lang="html">&lt;div class="one"&gt;padding: 0&lt;/div&gt;
+&lt;div class="two"&gt;padding: 40px&lt;/div&gt;</pre>
               <pre data-lang="css">.one {
   width: 200px;
   height: 100px;
@@ -428,7 +428,8 @@ git config --global user.email myEmail@example.com</pre>
   width: 200px;
   height: 100px;
   padding: 40px;
-}</pre>
+}
+</pre>
               <div class="ex6">
                 <div class="one">padding: 0</div>
                 <div class="two">padding: 40px</div>
@@ -437,8 +438,8 @@ git config --global user.email myEmail@example.com</pre>
             </section>
             <section>
               <p>На помощь в борьбе с этим нелогичным, казалось бы, поведением пришел <a href="http://htmlbook.ru/css/box-sizing" target="_blank">box-sizing</a>. Добавим в наши блоки всего по одной строчке кода:</p>
-              <pre data-lang="html"><div class="one">padding: 0</div>
-<div class="two">padding: 40px</div></pre>
+              <pre data-lang="html">&lt;div class="one"&gt;padding: 0&lt;/div&gt;
+&lt;div class="two"&gt;padding: 40px&lt;/div&gt;</pre>
               <pre data-lang="css">.one {
   width: 200px;
   height: 100px;
@@ -450,7 +451,8 @@ git config --global user.email myEmail@example.com</pre>
   height: 100px;
   padding: 40px;
   box-sizing: border-box;
-}</pre>
+}
+</pre>
               <div class="ex6 border-box">
                 <div class="one">padding: 0</div>
                 <div class="two">padding: 40px</div>
@@ -570,12 +572,13 @@ git config --global user.email myEmail@example.com</pre>
               Часто, бывает нужно вставить картинку в текст. Но работает это не всегда так, как мы это задумывали. Попробуем вставить картинку без стилей и посмотрим, что получится.</p>
             <section>
               <p>Код примера предельно прост: </p>
-              <pre data-lang="html"><p>
-   <img src="../images/image.svg" alt="Just image">
+              <pre data-lang="html">&lt;p&gt;
+   &lt;img src="../images/image.svg" alt="Just image"&gt;
    Lorem ipsum dolor sit amet consectetur adipisicing elit...
-</p>
-<p>Itaque voluptates eum nihil minima quo iure voluptas, atque amet molestias,...</p>
-<p>Soluta, laudantium in. Dolorem laboriosam nobis nihil iste eum sapiente maxime,...</p></pre>
+&lt;/p&gt;
+&lt;p&gt;Itaque voluptates eum nihil minima quo iure voluptas, atque amet molestias,...&lt;/p&gt;
+&lt;p&gt;Soluta, laudantium in. Dolorem laboriosam nobis nihil iste eum sapiente maxime,...&lt;/p&gt;
+</pre>
               <div class="ex7">
                 <p> <img src="../images/image.svg" alt="Just image"/>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic commodi maiores excepturi dolore cupiditate sit obcaecati, 
                   repellat doloribus rerum! Dicta eius aliquid eaque sed sequi obcaecati debitis quos veniam placeat.
@@ -614,13 +617,13 @@ git config --global user.email myEmail@example.com</pre>
             </section>
             <section>
               <p>Для того, чтобы исправить подобное поведение, нужно воспользоваться "очисткой" &mdash; <a href="http://htmlbook.ru/css/clear" target="_blank">clear</a>. Изменим наш код следующим образом:</p>
-              <pre data-lang="html"><p>
-   <img src="../images/image.svg" alt="Just image">
-   Lorem ipsum dolor sit amet consectetur adipisicing elit...
-</p>
-<p>Itaque voluptates eum nihil minima quo iure voluptas, atque amet molestias,...</p>
-<p>Soluta, laudantium in. Dolorem laboriosam nobis nihil iste eum sapiente maxime,...</p>
-<div class="clear"></div></pre>
+              <pre data-lang="html">&lt;p&gt;
+  &lt;img src="../images/image.svg" alt="Just image"&gt;
+  Lorem ipsum dolor sit amet consectetur adipisicing elit...
+&lt;/p&gt;
+&lt;p&gt;Itaque voluptates eum nihil minima quo iure voluptas, atque amet molestias,...&lt;/p&gt;
+&lt;p&gt;Soluta, laudantium in. Dolorem laboriosam nobis nihil iste eum sapiente maxime,...&lt;/p&gt;
+&lt;div class="clear"&gt;&lt;/div&gt;</pre>
               <pre data-lang="css">img {
   float: left;
 }
@@ -680,11 +683,13 @@ git config --global user.email myEmail@example.com</pre>
           </div>
           <div class="container">
             <p>Код:</p>
-            <pre data-lang="html"> <div class="block"></div></pre>
+            <pre data-lang="html">&lt;div class="block"&gt;&lt;/div&gt;
+</pre>
             <pre data-lang="css">.block {
   max-width: 500px;
   margin: 0 auto; /* центрирует блок так, что правый и левый маргин становятся одинаковыми */
-}</pre>
+}
+</pre>
           </div>
           <div class="container">
             <h3>Задача</h3>
@@ -715,32 +720,34 @@ git config --global user.email myEmail@example.com</pre>
                 <div class="ex2-box-right"><span>Settings</span><span>Account</span></div>
               </div>
               <p>Код:</p>
-              <pre data-lang="html"><div class="container">
-    <div class="box-left">
-       <span>Brand</span>
-       <span>Stores</span>
-       <span>Actions</span>
-       <span>Contacts</span>
-    </div>
-    <div class="box-right">
-       <span>Settings</span>
-       <span>Account</span>
-    </div>
-</div></pre>
+              <pre data-lang="html">&lt;div class="container"&gt;
+    &lt;div class="box-left"&gt;
+       &lt;span&gt;Brand&lt;/span&gt;
+       &lt;span&gt;Stores&lt;/span&gt;
+       &lt;span&gt;Actions&lt;/span&gt;
+       &lt;span&gt;Contacts&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div class="box-right"&gt;
+       &lt;span&gt;Settings&lt;/span&gt;
+       &lt;span&gt;Account&lt;/span&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</pre>
               <pre data-lang="css">.container {
   /* Задаём флекс-бокс (позволяет влиять на расположение дочерних элементов) */
   display: flex;
   /* Говорим элементам встать так, чтобы между ними, по возможности, образовывалось расстояние */
   justify-content: space-between; 
 }
- 
+
 .box-left {
   /* Здесь можно задать какие-то стили для левого блока */
 }
- 
+
 .box-right {
   /* Здесь можно задать какие-то стили для правого блока */
-}</pre>
+}
+</pre>
             </section>
             <section>
               <h3>Задача</h3>
@@ -784,15 +791,16 @@ git config --global user.email myEmail@example.com</pre>
                 <div class="ex3-block"> </div>
               </div>
               <p>Код:</p>
-              <pre data-lang="html"><div class="container">
-    <div class="block"></div>
-</div></pre>
+              <pre data-lang="html">&lt;div class="container"&gt;
+    &lt;div class="block"&gt;&lt;/div&gt;
+&lt;/div&gt;
+</pre>
               <pre data-lang="css">.container {
   position: relative;
   width: 100%;
   height: 250px;
 }
- 
+
 .block {
   position: absolute; /* позволяет двигать блок относительно родительского релятивного контейнера */
   top: 50%; /* смещаем блок на 50% от высоты родителя */
@@ -800,7 +808,8 @@ git config --global user.email myEmail@example.com</pre>
   transform: translate(-50%, -50%); /* смещаем блок на 50% от ширины и высоты этого блока */
   width: 120px;
   height: 80px;
-}</pre>
+}
+</pre>
             </section>
           </div>
           <div class="container">
@@ -862,11 +871,12 @@ git config --global user.email myEmail@example.com</pre>
                 </label>
               </p>
               <p>Код:</p>
-              <pre data-lang="html"><label class="custom-checkbox">
-    <input type="checkbox" class="visually-hidden">
-    <span class="checker"></span>
+              <pre data-lang="html">&lt;label class="custom-checkbox"&gt;
+    &lt;input type="checkbox" class="visually-hidden"&gt;
+    &lt;span class="checker"&gt;&lt;/span&gt;
     Отметка
-</label></pre>
+&lt;/label&gt;
+</pre>
               <pre data-lang="css">.custom-checkbox {
     /* Контейнер должен быть релятивным, так как внутри него мы разместим два абсолютно спозиционированных элемента */
     position: relative;
@@ -881,31 +891,31 @@ git config --global user.email myEmail@example.com</pre>
     /* Отодвигаем левую часть так, чтобы влез кастомный чекбокс*/
     padding: 0 1em 0 1.4em;
 }
- 
+
 /* Задаем кастомную галочку для чекбокса и скрываем её по умолчанию */
 .custom-checkbox .checker {
-   position: absolute;
-   margin-top: 0;
-   /* Выдвигаем чекбокс левее так, чтобы он не наезжал на текст */
-   margin-left: -1.2em;
-   width: 1em;
-   height: 1em;
-   overflow: hidden;
-   text-align: center;
-   font-size: 1em;
-   line-height: 1;
-   border: 1px solid teal;
-   border-radius: 3px;
-   background-color: white;
-   /* Делаем галочку прозрачной */
-   color: transparent;
+    position: absolute;
+    margin-top: 0;
+    /* Выдвигаем чекбокс левее так, чтобы он не наезжал на текст */
+    margin-left: -1.2em;
+    width: 1em;
+    height: 1em;
+    overflow: hidden;
+    text-align: center;
+    font-size: 1em;
+    line-height: 1;
+    border: 1px solid teal;
+    border-radius: 3px;
+    background-color: white;
+    /* Делаем галочку прозрачной */
+    color: transparent;
 }
- 
+
 /* В псевдо-элементе допишем саму галочку */
 .custom-checkbox .checker:after {
     content: '✓';
 }
- 
+
 /* указываем селектор на наш конкретный инпут с типом чекбокс */
 .custom-checkbox input[type='checkbox'] {
     /* Выводим стандартный чекбокс за границы label */
@@ -920,13 +930,13 @@ git config --global user.email myEmail@example.com</pre>
     background-color: teal;
     color: white;
 }
- 
+
 /* Не все люди используют для просмотра веб-страниц мышь, а некоторые из них используют вообще только клавиатуру. Так вот, чтобы интерактивные элементы подсвечивались, когда фокус клавиатуры попадал на них, им нужно задать отдельные стили. */
 /* Когда скрытый инпут окажется в фокусе, его сосед с классом .checker примет стили */
 .custom-checkbox input[type='checkbox']:focus + .checker {
     box-shadow: 0 0 5px 0 teal;
 }
- 
+
 /* Когда скрытый интуп нельзя изменить, его сосед с классом .checker примет стили */
 .custom-checkbox input[type='checkbox']:disabled+.checker {
   background-color: #999;
@@ -943,7 +953,8 @@ git config --global user.email myEmail@example.com</pre>
   padding: 0;
   clip: rect(0 0 0 0);
   overflow: hidden;
-}</pre>
+}
+</pre>
               <p>Подробнее о visually-hidden можно почитать здесь: <a href="https://allyjs.io/tutorials/hiding-elements.html#how-to-hide-elements-visually" target="_blank">How to hide elements visually</a></p>
             </section>
             <section>

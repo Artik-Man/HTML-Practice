@@ -31,34 +31,36 @@ article#flex
 
       p Код:
       pre(data-lang="html")
-        | <div class="container">
-        |     <div class="box-left">
-        |        <span>Brand</span>
-        |        <span>Stores</span>
-        |        <span>Actions</span>
-        |        <span>Contacts</span>
-        |     </div>
-        |     <div class="box-right">
-        |        <span>Settings</span>
-        |        <span>Account</span>
-        |     </div>
-        | </div>
+        :escape
+          <div class="container">
+              <div class="box-left">
+                 <span>Brand</span>
+                 <span>Stores</span>
+                 <span>Actions</span>
+                 <span>Contacts</span>
+              </div>
+              <div class="box-right">
+                 <span>Settings</span>
+                 <span>Account</span>
+              </div>
+          </div>
 
       pre(data-lang="css")
-        | .container {
-        |   /* Задаём флекс-бокс (позволяет влиять на расположение дочерних элементов) */
-        |   display: flex;
-        |   /* Говорим элементам встать так, чтобы между ними, по возможности, образовывалось расстояние */
-        |   justify-content: space-between; 
-        | }
-        | 
-        | .box-left {
-        |   /* Здесь можно задать какие-то стили для левого блока */
-        | }
-        | 
-        | .box-right {
-        |   /* Здесь можно задать какие-то стили для правого блока */
-        | }
+        :escape
+          .container {
+            /* Задаём флекс-бокс (позволяет влиять на расположение дочерних элементов) */
+            display: flex;
+            /* Говорим элементам встать так, чтобы между ними, по возможности, образовывалось расстояние */
+            justify-content: space-between; 
+          }
+          
+          .box-left {
+            /* Здесь можно задать какие-то стили для левого блока */
+          }
+          
+          .box-right {
+            /* Здесь можно задать какие-то стили для правого блока */
+          }
 
     section
       h3 Задача
