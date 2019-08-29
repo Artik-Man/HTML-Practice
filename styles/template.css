@@ -74,7 +74,16 @@ code {
   font-size: 14px;
   display: inline-block;
 }
-
+[data-run] iframe {
+  border: none;
+  width: 100%;
+  min-height: 100px;
+  max-height: 100vh;
+  min-width: 300px;
+  max-width: 100%;
+  resize: both;
+  background: var(--white-dark);
+}
 h1 {
   height: 100vh;
   margin: 0 !important;
@@ -290,10 +299,6 @@ main.without-menu > .main-menu > #menu-switch-button {
 
 main > .main-menu > #menu-switch-button:not(:hover) {
   box-shadow: none;
-}
-
-main.without-menu {
-  display: block;
 }
 
 main.without-menu > .main-menu {

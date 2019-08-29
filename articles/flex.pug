@@ -19,18 +19,10 @@ article#flex
 
     section
       p Пример:
-      .ex2-container
-        .ex2-box-left
-          span Brand
-          span Stores
-          span Actions
-          span Contacts
-        .ex2-box-right
-          span Settings
-          span Account
+      div(data-run="flex-justify-1" data-height="100px")
 
       p Код:
-      pre(data-lang="html")
+      pre(data-lang="html" data-code="flex-justify-1")
         :escape
           <div class="container">
               <div class="box-left">
@@ -45,7 +37,7 @@ article#flex
               </div>
           </div>
 
-      pre(data-lang="css")
+      pre(data-lang="css" data-code="flex-justify-1")
         :escape
           .container {
             /* Задаём флекс-бокс (позволяет влиять на расположение дочерних элементов) */
@@ -62,21 +54,160 @@ article#flex
             /* Здесь можно задать какие-то стили для правого блока */
           }
 
+      pre(data-lang="css" data-code="flex-justify-1" hidden)
+        :escape
+          .container {
+            background: lightblue;
+            padding: 5px;
+          }
+
+          .box-left {
+            background: teal;
+          }
+
+          .box-right {
+            background: blueviolet;
+          }
+
+          .container span {
+            display: inline-block;
+            padding: 10px 20px;
+            background: rgba(255, 255, 255, 0.5);
+            margin: 5px;
+          }
+
+          @media (max-width: 720px) {
+            .container {
+              padding: 5px 1px;
+              font-size: 3.5vw;
+            }
+
+            .container span {
+              margin: 2px;
+              padding: 10px 2px;
+            }
+          }
+
     section
       h3 Задача
       p
         | Сделать шапку для сайта habr.com так, чтобы правая и левая часть меню были разнесены при помощи
         | флекс-бокса
 
-  .sol2
-    .content
-      .left
-        a.current(href="#") Публикации
-        a(href="#") Новости
-        a(href="#") Пользователи
-        a(href="#") Хабы
-        a(href="#") Компании
-        a(href="#") Песочница
-      .right
-        a.button.default(href="#") Войти
-        a.button.primary(href="#") Регистрация
+
+  pre(data-lang="html" data-code="habr-header" hidden)
+    :escape
+      <div class="sol2">
+        <div class="content">
+          <div class="left"><a class="current" href="#">Публикации</a><a href="#">Новости</a><a href="#">Пользователи</a><a href="#">Хабы</a><a href="#">Компании</a><a href="#">Песочница</a></div>
+          <div class="right"><a class="button default" href="#">Войти</a><a class="button primary" href="#">Регистрация</a></div>
+        </div>
+      </div>
+  pre(data-lang="css" data-code="habr-header" hidden)
+    :escape
+      * {
+        box-sizing:border-box;
+      }
+
+      body {
+        margin:0;  
+        font-family: '-apple-system', BlinkMacSystemFont, Arial, sans-serif;
+      }
+      
+      .sol2 {
+        border-bottom: 1px solid #d5dddf;
+        border-top: 1px solid #d5dddf;
+        font-size: 15px;
+        background: white;
+        margin-top:10px;
+      }
+
+      .sol2 .content {
+        max-width: 1164px;
+        margin: 0 auto;
+        padding: 0 32px;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .sol2 .right {
+        padding: 16px;
+        white-space: nowrap;
+      }
+
+      .sol2 .right .button {
+        margin: 0 0 0 10px;
+      }
+
+      .sol2 a {
+        display: inline-block;
+        padding: 23px 0;
+        margin-right: 28px;
+        text-decoration: none;
+        color: #838a92;
+      }
+
+      .sol2 a:hover {
+        color: #5096b1;
+      }
+
+      .sol2 a.current {
+        color: #464646;
+      }
+
+      .sol2 .button {
+        padding: 8px 13px;
+        border: 1px solid transparent;
+        border-radius: 3px;
+        font-size: 13px;
+        box-shadow: none;
+      }
+
+      .sol2 .button.default {
+        border-color: #a4afba;
+        background-color: white;
+      }
+
+      .sol2 .button.default:hover {
+        border-color: #65a3be;
+      }
+
+      .sol2 .button.primary {
+        background-color: #65a3be;
+        border-color: transparent;
+        color: white;
+      }
+
+      .sol2 .button.primary:hover {
+        background-color: #4986a1;
+      }
+
+      @media (max-width: 900px) {
+        .sol2 {
+          font-size: 1.5vw;
+        }
+
+        .sol2 .content {
+          padding: 0 3.5vw;
+        }
+
+        .sol2 .right {
+          padding: 1.5vw;
+        }
+
+        .sol2 .right .button {
+          margin: 0 0 0 0.5vw;
+        }
+
+        .sol2 a {
+          padding: 2.5vw 0;
+          margin-right: 1.4vw;
+        }
+
+        .sol2 .button {
+          padding: 0.8vw 1.4vw;
+          font-size: 1.4vw;
+        }
+      }
+
+  div(data-run="habr-header" data-height="100px")

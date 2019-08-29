@@ -13,21 +13,80 @@ article#box-sizing
       a(target="_blank" href="http://htmlbook.ru/css/margin") margin
       | ). 
       a(href="http://htmlbook.ru/samlayout/blochnaya-verstka/blochnaya-model" target="_blank") Подробнее о блочной модели стоит почитать здесь.
+    
+    div(data-run="box-model" data-height="340px")
 
-    .ex5
-      .margin margin
-        .border border
-          .padding padding
-            .size width
+    pre(data-lang="html" data-code="box-model" hidden)
+      :escape
+        <div class="box-model">
+          <div class="margin">margin
+            <div class="border">border
+              <div class="padding">padding
+                <div class="size">width</div>
+              </div>
+            </div>
+          </div>
+        </div>
+    pre(data-lang="css" data-code="box-model" hidden)
+      :escape
+        
+        body{
+          background: white;
+          margin: 0;
+        }
+
+        .box-model {
+          display: flex;
+          justify-content: center;
+        }
+
+        .box-model * {
+          text-align: center;
+          border: 1px dashed black;
+          padding: 10px;
+          margin: 10px 24px 24px;
+          font-size: 14px;
+          font-family: monospace;
+        }
+
+        .box-model .margin {
+          background: lightsalmon;
+        }
+
+        .box-model .border {
+          background: navajowhite;
+        }
+
+        .box-model .padding {
+          background: lightgreen;
+        }
+
+        .box-model .size {
+          background: lightblue;
+          width: 90px;
+          height: 80px;
+          position: relative;
+          padding: 0 10px;
+          text-align: left;
+        }
+
+        .box-model .size::after {
+          content: 'height';
+          position: absolute;
+          writing-mode: vertical-lr;
+          top: 10px;
+          right: 0;
+        }
+
     section
       p Долгое время в CSS изменение padding приводило к изменению width у элементов, из-за чего два одинаковых по ширине элемента 
         | с разными по ширине полями, в реальности имели разную ширину. Пример ниже демонстрирует этот недуг:
 
-      pre(data-lang="html")
+      pre(data-lang="html" data-code="box-z-1")
         :escape
           <div class="one">padding: 0</div>
           <div class="two">padding: 40px</div>
-      pre(data-lang="css")
+      pre(data-lang="css" data-code="box-z-1")
         :escape
           .one {
             width: 200px;
@@ -39,10 +98,18 @@ article#box-sizing
             height: 100px;
             padding: 40px;
           }
-
-      .ex6
-        .one padding: 0
-        .two padding: 40px
+      pre(data-lang="css" data-code="box-z-1" hidden)
+        :escape
+          .one,.two{
+            box-sizing: content-box;
+            background: teal;
+            color: white;
+            margin: 20px auto;
+          }
+          .two{
+            box-shadow: inset 0 0 0 40px darkcyan;
+          }
+      div(data-run="box-z-1" data-height="340px")
 
       p 
         i Для визуализации, padding был окрашен с помощью свойства box-shadow. В действительности же, задать цвет для padding невозможно!
@@ -52,11 +119,11 @@ article#box-sizing
         a(href="http://htmlbook.ru/css/box-sizing" target="_blank") box-sizing
         | . Добавим в наши блоки всего по одной строчке кода:
 
-      pre(data-lang="html")
+      pre(data-lang="html" data-code="box-z-2")
         :escape
          <div class="one">padding: 0</div>
          <div class="two">padding: 40px</div>
-      pre(data-lang="css")
+      pre(data-lang="css" data-code="box-z-2")
         :escape
          .one {
            width: 200px;
@@ -70,10 +137,17 @@ article#box-sizing
            padding: 40px;
            box-sizing: border-box;
          }
-
-      .ex6.border-box
-        .one padding: 0
-        .two padding: 40px
+      pre(data-lang="css" data-code="box-z-2" hidden)
+        :escape
+          .one,.two{
+            background: teal;
+            color: white;
+            margin: 20px auto;
+          }
+          .two{
+            box-shadow: inset 0 0 0 40px darkcyan;
+          }
+      div(data-run="box-z-2")
 
     section
       p Так стало гораздо проще работать с CSS, поэтому многие добавляют 

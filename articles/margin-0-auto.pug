@@ -6,32 +6,148 @@ article#margin-0-auto
       | того, если использовать max-width вместо width, то, даже если размер экрана пользователя окажется меньше
       | ширины этого блока, то блок не выйдет за границы экрана, а будет равен ширине экрана. Это весьма
       | распространенная практика
+
     h3 Пример:
-  .ex1-container
-    .ex1-content
+  div(data-run="auto-margin-1" data-height="150px")
+
   .container
     p Код:
-    pre(data-lang="html")
+    pre(data-lang="html" data-code="auto-margin-1")
       :escape
         <div class="block"></div>
 
-    pre(data-lang="css")
+    pre(data-lang="css" data-code="auto-margin-1")
       :escape
         .block {
           max-width: 500px;
           margin: 0 auto; /* центрирует блок так, что правый и левый маргин становятся одинаковыми */
         }
+    pre(data-lang="css" data-code="auto-margin-1" hidden)
+      :escape
+        body{
+          padding: 10px;
+          background: lightblue;
+        }
+        .block {
+          height: 110px; 
+          background: teal; 
+        }
 
   .container
     h3 Задача
     p Сделать шапку для сайта avito.ru. Серый фон шапки должен быть растянут на всю страницу, а элементы меню должны быть в центре, не зависимо от ширины экрана пользователя
-  .sol1
-    .content
-      .left
-        a(href="#") Объявления
-        a(href="#") Магазины
-        a(href="#") Бизнес
-        a(href="#") Помощь
-      .right
-        a.primary(href="#") Вход и регистрация
-        a.button.primary(href="#") Подать объявление
+  
+  div(data-run="auto-margin-2" data-height="100px")
+
+  pre(data-lang="html" data-code="auto-margin-2" hidden)
+      :escape
+        <div class="sol1">
+          <div class="content">
+            <div class="left"><a href="#">Объявления</a><a href="#">Магазины</a><a href="#">Бизнес</a><a href="#">Помощь</a></div>
+            <div class="right"><a class="primary" href="#">Вход и регистрация</a><a class="button primary" href="#">Подать объявление</a></div>
+          </div>
+        </div>
+
+  pre(data-lang="css" data-code="auto-margin-2" hidden)
+      :escape
+        * {
+          box-sizing: border-box;
+        }
+        
+        body {
+          margin: 10px 0;
+          font-family: '-apple-system', BlinkMacSystemFont, Arial, sans-serif;
+        }
+
+        .sol1 {
+          background-color: #f7f7f7;
+          font-size: 14px;
+          border-bottom: 1px solid #d8d8d8;
+          border-top: 1px solid #d8d8d8;
+        }
+
+        .sol1 .content {
+          margin: 0 auto;
+          max-width: 900px;
+          display: flex;
+          justify-content: space-between;
+          padding: 0 32px;
+        }
+
+        .sol1 .content .left {
+          padding: 14px 0;
+        }
+
+        .sol1 .content .left a {
+          margin-right: 18px;
+        }
+
+        .sol1 .content .right {
+          padding: 7px 0;
+        }
+
+        .sol1 .content .right a.button {
+          margin-left: 29px;
+        }
+
+        .sol1 a {
+          color: #a1a1a1;
+          text-decoration: none;
+        }
+
+        .sol1 a:hover {
+          color: #ff6163;
+        }
+
+        .sol1 .button {
+          display: inline-block;
+          padding: 6px 13px;
+          border-radius: 3px;
+          border: 1px solid transparent;
+          box-shadow: none;
+        }
+
+        .sol1 a.primary {
+          color: #0091d9;
+        }
+
+        .sol1 a.primary:hover {
+          color: #ff6163;
+        }
+
+        .sol1 .button.primary {
+          background-color: #01aaff;
+          color: white;
+        }
+
+        .sol1 .button.primary:hover {
+          color: white;
+          background-color: #0099e6;
+        }
+
+        @media (max-width: 720px) {
+          .sol1 {
+            font-size: 1.5vw;
+          }
+
+          .sol1 .content {
+            padding: 0 3.5vw;
+          }
+
+          .sol1 .content .left {
+            padding: 1.5vw 0;
+          }
+
+          .sol1 .content .left a {
+            margin-right: 2vw;
+          }
+
+          .sol1 .content .right {
+            padding: 0.7vw 0;
+          }
+
+          .sol1 .content .right a.button {
+            margin-left: 3.2vw;
+            padding: 0.6vw 1.5vw;
+          }
+        }

@@ -20,34 +20,40 @@ article#column-count
       | , объединяющее в себе column-width и column-count. 
 
       p Разберемся на примерах из жизни. Простой пример: нужно сделать так, чтобы список располагался в две колонки. 
-      .ex8
-        ul
-            li Lorem
-            li ipsum
-            li dolor
-            li sit
-            li amet
-            li consectetur
-            li adipisicing
-            li elit
+      pre(data-lang="html" data-code="col-count-1" hidden)
+        :escape
+          <ul>
+            <li>Lorem</li>
+            <li>ipsum</li>
+            <li>dolor</li>
+            <li>sit</li>
+            <li>amet</li>
+            <li>consectetur</li>
+            <li>adipisicing</li>
+            <li>elit</li>
+          </ul>
+      div(data-run="col-count-1" data-height="200px")
 
       p Добавим следующий CSS-код:
-      pre(data-lang="css")
+      pre(data-lang="css" data-code="col-count-2")
         :escape
           ul {
             column-count: 2;
           }
       p В результате получим это:
-      .ex8
-        ul.col-2
-            li Lorem
-            li ipsum
-            li dolor
-            li sit
-            li amet
-            li consectetur
-            li adipisicing
-            li elit
+      pre(data-lang="html" data-code="col-count-2" hidden)
+        :escape
+          <ul>
+            <li>Lorem</li>
+            <li>ipsum</li>
+            <li>dolor</li>
+            <li>sit</li>
+            <li>amet</li>
+            <li>consectetur</li>
+            <li>adipisicing</li>
+            <li>elit</li>
+          </ul>
+      div(data-run="col-count-2" data-height="110px")
 
       p Просто, не правда ли? А теперь посмотрим на немного более сложный пример. Итак, наши клиенты - люди с планшетами. 
         | Наше веб-приложение похоже на газету и листать её нужно слева направо, а не вниз, как остальные сайты. Текст должен располагаться в три колонки на экран. 

@@ -15,7 +15,6 @@
     <meta name="theme-color" content="#ffffff"/>
     <link rel="stylesheet" href="./lib/hihglight/github-gist.css"/>
     <link rel="stylesheet" href="./styles/template.css"/>
-    <link rel="stylesheet" href="./styles/examples.css"/>
     <link href="https://fonts.googleapis.com/css?family=Philosopher&amp;display=swap&amp;subset=cyrillic" rel="stylesheet"/>
     <title>HTML Practice</title>
   </head>
@@ -311,35 +310,33 @@ git config --global user.email myEmail@example.com</pre>
             <p>
               Время от времени возникает задача расположить список или текст в две колонки. Годы идут, CSS развивается, поколения верстальщиков сменяют поколения, но свои костыли люди как делали, так и делают. Мало кто знает, но в CSS появилось свойство <br/><a href="http://htmlbook.ru/css/column-count" target="_blank">column-count</a>, позволяющее задать количество колонок для списка или текста. Также есть свойство <br/><a href="http://htmlbook.ru/css/column-width" target="_blank">column-width</a>, которое задаёт минимальную ширину для колонки, <br/><a href="http://htmlbook.ru/css/column-rule" target="_blank">column-rule</a>, отрисовывающее линию между колонками словно border,<br/><a href="http://htmlbook.ru/css/column-gap" target="_blank">column-gap</a>, задающее расстояние между колонками и <br/><a href="http://htmlbook.ru/css/columns" target="_blank">columns</a>, объединяющее в себе column-width и column-count. 
               <p>Разберемся на примерах из жизни. Простой пример: нужно сделать так, чтобы список располагался в две колонки. </p>
-              <div class="ex8">
-                <ul>
-                  <li>Lorem</li>
-                  <li>ipsum</li>
-                  <li>dolor</li>
-                  <li>sit</li>
-                  <li>amet</li>
-                  <li>consectetur</li>
-                  <li>adipisicing</li>
-                  <li>elit</li>
-                </ul>
-              </div>
+              <pre data-lang="html" data-code="col-count-1" hidden="hidden">&lt;ul&gt;
+  &lt;li&gt;Lorem&lt;/li&gt;
+  &lt;li&gt;ipsum&lt;/li&gt;
+  &lt;li&gt;dolor&lt;/li&gt;
+  &lt;li&gt;sit&lt;/li&gt;
+  &lt;li&gt;amet&lt;/li&gt;
+  &lt;li&gt;consectetur&lt;/li&gt;
+  &lt;li&gt;adipisicing&lt;/li&gt;
+  &lt;li&gt;elit&lt;/li&gt;
+&lt;/ul&gt;</pre>
+              <div data-run="col-count-1" data-height="200px"></div>
               <p>Добавим следующий CSS-код:</p>
-              <pre data-lang="css">ul {
+              <pre data-lang="css" data-code="col-count-2">ul {
   column-count: 2;
 }</pre>
               <p>В результате получим это:</p>
-              <div class="ex8">
-                <ul class="col-2">
-                  <li>Lorem</li>
-                  <li>ipsum</li>
-                  <li>dolor</li>
-                  <li>sit</li>
-                  <li>amet</li>
-                  <li>consectetur</li>
-                  <li>adipisicing</li>
-                  <li>elit</li>
-                </ul>
-              </div>
+              <pre data-lang="html" data-code="col-count-2" hidden="hidden">&lt;ul&gt;
+  &lt;li&gt;Lorem&lt;/li&gt;
+  &lt;li&gt;ipsum&lt;/li&gt;
+  &lt;li&gt;dolor&lt;/li&gt;
+  &lt;li&gt;sit&lt;/li&gt;
+  &lt;li&gt;amet&lt;/li&gt;
+  &lt;li&gt;consectetur&lt;/li&gt;
+  &lt;li&gt;adipisicing&lt;/li&gt;
+  &lt;li&gt;elit&lt;/li&gt;
+&lt;/ul&gt;</pre>
+              <div data-run="col-count-2" data-height="110px"></div>
               <p>
                 Просто, не правда ли? А теперь посмотрим на немного более сложный пример. Итак, наши клиенты - люди с планшетами. Наше веб-приложение похоже на газету и листать её нужно слева направо, а не вниз, как остальные сайты. Текст должен располагаться в три колонки на экран. 
                 Общее количество колонок неизвестно, также, как и количество текста. 
@@ -405,21 +402,70 @@ git config --global user.email myEmail@example.com</pre>
           <div class="container">
             <h2>Блочная модель и box-sizing</h2>
             <p> Элементы в CSS представляют собой набор слоёв: ширина и высота самого элемента (<a target="_blank" href="http://htmlbook.ru/css/width">width</a> и <a target="_blank" href="http://htmlbook.ru/css/height">height</a>), поля элемента (<a target="_blank" href="http://htmlbook.ru/css/padding">padding</a>), граница элемента (<a target="_blank" href="http://htmlbook.ru/css/border">border</a>) и отступы (<a target="_blank" href="http://htmlbook.ru/css/margin">margin</a>). <a href="http://htmlbook.ru/samlayout/blochnaya-verstka/blochnaya-model" target="_blank">Подробнее о блочной модели стоит почитать здесь.</a></p>
-            <div class="ex5">
-              <div class="margin">margin
-                <div class="border">border
-                  <div class="padding">padding
-                    <div class="size">width</div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <div data-run="box-model" data-height="340px"></div>
+            <pre data-lang="html" data-code="box-model" hidden="hidden">&lt;div class="box-model"&gt;
+  &lt;div class="margin"&gt;margin
+    &lt;div class="border"&gt;border
+      &lt;div class="padding"&gt;padding
+        &lt;div class="size"&gt;width&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+            <pre data-lang="css" data-code="box-model" hidden="hidden">body{
+  background: white;
+  margin: 0;
+}
+
+.box-model {
+  display: flex;
+  justify-content: center;
+}
+
+.box-model * {
+  text-align: center;
+  border: 1px dashed black;
+  padding: 10px;
+  margin: 10px 24px 24px;
+  font-size: 14px;
+  font-family: monospace;
+}
+
+.box-model .margin {
+  background: lightsalmon;
+}
+
+.box-model .border {
+  background: navajowhite;
+}
+
+.box-model .padding {
+  background: lightgreen;
+}
+
+.box-model .size {
+  background: lightblue;
+  width: 90px;
+  height: 80px;
+  position: relative;
+  padding: 0 10px;
+  text-align: left;
+}
+
+.box-model .size::after {
+  content: 'height';
+  position: absolute;
+  writing-mode: vertical-lr;
+  top: 10px;
+  right: 0;
+}
+</pre>
             <section>
               <p>
                 Долгое время в CSS изменение padding приводило к изменению width у элементов, из-за чего два одинаковых по ширине элемента с разными по ширине полями, в реальности имели разную ширину. Пример ниже демонстрирует этот недуг:</p>
-              <pre data-lang="html">&lt;div class="one"&gt;padding: 0&lt;/div&gt;
+              <pre data-lang="html" data-code="box-z-1">&lt;div class="one"&gt;padding: 0&lt;/div&gt;
 &lt;div class="two"&gt;padding: 40px&lt;/div&gt;</pre>
-              <pre data-lang="css">.one {
+              <pre data-lang="css" data-code="box-z-1">.one {
   width: 200px;
   height: 100px;
   padding: 0;
@@ -428,19 +474,24 @@ git config --global user.email myEmail@example.com</pre>
   width: 200px;
   height: 100px;
   padding: 40px;
+}</pre>
+              <pre data-lang="css" data-code="box-z-1" hidden="hidden">.one,.two{
+  box-sizing: content-box;
+  background: teal;
+  color: white;
+  margin: 20px auto;
 }
-</pre>
-              <div class="ex6">
-                <div class="one">padding: 0</div>
-                <div class="two">padding: 40px</div>
-              </div>
+.two{
+  box-shadow: inset 0 0 0 40px darkcyan;
+}</pre>
+              <div data-run="box-z-1" data-height="340px"></div>
               <p> <i>Для визуализации, padding был окрашен с помощью свойства box-shadow. В действительности же, задать цвет для padding невозможно!</i></p>
             </section>
             <section>
               <p>На помощь в борьбе с этим нелогичным, казалось бы, поведением пришел <a href="http://htmlbook.ru/css/box-sizing" target="_blank">box-sizing</a>. Добавим в наши блоки всего по одной строчке кода:</p>
-              <pre data-lang="html">&lt;div class="one"&gt;padding: 0&lt;/div&gt;
+              <pre data-lang="html" data-code="box-z-2">&lt;div class="one"&gt;padding: 0&lt;/div&gt;
 &lt;div class="two"&gt;padding: 40px&lt;/div&gt;</pre>
-              <pre data-lang="css">.one {
+              <pre data-lang="css" data-code="box-z-2">.one {
   width: 200px;
   height: 100px;
   padding: 0;
@@ -451,12 +502,16 @@ git config --global user.email myEmail@example.com</pre>
   height: 100px;
   padding: 40px;
   box-sizing: border-box;
+}</pre>
+              <pre data-lang="css" data-code="box-z-2" hidden="hidden">.one,.two{
+  background: teal;
+  color: white;
+  margin: 20px auto;
 }
-</pre>
-              <div class="ex6 border-box">
-                <div class="one">padding: 0</div>
-                <div class="two">padding: 40px</div>
-              </div>
+.two{
+  box-shadow: inset 0 0 0 40px darkcyan;
+}</pre>
+              <div data-run="box-z-2"></div>
             </section>
             <section>
               <p>
@@ -572,59 +627,62 @@ git config --global user.email myEmail@example.com</pre>
               Часто, бывает нужно вставить картинку в текст. Но работает это не всегда так, как мы это задумывали. Попробуем вставить картинку без стилей и посмотрим, что получится.</p>
             <section>
               <p>Код примера предельно прост: </p>
-              <pre data-lang="html">&lt;p&gt;
-   &lt;img src="../images/image.svg" alt="Just image"&gt;
-   Lorem ipsum dolor sit amet consectetur adipisicing elit...
+              <pre data-lang="html" data-code="image-in-text-1">&lt;p&gt;
+   &lt;img src="./images/image.svg" alt="Just image"&gt;
+   Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic commodi maiores excepturi dolore cupiditate sit obcaecati, 
+   repellat doloribus rerum! Dicta eius aliquid eaque sed sequi obcaecati debitis quos veniam placeat.
 &lt;/p&gt;
-&lt;p&gt;Itaque voluptates eum nihil minima quo iure voluptas, atque amet molestias,...&lt;/p&gt;
-&lt;p&gt;Soluta, laudantium in. Dolorem laboriosam nobis nihil iste eum sapiente maxime,...&lt;/p&gt;
+&lt;p&gt;
+   Itaque voluptates eum nihil minima quo iure voluptas, atque amet molestias, perspiciatis sed cupiditate nemo inventore velit 
+   soluta iste ut nesciunt! Qui fuga nesciunt accusantium magnam officiis corrupti, quibusdam amet.
+&lt;/p&gt;
+&lt;p&gt;
+   Soluta, laudantium in. Dolorem laboriosam nobis nihil iste eum sapiente maxime, facilis minus atque debitis corporis quasi, 
+   molestias delectus magni placeat ipsum iure perspiciatis doloremque repudiandae rem tenetur, in dolorum. 
+&lt;/p&gt;
 </pre>
-              <div class="ex7">
-                <p> <img src="../images/image.svg" alt="Just image"/>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic commodi maiores excepturi dolore cupiditate sit obcaecati, 
-                  repellat doloribus rerum! Dicta eius aliquid eaque sed sequi obcaecati debitis quos veniam placeat.
-                </p>
-                <p>
-                  Itaque voluptates eum nihil minima quo iure voluptas, atque amet molestias, perspiciatis sed cupiditate nemo inventore velit soluta iste ut nesciunt! Qui fuga nesciunt accusantium magnam officiis corrupti, quibusdam amet.</p>
-                <p>
-                  Soluta, laudantium in. Dolorem laboriosam nobis nihil iste eum sapiente maxime, facilis minus atque debitis corporis quasi, molestias delectus magni placeat ipsum iure perspiciatis doloremque repudiandae rem tenetur, in dolorum.    </p>
-              </div>
+              <div data-run="image-in-text-1"></div>
             </section>
             <section>
               <p>
                 Как видите, картинка стала частью первой строки текста. Нам редко нужно, чтобы поведение было именно таким. Чаще нам необходимо сделать так, чтобы картинка обтекалась текстом. Для этого существует свойство float. </p>
               <p>Добавим к нашему примеру <a href="http://htmlbook.ru/css/float" target="_blank">float</a>: left и посмотрим, что получится</p>
-              <pre data-lang="css">img {
+              <pre data-lang="css" data-code="image-in-text-2">img {
   float: left;
 }</pre>
-              <div class="ex7">
-                <p> <img class="float-left" src="../images/image.svg" alt="Just image"/>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic commodi maiores excepturi dolore cupiditate sit obcaecati, 
-                  repellat doloribus rerum! Dicta eius aliquid eaque sed sequi obcaecati debitis quos veniam placeat.
-                </p>
-                <p>
-                  Itaque voluptates eum nihil minima quo iure voluptas, atque amet molestias, perspiciatis sed cupiditate nemo inventore velit soluta iste ut nesciunt! Qui fuga nesciunt accusantium magnam officiis corrupti, quibusdam amet.</p>
-                <p>
-                  Soluta, laudantium in. Dolorem laboriosam nobis nihil iste eum sapiente maxime, facilis minus atque debitis corporis quasi, molestias delectus magni placeat ipsum iure perspiciatis doloremque repudiandae rem tenetur, in dolorum.</p>
-              </div>
+              <pre data-lang="html" data-code="image-in-text-2" hidden="hidden">&lt;p&gt;
+   &lt;img src="./images/image.svg" alt="Just image"&gt;
+   Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic commodi maiores excepturi dolore cupiditate sit obcaecati, 
+   repellat doloribus rerum! Dicta eius aliquid eaque sed sequi obcaecati debitis quos veniam placeat.
+&lt;/p&gt;
+&lt;p&gt;
+   Itaque voluptates eum nihil minima quo iure voluptas, atque amet molestias, perspiciatis sed cupiditate nemo inventore velit 
+   soluta iste ut nesciunt! Qui fuga nesciunt accusantium magnam officiis corrupti, quibusdam amet.
+&lt;/p&gt;
+&lt;p&gt;
+   Soluta, laudantium in. Dolorem laboriosam nobis nihil iste eum sapiente maxime, facilis minus atque debitis corporis quasi, 
+   molestias delectus magni placeat ipsum iure perspiciatis doloremque repudiandae rem tenetur, in dolorum. 
+&lt;/p&gt;
+</pre>
+              <div data-run="image-in-text-2" data-height="200px"></div>
               <p>Здесь мы видим, что картинка стала обтекаться текстом. Правда, из-за того, что текста много, мы не видим одного подводного камня этого решения.</p>
             </section>
             <section>
               <p>Давайте уберём последние два абзаца и посмотрим, что будет</p>
-              <div class="ex7">
-                <p> <img class="float-left" src="../images/image.svg" alt="Just image"/>Lorem ipsum dolor... </p>
+              <div style="background: #f2f2f2; padding: 15px;">
+                <p style="margin: 10px 0;"><img src="../images/image.svg" alt="Just image" style="float:left;"/>Lorem ipsum dolor... </p>
               </div>
               <p>
                 Обратите внимание, что-то пошло не так и даже этот абзац, не относящийся к примеру, всё равно обтекается картинкой. Явно не то, чего мы ожидали. Всё дело в том, что флоаты (поплавки) "всплывают" над родительским элементом, поэтому его высота больше не зависит от нашей картинки. </p>
             </section>
             <section>
               <p>Для того, чтобы исправить подобное поведение, нужно воспользоваться "очисткой" &mdash; <a href="http://htmlbook.ru/css/clear" target="_blank">clear</a>. Изменим наш код следующим образом:</p>
-              <pre data-lang="html">&lt;p&gt;
+              <pre data-lang="html" data-code="image-in-text-3">&lt;p&gt;
   &lt;img src="../images/image.svg" alt="Just image"&gt;
-  Lorem ipsum dolor sit amet consectetur adipisicing elit...
+  Lorem ipsum dolor...
 &lt;/p&gt;
-&lt;p&gt;Itaque voluptates eum nihil minima quo iure voluptas, atque amet molestias,...&lt;/p&gt;
-&lt;p&gt;Soluta, laudantium in. Dolorem laboriosam nobis nihil iste eum sapiente maxime,...&lt;/p&gt;
 &lt;div class="clear"&gt;&lt;/div&gt;</pre>
-              <pre data-lang="css">img {
+              <pre data-lang="css" data-code="image-in-text-3">img {
   float: left;
 }
 .clear {
@@ -632,35 +690,43 @@ git config --global user.email myEmail@example.com</pre>
 }</pre>
             </section>
             <section>
-              <div class="ex7">
-                <p> <img class="float-left" src="../images/image.svg" alt="Just image"/>Lorem ipsum dolor... </p>
-                <div class="clear"></div>
-              </div>
+              <div data-run="image-in-text-3" data-height="160px"></div>
               <p>
                 Как видите, абзац, который вы сейчас читаете, находится уже за пределами примера. Добавив такой чистящий элемент в самый конец родительского контейнера, мы смогли вернуть высоту контейнера к нормальному уровню. </p>
             </section>
             <section>
               <p>
                 В предыдущих примерах мы увидели, как задать обтекание картинки текстом так, чтобы картинка оказалась слева. Точно так же мы можем обтекать её и с другой стороны. </p>
-              <pre data-lang="css">img {
+              <pre data-lang="css" data-code="image-in-text-4">img {
   float: right;
 }</pre>
-              <div class="ex7">
-                <p> <img class="float-right" src="../images/image.svg" alt="Just image"/>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic commodi maiores excepturi dolore cupiditate sit obcaecati,
-                  repellat doloribus rerum! Dicta eius aliquid eaque sed sequi obcaecati debitis quos veniam placeat.
-                </p>
-                <p>
-                  Itaque voluptates eum nihil minima quo iure voluptas, atque amet molestias, perspiciatis sed cupiditate nemo inventore velitsoluta iste ut nesciunt! Qui fuga nesciunt accusantium magnam officiis corrupti, quibusdam amet.</p>
-                <p>
-                  Soluta, laudantium in. Dolorem laboriosam nobis nihil iste eum sapiente maxime, facilis minus atque debitis corporis quasi,molestias delectus magni placeat ipsum iure perspiciatis doloremque repudiandae rem tenetur, in dolorum. Quas dolorem excepturi expedita ipsa veniam?</p>
-              </div>
+              <pre data-lang="html" data-code="image-in-text-4" hidden="hidden">&lt;p&gt;
+   &lt;img src="./images/image.svg" alt="Just image"&gt;
+   Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic commodi maiores excepturi dolore cupiditate sit obcaecati, 
+   repellat doloribus rerum! Dicta eius aliquid eaque sed sequi obcaecati debitis quos veniam placeat.
+&lt;/p&gt;
+&lt;p&gt;
+   Itaque voluptates eum nihil minima quo iure voluptas, atque amet molestias, perspiciatis sed cupiditate nemo inventore velit 
+   soluta iste ut nesciunt! Qui fuga nesciunt accusantium magnam officiis corrupti, quibusdam amet.
+&lt;/p&gt;
+&lt;p&gt;
+   Soluta, laudantium in. Dolorem laboriosam nobis nihil iste eum sapiente maxime, facilis minus atque debitis corporis quasi, 
+   molestias delectus magni placeat ipsum iure perspiciatis doloremque repudiandae rem tenetur, in dolorum. 
+&lt;/p&gt;</pre>
+              <div data-run="image-in-text-4" data-height="200px"></div>
               <p>И если мы не уверены, что текста будет достаточно, не забудем добавить в конец контейнера clear: both.</p>
-              <div class="ex7">
-                <p> <img class="float-right" src="../images/image.svg" alt="Just image"/>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic commodi maiores excepturi dolore cupiditate sit obcaecati, 
-                  repellat doloribus rerum! Dicta eius aliquid eaque sed sequi obcaecati debitis quos veniam placeat.
-                </p>
-                <div class="clear"></div>
-              </div>
+              <pre data-lang="css" data-code="image-in-text-5">img {
+  float: left;
+}
+.clear {
+  clear: both;
+}</pre>
+              <pre data-lang="html" data-code="image-in-text-5" hidden="hidden">&lt;p&gt;
+   &lt;img src="./images/image.svg" alt="Just image"&gt;
+   Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic commodi maiores excepturi dolore cupiditate sit obcaecati, 
+   repellat doloribus rerum! Dicta eius aliquid eaque sed sequi obcaecati debitis quos veniam placeat.
+&lt;/p&gt;</pre>
+              <div data-run="image-in-text-5" data-height="150px"></div>
             </section>
             <section>
               <p>Подведём итоги. Для того, чтобы вставить картинку в текст и сделать так, чтобы она обтекалась, нужно воспользоваться свойством </p><a href="http://htmlbook.ru/css/float" target="_blank">float</a>, а для того, чтобы восстановить размер контейнера в том случае, если картинка стала вылезать за его пределы, нужно использовать свойство <a href="http://htmlbook.ru/css/clear" target="_blank">clear</a>.
@@ -678,16 +744,22 @@ git config --global user.email myEmail@example.com</pre>
             </p>
             <h3>Пример:</h3>
           </div>
-          <div class="ex1-container">
-            <div class="ex1-content"></div>
-          </div>
+          <div data-run="auto-margin-1" data-height="150px"></div>
           <div class="container">
             <p>Код:</p>
-            <pre data-lang="html">&lt;div class="block"&gt;&lt;/div&gt;
+            <pre data-lang="html" data-code="auto-margin-1">&lt;div class="block"&gt;&lt;/div&gt;
 </pre>
-            <pre data-lang="css">.block {
+            <pre data-lang="css" data-code="auto-margin-1">.block {
   max-width: 500px;
   margin: 0 auto; /* центрирует блок так, что правый и левый маргин становятся одинаковыми */
+}</pre>
+            <pre data-lang="css" data-code="auto-margin-1" hidden="hidden">body{
+  padding: 10px;
+  background: lightblue;
+}
+.block {
+  height: 110px; 
+  background: teal; 
 }
 </pre>
           </div>
@@ -695,12 +767,115 @@ git config --global user.email myEmail@example.com</pre>
             <h3>Задача</h3>
             <p>Сделать шапку для сайта avito.ru. Серый фон шапки должен быть растянут на всю страницу, а элементы меню должны быть в центре, не зависимо от ширины экрана пользователя</p>
           </div>
-          <div class="sol1">
-            <div class="content">
-              <div class="left"><a href="#">Объявления</a><a href="#">Магазины</a><a href="#">Бизнес</a><a href="#">Помощь</a></div>
-              <div class="right"><a class="primary" href="#">Вход и регистрация</a><a class="button primary" href="#">Подать объявление</a></div>
-            </div>
-          </div>
+          <div data-run="auto-margin-2" data-height="100px"></div>
+          <pre data-lang="html" data-code="auto-margin-2" hidden="hidden">&lt;div class="sol1"&gt;
+  &lt;div class="content"&gt;
+    &lt;div class="left"&gt;&lt;a href="#"&gt;Объявления&lt;/a&gt;&lt;a href="#"&gt;Магазины&lt;/a&gt;&lt;a href="#"&gt;Бизнес&lt;/a&gt;&lt;a href="#"&gt;Помощь&lt;/a&gt;&lt;/div&gt;
+    &lt;div class="right"&gt;&lt;a class="primary" href="#"&gt;Вход и регистрация&lt;/a&gt;&lt;a class="button primary" href="#"&gt;Подать объявление&lt;/a&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+          <pre data-lang="css" data-code="auto-margin-2" hidden="hidden">* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 10px 0;
+  font-family: '-apple-system', BlinkMacSystemFont, Arial, sans-serif;
+}
+
+.sol1 {
+  background-color: #f7f7f7;
+  font-size: 14px;
+  border-bottom: 1px solid #d8d8d8;
+  border-top: 1px solid #d8d8d8;
+}
+
+.sol1 .content {
+  margin: 0 auto;
+  max-width: 900px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 32px;
+}
+
+.sol1 .content .left {
+  padding: 14px 0;
+}
+
+.sol1 .content .left a {
+  margin-right: 18px;
+}
+
+.sol1 .content .right {
+  padding: 7px 0;
+}
+
+.sol1 .content .right a.button {
+  margin-left: 29px;
+}
+
+.sol1 a {
+  color: #a1a1a1;
+  text-decoration: none;
+}
+
+.sol1 a:hover {
+  color: #ff6163;
+}
+
+.sol1 .button {
+  display: inline-block;
+  padding: 6px 13px;
+  border-radius: 3px;
+  border: 1px solid transparent;
+  box-shadow: none;
+}
+
+.sol1 a.primary {
+  color: #0091d9;
+}
+
+.sol1 a.primary:hover {
+  color: #ff6163;
+}
+
+.sol1 .button.primary {
+  background-color: #01aaff;
+  color: white;
+}
+
+.sol1 .button.primary:hover {
+  color: white;
+  background-color: #0099e6;
+}
+
+@media (max-width: 720px) {
+  .sol1 {
+    font-size: 1.5vw;
+  }
+
+  .sol1 .content {
+    padding: 0 3.5vw;
+  }
+
+  .sol1 .content .left {
+    padding: 1.5vw 0;
+  }
+
+  .sol1 .content .left a {
+    margin-right: 2vw;
+  }
+
+  .sol1 .content .right {
+    padding: 0.7vw 0;
+  }
+
+  .sol1 .content .right a.button {
+    margin-left: 3.2vw;
+    padding: 0.6vw 1.5vw;
+  }
+}</pre>
         </article>
         <article id="flex">
           <div class="container">
@@ -715,12 +890,9 @@ git config --global user.email myEmail@example.com</pre>
             </p>
             <section>
               <p>Пример:</p>
-              <div class="ex2-container">
-                <div class="ex2-box-left"><span>Brand</span><span>Stores</span><span>Actions</span><span>Contacts</span></div>
-                <div class="ex2-box-right"><span>Settings</span><span>Account</span></div>
-              </div>
+              <div data-run="flex-justify-1" data-height="100px"></div>
               <p>Код:</p>
-              <pre data-lang="html">&lt;div class="container"&gt;
+              <pre data-lang="html" data-code="flex-justify-1">&lt;div class="container"&gt;
     &lt;div class="box-left"&gt;
        &lt;span&gt;Brand&lt;/span&gt;
        &lt;span&gt;Stores&lt;/span&gt;
@@ -733,7 +905,7 @@ git config --global user.email myEmail@example.com</pre>
     &lt;/div&gt;
 &lt;/div&gt;
 </pre>
-              <pre data-lang="css">.container {
+              <pre data-lang="css" data-code="flex-justify-1">.container {
   /* Задаём флекс-бокс (позволяет влиять на расположение дочерних элементов) */
   display: flex;
   /* Говорим элементам встать так, чтобы между ними, по возможности, образовывалось расстояние */
@@ -748,6 +920,38 @@ git config --global user.email myEmail@example.com</pre>
   /* Здесь можно задать какие-то стили для правого блока */
 }
 </pre>
+              <pre data-lang="css" data-code="flex-justify-1" hidden="hidden">.container {
+  background: lightblue;
+  padding: 5px;
+}
+
+.box-left {
+  background: teal;
+}
+
+.box-right {
+  background: blueviolet;
+}
+
+.container span {
+  display: inline-block;
+  padding: 10px 20px;
+  background: rgba(255, 255, 255, 0.5);
+  margin: 5px;
+}
+
+@media (max-width: 720px) {
+  .container {
+    padding: 5px 1px;
+    font-size: 3.5vw;
+  }
+
+  .container span {
+    margin: 2px;
+    padding: 10px 2px;
+  }
+}
+</pre>
             </section>
             <section>
               <h3>Задача</h3>
@@ -757,12 +961,118 @@ git config --global user.email myEmail@example.com</pre>
               </p>
             </section>
           </div>
-          <div class="sol2">
-            <div class="content">
-              <div class="left"><a class="current" href="#">Публикации</a><a href="#">Новости</a><a href="#">Пользователи</a><a href="#">Хабы</a><a href="#">Компании</a><a href="#">Песочница</a></div>
-              <div class="right"><a class="button default" href="#">Войти</a><a class="button primary" href="#">Регистрация</a></div>
-            </div>
-          </div>
+          <pre data-lang="html" data-code="habr-header" hidden="hidden">&lt;div class="sol2"&gt;
+  &lt;div class="content"&gt;
+    &lt;div class="left"&gt;&lt;a class="current" href="#"&gt;Публикации&lt;/a&gt;&lt;a href="#"&gt;Новости&lt;/a&gt;&lt;a href="#"&gt;Пользователи&lt;/a&gt;&lt;a href="#"&gt;Хабы&lt;/a&gt;&lt;a href="#"&gt;Компании&lt;/a&gt;&lt;a href="#"&gt;Песочница&lt;/a&gt;&lt;/div&gt;
+    &lt;div class="right"&gt;&lt;a class="button default" href="#"&gt;Войти&lt;/a&gt;&lt;a class="button primary" href="#"&gt;Регистрация&lt;/a&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+          <pre data-lang="css" data-code="habr-header" hidden="hidden">* {
+  box-sizing:border-box;
+}
+
+body {
+  margin:0;  
+  font-family: '-apple-system', BlinkMacSystemFont, Arial, sans-serif;
+}
+
+.sol2 {
+  border-bottom: 1px solid #d5dddf;
+  border-top: 1px solid #d5dddf;
+  font-size: 15px;
+  background: white;
+  margin-top:10px;
+}
+
+.sol2 .content {
+  max-width: 1164px;
+  margin: 0 auto;
+  padding: 0 32px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.sol2 .right {
+  padding: 16px;
+  white-space: nowrap;
+}
+
+.sol2 .right .button {
+  margin: 0 0 0 10px;
+}
+
+.sol2 a {
+  display: inline-block;
+  padding: 23px 0;
+  margin-right: 28px;
+  text-decoration: none;
+  color: #838a92;
+}
+
+.sol2 a:hover {
+  color: #5096b1;
+}
+
+.sol2 a.current {
+  color: #464646;
+}
+
+.sol2 .button {
+  padding: 8px 13px;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  font-size: 13px;
+  box-shadow: none;
+}
+
+.sol2 .button.default {
+  border-color: #a4afba;
+  background-color: white;
+}
+
+.sol2 .button.default:hover {
+  border-color: #65a3be;
+}
+
+.sol2 .button.primary {
+  background-color: #65a3be;
+  border-color: transparent;
+  color: white;
+}
+
+.sol2 .button.primary:hover {
+  background-color: #4986a1;
+}
+
+@media (max-width: 900px) {
+  .sol2 {
+    font-size: 1.5vw;
+  }
+
+  .sol2 .content {
+    padding: 0 3.5vw;
+  }
+
+  .sol2 .right {
+    padding: 1.5vw;
+  }
+
+  .sol2 .right .button {
+    margin: 0 0 0 0.5vw;
+  }
+
+  .sol2 a {
+    padding: 2.5vw 0;
+    margin-right: 1.4vw;
+  }
+
+  .sol2 .button {
+    padding: 0.8vw 1.4vw;
+    font-size: 1.4vw;
+  }
+}
+</pre>
+          <div data-run="habr-header" data-height="100px"></div>
         </article>
         <article id="relative-absolute">
           <div class="container">
@@ -787,15 +1097,13 @@ git config --global user.email myEmail@example.com</pre>
               Дело в том, что в CSS, началом координат является верхняя левая точка элемента, а не центр элемента. Поэтому нам не достаточно просто подвинуть блок на 50% вниз и вправо, так как тогда в центре контейнера окажется левый верхний угол блока, а не центр блока.</p>
             <section>
               <h3>Пример:</h3>
-              <div class="ex3-container">
-                <div class="ex3-block"> </div>
-              </div>
+              <div data-run="rel-abs-center" data-height="250px"></div>
               <p>Код:</p>
-              <pre data-lang="html">&lt;div class="container"&gt;
+              <pre data-lang="html" data-code="rel-abs-center">&lt;div class="container"&gt;
     &lt;div class="block"&gt;&lt;/div&gt;
 &lt;/div&gt;
 </pre>
-              <pre data-lang="css">.container {
+              <pre data-lang="css" data-code="rel-abs-center">.container {
   position: relative;
   width: 100%;
   height: 250px;
@@ -808,6 +1116,19 @@ git config --global user.email myEmail@example.com</pre>
   transform: translate(-50%, -50%); /* смещаем блок на 50% от ширины и высоты этого блока */
   width: 120px;
   height: 80px;
+}
+</pre>
+              <pre data-lang="css" data-code="rel-abs-center" hidden="hidden">body{
+  margin: 0;
+}
+
+.container {
+  background: lightblue;
+  height:100vh;
+}
+
+.block {
+  background: teal;
 }
 </pre>
             </section>
@@ -823,21 +1144,164 @@ git config --global user.email myEmail@example.com</pre>
               </ul>
             </section>
           </div>
-          <div class="sol3 no-print-break">
-            <div class="title">iPhone Xs Max</div>
-            <button class="button close"></button>
-            <button class="button left"></button>
-            <button class="button right"></button>
-            <div class="image-container"><img src="./images/iphonexsmax-1.jpg" alt="iPhone Xs Max"/></div>
-            <div class="slider-container">
-              <button class="button left"></button>
-              <button class="thumb active"><img src="./images/iphonexsmax-2.jpg" alt="Next"/></button>
-              <button class="thumb"><img src="./images/iphonexsmax-3.jpg" alt="Next"/></button>
-              <button class="thumb"><img src="./images/iphonexsmax-4.jpg" alt="Next"/></button>
-              <button class="thumb"><img src="./images/iphonexsmax-5.jpg" alt="Next"/></button>
-              <button class="button right"></button>
-            </div>
-          </div>
+          <div class="no-print-break" data-run="dns-modal" data-height="90vh"></div>
+          <pre data-lang="html" data-code="dns-modal" hidden="hidden">&lt;div class="sol3"&gt;
+  &lt;div class="title"&gt;iPhone Xs Max&lt;/div&gt;
+  &lt;button class="button close"&gt;&lt;/button&gt;
+  &lt;button class="button left"&gt;&lt;/button&gt;
+  &lt;button class="button right"&gt;&lt;/button&gt;
+  &lt;div class="image-container"&gt;&lt;img src="./images/iphonexsmax-1.jpg" alt="iPhone Xs Max"&gt;&lt;/div&gt;
+  &lt;div class="slider-container"&gt;
+    &lt;button class="button left"&gt;&lt;/button&gt;
+    &lt;button class="thumb active"&gt;&lt;img src="./images/iphonexsmax-2.jpg" alt="Next"&gt;&lt;/button&gt;
+    &lt;button class="thumb"&gt;&lt;img src="./images/iphonexsmax-3.jpg" alt="Next"&gt;&lt;/button&gt;
+    &lt;button class="thumb"&gt;&lt;img src="./images/iphonexsmax-4.jpg" alt="Next"&gt;&lt;/button&gt;
+    &lt;button class="thumb"&gt;&lt;img src="./images/iphonexsmax-5.jpg" alt="Next"&gt;&lt;/button&gt;
+    &lt;button class="button right"&gt;&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+          <pre data-lang="css" data-code="dns-modal" hidden="hidden">body{
+  margin: 0;
+  font-family: '-apple-system', BlinkMacSystemFont, Arial, sans-serif;
+  background: white;
+}
+
+.sol3 {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 550px;
+  overflow: hidden;
+}
+
+.sol3 .title {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #444;
+}
+
+.sol3 .image-container {
+  position: absolute;
+  bottom: 50%;
+  right: 50%;
+  transform: translate(50%, 50%);
+  width: 70%;
+  height: 60%;
+  text-align: center;
+}
+
+.sol3 .image-container img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.sol3 .slider-container {
+  position: absolute;
+  bottom: 30px;
+  right: 50%;
+  width: 320px;
+  height: 80px;
+  margin-right: -160px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.sol3 .slider-container .thumb {
+  text-align: center;
+  padding: 8px;
+  background: white;
+  border: 1px solid #d8d8d8;
+  margin: 5px;
+  width: 70px;
+  height: 70px;
+  border-radius: 4px;
+  cursor: pointer;
+  box-shadow: none;
+}
+
+.sol3 .slider-container .thumb img {
+  display: inline-block;
+  max-width: 100%;
+  max-height: 100%;
+  opacity: 0.7;
+}
+
+.sol3 .slider-container .thumb.active {
+  border-color: #464646;
+}
+
+.sol3 .slider-container .thumb.active img,
+.sol3 .slider-container .thumb:hover img {
+  opacity: 1;
+}
+
+.sol3 .slider-container .button {
+  width: 60px;
+}
+
+.sol3 .slider-container .button.left {
+  left: auto;
+  right: 100%;
+  width: 40px;
+}
+
+.sol3 .slider-container .button.right {
+  right: auto;
+  left: 100%;
+  width: 40px;
+}
+
+.sol3 .button {
+  position: absolute;
+  bottom: 50%;
+  transform: translateY(50%);
+  background: white;
+  min-width: 30px;
+  min-height: 30px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.4;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+  width: 80px;
+  height: 80px;
+  box-shadow: none;
+}
+
+.sol3 .button:hover {
+  opacity: 1;
+}
+
+.sol3 .button.left {
+  left: 0;
+  background-image: url('../images/angle-left-sm.svg');
+}
+
+.sol3 .button.right {
+  right: 0;
+  background-image: url('../images/angle-right-sm.svg');
+}
+
+.sol3 .button.close {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  transform: none;
+  width: 30px;
+  height: 30px;
+  background-image: url('../images/times-sm.svg');
+}
+
+@media (max-width: 500px) {
+  .sol3 .slider-container {
+    transform: scale(0.8);
+  }
+}</pre>
         </article>
         <article id="custom-checkbox">
           <div class="container">
@@ -852,32 +1316,29 @@ git config --global user.email myEmail@example.com</pre>
               конструкции я нашел лишь пару раз в своей практике.
             </p>
             <p> <a href="http://htmlbook.ru/html/label" target="_blank">Немного подробнее о label можно почитать здесь</a></p>
-            <p>В этом видео Вадим Макеев подробно рассказывает об этой технике вёрстки чекбокса: <a href="https://youtu.be/E6kLaaQFctU" target="_blank">Смотреть на YouTube</a></p>
+            <p>В этом видео Вадим Макеев подробно рассказывает об этой технике вёрстки чекбокса: </p>
             <div class="youtube" data-video="E6kLaaQFctU"></div>
             <section>
               <h3>Пример:</h3>
-              <p class="ex4">
-                <label class="custom-checkbox">
-                  <input class="visually-hidden" type="checkbox"/><span class="checker"></span>Checkbox
-                </label>
-                <label class="custom-checkbox">
-                  <input class="visually-hidden" type="checkbox" checked="checked"/><span class="checker"></span>Checked
-                </label>
-                <label class="custom-checkbox">
-                  <input class="visually-hidden" type="checkbox" disabled="disabled"/><span class="checker"></span>Disabled
-                </label>
-                <label class="custom-checkbox">
-                  <input class="visually-hidden" type="checkbox" checked="checked" disabled="disabled"/><span class="checker"></span>Checked disabled
-                </label>
-              </p>
+              <div data-run="custom-checkbox" data-height="100px"></div>
               <p>Код:</p>
-              <pre data-lang="html">&lt;label class="custom-checkbox"&gt;
-    &lt;input type="checkbox" class="visually-hidden"&gt;
-    &lt;span class="checker"&gt;&lt;/span&gt;
-    Отметка
-&lt;/label&gt;
+              <pre data-lang="html" data-code="custom-checkbox">&lt;p&gt;
+  &lt;label class="custom-checkbox"&gt;
+    &lt;input class="visually-hidden" type="checkbox"&gt;&lt;span class="checker"&gt;&lt;/span&gt;Checkbox
+  &lt;/label&gt;
+  &lt;label class="custom-checkbox"&gt;
+    &lt;input class="visually-hidden" type="checkbox" checked="checked"&gt;&lt;span class="checker"&gt;&lt;/span&gt;Checked
+  &lt;/label&gt;
+  &lt;label class="custom-checkbox"&gt;
+    &lt;input class="visually-hidden" type="checkbox" disabled="disabled"&gt;&lt;span class="checker"&gt;&lt;/span&gt;Disabled
+  &lt;/label&gt;
+  &lt;label class="custom-checkbox"&gt;
+    &lt;input class="visually-hidden" type="checkbox" checked="checked" disabled="disabled"&gt;&lt;span class="checker"&gt;&lt;/span&gt;Checked disabled
+  &lt;/label&gt;
+&lt;/p&gt;
 </pre>
-              <pre data-lang="css">.custom-checkbox {
+              <pre data-lang="css" data-code="custom-checkbox">
+.custom-checkbox {
     /* Контейнер должен быть релятивным, так как внутри него мы разместим два абсолютно спозиционированных элемента */
     position: relative;
     /* скрываем элементы, попадающие за границы label */
@@ -890,6 +1351,8 @@ git config --global user.email myEmail@example.com</pre>
     cursor: pointer;
     /* Отодвигаем левую часть так, чтобы влез кастомный чекбокс*/
     padding: 0 1em 0 1.4em;
+    /* Задаём минимальную высоту */
+    min-height: 1em;
 }
 
 /* Задаем кастомную галочку для чекбокса и скрываем её по умолчанию */
@@ -960,32 +1423,182 @@ git config --global user.email myEmail@example.com</pre>
             <section>
               <h3>Задача</h3>
               <p>Сверстать чекбоксы как в gmail.</p>
-              <div class="sol4">
-                <div class="ex4">
-                  <label class="custom-checkbox default">
-                    <input class="visually-hidden" type="checkbox"/><span class="checker"></span>
-                  </label>
-                  <label class="custom-checkbox star">
-                    <input class="visually-hidden" type="checkbox"/><span class="checker"></span>
-                  </label>
-                  <label class="custom-checkbox label">
-                    <input class="visually-hidden" type="checkbox"/><span class="checker"></span>
-                  </label>
-                </div>
-              </div>
-              <div class="sol4">
-                <div class="ex4">
-                  <label class="custom-checkbox default">
-                    <input class="visually-hidden" type="checkbox" checked="checked"/><span class="checker"></span>
-                  </label>
-                  <label class="custom-checkbox star">
-                    <input class="visually-hidden" type="checkbox" checked="checked"/><span class="checker"></span>
-                  </label>
-                  <label class="custom-checkbox label">
-                    <input class="visually-hidden" type="checkbox" checked="checked"/><span class="checker"></span>
-                  </label>
-                </div>
-              </div>
+              <pre data-lang="css" data-code="custom-checkbox-gmail" hidden="hidden">
+.custom-checkbox {
+    /* Контейнер должен быть релятивным, так как внутри него мы разместим два абсолютно спозиционированных элемента */
+    position: relative;
+    /* скрываем элементы, попадающие за границы label */
+    overflow: hidden;
+    /* По умолчанию, label - это строчный элемент. С высокой вероятностью, нам нужно будет добавлять вертикальный margin, поэтому сразу сделаем его строчно-блочным*/
+    display: inline-block;
+    /* Делаем так, чтобы чекбокс нельзя было выделить курсором, а только нажать */
+    user-select: none;
+    /* Я приверженец того, что все интерактивные элементы должны иметь cursor: pointer, поэтому задаём и его */
+    cursor: pointer;
+    /* Отодвигаем левую часть так, чтобы влез кастомный чекбокс*/
+    padding: 0 1em 0 1.4em;
+    /* Задаём минимальную высоту */
+    min-height: 1em;
+}
+
+/* Задаем кастомную галочку для чекбокса и скрываем её по умолчанию */
+.custom-checkbox .checker {
+    position: absolute;
+    margin-top: 0;
+    /* Выдвигаем чекбокс левее так, чтобы он не наезжал на текст */
+    margin-left: -1.2em;
+    width: 1em;
+    height: 1em;
+    overflow: hidden;
+    text-align: center;
+    font-size: 1em;
+    line-height: 1;
+    border: 1px solid teal;
+    border-radius: 3px;
+    background-color: white;
+    /* Делаем галочку прозрачной */
+    color: transparent;
+}
+
+/* В псевдо-элементе допишем саму галочку */
+.custom-checkbox .checker:after {
+    content: '✓';
+}
+
+/* указываем селектор на наш конкретный инпут с типом чекбокс */
+.custom-checkbox input[type='checkbox'] {
+    /* Выводим стандартный чекбокс за границы label */
+    position: absolute;
+    right: 100%;
+    top: 0;
+}
+
+/* Несколько сложноее CSS правило: когда чекбокс будет иметь атрибут checked, его сосед снизу (селектор +) с классом .checker, примет эти стили */
+.custom-checkbox input[type='checkbox']:checked + .checker {
+    /* Перекрашиваем фон чекбокса и галочку */
+    background-color: teal;
+    color: white;
+}
+
+/* Не все люди используют для просмотра веб-страниц мышь, а некоторые из них используют вообще только клавиатуру. Так вот, чтобы интерактивные элементы подсвечивались, когда фокус клавиатуры попадал на них, им нужно задать отдельные стили. */
+/* Когда скрытый инпут окажется в фокусе, его сосед с классом .checker примет стили */
+.custom-checkbox input[type='checkbox']:focus + .checker {
+    box-shadow: 0 0 5px 0 teal;
+}
+
+/* Когда скрытый интуп нельзя изменить, его сосед с классом .checker примет стили */
+.custom-checkbox input[type='checkbox']:disabled+.checker {
+  background-color: #999;
+  border-color: #999;
+}
+
+/* Этот класс позволяет правильно скрыть элемент с экрана так, чтобы он был доступен для скринридеров */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+</pre>
+              <pre data-lang="css" data-code="custom-checkbox-gmail" hidden="hidden">body{
+  text-align: center;
+  font-size: 16px;
+  margin: 10px 0;
+}
+.sol4 {
+  text-align: center;
+  display: inline-block;
+}
+
+.sol4 .row {
+  border-bottom: 1px solid lightgray;
+  border-top: 1px solid lightgray;
+  padding: 8px;
+  margin-bottom: -1px;
+  display: block;
+  line-height: 1;
+  background: white;
+}
+
+.sol4 .custom-checkbox {
+  padding-right: 0;
+  vertical-align: middle;
+}
+
+.sol4 .custom-checkbox .checker::after {
+  display: none;
+}
+
+.sol4 .custom-checkbox input[type='checkbox']:focus + .checker {
+  box-shadow: none;
+}
+
+.sol4 .custom-checkbox .checker {
+  background-repeat: no-repeat;
+  background-position: center center;
+  border: none;
+  opacity: 0.3;
+}
+
+.sol4 .custom-checkbox input[type='checkbox']:checked + .checker {
+  background-color: transparent;
+  opacity: 1;
+}
+
+.sol4 .custom-checkbox.default .checker {
+  background-image: url('https://www.gstatic.com/images/icons/material/system/1x/check_box_outline_blank_black_20dp.png');
+}
+
+.sol4 .custom-checkbox.default input[type='checkbox']:checked + .checker {
+  background-image: url('https://www.gstatic.com/images/icons/material/system/1x/check_box_black_20dp.png');
+}
+
+.sol4 .custom-checkbox.star .checker {
+  background-image: url('https://www.gstatic.com/images/icons/material/system/1x/star_border_black_20dp.png');
+}
+
+.sol4 .custom-checkbox.star input[type='checkbox']:checked + .checker {
+  background-image: url('https://www.gstatic.com/images/icons/material/system/1x/star_googyellow500_20dp.png');
+}
+
+.sol4 .custom-checkbox.label .checker {
+  background-image: url('https://www.gstatic.com/images/icons/material/system/1x/label_important_outline_black_20dp.png');
+}
+
+.sol4 .custom-checkbox.label input[type='checkbox']:checked + .checker {
+  background-image: url('https://www.gstatic.com/images/icons/material/system/1x/label_important_googyellow500_20dp.png');
+}
+</pre>
+              <pre data-lang="html" data-code="custom-checkbox-gmail" hidden="hidden">&lt;div class="sol4"&gt;
+  &lt;div class="row"&gt;
+    &lt;label class="custom-checkbox default"&gt;
+      &lt;input class="visually-hidden" type="checkbox"&gt;&lt;span class="checker"&gt;&lt;/span&gt;
+    &lt;/label&gt;
+    &lt;label class="custom-checkbox star"&gt;
+      &lt;input class="visually-hidden" type="checkbox"&gt;&lt;span class="checker"&gt;&lt;/span&gt;
+    &lt;/label&gt;
+    &lt;label class="custom-checkbox label"&gt;
+      &lt;input class="visually-hidden" type="checkbox"&gt;&lt;span class="checker"&gt;&lt;/span&gt;
+    &lt;/label&gt;
+  &lt;/div&gt;
+  &lt;div class="row"&gt;
+    &lt;label class="custom-checkbox default"&gt;
+      &lt;input class="visually-hidden" type="checkbox" checked&gt;&lt;span class="checker"&gt;&lt;/span&gt;
+    &lt;/label&gt;
+    &lt;label class="custom-checkbox star"&gt;
+      &lt;input class="visually-hidden" type="checkbox" checked&gt;&lt;span class="checker"&gt;&lt;/span&gt;
+    &lt;/label&gt;
+    &lt;label class="custom-checkbox label"&gt;
+      &lt;input class="visually-hidden" type="checkbox" checked&gt;&lt;span class="checker"&gt;&lt;/span&gt;
+    &lt;/label&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+              <div data-run="custom-checkbox-gmail" data-height="100px"></div>
               <p>Картинки для чекбоксов взять отсюда:</p>
               <ul>
                 <li><a target="_blank" href="https://www.gstatic.com/images/icons/material/system/1x/check_box_outline_blank_black_20dp.png">Unchecked checkbox</a></li>
