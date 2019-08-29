@@ -1,5 +1,6 @@
 const gulp = require('gulp');
 const pug = require('gulp-pug');
+const less = require('gulp-less');
 const connect = require('gulp-connect');
 
 gulp.task('pug', () => {
@@ -18,6 +19,15 @@ gulp.task('pug', () => {
     .pipe(gulp.dest(file => './'));
 });
 
+gulp.task('less', () => {
+  return gulp
+    .src('./styles/template.less')
+    .pipe(
+      less()
+    )
+    .pipe(gulp.dest('./styles/'));
+});
+
 gulp.task('webserver', () =>
   connect.server({
     root: './',
@@ -29,8 +39,9 @@ gulp.task('webserver', () =>
 
 gulp.task('watch', () => {
   gulp.watch('./**/*.pug', gulp.series('pug'));
+  gulp.watch('./styles/*.less', gulp.series('less'));
 });
 
-gulp.task('default', gulp.parallel('pug'));
+gulp.task('default', gulp.parallel('pug', 'less'));
 
 gulp.task('serve', gulp.parallel('default', 'webserver', 'watch'));
