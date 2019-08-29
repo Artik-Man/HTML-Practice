@@ -27,7 +27,8 @@ body {
 section,
 .no-print-break,
 ul li,
-ol li {
+ol li,
+[data-run] {
   page-break-inside: avoid;
 }
 
@@ -74,6 +75,7 @@ code {
   font-size: 14px;
   display: inline-block;
 }
+
 [data-run] {
   padding: 15px;
   border: none;
@@ -86,6 +88,7 @@ code {
   resize: both;
   overflow: auto;
 }
+
 h1 {
   height: 100vh;
   margin: 0 !important;
@@ -264,6 +267,7 @@ main > .main-menu menu {
   margin: 0;
   list-style: none;
   padding: 0;
+  min-width: 250px;
 }
 
 main > .main-menu menu li a {
@@ -306,8 +310,13 @@ main > .main-menu > #menu-switch-button:not(:hover) {
 main.without-menu > .main-menu {
   width: 3em;
 }
+
 main.without-menu > .main-menu > menu {
   display: none;
+}
+
+main.without-menu > .main-content {
+  width: 100%;
 }
 
 @media (min-width: 1300px) {
@@ -318,6 +327,8 @@ main.without-menu > .main-menu > menu {
   main > .main-menu {
     display: block;
   }
+
+
 }
 
 @media (max-width: 600px) {
