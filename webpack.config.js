@@ -1,68 +1,81 @@
-const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+
+const PATHS = {
+  src: path.join(__dirname, './src'),
+  dist: path.join(__dirname, './docs'),
+  assets: 'assets/',
+};
 
 module.exports = {
-  devtool: "source-map",
+  devtool: 'source-map',
   entry: {
-    app: "./ts/index.ts"
+    app: './src/index.ts',
   },
   output: {
-    filename: "app.js",
-    path: path.resolve(__dirname, "js"),
-    publicPath: "/docs"
+    filename: 'script.js',
+    path: PATHS.dist,
   },
   resolve: {
-    extensions: [".ts", ".less", ".pug"]
+    extensions: ['.ts', '.less', '.pug', '.js'],
   },
   module: {
     rules: [
       {
-        test: /\.tsx?$/,
-        use: "ts-loader",
-        exclude: /node_modules/
+        test: /\.(png|jpg|gif|svg)$/,
+        loader: 'file-loader',
+        options: {
+          name: '[name].[ext]',
+        },
+      },
+      {
+        test: /\.pug$/,
+        use: [
+          {
+            loader: 'pug-loader',
+            options: {
+              pretty: true,
+              filters: {
+                escape: code => {
+                  return code.replace(/\</g, '&lt;').replace(/\>/g, '&gt;');
+                },
+              },
+            },
+          },
+        ],
       },
       {
         test: /\.less$/,
         use: [
-          "less-loader",
           {
-            loader: "less-loader",
-            options: { sourceMap: true }
-          }
-        ]
+            loader: 'style-loader',
+          },
+          {
+            loader: 'css-loader',
+            options: {
+              url: false,
+            },
+          },
+          {
+            loader: 'less-loader',
+          },
+        ],
       },
       {
-      //   test: /\.pug$/,
-      //   loaders: [
-      //     {
-      //       loader: "html-loader"
-      //     },
-      //     {
-      //       loader: "pug-html-loader",
-      //       options: {
-      //         pretty: true,
-      //         filters: {
-      //           escape: code => {
-      //             return code.replace(/\</g, "&lt;").replace(/\>/g, "&gt;");
-      //           }
-      //         }
-      //       }
-      //     }
-      //   ]
-      }
-    ]
+        test: /\.ts$/,
+        use: 'ts-loader',
+        exclude: /node_modules/,
+      },
+    ],
   },
   devServer: {
-    overlay: true
+    overlay: true,
   },
   plugins: [
-    new MiniCssExtractPlugin({
-      filename: "[name].css"
-    }),
     new HtmlWebpackPlugin({
-      filename: "index.html",
-      template: "./index.pug"
-    })
-  ]
+      template: './src/index.pug',
+    }),
+    new CopyWebpackPlugin([{ from: PATHS.src + '/assets', to: PATHS.dist + '/assets' }]),
+  ],
 };

@@ -1,3 +1,5 @@
+@import '../node_modules/highlight.js/styles/github-gist.css';
+
 :root {
   --white-dark: #f2f2f2;
   --grey-light: #d5dddf;
@@ -14,7 +16,7 @@
 
 body {
   margin: 0;
-  font-family: "-apple-system", BlinkMacSystemFont, Arial, sans-serif;
+  font-family: '-apple-system', BlinkMacSystemFont, Arial, sans-serif;
   font-size: 16px;
 }
 
@@ -138,7 +140,7 @@ h4,
 h5,
 h6 {
   color: var(--grey-dark);
-  font-family: "Philosopher", sans-serif;
+  font-family: 'Philosopher', sans-serif;
   margin: 2em 0 1em;
   font-weight: 400;
 }
@@ -159,7 +161,7 @@ ol {
 
 .logo {
   display: inline-block;
-  font-family: "Philosopher", sans-serif !important;
+  font-family: 'Philosopher', sans-serif !important;
   font-size: 30px;
   padding: 2px;
   line-height: 1;
@@ -192,9 +194,9 @@ ol {
   display: block;
   position: relative;
   &::after {
-    content: "";
+    content: '';
     display: block;
-    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEQAAAAwCAYAAACooNxlAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAOwQAADsEBuJFr7QAAABl0RVh0U29mdHdhcmUAcGFpbnQubmV0IDQuMC4xMzQDW3oAAANaSURBVGhD7Zvba9NQHMfzX9jGJu0SvIAwBFGRKQwUJmyICiLik4Ii6IMwZciGIshkKF5eRYdDZNZpRXzYzfmgTdvNgdsQde7B2zZ3ERQVwafj7xsbV+vPTdamOVn8wYeT9fzO7cNOmpZT5W/RH9JNotbhcUg/aanRcz2Ly1q6IsbdTs3sadfMDDFAPE+Ho98oT3gBxsYcsnPJdGrGA8wRc02q0fOYO+X9WgthZpc5dyCZOqh7pMZG6JqdgN/B2rKSZheDBEp+ktt4IfNQjQ1SyUtBBckYz20QBGjN76n8XQpeIFvPchODBEkZpnJGSm9Yb8xPChp0Y26yZdAfZlKNTeUnBA16B/1IpQkheBtikwJIrdIb0k8xFYEkHdZPK/cjRpyrDCLdmnFHKcVb7XBdvfhwKyGmWm8Ka00FmyMD5GIS9xC2slhkqqrF97Fx4QSuRxpOsLky4LqQoWMNWRUzASn4j+nfsYtt4yWeCHECYiZb48IqX8W29QJPhTgBMS+O1LHtS40UQhDONuqt3sr2UyqkEeIExIy3XBPW8nK2P7eRTogTEPP00GG2TzeRVgjC3kZtCZHeWMX27QZSC3ECYt5dbhbpsmXsGMXEF0KcgJjBvfvZcYqFr4QgIGU63iZS6zaw4xWK74Q4ATEv64+zYxaCb4UgIMVau54dd774XkiqopIdd774esu8bmxixywEX95U7Uf8mm3seIXiKyGQ4faHQF8IgYiJ6zeEtXI1O0YxkVqIsz36d+5m+3YDaYVAhhdfNUonBCLsL6OL/Hzxr0glBDIG9uxj+ykVUgiBiLeXrtCn2aVsH6XEUyH2TbMtIVKVm9i2XuCZEMgYOnCQbeMlrgvp27LdXrwTuB5tvipSS1aw+V6jJNXoNFdRTPCZA88TILO5hs2RgaQam1C6NOMeVxlEuiPGbcUKR89wlUEEJ6lwD/l/YGaGWggxU+Ho17yKwEE75ROVPw/e0Y31Qn5C0CAhZ20ZCHoBZ1RH85OCAq39DZV/nlUN4tah/4wvVM56mhm22MYLDVrrKyp5GU4gAYdYS/HA5hU4l5sK6U10PbuM3EAyYf+com+RdpRsXuyJlLXSg1xHh2ZY7bo5QFvsMwaQCcwJc8McMVfMGXPHGqh+jp+HKMoPg5XHKtJNDT8AAAAASUVORK5CYII=");
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEQAAAAwCAYAAACooNxlAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAOwQAADsEBuJFr7QAAABl0RVh0U29mdHdhcmUAcGFpbnQubmV0IDQuMC4xMzQDW3oAAANaSURBVGhD7Zvba9NQHMfzX9jGJu0SvIAwBFGRKQwUJmyICiLik4Ii6IMwZciGIshkKF5eRYdDZNZpRXzYzfmgTdvNgdsQde7B2zZ3ERQVwafj7xsbV+vPTdamOVn8wYeT9fzO7cNOmpZT5W/RH9JNotbhcUg/aanRcz2Ly1q6IsbdTs3sadfMDDFAPE+Ho98oT3gBxsYcsnPJdGrGA8wRc02q0fOYO+X9WgthZpc5dyCZOqh7pMZG6JqdgN/B2rKSZheDBEp+ktt4IfNQjQ1SyUtBBckYz20QBGjN76n8XQpeIFvPchODBEkZpnJGSm9Yb8xPChp0Y26yZdAfZlKNTeUnBA16B/1IpQkheBtikwJIrdIb0k8xFYEkHdZPK/cjRpyrDCLdmnFHKcVb7XBdvfhwKyGmWm8Ka00FmyMD5GIS9xC2slhkqqrF97Fx4QSuRxpOsLky4LqQoWMNWRUzASn4j+nfsYtt4yWeCHECYiZb48IqX8W29QJPhTgBMS+O1LHtS40UQhDONuqt3sr2UyqkEeIExIy3XBPW8nK2P7eRTogTEPP00GG2TzeRVgjC3kZtCZHeWMX27QZSC3ECYt5dbhbpsmXsGMXEF0KcgJjBvfvZcYqFr4QgIGU63iZS6zaw4xWK74Q4ATEv64+zYxaCb4UgIMVau54dd774XkiqopIdd774esu8bmxixywEX95U7Uf8mm3seIXiKyGQ4faHQF8IgYiJ6zeEtXI1O0YxkVqIsz36d+5m+3YDaYVAhhdfNUonBCLsL6OL/Hzxr0glBDIG9uxj+ykVUgiBiLeXrtCn2aVsH6XEUyH2TbMtIVKVm9i2XuCZEMgYOnCQbeMlrgvp27LdXrwTuB5tvipSS1aw+V6jJNXoNFdRTPCZA88TILO5hs2RgaQam1C6NOMeVxlEuiPGbcUKR89wlUEEJ6lwD/l/YGaGWggxU+Ho17yKwEE75ROVPw/e0Y31Qn5C0CAhZ20ZCHoBZ1RH85OCAq39DZV/nlUN4tah/4wvVM56mhm22MYLDVrrKyp5GU4gAYdYS/HA5hU4l5sK6U10PbuM3EAyYf+com+RdpRsXuyJlLXSg1xHh2ZY7bo5QFvsMwaQCcwJc8McMVfMGXPHGqh+jp+HKMoPg5XHKtJNDT8AAAAASUVORK5CYII=');
     background-repeat: no-repeat;
     background-position: center center;
     filter: grayscale(1) contrast(1.4) opacity(0.9);
@@ -255,7 +257,7 @@ main {
     margin-top: 210vh;
     overflow-y: auto;
     #menu-switch-button {
-      background-image: url(../images/angle-left-sm.svg);
+      background-image: url(./assets/images/angle-left-sm.svg);
       background-color: transparent;
       background-repeat: no-repeat;
       background-size: contain;
@@ -291,15 +293,13 @@ main {
       }
     }
   }
-  > .main-content {
-    max-width: calc(100vw - 6em);
-  }
+
   &.without-menu {
     grid-template-columns: 3em 1fr;
     > .main-menu {
       width: 3em;
       #menu-switch-button {
-        background-image: url(../images/angle-right-sm.svg);
+        background-image: url(./assets/images/angle-right-sm.svg);
       }
       menu {
         display: none;
@@ -311,6 +311,9 @@ main {
     padding-right: 3em;
     > .main-menu {
       display: block;
+    }
+    > .main-content {
+      max-width: calc(100vw - 6em);
     }
   }
 }
@@ -338,12 +341,12 @@ main {
     padding: 0;
   }
 
-  a[target="_blank"] {
+  a[target='_blank'] {
     display: inline-block;
   }
 
-  a[target="_blank"]::after {
-    content: "[ " attr(href) " ]";
+  a[target='_blank']::after {
+    content: '[ ' attr(href) ' ]';
     font-size: 0.8em;
     margin: 0 1ex;
     display: inline-block;
