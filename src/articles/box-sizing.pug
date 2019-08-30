@@ -13,7 +13,7 @@ article#box-sizing
       a(target="_blank" href="http://htmlbook.ru/css/margin") margin
       | ). 
       a(href="http://htmlbook.ru/samlayout/blochnaya-verstka/blochnaya-model" target="_blank") Подробнее о блочной модели стоит почитать здесь.
-    
+
     div(data-run="box-model")
 
     pre(data-lang="html" data-code="box-model" hidden)
@@ -29,7 +29,7 @@ article#box-sizing
         </div>
     pre(data-lang="css" data-code="box-model" hidden)
       :escape
-        
+
         .box-model {
           display: flex;
           justify-content: center;
@@ -115,22 +115,22 @@ article#box-sizing
 
       pre(data-lang="html" data-code="box-z-2")
         :escape
-         <div class="one">padding: 0</div>
-         <div class="two">padding: 40px</div>
+          <div class="one">padding: 0</div>
+          <div class="two">padding: 40px</div>
       pre(data-lang="css" data-code="box-z-2")
         :escape
-         .one {
-           width: 200px;
-           height: 100px;
-           padding: 0;
-           box-sizing: border-box;
-         }
-         .two {
-           width: 200px;
-           height: 100px;
-           padding: 40px;
-           box-sizing: border-box;
-         }
+          .one {
+            width: 200px;
+            height: 100px;
+            padding: 0;
+            box-sizing: border-box;
+          }
+          .two {
+            width: 200px;
+            height: 100px;
+            padding: 40px;
+            box-sizing: border-box;
+          }
       pre(data-lang="css" data-code="box-z-2" hidden)
         :escape
           .one,.two{

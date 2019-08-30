@@ -7,49 +7,49 @@ article#image
       p Код примера предельно прост: 
       pre(data-lang="html" data-code="image-in-text-1")
         :escape
-         <p>
+          <p>
             <img src="./assets/images/image.svg" alt="Just image">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic commodi maiores excepturi dolore cupiditate sit obcaecati, 
             repellat doloribus rerum! Dicta eius aliquid eaque sed sequi obcaecati debitis quos veniam placeat.
-         </p>
-         <p>
+          </p>
+          <p>
             Itaque voluptates eum nihil minima quo iure voluptas, atque amet molestias, perspiciatis sed cupiditate nemo inventore velit 
             soluta iste ut nesciunt! Qui fuga nesciunt accusantium magnam officiis corrupti, quibusdam amet.
-         </p>
-         <p>
+          </p>
+          <p>
             Soluta, laudantium in. Dolorem laboriosam nobis nihil iste eum sapiente maxime, facilis minus atque debitis corporis quasi, 
             molestias delectus magni placeat ipsum iure perspiciatis doloremque repudiandae rem tenetur, in dolorum. 
-         </p>
+          </p>
 
       div(data-run="image-in-text-1")
 
     section
       p Как видите, картинка стала частью первой строки текста. Нам редко нужно, чтобы поведение было именно таким. 
         | Чаще нам необходимо сделать так, чтобы картинка обтекалась текстом. Для этого существует свойство float. 
-      
+
       p Добавим к нашему примеру 
         a(href="http://htmlbook.ru/css/float" target="_blank") float
         | : left и посмотрим, что получится
       pre(data-lang="css" data-code="image-in-text-2")
         :escape
-         img {
-           float: left;
-         }
+          img {
+            float: left;
+          }
       pre(data-lang="html" data-code="image-in-text-2" hidden)
         :escape
-         <p>
+          <p>
             <img src="./assets/images/image.svg" alt="Just image">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic commodi maiores excepturi dolore cupiditate sit obcaecati, 
             repellat doloribus rerum! Dicta eius aliquid eaque sed sequi obcaecati debitis quos veniam placeat.
-         </p>
-         <p>
+          </p>
+          <p>
             Itaque voluptates eum nihil minima quo iure voluptas, atque amet molestias, perspiciatis sed cupiditate nemo inventore velit 
             soluta iste ut nesciunt! Qui fuga nesciunt accusantium magnam officiis corrupti, quibusdam amet.
-         </p>
-         <p>
+          </p>
+          <p>
             Soluta, laudantium in. Dolorem laboriosam nobis nihil iste eum sapiente maxime, facilis minus atque debitis corporis quasi, 
             molestias delectus magni placeat ipsum iure perspiciatis doloremque repudiandae rem tenetur, in dolorum. 
-         </p>
+          </p>
 
       div(data-run="image-in-text-2")
 
@@ -84,7 +84,7 @@ article#image
           }
     section
       div(data-run="image-in-text-3")
-      
+
       p Как видите, абзац, который вы сейчас читаете, находится уже за пределами примера. Добавив такой чистящий элемент в самый конец родительского контейнера, 
         | мы смогли вернуть высоту контейнера к нормальному уровню. 
     section
@@ -97,22 +97,22 @@ article#image
           }
       pre(data-lang="html" data-code="image-in-text-4" hidden)
         :escape
-         <p>
+          <p>
             <img src="./assets/images/image.svg" alt="Just image">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic commodi maiores excepturi dolore cupiditate sit obcaecati, 
             repellat doloribus rerum! Dicta eius aliquid eaque sed sequi obcaecati debitis quos veniam placeat.
-         </p>
-         <p>
+          </p>
+          <p>
             Itaque voluptates eum nihil minima quo iure voluptas, atque amet molestias, perspiciatis sed cupiditate nemo inventore velit 
             soluta iste ut nesciunt! Qui fuga nesciunt accusantium magnam officiis corrupti, quibusdam amet.
-         </p>
-         <p>
+          </p>
+          <p>
             Soluta, laudantium in. Dolorem laboriosam nobis nihil iste eum sapiente maxime, facilis minus atque debitis corporis quasi, 
             molestias delectus magni placeat ipsum iure perspiciatis doloremque repudiandae rem tenetur, in dolorum. 
-         </p>
+          </p>
       div(data-run="image-in-text-4")
 
- 
+
       p И если мы не уверены, что текста будет достаточно, не забудем добавить в конец контейнера clear: both.
       pre(data-lang="css" data-code="image-in-text-5")
         :escape
@@ -124,13 +124,13 @@ article#image
           }
       pre(data-lang="html" data-code="image-in-text-5" hidden)
         :escape
-         <p>
+          <p>
             <img src="./assets/images/image.svg" alt="Just image">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic commodi maiores excepturi dolore cupiditate sit obcaecati, 
             repellat doloribus rerum! Dicta eius aliquid eaque sed sequi obcaecati debitis quos veniam placeat.
-         </p>
+          </p>
       div(data-run="image-in-text-5")
-    
+
     section
       p Подведём итоги. Для того, чтобы вставить картинку в текст и сделать так, чтобы она обтекалась, нужно воспользоваться свойством 
       a(href="http://htmlbook.ru/css/float" target="_blank") float
