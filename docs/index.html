@@ -1,0 +1,1586 @@
+<!DOCTYPE html><!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/icons/favicon-16x16.png">
+    <link rel="manifest" href="./assets/icons/site.webmanifest">
+    <link rel="mask-icon" href="./assets/icons/favicon.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="./assets/icons/favicon.ico">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-config" content="./assets/icons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+    <link href="https://fonts.googleapis.com/css?family=Philosopher&amp;display=swap&amp;subset=cyrillic" rel="stylesheet">
+    <title>HTML Practice</title>
+  </head>
+  <body>
+    <main>
+      <div class="main-menu">
+        <button id="menu-switch-button" title="Меню"></button>
+        <menu id="menu"></menu>
+      </div>
+      <div class="main-content">
+        <div class="container">
+          <h1><a class="logo" href="https://artik-man.github.io/HTML-Practice/"><span class="top">HTML</span><span class="bottom">Practice</span></a></h1>
+          <p></p>
+        </div>
+<article id="contents">
+  <div class="container">
+    <h2>Содержание</h2>
+    <ul>
+    </ul>
+    <ul>
+      <li>CSS переменные</li>
+      <li>Способы создания сеток</li>
+      <li>Вёрстка тултипов </li>
+      <li>Вёрстка выпадающего меню</li>
+      <li>Вёрстка модальных окон</li>
+      <li>Вёрстка форм</li>
+      <li>Градиенты, тени и фильтры</li>
+      <li>Трансформации</li>
+      <li>Анимации</li>
+      <li>Аудио и видео</li>
+      <li>Отзывчивый дизайн и медиа-выражения</li>
+      <li>Поговорим о семантике</li>
+      <li>Bootstrap</li>
+      <li>Препроцессоры</li>
+    </ul>
+  </div>
+</article>
+<article id="introduction">
+  <div class="container">
+    <h2>Введение</h2>
+    <p>
+       Это практическое руководство создано для начинающих верстальщиков и frontend-разработчиков, которые уже успели познакомиться с множеством HTML-тегов и CSS-свойств. 
+      Как минимум, вы должны быть знакомы со следующими тегами:
+    </p>
+    <ul class="columns-2">
+      <li><a href="http://htmlbook.ru/html/a" target="_blank">A</a></li>
+      <li><a href="http://htmlbook.ru/html/article" target="_blank">ARTICLE</a></li>
+      <li><a href="http://htmlbook.ru/html/body" target="_blank">BODY</a></li>
+      <li><a href="http://htmlbook.ru/html/button" target="_blank">BUTTON</a></li>
+      <li><a href="http://htmlbook.ru/html/div" target="_blank">DIV</a></li>
+      <li><a href="http://htmlbook.ru/html/h1" target="_blank">H1</a></li>
+      <li><a href="http://htmlbook.ru/html/h2" target="_blank">H2</a></li>
+      <li><a href="http://htmlbook.ru/html/h3" target="_blank">H3</a></li>
+      <li><a href="http://htmlbook.ru/html/head" target="_blank">HEAD</a></li>
+      <li><a href="http://htmlbook.ru/html/html" target="_blank">HTML</a></li>
+      <li><a href="http://htmlbook.ru/html/img" target="_blank">IMG</a></li>
+      <li><a href="http://htmlbook.ru/html/input" target="_blank">INPUT</a></li>
+      <li><a href="http://htmlbook.ru/html/label" target="_blank">LABEL</a></li>
+      <li><a href="http://htmlbook.ru/html/li" target="_blank">LI</a></li>
+      <li><a href="http://htmlbook.ru/html/link" target="_blank">LINK</a></li>
+      <li><a href="http://htmlbook.ru/html/p" target="_blank">P</a></li>
+      <li><a href="http://htmlbook.ru/html/section" target="_blank">SECTION</a></li>
+      <li><a href="http://htmlbook.ru/html/span" target="_blank">SPAN</a></li>
+      <li><a href="http://htmlbook.ru/html/textarea" target="_blank">TEXTAREA</a></li>
+      <li><a href="http://htmlbook.ru/html/title" target="_blank">TITLE</a></li>
+      <li><a href="http://htmlbook.ru/html/ul" target="_blank">UL </a></li>
+    </ul>
+    <p>Было бы неплохо, если бы вы могли оперировать такими единицами измерения, как px, %, em, rem, vw, vh, vmin и vmax. <a href="https://developer.mozilla.org/ru/docs/Learn/CSS/Introduction_to_CSS/Values_and_units" target="_blank">О единицах измерения стоит почитать здесь</a>, но не волнуйтесь, с основными единицами измерения мы ознакомимся в скором времени. А перед тем, как вы приступите к этому руководству, вы должны понимать, <a href="https://developer.mozilla.org/ru/docs/Web/CSS/CSS_Селекторы" target="_blank">как писать селекторы</a>. Для закрепления этих знаний предлагаю  <a href="https://flukeout.github.io/" target="_blank">поиграть в эту игру</a>. Кроме того, вы должны знать основные css-свойства, перечисленные в списке ниже, и другие.</p>
+    <ul class="columns-2 can-print-break">
+      <li><a href="http://htmlbook.ru/css/background" target="_blank">background</a></li>
+      <li><a href="http://htmlbook.ru/css/border" target="_blank">border</a></li>
+      <li><a href="http://htmlbook.ru/css/box-shadow" target="_blank">box-shadow</a></li>
+      <li><a href="http://htmlbook.ru/css/display" target="_blank">display</a></li>
+      <li><a href="http://htmlbook.ru/css/clear" target="_blank">clear</a></li>
+      <li><a href="http://htmlbook.ru/css/cursor" target="_blank">cursor</a></li>
+      <li><a href="http://htmlbook.ru/css/color" target="_blank">color</a></li>
+      <li><a href="http://htmlbook.ru/css/column-count" target="_blank">column-count</a></li>
+      <li><a href="http://htmlbook.ru/css/float" target="_blank">float</a></li>
+      <li><a href="http://htmlbook.ru/css/font-family" target="_blank">font-family</a></li>
+      <li><a href="http://htmlbook.ru/css/font-size" target="_blank">font-size</a></li>
+      <li><a href="http://htmlbook.ru/css/font-weight" target="_blank">font-weight</a></li>
+      <li><a href="http://htmlbook.ru/css/height" target="_blank">height</a></li>
+      <li><a href="http://htmlbook.ru/css/justify-content" target="_blank">justify-content</a></li>
+      <li><a href="http://htmlbook.ru/css/line-height" target="_blank">line-height</a></li>
+      <li><a href="http://htmlbook.ru/css/list-style" target="_blank">list-style</a></li>
+      <li><a href="http://htmlbook.ru/css/margin" target="_blank">margin</a></li>
+      <li><a href="http://htmlbook.ru/css/max-height" target="_blank">max-height</a></li>
+      <li><a href="http://htmlbook.ru/css/max-width" target="_blank">max-width</a></li>
+      <li><a href="http://htmlbook.ru/css/min-height" target="_blank">min-height</a></li>
+      <li><a href="http://htmlbook.ru/css/min-width" target="_blank">min-width</a></li>
+      <li><a href="http://htmlbook.ru/css/opacity" target="_blank">opacity</a></li>
+      <li><a href="http://htmlbook.ru/css/outline" target="_blank">outline</a></li>
+      <li><a href="http://htmlbook.ru/css/overflow" target="_blank">overflow</a></li>
+      <li><a href="http://htmlbook.ru/css/padding" target="_blank">padding</a></li>
+      <li><a href="http://htmlbook.ru/css/position" target="_blank">position</a></li>
+      <li><a href="http://htmlbook.ru/css/text-align" target="_blank">text-align</a></li>
+      <li><a href="http://htmlbook.ru/css/text-decoration" target="_blank">text-decoration</a></li>
+      <li><a href="http://htmlbook.ru/css/text-overflow" target="_blank">text-overflow</a></li>
+      <li><a href="http://htmlbook.ru/css/text-shadow" target="_blank">text-shadow</a></li>
+      <li><a href="http://htmlbook.ru/css/transform" target="_blank">transform</a></li>
+      <li><a href="http://htmlbook.ru/css/transition" target="_blank">transition</a></li>
+      <li><a href="http://htmlbook.ru/css/vertical-align" target="_blank">vertical-align</a></li>
+      <li><a href="http://htmlbook.ru/css/visibility" target="_blank">visibility</a></li>
+      <li><a href="http://htmlbook.ru/css/white-space" target="_blank">white-space</a></li>
+      <li><a href="http://htmlbook.ru/css/width" target="_blank">width</a></li>
+      <li><a href="http://htmlbook.ru/css/z-index" target="_blank">z-index</a></li>
+    </ul>
+  </div>
+</article>
+<article id="git">
+  <div class="container">
+    <h2>Кратко о GIT</h2>
+    <p>
+      GIT — это система контроля версий. Позволяет отслеживать и фиксировать изменения в коде, смотреть,
+      как развивался проект и какие люди вкладывали в него своё время. Без базовых знаний гита, работать
+      frontend-разработчиком просто нельзя.
+    </p>
+    <h3>Установка</h3>
+    <p>По этой ссылке, вы найдете инструкцию по установке GIT на свой компьютер: <a href="https://git-scm.com/downloads" target="_blank">Download GIT</a></p>
+    <h3>Настройка</h3>
+    <p>После установки, нам нужно настроить GIT. Самое главное - выполнить команды:</p>
+    <pre data-lang="bash">git config --global user.name "My Name"
+git config --global user.email myEmail@example.com</pre>
+    <h3>GitHub</h3>
+    <p>
+      Теперь нужно зарегистрироваться на GitHub или на любом другом сервисе для хостинга проектов, основанной
+      на системе контроля версий GIT.
+    </p>
+    <p><a href="https://github.com/" target="_blank">GitHub.com</a></p>
+    <p>С помощью генератора ключей, нужно создать новый ключ для репозитория. Для этого, воспользуйтесь командой</p>
+    <pre data-lang="bash">ssh-keygen</pre>
+    <p>
+      Следуйте инструкциям. После создания ключей, поместите их в папку C:\Users\YOUR_NAME\.ssh, для
+      пользователей Windows или в папку ~/.ssh, для пользователей Linux или MacOS.
+    </p>
+    <p>
+      На сайте GitHub.com добавьте публичный (id_rsa.pub) ssh-ключ. Это можно сделать в разделе настройки
+      пользователя.
+    </p>
+    <p>
+      Создайте на сайте новый проект. После создания проекта, вы найдете ссылку вида
+      git@github.com:YOUR_LOGIN/YOUR_PROJECT.git
+    </p>
+    <p>
+      На своём компьютере создайте папку, где будете хранить ваши проекты. В этой папке откройте терминал
+      (например, C:\projects) и выполните команду:
+    </p>
+    <pre data-lang="bash">git clone git@github.com:YOUR_LOGIN/YOUR_PROJECT.git</pre>
+    <p>На данном этапе можно сказать, что мы настроили GIT.</p>
+    <h3>Основные команды</h3>
+    <p>
+      Чтобы сохранить измененные файлы в каком-то состоянии, нужно их закоммитить. Для этого нужно сначала
+      добавить измененные файлы в будующий коммит
+    </p>
+    <pre data-lang="bash">git add -A          </pre>
+    <p>Далее нужно сохранить коммит</p>
+    <pre data-lang="bash">git commit -m "Название коммита"          </pre>
+    <p>
+      Коммиты лучше всего называть так, чтобы было понятно, что было сделано в этом коммите, как именно
+      изменилось приложение или сайт. Например, "Изменен цвет кнопки корзины". Еще лучше было бы, если бы мы
+      написали это на английском.
+    </p>
+    <p>Теперь нужно отправить изменения на сервер. Для этого есть команда:</p>
+    <pre data-lang="bash">git push          </pre>
+    <p>Чтобы получить изменения с сервера, существует команда:</p>
+    <pre data-lang="bash">git pull          </pre>
+    <p>Кроме того, вам стоит изучить такие команды, как merge, status, branch checkout, revert и многие другие.</p>
+    <p>Больше подробностей читать здесь: </p>
+    <ul>
+      <li><a href="https://proglib.io/p/git-for-half-an-hour/" target="_blank">Git за полчаса: руководство для начинающих</a></li>
+      <li><a href="https://tproger.ru/translations/git-quick-start/" target="_blank">Git. Быстрый старт по использованию основных операций с объяснениями</a></li>
+      <li><a href="https://git-scm.com/book/en/v2" target="_blank">Pro GIT</a></li>
+    </ul>
+  </div>
+</article>
+<article id="units">
+  <div class="container">
+    <h2>Единицы измерения в CSS</h2>
+    <p>
+      Прежде, чем начать что-то делать, надо разобраться с принятыми единицами измерения. CSS поддерживает множество единиц измерения, но здесь будут описаны только самые часто-применяемые.</p>
+    <h3>px - пиксели</h3>
+    <p>
+      Самая основная единица измерения, которая встречается практически везде - это пиксели. Пиксель - это точка минимального размера на вашем экране. Весь экран состоит из таких точек.
+      Вообще, если мы говорим о CSS, то пиксели здесь не всегда будут равны тем самым точкам на экране. 
+      К примеру, если у вас Retina Display, то, скорее всего, за один CSS-пиксель у вас будет отвечать аж квадрат из 4-х соседних пикселей. 
+      Эта технология служит для сглаживания изображений. 
+      Итак, пиксели. Если вам в конкретной задаче нужна постоянная, практически ни от чего не зависящая единица измерения, смело используйте её. 
+    </p>
+    <p>Пример - нужно установить размер контейнера для сайта. С очень высокой вероятностью, вы должны использовать пиксели. </p>
+    <h3>% - проценты</h3>
+    <p>Проценты используются там, где нам нужно задать величину относительно другого значения. Как правило, относительно родителя. </p>
+    <p>
+      К примеру, у родительского блока есть четыре равных, дочерних. Ширина родительского блока зависит от размера экрана пользователя и нам точно не известна, а дочерние блоки должны быть расположены рядом друг с другом. Используем ширину 25% у блоков и мы решим эту задачу.</p>
+    <h3>em и rem - значение относительно шрифта. </h3>
+    <p>
+      em - это относительная единица длины, равная размеру текущего шрифта. То есть, если мы верстаем кнопку, кегль шрифта которой равен 10px, мы можем установить padding: 1.5em, что будет означать, что пока размер шрифта этой кнопки равен 10px, то padding будет равен 15px (1.5*10px).
+      Если где-то ниже будет вторая такая кнопка с модификатором (дополнительный класс, который, например, переопределяет размер шрифта на 20px),
+      то padding, равный 1.5em преобразуется браузером в 30px (1.5*20px).
+    </p>
+    <p>rem делает всё то же самое, но берёт размер шрифта, установленного в html. То есть, если мы хотим точно управлять размером шрифта, лучше установить этот код:</p>
+    <pre data-lang="css">html {
+  font-size: 18px;   
+} </pre>
+    <p>
+      Так, мы сможем установить размер шрифта в rem во всём документе, а когда нам понадобится его уменьшить (например, для мобильных устройств с маленькими экранами), мы просто изменим это значение прям в html и весь сайт адаптируется под новый экран.</p>
+    <h3>vw, vh, vmin и vmax - значение относительно размера экрана </h3>
+    <p>Тут всё просто. Каким бы ни был экран пользователя вашего сайта, 1vw всегда будет равен 1% от ширины его экрана, а 1vh будет равен 1% от высоты его экрана.</p>
+    <p>
+      vmin - это наименьшее значение среди vw и vh. Если экран пользователя расположен горизонтально (экран ноутбука, например), то vmin = vh. Если это экран телефона, например, расположенный вертикально, то vmin = vw</p>
+    <p>vmax - точно так же, но наоборот. Это наибольшее среди значений vw и vh.</p>
+    <h3>fr - "единица гибкости"  </h3>
+    <p>fr используется в <a target="_blank" href="https://developer.mozilla.org/ru/docs/Web/CSS/CSS_Grid_Layout/Basic_Concepts_of_Grid_Layout">гридах</a>. Об этой единице измерения очень хорошо описано в этой статье: <a target="_blank" href="https://medium.com/@stasonmars/что-такое-единица-гибкости-fr-в-css-доступным-и-простым-языком-2a3794c4444">Что такое единица гибкости fr в CSS, доступным и простым языком</a>. Если коротко, то fr позволяет разделять пространство на части.</p>
+    <p>
+      К примеру, элементы грида нужно разделить так, чтобы все они были равны. Для этого нужно задать для них ширину равную, например, 1fr. Тогда все элементы будут равны между собой.</p>
+    <p>
+      А что если у нас есть два блока в грид-контейнере, ширина которых должа относиться друг к другу как 1 к 3? Получается, всего частей у нас 4 (1+3), тогда ширина первого будет 25%, а второго 75%. И зачем же нам fr? Мы можем задать ширину первого 1fr, а второго 3fr и получить такой же результат. 
+      Но почему бы просто ни использовать проценты? А что если мы точно знаем, что первый блок должен быть 50px в ширину, а второй и третий - делить между собой 
+      оставшееся пространство так, чтобы первому досталось 25%, а второму 75%? Если задать "50px 25% 75%", ничего не получится, потому что общая сумма будет равна 
+      25% ширины контейнера + 75% ширины контейнера + 50px, что уже точно больше, чем 100% и блок выйдет за границу контейнера. Как раз здесь нам и 
+      нужно использовать fr. Мы можем задать "50px 1fr 3fr" - и вуаля! Ведь fr разделить именно свободное пространство.
+    </p>
+    <p>Таким образом, fr позволяет нам делить имеющееся пространство на доли, отношение которых и задаётся этой единицей измерения. </p>
+    <h3>Остальные единицы измерения </h3>
+    <p>Также CSS поддерживает и другие  <a target="_blank" href="http://proglang.su/css/measurement-units">единицы измерения:</a></p>
+    <ul>
+      <li>mm (миллиметры),</li>
+      <li>cm (сантиметры)</li>
+      <li>ex (относительно высоты строчной буквы)</li>
+      <li>ch (относительно ширины строчной буквы)</li>
+      <li>in (дюймы)</li>
+      <li>pt (типографские пункты = 1/72in = 0.3528mm)</li>
+      <li>pc (пики. одна пика эквивалентна 12pt)</li>
+    </ul>
+    <p>и другие. Они значительно реже применяются на практике, но для общего развития, стоит изучить и их.</p>
+  </div>
+</article>
+<article id="fonts">
+  <div class="container">
+    <h2>Форматирование текста</h2>
+    <p>
+      Знаете ли вы, что CSS имеет средства форматирования текста не хуже чем у Microsoft Word? Вы можете задать свой шрифт, жирность, начертание, цвет, тень, размер и еще множество параметров, чтобы получить идеально отформатированный текст. Для форматирования текста используется следующий основной набор свойств: </p>
+    <ul class="can-print-break">
+      <li> <a href="http://htmlbook.ru/css/font-family" target="_blank">font-family</a><br>Задаёт шрифт для элемента. К примеру, <code>font-family: Arial, sans-serif; </code>Изменяет шрифт на Arial, а если этого шрифта в системе нет, то берёт любой из установленных шрифтов семейства sans-serif. </li>
+      <li> <a href="http://htmlbook.ru/css/font-size" target="_blank">font-size</a><br>Задаёт кегль для текста (размер шрифта). <code>font-size: 18px; </code>Задаёт размер шрифта в 18px. Могут быть использованы относительные значения: "larger" и "smaller", указывающие, что размер должен быть больше или меньше стандартного значения. </li>
+      <li> <a href="http://htmlbook.ru/css/font-weight" target="_blank">font-weight</a><br>Устанавливает насыщенность (жирность) шрифта. Значением могут быть числа от 100 до 900 с шагом 100, а также bold, bolder, lighter и normal. <br><b>Примечание:</b> значения должны поддерживаться шрифтом! Если шрифт не поддерживает какие-то значения насыщенности, то вы не сможете задать эти значения и будет выбрано ближайшее поддерживающееся. </li>
+      <li> <a href="http://htmlbook.ru/css/font-style" target="_blank">font-style</a><br>Определяет начертание шрифта. Может быть обычным (normal), курсивным (italic) и наклонным (oblique). <br>Наклонное начертание хоть и похоже на курсивной, однако, это разные вещи. Курсивным текст станет только в том случае, если шрифт поддерживает курсивное начертание. 
+        Наклонный текст образуется путём программного наклона букв обычного шрифта.  
+      </li>
+      <li> <a href="http://htmlbook.ru/css/font-variant" target="_blank">font-variant</a><br>Благодаря этому свойству, можно отображать текст капителью. Это означает, что строчные буквы будут отображены как прописные, но уменьшенного размера. </li>
+      <li> <a href="http://htmlbook.ru/css/letter-spacing" target="_blank">letter-spacing</a><br>Определяет интервал между символами. Желательно задавать значения в em. Принимает и отрицательные значения. </li>
+      <li> <a href="http://htmlbook.ru/css/word-spacing" target="_blank">word-spacing </a><br>Устанавливает интервал между словами (ширина пробела)</li>
+      <li> <a href="http://htmlbook.ru/css/text-indent" target="_blank">text-indent</a><br>Устанавливает ширину первой строки абзаца (красной строки)</li>
+      <li> <a href="http://htmlbook.ru/css/text-transform" target="_blank">text-transform</a><br>Управляет регистром текста. К примеру, значение uppercase устанавливает все символы текста прописными.</li>
+      <li> <a href="http://htmlbook.ru/css/text-decoration" target="_blank">text-decoration</a><br>Добавляет подчёркивание (underline), перечёркивание (line-through) или линию над текстом (overline). 
+        Кроме того, значение none полностью убирает стандартные подчёркивания у ссылок. 
+      </li>
+      <li> <a href="http://htmlbook.ru/css/text-align" target="_blank">text-align</a><br>Выравнивание текста. Доступные значения: <b>center </b>(по центру), <b>justify </b>(по ширине строки), <b>start </b>(по левому краю, для тех языков, где текст идёт слева направо), <b>end </b>(по правому краю, для тех языков, где текст идёт слева направо)</li>
+      <li> <a href="http://htmlbook.ru/css/text-shadow" target="_blank">text-shadow</a><br>Добавляет тень тексту. К примеру, <code>text-shadow: 1px 2px 3px black;</code>, где <br>первое значение (1px) &mdash; сдвиг по оси x, <br>второе значение (2px) &mdash; сдвиг по оси y,<br>третье значение (3px) &mdash; радиус размытия тени,<br>четвертое значение (black) &mdash; цвет тени. <br>Кроме того, таких групп значений может быть сколько угодно. К примеру, <code>text-shadow: 1px 2px 3px black, 0 0 1em red;</code></li>
+      <li> <a href="http://htmlbook.ru/css/column-count" target="_blank">column-count</a><br>Задаёт количество колонок в тексте. Применяется, в основном, для газетной вёрстки.</li>
+      <li> <a href="http://htmlbook.ru/css/line-height" target="_blank">line-height</a><br>Задаёт высоту строки. Если задавать без единиц измерения, например, <code>line-height: 2;</code>, значение будет воспринято как множитель. </li>
+    </ul>
+    <section>
+      <h3>Собственные шрифты</h3>
+      <p>Для подключения собственного шрифта используется правило <a href="http://htmlbook.ru/css/font-face" target="_blank">@font-face.</a></p>
+      <pre data-lang="css">@font-face {
+  font-family: 'Philosopher'; /* Название шрифта*/
+  font-style: normal;         /* Начертание */
+  font-weight: 400;           /* Насыщенность */
+  src: url(./fonts/philosopher.woff2) format('woff2'); /* Путь к файлу шрифта и его формат */
+}</pre>
+      <p>Для подключение такого шрифта к элементу, используют код:</p>
+      <pre data-lang="css">.selector {
+  font-family: 'Philosopher', sans-serif;
+}</pre>
+    </section>
+    <section>
+      <h3>Google Fonts </h3>
+      <p>Для упрощения подключения шрифтов, используют различные библиотеки шрифтов. К примеру, <a target="_blank" href="https://fonts.google.com/">Google Fonts</a>. Такие библиотеки содержат сотни шрифтов, а так же оптимизаторы для браузеров. 
+        Всё что нам нужено &mdash; выбрать требуемый шрифт, выбрать, какие начертания и языки нам требуются (для русского языка Cyrillic),
+        подключить в <code>&lt;head&gt;</code>стиль шрифта, имеющий примерно такой вид:
+      </p>
+      <pre data-lang="html">&lt;head&gt;
+ ...
+ &lt;link href="https://fonts.googleapis.com/css?family=Philosopher:400,700&display=swap&subset=cyrillic" rel="stylesheet"&gt;
+ ...
+&lt;/head&gt;</pre>
+    </section>
+  </div>
+</article>
+<article id="column-count">
+  <div class="container">
+    <h2>Многоколоночный текст</h2>
+    <p>
+      Время от времени возникает задача расположить список или текст в две колонки. Годы идут, CSS развивается, поколения верстальщиков сменяют поколения, но свои костыли люди как делали, так и делают. Мало кто знает, но в CSS появилось свойство <br><a href="http://htmlbook.ru/css/column-count" target="_blank">column-count</a>, позволяющее задать количество колонок для списка или текста. Также есть свойство <br><a href="http://htmlbook.ru/css/column-width" target="_blank">column-width</a>, которое задаёт минимальную ширину для колонки, <br><a href="http://htmlbook.ru/css/column-rule" target="_blank">column-rule</a>, отрисовывающее линию между колонками словно border,<br><a href="http://htmlbook.ru/css/column-gap" target="_blank">column-gap</a>, задающее расстояние между колонками и <br><a href="http://htmlbook.ru/css/columns" target="_blank">columns</a>, объединяющее в себе column-width и column-count. 
+      <p>Разберемся на примерах из жизни. Простой пример: нужно сделать так, чтобы список располагался в две колонки. </p>
+      <pre data-lang="html" data-code="col-count-1" hidden>&lt;ul&gt;
+  &lt;li&gt;Lorem&lt;/li&gt;
+  &lt;li&gt;ipsum&lt;/li&gt;
+  &lt;li&gt;dolor&lt;/li&gt;
+  &lt;li&gt;sit&lt;/li&gt;
+  &lt;li&gt;amet&lt;/li&gt;
+  &lt;li&gt;consectetur&lt;/li&gt;
+  &lt;li&gt;adipisicing&lt;/li&gt;
+  &lt;li&gt;elit&lt;/li&gt;
+&lt;/ul&gt;</pre>
+      <div data-run="col-count-1"></div>
+      <p>Добавим следующий CSS-код:</p>
+      <pre data-lang="css" data-code="col-count-2">ul {
+  column-count: 2;
+}</pre>
+      <p>В результате получим это:</p>
+      <pre data-lang="html" data-code="col-count-2" hidden>&lt;ul&gt;
+  &lt;li&gt;Lorem&lt;/li&gt;
+  &lt;li&gt;ipsum&lt;/li&gt;
+  &lt;li&gt;dolor&lt;/li&gt;
+  &lt;li&gt;sit&lt;/li&gt;
+  &lt;li&gt;amet&lt;/li&gt;
+  &lt;li&gt;consectetur&lt;/li&gt;
+  &lt;li&gt;adipisicing&lt;/li&gt;
+  &lt;li&gt;elit&lt;/li&gt;
+&lt;/ul&gt;</pre>
+      <div data-run="col-count-2"></div>
+      <p>
+        Просто, не правда ли? А теперь посмотрим на немного более сложный пример. Итак, наши клиенты - люди с планшетами. Наше веб-приложение похоже на газету и листать её нужно слева направо, а не вниз, как остальные сайты. Текст должен располагаться в три колонки на экран. 
+        Общее количество колонок неизвестно, также, как и количество текста. 
+      </p>
+      <p>
+        Из задания лишь понятно, что высота приложения должна быть равна высоте экрана пользователя, а за раз на экране должно быть отображено три колонки. Для начала, создадим контейнер, который бы занимал весь экран и имел прокрутку слева направо. </p>
+      <pre data-lang="css">.overflow-container {
+  height: 100vh;      /* занимает 100% высоты экрана */
+  overflow-x: auto;   /* показывает горизонтальный скролл в том случае, если он нужен */
+  overflow-y: hidden; /* скрывает вертикальный скролл даже если он нужен */
+}     </pre>
+      <p>
+        Теперь определим стили для текста. Мы понимаем, что так как колонки должно быть три, то каждая колонка должна иметь ширину 1/3 от ширины страницы. Это означает, что ширина колонки должна быть 100vw/3. Но число 33.333333vw не очень красиво выглядит. А свойство column-width задаёт именно
+        минимальную ширину колонки. То есть, ширина колонки всегда будет подбираться автоматически, однако, минимальная ширина будет такой, какой мы её зададим. 
+        Давайте зададим ширину колонки в 30vw - это ровное число, которое меньше 33.3333vw. 
+      </p>
+      <pre data-lang="css">.col-3 {
+  column-width: 30vw;
+}</pre>
+      <p>И добавим немного стиля. К примеру, расстояние между колонками и тонкую серую линию между ними.</p>
+      <pre data-lang="css">.col-3 {
+  column-width: 30vw;
+  column-gap: 2em;
+  column-rule: 1px solid #ccc;
+}</pre>
+      <p>Посмотрим, что получилось: </p><a class="codepen button" data-id="WNejwwa" data-height="500" data-default-tab="result">Запустить пример </a>
+      <p>
+        Если вы видите не три колонки, значит, по мнению вашего браузера, ширины окна недостаточно для размещения трёх колонок текста. Установите column-width немного меньше, поэкспериментируйте и получите приемлемый для вас результат. </p>
+    </p>
+  </div>
+</article>
+<article id="display">
+  <div class="container">
+    <h2>Свойство display</h2>
+    <p>
+      Одним из важнейший CSS-свойств является display. Оно позволяет переопределять тип отображения элемента, не изменяя семантику кода. Рассмотрим основные значения этого свойства:</p>
+    <ol>
+      <li>none &mdash; скрывает элемент;</li>
+      <li>
+        block &mdash; определяет элемент как "блочный", что означает, что элемент не обтекается другими объектами, а переносится на новую строку и заполняет её полностью. Следующий элемент будет отрисован под блочным элементом. 
+        Является стандартным значением элементов div, p, ul, article, section и других;
+      </li>
+      <li>
+        inline &mdash; определяет элемент как "строчный", что означает, что элемент ведёт себя как текст. Является стандартным значением элементов span, a, s, b и других;</li>
+      <li>inline-block &mdash; смесь строчного и блочного. Фактически, являясь блочным, элемент получает возможность обтекаться строчными элементами, как тег img;</li>
+      <li>flex &mdash; превращает элемент в flex-контейнер. Это означает, что внутренние элементы выстраиваются так, как мы зададим с помощью свойств <a target="_blank" href="https://developer.mozilla.org/ru/docs/Web/CSS/flex">flex, </a><a target="_blank" href="https://developer.mozilla.org/ru/docs/Web/CSS/flex-direction">flex-direction, </a><a target="_blank" href="https://developer.mozilla.org/ru/docs/Web/CSS/flex-wrap">flex-wrap, </a><a target="_blank" href="https://developer.mozilla.org/ru/docs/Web/CSS/align-items">align-items, </a><a target="_blank" href="https://developer.mozilla.org/ru/docs/Web/CSS/justify-content">justify-content</a> и других. Более подробно о flex-контейнерах стоит прочитать тут: <a target="_blank" href="https://developer.mozilla.org/ru/docs/Web/CSS/CSS_Flexible_Box_Layout/Выравнивание_элементов_в_Flex_контейнере">Выравнивание элементов в Flex контейнере</a>;</li>
+      <li>grid &mdash; превращает элемент в grid-контейнер. Гриды это новая технология построения сеток. При помощи свойств управления сетками, например, <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-columns">grid-template-columns</a>, мы можем управлять отображением содержимого внутри грида. Более подробно о гридах можно почитать здесь: <a target="_blank" href="https://developer.mozilla.org/ru/docs/Web/CSS/CSS_Grid_Layout/Basic_Concepts_of_Grid_Layout">Основные понятия Grid Layout</a>.</li>
+    </ol>
+    <section>
+      <h3>Задачи</h3>
+      <p>
+        Задачи на добавление всего одной строки кода. Смотрите HTML-код, подумайте, какое CSS-свойство спасёт ситуацию. Поиграйтесь со значениями этого свойства. Все необходимые для выполнения задачи знания описаны в этой главе.</p>
+      <p>1. Напишите CSS-код, позволяющий скрыть этот элемент </p><a class="codepen button" data-id="gOYPNzd">Посмотреть задание</a>
+      <p>2. Не меняя HTML-кода, сделайте так, чтобы каждое предложение начиналось с новой строки</p><a class="codepen button" data-id="JjPGQBN">Посмотреть задание</a>
+      <p>3. Сделайте так, чтобы все элементы списка шли в одну строку</p><a class="codepen button" data-id="xxKVKKm">Посмотреть задание</a>
+      <p>4. Добавьте одно свойство так, чтобы меню стало широким </p><a class="codepen button" data-id="vYBGBLE" data-height="400">Посмотреть задание</a>
+      <p>5. Сделайте так, чтобы счёт шёл слева направо, а не снизу вверх</p><a class="codepen button" data-id="ExYKYWM" data-height="400">Посмотреть задание</a>
+      <p>6. Добавьте одну строку так, чтобы получилась таблица</p><a class="codepen button" data-id="yLBOBpq">Посмотреть задание</a>
+    </section>
+  </div>
+</article>
+<article id="box-sizing">
+  <div class="container">
+    <h2>Блочная модель и box-sizing</h2>
+    <p> Элементы в CSS представляют собой набор слоёв: ширина и высота самого элемента (<a target="_blank" href="http://htmlbook.ru/css/width">width</a> и <a target="_blank" href="http://htmlbook.ru/css/height">height</a>), поля элемента (<a target="_blank" href="http://htmlbook.ru/css/padding">padding</a>), граница элемента (<a target="_blank" href="http://htmlbook.ru/css/border">border</a>) и отступы (<a target="_blank" href="http://htmlbook.ru/css/margin">margin</a>). <a href="http://htmlbook.ru/samlayout/blochnaya-verstka/blochnaya-model" target="_blank">Подробнее о блочной модели стоит почитать здесь.</a></p>
+    <div data-run="box-model"></div>
+    <pre data-lang="html" data-code="box-model" hidden>&lt;div class="box-model"&gt;
+  &lt;div class="margin"&gt;margin
+    &lt;div class="border"&gt;border
+      &lt;div class="padding"&gt;padding
+        &lt;div class="size"&gt;width&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+    <pre data-lang="css" data-code="box-model" hidden>.box-model {
+  display: flex;
+  justify-content: center;
+}
+
+.box-model * {
+  text-align: center;
+  border: 1px dashed black;
+  padding: 10px;
+  margin: 10px 24px 24px;
+  font-size: 14px;
+  font-family: monospace;
+}
+
+.box-model .margin {
+  background: lightsalmon;
+}
+
+.box-model .border {
+  background: navajowhite;
+}
+
+.box-model .padding {
+  background: lightgreen;
+}
+
+.box-model .size {
+  background: lightblue;
+  width: 90px;
+  height: 80px;
+  position: relative;
+  padding: 0 10px;
+  text-align: left;
+}
+
+.box-model .size::after {
+  content: 'height';
+  position: absolute;
+  writing-mode: vertical-lr;
+  top: 10px;
+  right: 0;
+}
+</pre>
+    <section>
+      <p>
+        Долгое время в CSS изменение padding приводило к изменению width у элементов, из-за чего два одинаковых по ширине элемента с разными по ширине полями, в реальности имели разную ширину. Пример ниже демонстрирует этот недуг:</p>
+      <pre data-lang="html" data-code="box-z-1">&lt;div class="one"&gt;padding: 0&lt;/div&gt;
+&lt;div class="two"&gt;padding: 40px&lt;/div&gt;</pre>
+      <pre data-lang="css" data-code="box-z-1">.one {
+  width: 200px;
+  height: 100px;
+  padding: 0;
+}
+.two {
+  width: 200px;
+  height: 100px;
+  padding: 40px;
+}</pre>
+      <pre data-lang="css" data-code="box-z-1" hidden>.one,.two{
+  background: teal;
+  color: white;
+  margin: 20px auto;
+}
+.two{
+  box-shadow: inset 0 0 0 40px darkcyan;
+}</pre>
+      <div data-run="box-z-1"></div>
+      <p> <i>Для визуализации, padding был окрашен с помощью свойства box-shadow. В действительности же, задать цвет для padding невозможно!</i></p>
+    </section>
+    <section>
+      <p>На помощь в борьбе с этим нелогичным, казалось бы, поведением пришел <a href="http://htmlbook.ru/css/box-sizing" target="_blank">box-sizing</a>. Добавим в наши блоки всего по одной строчке кода:</p>
+      <pre data-lang="html" data-code="box-z-2">&lt;div class="one"&gt;padding: 0&lt;/div&gt;
+&lt;div class="two"&gt;padding: 40px&lt;/div&gt;</pre>
+      <pre data-lang="css" data-code="box-z-2">.one {
+  width: 200px;
+  height: 100px;
+  padding: 0;
+  box-sizing: border-box;
+}
+.two {
+  width: 200px;
+  height: 100px;
+  padding: 40px;
+  box-sizing: border-box;
+}</pre>
+      <pre data-lang="css" data-code="box-z-2" hidden>.one,.two{
+  background: teal;
+  color: white;
+  margin: 20px auto;
+}
+.two{
+  box-shadow: inset 0 0 0 40px darkcyan;
+}</pre>
+      <div data-run="box-z-2"></div>
+    </section>
+    <section>
+      <p>
+        Так стало гораздо проще работать с CSS, поэтому многие добавляют box-sizing: border-box всем элементам на сайте при помощи этого кода:</p>
+      <pre data-lang="css">* {
+  box-sizing: border-box;
+}</pre>
+      <p>
+        Это стало хорошей и распространённой практикой, однако по умолчанию значением свойства box-sizing является стандартная модель content-box, возвращающий нас в те времена,
+        когда приходилось вычислять ширину элемента по его полям.
+      </p>
+    </section>
+  </div>
+</article>
+<article id="position">
+  <div class="container">
+    <h2>Позиционирование</h2>
+    <p>position - это фундаментальное свойство CSS, которое позволяет определить, в каком месте браузер будет отрисовывать элементы. </p>
+    <p>Свойство position обладает следующими значениями:</p>
+    <ul>
+      <li>static - значение по умолчанию. Элемент будет отрисован "нормально" </li>
+      <li>
+        relative - позволяет отрисовать элемент "нормально", но, благодаря CSS-свойствам top, right, bottom и left, появляется возможность сместить блок из "нормальной" позиции. </li>
+      <li>
+        absolute - самое интересное свойство. Положение блока рассчитывается при помощи top, right, bottom и left,но не относительно изначального места, а относительно ближайшего родителя с position не равным static или элемента body. </li>
+      <li>fixed - положение относительно границ экрана. Также рассчитывается с помощью top, right, bottom и left, но родителем является сам экран. </li>
+      <li>
+        sticky - "прилипает" к границам экрана в том случае, если выходит за границы экрана. Также устанавливается при помощи top, right, bottom и left.Подробнее тут: <a target="_blank" href="https://medium.com/web-standards/sticky-bc7ff7088693">Как на самом деле работает position: sticky в CSS</a></li>
+    </ul>
+    <p>Поэкспериментировать с position: absolute можно здесь:</p><a class="codepen button" data-id="gOYwLmY" data-height="400">Запустить пример</a>
+    <p>Поэкспериментировать с position: sticky можно тут:</p><a class="codepen button" data-id="rNBMWzp" data-height="400">Запустить пример</a>
+    <section>
+      <h3>Смещение блока: top, right, bottom и left</h3>
+      <p>По умолчанию значением этих свойств является auto. Мы можем использовать для задания положения, например, px или %. </p>Используются в купе с нестатично спозиционированными блоками. 
+      <ul>
+        <li>top смещает блок сверху вниз;</li>
+        <li>bottom смещает блок снизу вверх;</li>
+        <li>left смещает блок слева направо;</li>
+        <li>right смещает блок справа налево.</li>
+      </ul>
+    </section>
+    <section>
+      <h3>Слои и z-index</h3>
+      <p>
+        Иногда, сместив один блок относительно другого, они начинают "наезжать" друг на друга. Причём, не всегда так, как мы этого хотим. Что если мы хотим, чтобы блок, который отрисовался "под" вторым блоком, был отрисован "над" ним? 
+        Для этого на помощь приходит свойство z-index. Значением этого свойства может быть просто любое число, без единиц измерения. 
+        Установив z-index: 2 для первого блока и z-index: 1 для второго, мы точно будем знать, что первый блок будет отрисован "над" вторым, так как
+        его z-index больше. По умолчанию же, "над" отрисовывается тот блок, который в структуре HTML был ближе к концу документа. 
+      </p>
+      <p>
+        Если вы математик, то вам будет понятно следующее объяснение: наш экран имеет две координаты: X и Y. Координаты начинаются из верхнего левого угла. X направлен вправо. Y &mdash; вниз. А теперь представим себе ещё одну координату &mdash; Z. 
+        Она направлена из той же точки, но перпендикулярно экрану, на зрителя. Это и есть z-index. 
+      </p>
+      <p>
+        Если вы работали с фотошопом или какими-то другими графическими редакторами, то вам знакомо понятие "слои". Мы можем распологать различные изображенияна этих слоях, а в случае перекрытия, показан будет тот слой, что находится выше. И это тоже z-index. </p>
+      <p>Раскомментируйте строку с z-index, чтобы понять, как работает это свойство.</p><a class="codepen button" data-id="KKPgNrX" data-height="400">Посмотреть задание</a>
+    </section>
+  </div>
+</article>
+<article id="pseudo">
+  <div class="container">
+    <h2>Псевдоклассы и псевдоэлементы</h2>
+    <p>
+      Псевдоклассы и псевдоэлементы решают группу задач, связанных с выбором конктерного элемента списка или с изменением поведения объекта в связи с возникновением какого-либо события.
+      Здесь мы разберём лишь часть из существующих псевдоэлементов и псевдоклассов, а больше вы всегда сможете узнать здесь: <a href="https://developer.mozilla.org/ru/docs/Learn/CSS/Introduction_to_CSS/Pseudo-classes_and_pseudo-elements" target="_blank">Псевдоклассы и псевдоэлементы</a>
+    </p>
+    <h3>Псевдоклассы</h3>
+    <p>Псевдоклассы представляют собой ключевое слово, начинающееся с двоеточия (:), которое добавляют после селектора: </p>
+    <pre data-lang="css">selector:pseudo-class { ... }</pre>
+    <p>Ниже приведён список наиболее популярных псевдоклассов</p>
+    <ul> 
+      <li><a target="_blank" href="https://developer.mozilla.org/ru/docs/Web/CSS/:hover">:hover</a><br>Срабатывает при наведении курсора на элемент</li>
+      <li><a target="_blank" href="https://developer.mozilla.org/ru/docs/Web/CSS/:visited">:visited</a><br>Позволяет выбрать посещённые ссылки </li>
+      <li><a target="_blank" href="https://developer.mozilla.org/ru/docs/Web/CSS/:active">:active</a><br>Срабатывает при нажатии на элемент, но может быть применим только к элементам <code>&lt;a&gt;</code>и <code>&lt;button&gt; </code></li>
+      <li><a target="_blank" href="https://developer.mozilla.org/ru/docs/Web/CSS/:focus">:focus</a><br>Срабатывает при получении элементом фокуса. Работает только для элементов <code>&lt;a&gt;</code><code>&lt;button&gt;</code><code>&lt;input&gt;</code><code>&lt;textarea&gt;</code></li>
+      <li><a target="_blank" href="https://developer.mozilla.org/ru/docs/Web/CSS/:checked">:checked</a><br>Срабатывает для элемента <code>&lt;input type="checkbox"&gt; </code>или <code>&lt;input type="radio"&gt; </code>. Позволяет применять стили в том случае, если на элементе стоит отметка  </li>
+      <li><a target="_blank" href="https://developer.mozilla.org/ru/docs/Web/CSS/:disabled">:disabled</a><br>Срабатывает, если элемент имеет атрибут <code>disabled</code>, к примеру, элемент  <code>&lt;input type="..." disabled&gt; </code>или <code>&lt;button disabled&gt; </code></li>
+      <li><a target="_blank" href="https://developer.mozilla.org/ru/docs/Web/CSS/:required">:required</a><br>Срабатывает, если элемент имеет атрибут  <code>required</code>, всегда для элемента  <code>&lt;input required&gt;</code></li>
+      <li><a target="_blank" href="https://developer.mozilla.org/ru/docs/Web/CSS/:first-child">:first-child</a><br>Позволяет выбрать первый элемент в своем родителе</li>
+      <li><a target="_blank" href="https://developer.mozilla.org/ru/docs/Web/CSS/:last-child">:last-child</a><br>Позволяет выбрать последний элемент в своем родителе</li>
+      <li><a target="_blank" href="https://developer.mozilla.org/ru/docs/Web/CSS/:nth-child">:nth-child</a><br>Позволяет выбирать один или более элементов, основываясь на их позиции среди группы соседних элементов. <br><b>Примеры:</b><br><code>ul li:nth-child(2)</code>Выберет второй элемент<br><code>ul li:nth-child(2n)</code>Выберет каждый второй элемент (через один)<br><code>ul li:nth-child(3n+1)</code>Выберет 1,4,7,9 ... и так далее, через два элементы. </li>
+      <li><a target="_blank" href="https://developer.mozilla.org/ru/docs/Web/CSS/:nth-last-child">:nth-last-child</a><br>Точно так же, но счёт идёт с последнего элемента к первому. К примеру, для выбора предпоследнего элемента списка:<code>ul li:nth-last-child(2)</code></li>
+      <li><a target="_blank" href="https://developer.mozilla.org/ru/docs/Web/CSS/:not">:not()</a><br>"НЕ". Это функция, принимающая селектор внутрь скобок. К примеру, нам нужно найти все ссылки, у которых нет атрибута <code>target</code>:<br><code>a:not([target])</code><br>Ещё пример: требуется найти все статьи, не имеющие класса <code>.top</code>:<br><code>article:not(.top)</code></li>
+    </ul>
+    <h3>Псевдоэлементы</h3>
+    <p>Псевдоэлементов значительно меньше, а отличить их можно по двойному двоеточию (::), которое добавляется к селектору. </p>
+    <pre data-lang="css">selector::pseudo-element { ... }</pre>
+    <p>Браузерами поддерживается и устаревший синтаксис с одинарным двоеточием. </p>
+    <p>
+      Псевдоэлементы ведут себя как элементы, то есть, у них есть размеры, они могут быть спозиционированы, их видно. Псевдоклассы же мы увидеть ен могли, могли лишь только увидеть их влияние на элементы. Рассмотрим псевдоэлементы подробнее:</p>
+    <ul>
+      <li><a href="https://developer.mozilla.org/ru/docs/Web/CSS/::before" target="_blank">::before</a><br>Создаёт псевдоэлемент, который будет являться первым потомком элемента. Не работает без свойства <code>content: '';</code><br><code>
+           a::before{
+            content: '♥';
+          }</code>В этом примере, перед каждой ссылкой на сайте будет добавляться сердечко. </li>
+      <li><a href="https://developer.mozilla.org/ru/docs/Web/CSS/::after" target="_blank">::after</a><br>Работает точно так же, как и ::before, но псевдоэлемент создаётся в самом конце и будет являться последним потомком.  </li>
+    </ul>
+    <div class="no-print-break">
+      <p>С остальными псевдоэлементами вы познакомитесь позже, на личной практике. Они используются заметно реже. Конечно, ссылки на них я приведу:</p>
+      <ul>
+        <li><a href="https://developer.mozilla.org/ru/docs/Web/CSS/::first-letter" target="_blank">::first-letter</a></li>
+        <li><a href="https://developer.mozilla.org/ru/docs/Web/CSS/::first-line" target="_blank">::first-line</a></li>
+        <li><a href="https://developer.mozilla.org/ru/docs/Web/CSS/::selection" target="_blank">::selection</a></li>
+        <li><a href="https://developer.mozilla.org/ru/docs/Web/CSS/::backdrop" target="_blank">::backdrop </a></li>
+      </ul>
+    </div>
+  </div>
+</article>
+<article id="image">
+  <div class="container">
+    <h2>Картинка в тексте</h2>
+    <p>
+      Часто, бывает нужно вставить картинку в текст. Но работает это не всегда так, как мы это задумывали. Попробуем вставить картинку без стилей и посмотрим, что получится.</p>
+    <section>
+      <p>Код примера предельно прост: </p>
+      <pre data-lang="html" data-code="image-in-text-1">&lt;p&gt;
+   &lt;img src="./assets/images/image.svg" alt="Just image"&gt;
+   Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic commodi maiores excepturi dolore cupiditate sit obcaecati, 
+   repellat doloribus rerum! Dicta eius aliquid eaque sed sequi obcaecati debitis quos veniam placeat.
+&lt;/p&gt;
+&lt;p&gt;
+   Itaque voluptates eum nihil minima quo iure voluptas, atque amet molestias, perspiciatis sed cupiditate nemo inventore velit 
+   soluta iste ut nesciunt! Qui fuga nesciunt accusantium magnam officiis corrupti, quibusdam amet.
+&lt;/p&gt;
+&lt;p&gt;
+   Soluta, laudantium in. Dolorem laboriosam nobis nihil iste eum sapiente maxime, facilis minus atque debitis corporis quasi, 
+   molestias delectus magni placeat ipsum iure perspiciatis doloremque repudiandae rem tenetur, in dolorum. 
+&lt;/p&gt;
+</pre>
+      <div data-run="image-in-text-1"></div>
+    </section>
+    <section>
+      <p>
+        Как видите, картинка стала частью первой строки текста. Нам редко нужно, чтобы поведение было именно таким. Чаще нам необходимо сделать так, чтобы картинка обтекалась текстом. Для этого существует свойство float. </p>
+      <p>Добавим к нашему примеру <a href="http://htmlbook.ru/css/float" target="_blank">float</a>: left и посмотрим, что получится</p>
+      <pre data-lang="css" data-code="image-in-text-2">img {
+  float: left;
+}</pre>
+      <pre data-lang="html" data-code="image-in-text-2" hidden>&lt;p&gt;
+   &lt;img src="./assets/images/image.svg" alt="Just image"&gt;
+   Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic commodi maiores excepturi dolore cupiditate sit obcaecati, 
+   repellat doloribus rerum! Dicta eius aliquid eaque sed sequi obcaecati debitis quos veniam placeat.
+&lt;/p&gt;
+&lt;p&gt;
+   Itaque voluptates eum nihil minima quo iure voluptas, atque amet molestias, perspiciatis sed cupiditate nemo inventore velit 
+   soluta iste ut nesciunt! Qui fuga nesciunt accusantium magnam officiis corrupti, quibusdam amet.
+&lt;/p&gt;
+&lt;p&gt;
+   Soluta, laudantium in. Dolorem laboriosam nobis nihil iste eum sapiente maxime, facilis minus atque debitis corporis quasi, 
+   molestias delectus magni placeat ipsum iure perspiciatis doloremque repudiandae rem tenetur, in dolorum. 
+&lt;/p&gt;
+</pre>
+      <div data-run="image-in-text-2"></div>
+      <p>Здесь мы видим, что картинка стала обтекаться текстом. Правда, из-за того, что текста много, мы не видим одного подводного камня этого решения.</p>
+    </section>
+    <section>
+      <p>Давайте уберём последние два абзаца и посмотрим, что будет</p>
+      <div style="background: #f2f2f2; padding: 15px;">
+        <p style="margin: 10px 0;"><img src="./assets/images/image.svg" alt="Just image" style="float:left;">Lorem ipsum dolor... </p>
+      </div>
+      <p>
+        Обратите внимание, что-то пошло не так и даже этот абзац, не относящийся к примеру, всё равно обтекается картинкой. Явно не то, чего мы ожидали. Всё дело в том, что флоаты (поплавки) "всплывают" над родительским элементом, поэтому его высота больше не зависит от нашей картинки. </p>
+    </section>
+    <section>
+      <p>Для того, чтобы исправить подобное поведение, нужно воспользоваться "очисткой" &mdash; <a href="http://htmlbook.ru/css/clear" target="_blank">clear</a>. Изменим наш код следующим образом:</p>
+      <pre data-lang="html" data-code="image-in-text-3">&lt;p&gt;
+  &lt;img src="./assets/images/image.svg" alt="Just image"&gt;
+  Lorem ipsum dolor...
+&lt;/p&gt;
+&lt;div class="clear"&gt;&lt;/div&gt;</pre>
+      <pre data-lang="css" data-code="image-in-text-3">img {
+  float: left;
+}
+.clear {
+  clear: both;
+}</pre>
+    </section>
+    <section>
+      <div data-run="image-in-text-3"></div>
+      <p>
+        Как видите, абзац, который вы сейчас читаете, находится уже за пределами примера. Добавив такой чистящий элемент в самый конец родительского контейнера, мы смогли вернуть высоту контейнера к нормальному уровню. </p>
+    </section>
+    <section>
+      <p>
+        В предыдущих примерах мы увидели, как задать обтекание картинки текстом так, чтобы картинка оказалась слева. Точно так же мы можем обтекать её и с другой стороны. </p>
+      <pre data-lang="css" data-code="image-in-text-4">img {
+  float: right;
+}</pre>
+      <pre data-lang="html" data-code="image-in-text-4" hidden>&lt;p&gt;
+   &lt;img src="./assets/images/image.svg" alt="Just image"&gt;
+   Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic commodi maiores excepturi dolore cupiditate sit obcaecati, 
+   repellat doloribus rerum! Dicta eius aliquid eaque sed sequi obcaecati debitis quos veniam placeat.
+&lt;/p&gt;
+&lt;p&gt;
+   Itaque voluptates eum nihil minima quo iure voluptas, atque amet molestias, perspiciatis sed cupiditate nemo inventore velit 
+   soluta iste ut nesciunt! Qui fuga nesciunt accusantium magnam officiis corrupti, quibusdam amet.
+&lt;/p&gt;
+&lt;p&gt;
+   Soluta, laudantium in. Dolorem laboriosam nobis nihil iste eum sapiente maxime, facilis minus atque debitis corporis quasi, 
+   molestias delectus magni placeat ipsum iure perspiciatis doloremque repudiandae rem tenetur, in dolorum. 
+&lt;/p&gt;</pre>
+      <div data-run="image-in-text-4"></div>
+      <p>И если мы не уверены, что текста будет достаточно, не забудем добавить в конец контейнера clear: both.</p>
+      <pre data-lang="css" data-code="image-in-text-5">img {
+  float: left;
+}
+.clear {
+  clear: both;
+}</pre>
+      <pre data-lang="html" data-code="image-in-text-5" hidden>&lt;p&gt;
+   &lt;img src="./assets/images/image.svg" alt="Just image"&gt;
+   Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic commodi maiores excepturi dolore cupiditate sit obcaecati, 
+   repellat doloribus rerum! Dicta eius aliquid eaque sed sequi obcaecati debitis quos veniam placeat.
+&lt;/p&gt;</pre>
+      <div data-run="image-in-text-5"></div>
+    </section>
+    <section>
+      <p>Подведём итоги. Для того, чтобы вставить картинку в текст и сделать так, чтобы она обтекалась, нужно воспользоваться свойством </p><a href="http://htmlbook.ru/css/float" target="_blank">float</a>, а для того, чтобы восстановить размер контейнера в том случае, если картинка стала вылезать за его пределы, нужно использовать свойство <a href="http://htmlbook.ru/css/clear" target="_blank">clear</a>.
+    </section>
+  </div>
+</article>
+<article id="margin-0-auto">
+  <div class="container">
+    <h2>Выравнивание блока по центру</h2>
+    <p>
+      Этот фокус позволяет центрировать блок заранее определённой ширины, независимо от ширины экрана. Кроме
+      того, если использовать max-width вместо width, то, даже если размер экрана пользователя окажется меньше
+      ширины этого блока, то блок не выйдет за границы экрана, а будет равен ширине экрана. Это весьма
+      распространенная практика
+    </p>
+    <h3>Пример:</h3>
+  </div>
+  <div data-run="auto-margin-1"></div>
+  <div class="container">
+    <p>Код:</p>
+    <pre data-lang="html" data-code="auto-margin-1">&lt;div class="block"&gt;&lt;/div&gt;
+</pre>
+    <pre data-lang="css" data-code="auto-margin-1">.block {
+  max-width: 500px;
+  margin: 0 auto; /* центрирует блок так, что правый и левый маргин становятся одинаковыми */
+}</pre>
+    <pre data-lang="css" data-code="auto-margin-1" hidden>.block {
+  height: 110px; 
+  background: teal; 
+}
+</pre>
+  </div>
+  <div class="container">
+    <h3>Задача</h3>
+    <p>Сделать шапку для сайта avito.ru. Серый фон шапки должен быть растянут на всю страницу, а элементы меню должны быть в центре, не зависимо от ширины экрана пользователя</p>
+  </div>
+  <div data-run="auto-margin-2"></div>
+  <pre data-lang="html" data-code="auto-margin-2" hidden>&lt;div class="sol1"&gt;
+  &lt;div class="content"&gt;
+    &lt;div class="left"&gt;&lt;a href="#"&gt;Объявления&lt;/a&gt;&lt;a href="#"&gt;Магазины&lt;/a&gt;&lt;a href="#"&gt;Бизнес&lt;/a&gt;&lt;a href="#"&gt;Помощь&lt;/a&gt;&lt;/div&gt;
+    &lt;div class="right"&gt;&lt;a class="primary" href="#"&gt;Вход и регистрация&lt;/a&gt;&lt;a class="button primary" href="#"&gt;Подать объявление&lt;/a&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+  <pre data-lang="css" data-code="auto-margin-2" hidden>.sol1 {
+  background-color: #f7f7f7;
+  font-size: 14px;
+  border-bottom: 1px solid #d8d8d8;
+  border-top: 1px solid #d8d8d8;
+}
+
+.sol1 .content {
+  margin: 0 auto;
+  max-width: 900px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 32px;
+}
+
+.sol1 .content .left {
+  padding: 14px 0;
+}
+
+.sol1 .content .left a {
+  margin-right: 18px;
+}
+
+.sol1 .content .right {
+  padding: 7px 0;
+}
+
+.sol1 .content .right a.button {
+  margin-left: 29px;
+}
+
+.sol1 a {
+  color: #a1a1a1;
+  text-decoration: none;
+}
+
+.sol1 a:hover {
+  color: #ff6163;
+}
+
+.sol1 .button {
+  display: inline-block;
+  padding: 6px 13px;
+  border-radius: 3px;
+  border: 1px solid transparent;
+  box-shadow: none;
+}
+
+.sol1 a.primary {
+  color: #0091d9;
+}
+
+.sol1 a.primary:hover {
+  color: #ff6163;
+}
+
+.sol1 .button.primary {
+  background-color: #01aaff;
+  color: white;
+}
+
+.sol1 .button.primary:hover {
+  color: white;
+  background-color: #0099e6;
+}
+
+@media (max-width: 720px) {
+  .sol1 {
+    font-size: 1.5vw;
+  }
+
+  .sol1 .content {
+    padding: 0 3.5vw;
+  }
+
+  .sol1 .content .left {
+    padding: 1.5vw 0;
+  }
+
+  .sol1 .content .left a {
+    margin-right: 2vw;
+  }
+
+  .sol1 .content .right {
+    padding: 0.7vw 0;
+  }
+
+  .sol1 .content .right a.button {
+    margin-left: 3.2vw;
+    padding: 0.6vw 1.5vw;
+  }
+}</pre>
+</article>
+<article id="flex">
+  <div class="container">
+    <h2>Самый правильный способ разнести блоки в разные стороны</h2>
+    <p>Способ основывается на применении <a href="https://developer.mozilla.org/ru/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox" target="_blank">флекс-контейнера</a>, внутри которого находятся два блока. Оперируя свойством <a href="http://htmlbook.ru/css/justify-content" target="_blank">justify-content</a>, можно добиться различных вариантов размещения этих двух блоков внутри флекс-контейнера. Нас же сейчас интересует
+      значение "space-between", равномерно распределяющее блоки по ширине флекс-контейнера, прижимая к его краям первый и последний блоки. 
+      Ширина блоков будет выбираться автоматически, в зависимости от контента, содержащегося внутри блока. 
+      Кроме того, ширину блока, при необходимости, можно зафиксировать свойством <a href="http://htmlbook.ru/css/width" target="_blank">width</a>, если это потребуется. 
+    </p>
+    <p>Этот метод используется, в основном, для построения "шапки" сайта, но может быть использован и в других частях сайта или 
+      <nobr>веб-приложения. </nobr>Для полного понимания работы флекс-контейнеров, рекомендую поиграть в игру <a href="https://flexboxfroggy.com/" target="_blank">Flexbox Froggy</a>
+    </p>
+    <section>
+      <p>Пример:</p>
+      <div data-run="flex-justify-1"></div>
+      <p>Код:</p>
+      <pre data-lang="html" data-code="flex-justify-1">&lt;div class="container"&gt;
+    &lt;div class="box-left"&gt;
+       &lt;span&gt;Brand&lt;/span&gt;
+       &lt;span&gt;Stores&lt;/span&gt;
+       &lt;span&gt;Actions&lt;/span&gt;
+       &lt;span&gt;Contacts&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div class="box-right"&gt;
+       &lt;span&gt;Settings&lt;/span&gt;
+       &lt;span&gt;Account&lt;/span&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+      <pre data-lang="css" data-code="flex-justify-1">.container {
+  /* Задаём флекс-бокс (позволяет влиять на расположение дочерних элементов) */
+  display: flex;
+  /* Говорим элементам встать так, чтобы между ними, по возможности, образовывалось расстояние */
+  justify-content: space-between; 
+}
+
+.box-left {
+  /* Здесь можно задать какие-то стили для левого блока */
+}
+
+.box-right {
+  /* Здесь можно задать какие-то стили для правого блока */
+}
+</pre>
+      <pre data-lang="css" data-code="flex-justify-1" hidden>.container {
+  background: lightblue;
+  padding: 5px;
+}
+
+.box-left {
+  background: teal;
+}
+
+.box-right {
+  background: blueviolet;
+}
+
+.container span {
+  display: inline-block;
+  padding: 10px 20px;
+  background: rgba(255, 255, 255, 0.5);
+  margin: 5px;
+}
+
+@media (max-width: 720px) {
+  .container {
+    padding: 5px 1px;
+    font-size: 3.5vw;
+  }
+
+  .container span {
+    margin: 2px;
+    padding: 10px 2px;
+  }
+}
+</pre>
+    </section>
+    <section>
+      <h3>Задача</h3>
+      <p>
+        Сделать шапку для сайта habr.com так, чтобы правая и левая часть меню были разнесены при помощи
+        флекс-бокса
+      </p>
+    </section>
+  </div>
+  <pre data-lang="html" data-code="habr-header" hidden>&lt;div class="sol2"&gt;
+  &lt;div class="content"&gt;
+    &lt;div class="left"&gt;&lt;a class="current" href="#"&gt;Публикации&lt;/a&gt;&lt;a href="#"&gt;Новости&lt;/a&gt;&lt;a href="#"&gt;Пользователи&lt;/a&gt;&lt;a href="#"&gt;Хабы&lt;/a&gt;&lt;a href="#"&gt;Компании&lt;/a&gt;&lt;a href="#"&gt;Песочница&lt;/a&gt;&lt;/div&gt;
+    &lt;div class="right"&gt;&lt;a class="button default" href="#"&gt;Войти&lt;/a&gt;&lt;a class="button primary" href="#"&gt;Регистрация&lt;/a&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+  <pre data-lang="css" data-code="habr-header" hidden>.sol2 {
+  border-bottom: 1px solid #d5dddf;
+  border-top: 1px solid #d5dddf;
+  font-size: 15px;
+  background: white;
+  margin-top:10px;
+}
+
+.sol2 .content {
+  max-width: 1164px;
+  margin: 0 auto;
+  padding: 0 32px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.sol2 .right {
+  padding: 16px;
+  white-space: nowrap;
+}
+
+.sol2 .right .button {
+  margin: 0 0 0 10px;
+}
+
+.sol2 a {
+  display: inline-block;
+  padding: 23px 0;
+  margin-right: 28px;
+  text-decoration: none;
+  color: #838a92;
+}
+
+.sol2 a:hover {
+  color: #5096b1;
+}
+
+.sol2 a.current {
+  color: #464646;
+}
+
+.sol2 .button {
+  padding: 8px 13px;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  font-size: 13px;
+  box-shadow: none;
+}
+
+.sol2 .button.default {
+  border-color: #a4afba;
+  background-color: white;
+}
+
+.sol2 .button.default:hover {
+  border-color: #65a3be;
+}
+
+.sol2 .button.primary {
+  background-color: #65a3be;
+  border-color: transparent;
+  color: white;
+}
+
+.sol2 .button.primary:hover {
+  background-color: #4986a1;
+}
+
+@media (max-width: 900px) {
+  .sol2 {
+    font-size: 1.5vw;
+  }
+
+  .sol2 .content {
+    padding: 0 3.5vw;
+  }
+
+  .sol2 .right {
+    padding: 1.5vw;
+  }
+
+  .sol2 .right .button {
+    margin: 0 0 0 0.5vw;
+  }
+
+  .sol2 a {
+    padding: 2.5vw 0;
+    margin-right: 1.4vw;
+  }
+
+  .sol2 .button {
+    padding: 0.8vw 1.4vw;
+    font-size: 1.4vw;
+  }
+}
+</pre>
+  <div data-run="habr-header"></div>
+</article>
+<article id="relative-absolute">
+  <div class="container">
+    <h2>Горизонтальное и вертикальное центрирование блока</h2>
+    <p>
+      Эта техника применяется, в основном, для вёрстки модальных окон. Основывается на том, что блок с position: absolute смещается относительно ближайшего родителя с position: relative | absolute | fixed. 
+      Смещение задаётся при помощи CSS-свойств 
+    </p>
+    <ul>
+      <li><a href="http://htmlbook.ru/css/top" target="_blank">top</a></li>
+      <li><a href="http://htmlbook.ru/css/right" target="_blank">right</a></li>
+      <li><a href="http://htmlbook.ru/css/bottom" target="_blank">bottom</a></li>
+      <li><a href="http://htmlbook.ru/css/left" target="_blank">left</a></li>
+    </ul>
+    <p>
+      Если мы используем единицу измерения % для задания смещения, важно помнить, что процент берётся относительно родительского контейнера. Это значит, что left: 50% сместит блок на 50% от ширины родителя, а не от собственной ширины. 
+      Для того, чтобы сместить блок на 50% относительно собственной ширины, необходимо использовать свойство <a href="http://htmlbook.ru/css/transform" target="_blank">transform</a> с функцией translateX(50%) - движение по оси X, translateY(50%) - движение по оси Y или translate(50%, 50%) - движение по обеим осям.
+    </p>
+    <p>
+      В примере ниже показано, как мы сначала смещаем абсолютно спозиционированный блок на 50% слева направо (left) и на 50% сверху вниз (top) относительно контейнера, а затем, смещаем на 50% вверх и на 50% вправо относительно самого себя (transform: translate(-50%, -50%)), чтобы блок встал ровно по центру контейнера.</p>
+    <p>
+      Дело в том, что в CSS, началом координат является верхняя левая точка элемента, а не центр элемента. Поэтому нам не достаточно просто подвинуть блок на 50% вниз и вправо, так как тогда в центре контейнера окажется левый верхний угол блока, а не центр блока.</p>
+    <section>
+      <h3>Пример:</h3>
+      <div data-run="rel-abs-center"></div>
+      <p>Код:</p>
+      <pre data-lang="html" data-code="rel-abs-center">&lt;div class="container"&gt;
+    &lt;div class="block"&gt;&lt;/div&gt;
+&lt;/div&gt;
+</pre>
+      <pre data-lang="css" data-code="rel-abs-center">.container {
+  position: relative;
+  width: 100%;
+  height: 250px;
+}
+
+.block {
+  position: absolute; /* позволяет двигать блок относительно родительского релятивного контейнера */
+  top: 50%; /* смещаем блок на 50% от высоты родителя */
+  left: 50%; /* смещаем блок на 50% от ширины родителя */
+  transform: translate(-50%, -50%); /* смещаем блок на 50% от ширины и высоты этого блока */
+  width: 120px;
+  height: 80px;
+}
+</pre>
+      <pre data-lang="css" data-code="rel-abs-center" hidden>.container {
+  background: lightblue;
+}
+
+.block {
+  background: teal;
+}
+</pre>
+    </section>
+  </div>
+  <div class="container">
+    <section>
+      <h3>Задача</h3>
+      <p>Сделать просмотр изображений как на dns-shop.ru</p>
+      <ul>
+        <li>Размер внешнего контейнера: 100% * 100vh</li>
+        <li>Вместо картинок можно использовать цветные блоки</li>
+        <li>Стрелочки: <a href="./assets/images/angle-left-sm.svg" target="_blank">arrow-left</a>, <a href="./assets/images/angle-right-sm.svg" target="_blank">arrow-right</a>; изображение кнопки "закрыть": <a href="./assets/images/times-sm.svg" target="_blank">close</a>.</li>
+      </ul>
+    </section>
+  </div>
+  <div class="no-print-break" data-run="dns-modal" data-height="90vh"></div>
+  <pre data-lang="html" data-code="dns-modal" hidden>&lt;div class="sol3"&gt;
+  &lt;div class="title"&gt;iPhone Xs Max&lt;/div&gt;
+  &lt;button class="button close"&gt;&lt;/button&gt;
+  &lt;button class="button left"&gt;&lt;/button&gt;
+  &lt;button class="button right"&gt;&lt;/button&gt;
+  &lt;div class="image-container"&gt;&lt;img src="./assets/images/iphonexsmax-1.jpg" alt="iPhone Xs Max"&gt;&lt;/div&gt;
+  &lt;div class="slider-container"&gt;
+    &lt;button class="button left"&gt;&lt;/button&gt;
+    &lt;button class="thumb active"&gt;&lt;img src="./assets/images/iphonexsmax-2.jpg" alt="Next"&gt;&lt;/button&gt;
+    &lt;button class="thumb"&gt;&lt;img src="./assets/images/iphonexsmax-3.jpg" alt="Next"&gt;&lt;/button&gt;
+    &lt;button class="thumb"&gt;&lt;img src="./assets/images/iphonexsmax-4.jpg" alt="Next"&gt;&lt;/button&gt;
+    &lt;button class="thumb"&gt;&lt;img src="./assets/images/iphonexsmax-5.jpg" alt="Next"&gt;&lt;/button&gt;
+    &lt;button class="button right"&gt;&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+  <pre data-lang="css" data-code="dns-modal" hidden>.sol3 {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 550px;
+  overflow: hidden;
+  background: white;
+}
+
+.sol3 .title {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #444;
+}
+
+.sol3 .image-container {
+  position: absolute;
+  bottom: 50%;
+  right: 50%;
+  transform: translate(50%, 50%);
+  width: 70%;
+  height: 60%;
+  text-align: center;
+}
+
+.sol3 .image-container img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.sol3 .slider-container {
+  position: absolute;
+  bottom: 30px;
+  right: 50%;
+  width: 320px;
+  height: 80px;
+  margin-right: -160px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.sol3 .slider-container .thumb {
+  text-align: center;
+  padding: 8px;
+  background: white;
+  border: 1px solid #d8d8d8;
+  margin: 5px;
+  width: 70px;
+  height: 70px;
+  border-radius: 4px;
+  cursor: pointer;
+  box-shadow: none;
+}
+
+.sol3 .slider-container .thumb img {
+  display: inline-block;
+  max-width: 100%;
+  max-height: 100%;
+  opacity: 0.7;
+}
+
+.sol3 .slider-container .thumb.active {
+  border-color: #464646;
+}
+
+.sol3 .slider-container .thumb.active img,
+.sol3 .slider-container .thumb:hover img {
+  opacity: 1;
+}
+
+.sol3 .slider-container .button {
+  width: 60px;
+}
+
+.sol3 .slider-container .button.left {
+  left: auto;
+  right: 100%;
+  width: 40px;
+}
+
+.sol3 .slider-container .button.right {
+  right: auto;
+  left: 100%;
+  width: 40px;
+}
+
+.sol3 .button {
+  position: absolute;
+  bottom: 50%;
+  transform: translateY(50%);
+  background: white;
+  min-width: 30px;
+  min-height: 30px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.4;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+  width: 80px;
+  height: 80px;
+  box-shadow: none;
+}
+
+.sol3 .button:hover {
+  opacity: 1;
+}
+
+.sol3 .button.left {
+  left: 0;
+  background-image: url('../assets/images/angle-left-sm.svg');
+}
+
+.sol3 .button.right {
+  right: 0;
+  background-image: url('../assets/images/angle-right-sm.svg');
+}
+
+.sol3 .button.close {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  transform: none;
+  width: 30px;
+  height: 30px;
+  background-image: url('../assets/images/times-sm.svg');
+}
+
+@media (max-width: 500px) {
+  .sol3 .slider-container {
+    transform: scale(0.8);
+  }
+}</pre>
+</article>
+<article id="custom-checkbox">
+  <div class="container">
+    <h2>Вёрстка чекбоксов</h2>
+    <p>Вёрстка почти каждой формы предполагает изменение вида стандартных чекбоксов. Изначально, они выглядят вот так: 
+      <input type="checkbox"> и редко когда вписываются в дизайн. Поэтому каждый верстальщик знает, как кастомизировать чекбоксы. Сейчас и мы научимся это делать.
+    </p>
+    <p>
+      В кратце, наша задача - использовать label со скрытым внутри чекбоксом. Дело в том, что в HTML клик по
+      label переадресует его на внутенний элемент input. Кроме того, label можно использовать с атрибутом for,
+      значением которого выступает id элемента input, находящегося снаружи нашего label, но применения этой
+      конструкции я нашел лишь пару раз в своей практике.
+    </p>
+    <p> <a href="http://htmlbook.ru/html/label" target="_blank">Немного подробнее о label можно почитать здесь</a></p>
+    <p>В этом видео Вадим Макеев подробно рассказывает об этой технике вёрстки чекбокса: </p>
+    <div class="youtube" data-video="E6kLaaQFctU"></div>
+    <section>
+      <h3>Пример:</h3>
+      <div data-run="custom-checkbox"></div>
+      <p>Код:</p>
+      <pre data-lang="html" data-code="custom-checkbox">&lt;p&gt;
+  &lt;label class="custom-checkbox"&gt;
+    &lt;input class="visually-hidden" type="checkbox"&gt;&lt;span class="checker"&gt;&lt;/span&gt;Checkbox
+  &lt;/label&gt;
+  &lt;label class="custom-checkbox"&gt;
+    &lt;input class="visually-hidden" type="checkbox" checked="checked"&gt;&lt;span class="checker"&gt;&lt;/span&gt;Checked
+  &lt;/label&gt;
+  &lt;label class="custom-checkbox"&gt;
+    &lt;input class="visually-hidden" type="checkbox" disabled="disabled"&gt;&lt;span class="checker"&gt;&lt;/span&gt;Disabled
+  &lt;/label&gt;
+  &lt;label class="custom-checkbox"&gt;
+    &lt;input class="visually-hidden" type="checkbox" checked="checked" disabled="disabled"&gt;&lt;span class="checker"&gt;&lt;/span&gt;Checked disabled
+  &lt;/label&gt;
+&lt;/p&gt;
+</pre>
+      <pre data-lang="css" data-code="custom-checkbox">
+.custom-checkbox {
+    /* Контейнер должен быть релятивным, так как внутри него мы разместим два абсолютно спозиционированных элемента */
+    position: relative;
+    /* скрываем элементы, попадающие за границы label */
+    overflow: hidden;
+    /* По умолчанию, label - это строчный элемент. С высокой вероятностью, нам нужно будет добавлять вертикальный margin, поэтому сразу сделаем его строчно-блочным*/
+    display: inline-block;
+    /* Делаем так, чтобы чекбокс нельзя было выделить курсором, а только нажать */
+    user-select: none;
+    /* Я приверженец того, что все интерактивные элементы должны иметь cursor: pointer, поэтому задаём и его */
+    cursor: pointer;
+    /* Отодвигаем левую часть так, чтобы влез кастомный чекбокс*/
+    padding: 0 1em 0 1.4em;
+    /* Задаём минимальную высоту */
+    min-height: 1em;
+}
+
+/* Задаем кастомную галочку для чекбокса и скрываем её по умолчанию */
+.custom-checkbox .checker {
+    position: absolute;
+    margin-top: 0;
+    /* Выдвигаем чекбокс левее так, чтобы он не наезжал на текст */
+    margin-left: -1.2em;
+    width: 1em;
+    height: 1em;
+    overflow: hidden;
+    text-align: center;
+    font-size: 1em;
+    line-height: 1;
+    border: 1px solid teal;
+    border-radius: 3px;
+    background-color: white;
+    /* Делаем галочку прозрачной */
+    color: transparent;
+}
+
+/* В псевдо-элементе допишем саму галочку */
+.custom-checkbox .checker:after {
+    content: '✓';
+}
+
+/* указываем селектор на наш конкретный инпут с типом чекбокс */
+.custom-checkbox input[type='checkbox'] {
+    /* Выводим стандартный чекбокс за границы label */
+    position: absolute;
+    right: 100%;
+    top: 0;
+}
+
+/* Несколько сложноее CSS правило: когда чекбокс будет иметь атрибут checked, его сосед снизу (селектор +) с классом .checker, примет эти стили */
+.custom-checkbox input[type='checkbox']:checked + .checker {
+    /* Перекрашиваем фон чекбокса и галочку */
+    background-color: teal;
+    color: white;
+}
+
+/* Не все люди используют для просмотра веб-страниц мышь, а некоторые из них используют вообще только клавиатуру. Так вот, чтобы интерактивные элементы подсвечивались, когда фокус клавиатуры попадал на них, им нужно задать отдельные стили. */
+/* Когда скрытый инпут окажется в фокусе, его сосед с классом .checker примет стили */
+.custom-checkbox input[type='checkbox']:focus + .checker {
+    box-shadow: 0 0 5px 0 teal;
+}
+
+/* Когда скрытый интуп нельзя изменить, его сосед с классом .checker примет стили */
+.custom-checkbox input[type='checkbox']:disabled+.checker {
+  background-color: #999;
+  border-color: #999;
+}
+
+/* Этот класс позволяет правильно скрыть элемент с экрана так, чтобы он был доступен для скринридеров */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+</pre>
+      <p>Подробнее о visually-hidden можно почитать здесь: <a href="https://allyjs.io/tutorials/hiding-elements.html#how-to-hide-elements-visually" target="_blank">How to hide elements visually</a></p>
+    </section>
+    <section>
+      <h3>Задача</h3>
+      <p>Сверстать чекбоксы как в gmail.</p>
+      <pre data-lang="css" data-code="custom-checkbox-gmail" hidden>
+.custom-checkbox {
+    /* Контейнер должен быть релятивным, так как внутри него мы разместим два абсолютно спозиционированных элемента */
+    position: relative;
+    /* скрываем элементы, попадающие за границы label */
+    overflow: hidden;
+    /* По умолчанию, label - это строчный элемент. С высокой вероятностью, нам нужно будет добавлять вертикальный margin, поэтому сразу сделаем его строчно-блочным*/
+    display: inline-block;
+    /* Делаем так, чтобы чекбокс нельзя было выделить курсором, а только нажать */
+    user-select: none;
+    /* Я приверженец того, что все интерактивные элементы должны иметь cursor: pointer, поэтому задаём и его */
+    cursor: pointer;
+    /* Отодвигаем левую часть так, чтобы влез кастомный чекбокс*/
+    padding: 0 1em 0 1.4em;
+    /* Задаём минимальную высоту */
+    min-height: 1em;
+}
+
+/* Задаем кастомную галочку для чекбокса и скрываем её по умолчанию */
+.custom-checkbox .checker {
+    position: absolute;
+    margin-top: 0;
+    /* Выдвигаем чекбокс левее так, чтобы он не наезжал на текст */
+    margin-left: -1.2em;
+    width: 1em;
+    height: 1em;
+    overflow: hidden;
+    text-align: center;
+    font-size: 1em;
+    line-height: 1;
+    border: 1px solid teal;
+    border-radius: 3px;
+    background-color: white;
+    /* Делаем галочку прозрачной */
+    color: transparent;
+}
+
+/* В псевдо-элементе допишем саму галочку */
+.custom-checkbox .checker:after {
+    content: '✓';
+}
+
+/* указываем селектор на наш конкретный инпут с типом чекбокс */
+.custom-checkbox input[type='checkbox'] {
+    /* Выводим стандартный чекбокс за границы label */
+    position: absolute;
+    right: 100%;
+    top: 0;
+}
+
+/* Несколько сложноее CSS правило: когда чекбокс будет иметь атрибут checked, его сосед снизу (селектор +) с классом .checker, примет эти стили */
+.custom-checkbox input[type='checkbox']:checked + .checker {
+    /* Перекрашиваем фон чекбокса и галочку */
+    background-color: teal;
+    color: white;
+}
+
+/* Не все люди используют для просмотра веб-страниц мышь, а некоторые из них используют вообще только клавиатуру. Так вот, чтобы интерактивные элементы подсвечивались, когда фокус клавиатуры попадал на них, им нужно задать отдельные стили. */
+/* Когда скрытый инпут окажется в фокусе, его сосед с классом .checker примет стили */
+.custom-checkbox input[type='checkbox']:focus + .checker {
+    box-shadow: 0 0 5px 0 teal;
+}
+
+/* Когда скрытый интуп нельзя изменить, его сосед с классом .checker примет стили */
+.custom-checkbox input[type='checkbox']:disabled+.checker {
+  background-color: #999;
+  border-color: #999;
+}
+
+/* Этот класс позволяет правильно скрыть элемент с экрана так, чтобы он был доступен для скринридеров */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+</pre>
+      <pre data-lang="css" data-code="custom-checkbox-gmail" hidden>.sol4 {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.sol4 .row {
+  border-bottom: 1px solid lightgray;
+  border-top: 1px solid lightgray;
+  padding: 8px;
+  margin-bottom: -1px;
+  display: block;
+  line-height: 1;
+  background: white;
+}
+
+.sol4 .custom-checkbox {
+  padding-right: 0;
+  vertical-align: middle;
+}
+
+.sol4 .custom-checkbox .checker::after {
+  display: none;
+}
+
+.sol4 .custom-checkbox input[type='checkbox']:focus + .checker {
+  box-shadow: none;
+}
+
+.sol4 .custom-checkbox .checker {
+  background-repeat: no-repeat;
+  background-position: center center;
+  border: none;
+  opacity: 0.3;
+}
+
+.sol4 .custom-checkbox input[type='checkbox']:checked + .checker {
+  background-color: transparent;
+  opacity: 1;
+}
+
+.sol4 .custom-checkbox.default .checker {
+  background-image: url('https://www.gstatic.com/images/icons/material/system/1x/check_box_outline_blank_black_20dp.png');
+}
+
+.sol4 .custom-checkbox.default input[type='checkbox']:checked + .checker {
+  background-image: url('https://www.gstatic.com/images/icons/material/system/1x/check_box_black_20dp.png');
+}
+
+.sol4 .custom-checkbox.star .checker {
+  background-image: url('https://www.gstatic.com/images/icons/material/system/1x/star_border_black_20dp.png');
+}
+
+.sol4 .custom-checkbox.star input[type='checkbox']:checked + .checker {
+  background-image: url('https://www.gstatic.com/images/icons/material/system/1x/star_googyellow500_20dp.png');
+}
+
+.sol4 .custom-checkbox.label .checker {
+  background-image: url('https://www.gstatic.com/images/icons/material/system/1x/label_important_outline_black_20dp.png');
+}
+
+.sol4 .custom-checkbox.label input[type='checkbox']:checked + .checker {
+  background-image: url('https://www.gstatic.com/images/icons/material/system/1x/label_important_googyellow500_20dp.png');
+}
+</pre>
+      <pre data-lang="html" data-code="custom-checkbox-gmail" hidden>&lt;div class="sol4"&gt;
+  &lt;div class="row"&gt;
+    &lt;label class="custom-checkbox default"&gt;
+      &lt;input class="visually-hidden" type="checkbox"&gt;&lt;span class="checker"&gt;&lt;/span&gt;
+    &lt;/label&gt;
+    &lt;label class="custom-checkbox star"&gt;
+      &lt;input class="visually-hidden" type="checkbox"&gt;&lt;span class="checker"&gt;&lt;/span&gt;
+    &lt;/label&gt;
+    &lt;label class="custom-checkbox label"&gt;
+      &lt;input class="visually-hidden" type="checkbox"&gt;&lt;span class="checker"&gt;&lt;/span&gt;
+    &lt;/label&gt;
+  &lt;/div&gt;
+  &lt;div class="row"&gt;
+    &lt;label class="custom-checkbox default"&gt;
+      &lt;input class="visually-hidden" type="checkbox" checked&gt;&lt;span class="checker"&gt;&lt;/span&gt;
+    &lt;/label&gt;
+    &lt;label class="custom-checkbox star"&gt;
+      &lt;input class="visually-hidden" type="checkbox" checked&gt;&lt;span class="checker"&gt;&lt;/span&gt;
+    &lt;/label&gt;
+    &lt;label class="custom-checkbox label"&gt;
+      &lt;input class="visually-hidden" type="checkbox" checked&gt;&lt;span class="checker"&gt;&lt;/span&gt;
+    &lt;/label&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+      <div data-run="custom-checkbox-gmail"></div>
+      <p>Картинки для чекбоксов взять отсюда:</p>
+      <ul>
+        <li><a target="_blank" href="https://www.gstatic.com/images/icons/material/system/1x/check_box_outline_blank_black_20dp.png">Unchecked checkbox</a></li>
+        <li><a target="_blank" href="https://www.gstatic.com/images/icons/material/system/1x/check_box_black_20dp.png">Checked checkbox</a></li>
+        <li><a target="_blank" href="https://www.gstatic.com/images/icons/material/system/1x/star_border_black_20dp.png">Unchecked star</a></li>
+        <li><a target="_blank" href="https://www.gstatic.com/images/icons/material/system/1x/star_googyellow500_20dp.png">Checked star</a></li>
+        <li><a target="_blank" href="https://www.gstatic.com/images/icons/material/system/1x/label_important_outline_black_20dp.png">Unchecked label</a></li>
+        <li><a target="_blank" href="https://www.gstatic.com/images/icons/material/system/1x/label_important_googyellow500_20dp.png">Checked label</a></li>
+      </ul>
+    </section>
+  </div>
+</article>
+<article id="do-u-know">
+  <div class="container">
+    <h2>Знаете ли вы?</h2>
+    <p>В этой статье приведены нестандартные и неоднозначные решения тех или иных проблем, связанных с вёрсткой.</p>
+    <section>
+      <h3>Знаете ли вы, что картинки можно хранить прямо в css-файле?</h3>
+      <p>
+        Небольшие картинки, используемые, например, в свойстве background-image, можно хранить прямо в css. Лучше всего это работает с SVG-графикой. Для того, чтобы вставить картинку в css, нам придется воспользоваться <a target="_blank" href="http://yoksel.github.io/url-encoder/ru/">простеньким энкодером</a>, который, к тому же, сразу же сгенерирует код для вставки в css. </p>
+      <p>Если же у вас растровая иконка и вы используете <a target="_blank" href="https://lesscss.ru/">LESS</a>, то обратите внимание на <a target="_blank" href="https://lesscss.ru/functions/#misc-functions-data-uri">функцию data-uri</a>, которая принимает в качестве параметра путь к файлу с картинкой, а скомпилированный css-файл уже будет содержать закодированную картинку. </p>
+    </section>
+  </div>
+</article>
+      </div>
+    </main>
+    <script async src="https://static.codepen.io/assets/embed/ei.js" onload="initCodePen()"></script>
+  <script type="text/javascript" src="script.js"></script></body>
+</html>
