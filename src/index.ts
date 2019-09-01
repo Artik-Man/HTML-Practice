@@ -29,6 +29,10 @@ document.addEventListener('DOMContentLoaded', () => {
   } catch (e) {
     console.warn(e);
   }
-});
 
-window['initCodePen'] = initCodePen;
+  try {
+    initCodePen();
+  } catch (e) {
+    console.warn(e);
+  }
+});

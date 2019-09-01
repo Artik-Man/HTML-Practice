@@ -1,4 +1,4 @@
-export const initCodePen = () => {
+window['initCodePen'] = () => {
   document.querySelectorAll('.codepen').forEach((pen: HTMLElement) => {
     const id = pen.dataset.id;
     pen.innerHTML = pen.innerHTML || `Run Pen`;
@@ -31,4 +31,12 @@ export const initCodePen = () => {
       }
     });
   });
+};
+
+export const initCodePen = () => {
+  const script = document.createElement('script');
+  script.setAttribute('src', 'https://static.codepen.io/assets/embed/ei.js');
+  script.setAttribute('async', 'true');
+  script.setAttribute('onload', 'initCodePen()');
+  document.body.appendChild(script);
 };
