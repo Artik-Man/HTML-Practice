@@ -2,6 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 const PATHS = {
   src: path.join(__dirname, './src'),
@@ -15,7 +16,7 @@ module.exports = {
     app: './src/index.ts',
   },
   output: {
-    filename: 'script.js',
+    filename: 'script.[hash].js',
     path: PATHS.dist,
   },
   resolve: {
@@ -79,12 +80,13 @@ module.exports = {
     overlay: true,
   },
   plugins: [
+    new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       template: './src/index.pug',
     }),
     new CopyWebpackPlugin([{ from: PATHS.src + '/assets', to: PATHS.dist + '/assets' }]),
     new MiniCssExtractPlugin({
-      filename: '[name].css',
+      filename: 'styles.[hash].css',
       chunkFilename: '[id].css',
     }),
   ],
