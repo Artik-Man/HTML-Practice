@@ -15,7 +15,7 @@
     <meta name="theme-color" content="#ffffff">
     <link href="https://fonts.googleapis.com/css?family=Philosopher&amp;display=swap&amp;subset=cyrillic" rel="stylesheet">
     <title>HTML Practice</title>
-  <link href="styles.888a527187de06798236.css" rel="stylesheet"></head>
+  <link href="styles.ec0669dc5801fdbacd4a.css" rel="stylesheet"></head>
   <body>
     <main>
       <div class="main-menu">
@@ -1278,7 +1278,7 @@ h3 {
     <pre data-lang="html" data-code="lay1,lay2,lay3,lay4,lay5">&lt;div class="main-container"&gt;
   &lt;header&gt;Header&lt;/header&gt;
   &lt;nav&gt;Site navigation&lt;/nav&gt;
-  &lt;main class="content"&gt;Site content&lt;/main&gt;
+  &lt;main&gt;Site content&lt;/main&gt;
   &lt;footer&gt;Footer&lt;/footer&gt;
 &lt;/div&gt;
 </pre>
@@ -1299,10 +1299,10 @@ header {
 nav {
   height: 80px;
   background: darksalmon;
-  width: 20%;   /* Задаём ширину меню */
+  width: 20%;   /* Задаём ширину блока навигации */
   float: left;  /* Устанавливаем обтекание */  
 }
-.content {
+main {
   height: 120px;
   background: khaki;
   width: 80%;   /* Задаём ширину контента */
@@ -1319,7 +1319,7 @@ footer {
     <ol>
       <li>Мы не можем жёстко зафиксировать ширину навигационного меню</li>
       <li>Если перед футером нам потребуется вставить какой-то блок, например, рекламный, вёрстка "поедет", ведь мы благополучно забудем про <code>clear: both;</code></li>
-      <li>Высота меню никак не зависит от высоты контента и наоборот. Под более коротким блоком будет пустота.</li>
+      <li>Высота навигации никак не зависит от высоты контента и наоборот. Под более коротким блоком будет пустота.</li>
     </ol>
     <p>Подробнее о float читайте тут:<a target="_blank" href="https://developer.mozilla.org/ru/docs/Web/CSS/float">float</a></p>
     <h3>Flex</h3>
@@ -1338,9 +1338,9 @@ header {
 }
 nav {
   background: darksalmon;
-  width: 20%;           /* Задаём ширину меню */
+  width: 20%;           /* Задаём ширину навигационного меню */
 }
-.content {
+main {
   height: 120px;
   background: khaki;
   width: 80%;           /* Задаём ширину контента */
@@ -1361,7 +1361,7 @@ footer {
     </ul>
     <h3>Grid</h3>
     <p>
-      Самым современным способом вёрстки макетов на сегодняшний день является т.н. Grid layout. Грид позволяет выстраивать элементы внутри себя по заранее заданнойсетке. Для начала, разберём пример, а затем разберёмся подробнее, как это работает.</p>
+      Самым современным способом вёрстки макетов на сегодняшний день является т.н. Grid layout. Грид позволяет выстраивать элементы внутри себя по заранее заданной сетке. Для начала разберём пример, а затем разберёмся подробнее, как это работает.</p>
     <pre data-lang="css" data-code="lay3">.main-container {
   margin: 0 auto;
   max-width: 800px;
@@ -1380,7 +1380,7 @@ nav {
   background: darksalmon;
   grid-area: nav;     /* Навигация займет область nav */
 }
-.content {
+main {
   height: 120px;
   background: khaki;
   grid-area: content;  /* Контент займёт content */
@@ -1390,7 +1390,7 @@ footer {
   background: darkseagreen;
 }</pre>
     <div data-run="lay3"></div>
-    <p>Как можно заметить, мы избавились от всех негативных последствий. А теперь, разберёмся подробнее, как это работает.</p>
+    <p>Как можно заметить, мы избавились от всех негативных последствий. А теперь разберёмся подробнее, как это работает.</p>
     <ol>
       <li> <code>grid-template-rows: 50px 1fr 50px;</code>означает, что если смотреть на сайт по вертикали, то у нас образуются три строки: шапка, навигация с контентом, футер. 
         Высоту первой строки, шапки, установим равной 50px, высота второй строки нам неизвестна, а высота третьей, футера, тоже 50px.
@@ -1414,11 +1414,11 @@ footer {
     <pre data-lang="css" data-code="lay4">nav {
   width: 200px;
 }
-.content {
+main {
   width: calc(100% - 200px);
 }</pre>
     <div data-run="lay4"></div>
-    <p>Таким образом мы избавились от проблемы фиксированной ширины меню. Благодаря функции <code>calc()</code>, мы заставили ширину контента зависеть от ширины меню. <a target="_blank" href="https://developer.mozilla.org/ru/docs/Web/CSS/calc">О calc() можно почитать здесь</a></p>
+    <p>Таким образом мы избавились от проблемы фиксированной ширины меню. Благодаря функции <code>calc()</code>, мы заставили ширину контента зависеть от ширины блока навигации. <a target="_blank" href="https://developer.mozilla.org/ru/docs/Web/CSS/calc">О calc() можно почитать здесь</a></p>
     <h3>Ещё один вариант вёрстки шаблона</h3>
     <p>На самом деле, есть еще один вариант. Он сложный и ненадёжный, но для общего развития, стоит упомянуть и его.</p>
     <pre data-lang="css" data-code="lay5">.main-container {
@@ -1445,7 +1445,7 @@ nav {
   width: 200px;
   overflow-y: auto;
 }
-.content {
+main {
   height: 120px;
   background: khaki;
   width: 100%;
@@ -1465,7 +1465,7 @@ footer {
       <li>Шапка и футер прижимаются к верхней и нижней части контейнера.</li>
       <li>Навигация прижимается к левой части контейнера.</li>
       <li>Чтобы блоки не налезали друг на друга, с помощью внутренних отступов у основного контейнера, отделим контент от остальных блоков.</li>
-      <li>Так как теперь высота меню зависит от высоты контента, добавляем свойство<code>overflow</code>, чтобы при недостаточной высоте навигации, внутри неё появлялся скроллбар.</li>
+      <li>Так как теперь высота блока навигации зависит от высоты контента, добавляем свойство<code>overflow</code>, чтобы при недостаточной высоте навигации, внутри неё появлялся скроллбар.</li>
     </ol>
   </div>
 </article>
@@ -1705,5 +1705,5 @@ footer {
 </article>
       </div>
     </main>
-  <script type="text/javascript" src="script.888a527187de06798236.js"></script></body>
+  <script type="text/javascript" src="script.ec0669dc5801fdbacd4a.js"></script></body>
 </html>
