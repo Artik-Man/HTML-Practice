@@ -15,7 +15,7 @@
     <meta name="theme-color" content="#ffffff">
     <link href="https://fonts.googleapis.com/css?family=Philosopher&amp;display=swap&amp;subset=cyrillic" rel="stylesheet">
     <title>HTML Practice</title>
-  <link href="styles.6e4e9d29df7775ee4fd4.css" rel="stylesheet"></head>
+  <link href="styles.888a527187de06798236.css" rel="stylesheet"></head>
   <body>
     <main>
       <div class="main-menu">
@@ -33,8 +33,6 @@
     <ul>
     </ul>
     <ul>
-      <li>CSS переменные</li>
-      <li>Способы создания сеток</li>
       <li>Вёрстка тултипов </li>
       <li>Вёрстка выпадающего меню</li>
       <li>Вёрстка модальных окон</li>
@@ -308,7 +306,7 @@ git config --global user.email myEmail@example.com</pre>
     <p>
       Время от времени возникает задача расположить список или текст в две колонки. Годы идут, CSS развивается, поколения верстальщиков сменяют поколения, но свои костыли люди как делали, так и делают. Мало кто знает, но в CSS появилось свойство <br><a href="http://htmlbook.ru/css/column-count" target="_blank">column-count</a>, позволяющее задать количество колонок для списка или текста. Также есть свойство <br><a href="http://htmlbook.ru/css/column-width" target="_blank">column-width</a>, которое задаёт минимальную ширину для колонки, <br><a href="http://htmlbook.ru/css/column-rule" target="_blank">column-rule</a>, отрисовывающее линию между колонками словно border,<br><a href="http://htmlbook.ru/css/column-gap" target="_blank">column-gap</a>, задающее расстояние между колонками и <br><a href="http://htmlbook.ru/css/columns" target="_blank">columns</a>, объединяющее в себе column-width и column-count. 
       <p>Разберемся на примерах из жизни. Простой пример: нужно сделать так, чтобы список располагался в две колонки. </p>
-      <pre data-lang="html" data-code="col-count-1" hidden>&lt;ul&gt;
+      <pre data-lang="html" data-code="col-count-1,col-count-2" hidden>&lt;ul&gt;
   &lt;li&gt;Lorem&lt;/li&gt;
   &lt;li&gt;ipsum&lt;/li&gt;
   &lt;li&gt;dolor&lt;/li&gt;
@@ -324,16 +322,6 @@ git config --global user.email myEmail@example.com</pre>
   column-count: 2;
 }</pre>
       <p>В результате получим это:</p>
-      <pre data-lang="html" data-code="col-count-2" hidden>&lt;ul&gt;
-  &lt;li&gt;Lorem&lt;/li&gt;
-  &lt;li&gt;ipsum&lt;/li&gt;
-  &lt;li&gt;dolor&lt;/li&gt;
-  &lt;li&gt;sit&lt;/li&gt;
-  &lt;li&gt;amet&lt;/li&gt;
-  &lt;li&gt;consectetur&lt;/li&gt;
-  &lt;li&gt;adipisicing&lt;/li&gt;
-  &lt;li&gt;elit&lt;/li&gt;
-&lt;/ul&gt;</pre>
       <div data-run="col-count-2"></div>
       <p>
         Просто, не правда ли? А теперь посмотрим на немного более сложный пример. Итак, наши клиенты - люди с планшетами. Наше веб-приложение похоже на газету и листать её нужно слева направо, а не вниз, как остальные сайты. Текст должен располагаться в три колонки на экран. 
@@ -456,7 +444,7 @@ git config --global user.email myEmail@example.com</pre>
     <section>
       <p>
         Долгое время в CSS изменение padding приводило к изменению width у элементов, из-за чего два одинаковых по ширине элемента с разными по ширине полями, в реальности имели разную ширину. Пример ниже демонстрирует этот недуг:</p>
-      <pre data-lang="html" data-code="box-z-1">&lt;div class="one"&gt;padding: 0&lt;/div&gt;
+      <pre data-lang="html" data-code="box-z-1,box-z-2">&lt;div class="one"&gt;padding: 0&lt;/div&gt;
 &lt;div class="two"&gt;padding: 40px&lt;/div&gt;</pre>
       <pre data-lang="css" data-code="box-z-1">.one {
   width: 200px;
@@ -468,7 +456,7 @@ git config --global user.email myEmail@example.com</pre>
   height: 100px;
   padding: 40px;
 }</pre>
-      <pre data-lang="css" data-code="box-z-1" hidden>.one,.two{
+      <pre data-lang="css" data-code="box-z-1,box-z-2" hidden>.one,.two{
   background: teal;
   color: white;
   margin: 20px auto;
@@ -481,8 +469,6 @@ git config --global user.email myEmail@example.com</pre>
     </section>
     <section>
       <p>На помощь в борьбе с этим нелогичным, казалось бы, поведением пришел <a href="http://htmlbook.ru/css/box-sizing" target="_blank">box-sizing</a>. Добавим в наши блоки всего по одной строчке кода:</p>
-      <pre data-lang="html" data-code="box-z-2">&lt;div class="one"&gt;padding: 0&lt;/div&gt;
-&lt;div class="two"&gt;padding: 40px&lt;/div&gt;</pre>
       <pre data-lang="css" data-code="box-z-2">.one {
   width: 200px;
   height: 100px;
@@ -494,15 +480,8 @@ git config --global user.email myEmail@example.com</pre>
   height: 100px;
   padding: 40px;
   box-sizing: border-box;
-}</pre>
-      <pre data-lang="css" data-code="box-z-2" hidden>.one,.two{
-  background: teal;
-  color: white;
-  margin: 20px auto;
 }
-.two{
-  box-shadow: inset 0 0 0 40px darkcyan;
-}</pre>
+</pre>
       <div data-run="box-z-2"></div>
     </section>
     <section>
@@ -619,7 +598,7 @@ git config --global user.email myEmail@example.com</pre>
       Часто, бывает нужно вставить картинку в текст. Но работает это не всегда так, как мы это задумывали. Попробуем вставить картинку без стилей и посмотрим, что получится.</p>
     <section>
       <p>Код примера предельно прост: </p>
-      <pre data-lang="html" data-code="image-in-text-1">&lt;p&gt;
+      <pre data-lang="html" data-code="image-in-text-1,image-in-text-2,image-in-text-4">&lt;p&gt;
   &lt;img src="./assets/images/image.svg" alt="Just image"&gt;
   Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic commodi maiores excepturi dolore cupiditate sit obcaecati, 
   repellat doloribus rerum! Dicta eius aliquid eaque sed sequi obcaecati debitis quos veniam placeat.
@@ -641,20 +620,7 @@ git config --global user.email myEmail@example.com</pre>
       <p>Добавим к нашему примеру <a href="http://htmlbook.ru/css/float" target="_blank">float</a>: left и посмотрим, что получится</p>
       <pre data-lang="css" data-code="image-in-text-2">img {
   float: left;
-}</pre>
-      <pre data-lang="html" data-code="image-in-text-2" hidden>&lt;p&gt;
-  &lt;img src="./assets/images/image.svg" alt="Just image"&gt;
-  Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic commodi maiores excepturi dolore cupiditate sit obcaecati, 
-  repellat doloribus rerum! Dicta eius aliquid eaque sed sequi obcaecati debitis quos veniam placeat.
-&lt;/p&gt;
-&lt;p&gt;
-  Itaque voluptates eum nihil minima quo iure voluptas, atque amet molestias, perspiciatis sed cupiditate nemo inventore velit 
-  soluta iste ut nesciunt! Qui fuga nesciunt accusantium magnam officiis corrupti, quibusdam amet.
-&lt;/p&gt;
-&lt;p&gt;
-  Soluta, laudantium in. Dolorem laboriosam nobis nihil iste eum sapiente maxime, facilis minus atque debitis corporis quasi, 
-  molestias delectus magni placeat ipsum iure perspiciatis doloremque repudiandae rem tenetur, in dolorum. 
-&lt;/p&gt;
+}
 </pre>
       <div data-run="image-in-text-2"></div>
       <p>Здесь мы видим, что картинка стала обтекаться текстом. Правда, из-за того, что текста много, мы не видим одного подводного камня этого решения.</p>
@@ -691,20 +657,8 @@ git config --global user.email myEmail@example.com</pre>
         В предыдущих примерах мы увидели, как задать обтекание картинки текстом так, чтобы картинка оказалась слева. Точно так же мы можем обтекать её и с другой стороны. </p>
       <pre data-lang="css" data-code="image-in-text-4">img {
   float: right;
-}</pre>
-      <pre data-lang="html" data-code="image-in-text-4" hidden>&lt;p&gt;
-  &lt;img src="./assets/images/image.svg" alt="Just image"&gt;
-  Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic commodi maiores excepturi dolore cupiditate sit obcaecati, 
-  repellat doloribus rerum! Dicta eius aliquid eaque sed sequi obcaecati debitis quos veniam placeat.
-&lt;/p&gt;
-&lt;p&gt;
-  Itaque voluptates eum nihil minima quo iure voluptas, atque amet molestias, perspiciatis sed cupiditate nemo inventore velit 
-  soluta iste ut nesciunt! Qui fuga nesciunt accusantium magnam officiis corrupti, quibusdam amet.
-&lt;/p&gt;
-&lt;p&gt;
-  Soluta, laudantium in. Dolorem laboriosam nobis nihil iste eum sapiente maxime, facilis minus atque debitis corporis quasi, 
-  molestias delectus magni placeat ipsum iure perspiciatis doloremque repudiandae rem tenetur, in dolorum. 
-&lt;/p&gt;</pre>
+}
+</pre>
       <div data-run="image-in-text-4"></div>
       <p>И если мы не уверены, что текста будет достаточно, не забудем добавить в конец контейнера clear: both.</p>
       <pre data-lang="css" data-code="image-in-text-5">img {
@@ -1312,6 +1266,209 @@ h3 {
   }
 }</pre>
 </article>
+<article id="layouts">
+  <div class="container">
+    <h2>Многоколоночные макеты</h2>
+    <p>
+      При вёрстке сайта, одной из первых задач верстальщика является создание основного шаблона. Основным шаблоном в данном случае называется вёрстка без контента - это совокупность шапки сайта, меню, 
+      футера и прочих элементов, которые встречаются на каждой странице.
+    </p>
+    <p>
+      Итак, попробуем сверстать простой макет сайта. Сверху у нас будет шапка сайта, слева будет навигация по разделу сайта, справа контент, а снизу футер. Стандартный шаблон, ничего необычного. Начнём с HTML.</p>
+    <pre data-lang="html" data-code="lay1,lay2,lay3,lay4,lay5">&lt;div class="main-container"&gt;
+  &lt;header&gt;Header&lt;/header&gt;
+  &lt;nav&gt;Site navigation&lt;/nav&gt;
+  &lt;main class="content"&gt;Site content&lt;/main&gt;
+  &lt;footer&gt;Footer&lt;/footer&gt;
+&lt;/div&gt;
+</pre>
+    <p>Если мы запустим это прямо сейчас, мы лишь увидим, как все эти элементы расположились друг под другом. Придётся добавить стилей. </p>
+    <h3>Float</h3>
+    <p>
+      В древние времена существовало несколько вариантов вёрстки макетов, а самым адекватным из них был float. Как мы выяснили в одной из предыдущих глав,с помощью float можно сделать так, чтобы картинка обтекалась текстом. То же можно применить и к блокам. Если мы возьмём два блочных элемента
+      с определенными заранее шириной и высотой, то, добавив к ним <code>float: left;</code>, мы увидим, как эти два блочных элемента выстроятся в один ряд, если ширина страницы это позволит. 
+    </p>
+    <pre data-lang="css" data-code="lay1">.main-container {
+  margin: 0 auto;
+  max-width: 800px;
+}
+header {
+  height: 50px;
+  background: cornflowerblue;
+}
+nav {
+  height: 80px;
+  background: darksalmon;
+  width: 20%;   /* Задаём ширину меню */
+  float: left;  /* Устанавливаем обтекание */  
+}
+.content {
+  height: 120px;
+  background: khaki;
+  width: 80%;   /* Задаём ширину контента */
+  float: left;  /* Устанавливаем обтекание */
+}
+footer {
+  clear: both;  /* Сбрасываем обтекание */
+  height: 50px;
+  background: darkseagreen;
+}
+</pre>
+    <div data-run="lay1"></div>
+    <p>Казалось бы, на этом можно закончить наш урок, но, если хорошо подумать, можно увидеть, как много проблем мы породили этим решением:</p>
+    <ol>
+      <li>Мы не можем жёстко зафиксировать ширину навигационного меню</li>
+      <li>Если перед футером нам потребуется вставить какой-то блок, например, рекламный, вёрстка "поедет", ведь мы благополучно забудем про <code>clear: both;</code></li>
+      <li>Высота меню никак не зависит от высоты контента и наоборот. Под более коротким блоком будет пустота.</li>
+    </ol>
+    <p>Подробнее о float читайте тут:<a target="_blank" href="https://developer.mozilla.org/ru/docs/Web/CSS/float">float</a></p>
+    <h3>Flex</h3>
+    <p>Рассмотрим более современный способ. Мы можем использовать<code>display: flex;</code>у <code>.main-container</code>, тогда мы сможем избавиться от пары недостатков предыдущего примера. </p>
+    <pre data-lang="css" data-code="lay2,lay4">.main-container {
+  margin: 0 auto;
+  max-width: 800px;
+  display: flex;        /* Объявляем контейнер флексом */
+  align-items: stretch; /* Высота элементов должна подстраиваться по высоте самого высокого элемента */
+  flex-wrap: wrap;      /* Если не хватает места в строке, переносить блок на следующую */
+}
+header {
+  width: 100%;          /* Обязательно задаём ширину для шапки */
+  height: 50px;
+  background: cornflowerblue;
+}
+nav {
+  background: darksalmon;
+  width: 20%;           /* Задаём ширину меню */
+}
+.content {
+  height: 120px;
+  background: khaki;
+  width: 80%;           /* Задаём ширину контента */
+}
+footer {
+  width: 100%;          /* Обязательно задаём ширину для футера */
+  height: 50px;
+  background: darkseagreen;
+}</pre>
+    <div data-run="lay2"></div>
+    <p>
+      Как мы видим, каким бы длинным ни был контент, под навигацией не образуется пробела, а так как больше нет флоатов, то перед футером можно вставить любой блок.К сожалению, таким способом мы не смогли решить последнюю проблему: как задать у меню фиксированную ширину, а ширина контента при этом была переменной?</p>
+    <p>Больше о flex здесь:</p>
+    <ul>
+      <li><a target="_blank" href="https://developer.mozilla.org/ru/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox">Основные понятия Flexbox</a></li>
+      <li><a target="_blank" href="https://developer.mozilla.org/ru/docs/Web/CSS/flex-wrap">flex-wrap</a></li>
+      <li><a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Aligning_Items_in_a_Flex_Container">align-items and justify-content</a></li>
+    </ul>
+    <h3>Grid</h3>
+    <p>
+      Самым современным способом вёрстки макетов на сегодняшний день является т.н. Grid layout. Грид позволяет выстраивать элементы внутри себя по заранее заданнойсетке. Для начала, разберём пример, а затем разберёмся подробнее, как это работает.</p>
+    <pre data-lang="css" data-code="lay3">.main-container {
+  margin: 0 auto;
+  max-width: 800px;
+  display: grid;                        /* Объявляем контейнер гридом */
+  grid-template-rows: 50px 1fr 50px;    /* (1) Задаём строки*/
+  grid-template-columns: 200px 1fr;     /* (2) Задаём колонки*/
+  grid-template-areas: 'header header'  /* (3) Задаём названия областей*/
+    'nav content' 
+    'footer footer'; 
+}
+  header {
+    grid-area: header;  /* Шапка займёт область с названием header */
+    background: cornflowerblue;
+}
+nav {
+  background: darksalmon;
+  grid-area: nav;     /* Навигация займет область nav */
+}
+.content {
+  height: 120px;
+  background: khaki;
+  grid-area: content;  /* Контент займёт content */
+}
+footer {
+  grid-area: footer;  /* Футер - footer */
+  background: darkseagreen;
+}</pre>
+    <div data-run="lay3"></div>
+    <p>Как можно заметить, мы избавились от всех негативных последствий. А теперь, разберёмся подробнее, как это работает.</p>
+    <ol>
+      <li> <code>grid-template-rows: 50px 1fr 50px;</code>означает, что если смотреть на сайт по вертикали, то у нас образуются три строки: шапка, навигация с контентом, футер. 
+        Высоту первой строки, шапки, установим равной 50px, высота второй строки нам неизвестна, а высота третьей, футера, тоже 50px.
+      </li>
+      <li> <code>grid-template-columns: 200px 1fr;</code>означает, что если смотреть на сайт по горизонтали, то образуются два столбца: слева навигация, справа контент.
+        Ширину навигации установим равной 200px, а ширина контента нам неизвестна и она займёт всё доступное пространство.
+      </li>
+      <li>
+         Итак, на этом этапе мы поняли, что у нас будет три строки и два столбца. Это и указываем далее:<code> grid-template-areas: 'header header'  'nav content'  'footer footer';</code>. Этот код создаёт три строки и два столбца, состоящие из именованных областей. Именовать эти области можно как угодно,
+        их названия будут указаны в дочерних элементах в свойстве <code>grid-area</code>. Здесь мы видим, что шапка займёт две колонки; навигация - одну, левую колонку; контент - одну правую; футер - две колонки.
+      </li>
+    </ol>
+    <p>Таким образом, мы получили идеальную сетку для нашего сайта. Подробнее о grid layout читать здесь:</p>
+    <ul>
+      <li><a target="_blank" href="https://developer.mozilla.org/ru/docs/Web/CSS/CSS_Grid_Layout">CSS Grid layout</a></li>
+      <li><a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template">grid-template</a></li>
+      <li> <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/CSS/grid-area">grid-area</a></li>
+    </ul>
+    <h3>Calc</h3>
+    <p>А теперь настало время удивляться. Вернёмся к примеру с флексом и добавим еще немного CSS:</p>
+    <pre data-lang="css" data-code="lay4">nav {
+  width: 200px;
+}
+.content {
+  width: calc(100% - 200px);
+}</pre>
+    <div data-run="lay4"></div>
+    <p>Таким образом мы избавились от проблемы фиксированной ширины меню. Благодаря функции <code>calc()</code>, мы заставили ширину контента зависеть от ширины меню. <a target="_blank" href="https://developer.mozilla.org/ru/docs/Web/CSS/calc">О calc() можно почитать здесь</a></p>
+    <h3>Ещё один вариант вёрстки шаблона</h3>
+    <p>На самом деле, есть еще один вариант. Он сложный и ненадёжный, но для общего развития, стоит упомянуть и его.</p>
+    <pre data-lang="css" data-code="lay5">.main-container {
+  margin: 0 auto;
+  max-width: 800px;
+  position: relative;
+  padding: 50px 0 50px 200px;
+  box-sizing: border-box;
+}
+header {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 50px;
+  background: cornflowerblue;
+}
+nav {
+  background: darksalmon;
+  position: absolute;
+  top: 50px;
+  bottom: 50px;
+  left: 0;
+  width: 200px;
+  overflow-y: auto;
+}
+.content {
+  height: 120px;
+  background: khaki;
+  width: 100%;
+}
+footer {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  height: 50px;
+  background: darkseagreen;
+}</pre>
+    <div data-run="lay5"></div>
+    <p>Что тут сделано?</p>
+    <ol>
+      <li>Основной контейнер спозиционирован относительно, чтобы абсолютно-спозиционированные элементы выстраивались внутри него.</li>
+      <li>Шапка и футер прижимаются к верхней и нижней части контейнера.</li>
+      <li>Навигация прижимается к левой части контейнера.</li>
+      <li>Чтобы блоки не налезали друг на друга, с помощью внутренних отступов у основного контейнера, отделим контент от остальных блоков.</li>
+      <li>Так как теперь высота меню зависит от высоты контента, добавляем свойство<code>overflow</code>, чтобы при недостаточной высоте навигации, внутри неё появлялся скроллбар.</li>
+    </ol>
+  </div>
+</article>
 <article id="custom-checkbox">
   <div class="container">
     <h2>Вёрстка чекбоксов</h2>
@@ -1346,8 +1503,7 @@ h3 {
   &lt;/label&gt;
 &lt;/p&gt;
 </pre>
-      <pre data-lang="css" data-code="custom-checkbox">
-.custom-checkbox {
+      <pre data-lang="css" data-code="custom-checkbox,custom-checkbox-gmail">.custom-checkbox {
   /* Контейнер должен быть релятивным, так как внутри него мы разместим два абсолютно спозиционированных элемента */
   position: relative;
   /* скрываем элементы, попадающие за границы label */
@@ -1432,87 +1588,6 @@ h3 {
     <section>
       <h3>Задача</h3>
       <p>Сверстать чекбоксы как в gmail.</p>
-      <pre data-lang="css" data-code="custom-checkbox-gmail" hidden>
-.custom-checkbox {
-  /* Контейнер должен быть релятивным, так как внутри него мы разместим два абсолютно спозиционированных элемента */
-  position: relative;
-  /* скрываем элементы, попадающие за границы label */
-  overflow: hidden;
-  /* По умолчанию, label - это строчный элемент. С высокой вероятностью, нам нужно будет добавлять вертикальный margin, поэтому сразу сделаем его строчно-блочным*/
-  display: inline-block;
-  /* Делаем так, чтобы чекбокс нельзя было выделить курсором, а только нажать */
-  user-select: none;
-  /* Я приверженец того, что все интерактивные элементы должны иметь cursor: pointer, поэтому задаём и его */
-  cursor: pointer;
-  /* Отодвигаем левую часть так, чтобы влез кастомный чекбокс*/
-  padding: 0 1em 0 1.4em;
-  /* Задаём минимальную высоту */
-  min-height: 1em;
-}
-
-/* Задаем кастомную галочку для чекбокса и скрываем её по умолчанию */
-.custom-checkbox .checker {
-  position: absolute;
-  margin-top: 0;
-  /* Выдвигаем чекбокс левее так, чтобы он не наезжал на текст */
-  margin-left: -1.2em;
-  width: 1em;
-  height: 1em;
-  overflow: hidden;
-  text-align: center;
-  font-size: 1em;
-  line-height: 1;
-  border: 1px solid teal;
-  border-radius: 3px;
-  background-color: white;
-  /* Делаем галочку прозрачной */
-  color: transparent;
-}
-
-/* В псевдо-элементе допишем саму галочку */
-.custom-checkbox .checker:after {
-  content: '✓';
-}
-
-/* указываем селектор на наш конкретный инпут с типом чекбокс */
-.custom-checkbox input[type='checkbox'] {
-  /* Выводим стандартный чекбокс за границы label */
-  position: absolute;
-  right: 100%;
-  top: 0;
-}
-
-/* Несколько сложноее CSS правило: когда чекбокс будет иметь атрибут checked, его сосед снизу (селектор +) с классом .checker, примет эти стили */
-.custom-checkbox input[type='checkbox']:checked + .checker {
-  /* Перекрашиваем фон чекбокса и галочку */
-  background-color: teal;
-  color: white;
-}
-
-/* Не все люди используют для просмотра веб-страниц мышь, а некоторые из них используют вообще только клавиатуру. Так вот, чтобы интерактивные элементы подсвечивались, когда фокус клавиатуры попадал на них, им нужно задать отдельные стили. */
-/* Когда скрытый инпут окажется в фокусе, его сосед с классом .checker примет стили */
-.custom-checkbox input[type='checkbox']:focus + .checker {
-  box-shadow: 0 0 5px 0 teal;
-}
-
-/* Когда скрытый интуп нельзя изменить, его сосед с классом .checker примет стили */
-.custom-checkbox input[type='checkbox']:disabled+.checker {
-  background-color: #999;
-  border-color: #999;
-}
-
-/* Этот класс позволяет правильно скрыть элемент с экрана так, чтобы он был доступен для скринридеров */
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  border: 0;
-  padding: 0;
-  clip: rect(0 0 0 0);
-  overflow: hidden;
-}
-</pre>
       <pre data-lang="css" data-code="custom-checkbox-gmail" hidden>.sol4 {
   display: flex;
   align-items: center;
@@ -1630,5 +1705,5 @@ h3 {
 </article>
       </div>
     </main>
-  <script type="text/javascript" src="script.6e4e9d29df7775ee4fd4.js"></script></body>
+  <script type="text/javascript" src="script.888a527187de06798236.js"></script></body>
 </html>
