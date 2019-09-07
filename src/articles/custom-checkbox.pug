@@ -1,85 +1,3 @@
-- 
-  var customCheckboxCSS = `
-  .custom-checkbox {
-    /* Контейнер должен быть релятивным, так как внутри него мы разместим два абсолютно спозиционированных элемента */
-    position: relative;
-    /* скрываем элементы, попадающие за границы label */
-    overflow: hidden;
-    /* По умолчанию, label - это строчный элемент. С высокой вероятностью, нам нужно будет добавлять вертикальный margin, поэтому сразу сделаем его строчно-блочным*/
-    display: inline-block;
-    /* Делаем так, чтобы чекбокс нельзя было выделить курсором, а только нажать */
-    user-select: none;
-    /* Я приверженец того, что все интерактивные элементы должны иметь cursor: pointer, поэтому задаём и его */
-    cursor: pointer;
-    /* Отодвигаем левую часть так, чтобы влез кастомный чекбокс*/
-    padding: 0 1em 0 1.4em;
-    /* Задаём минимальную высоту */
-    min-height: 1em;
-  }
-
-  /* Задаем кастомную галочку для чекбокса и скрываем её по умолчанию */
-  .custom-checkbox .checker {
-    position: absolute;
-    margin-top: 0;
-    /* Выдвигаем чекбокс левее так, чтобы он не наезжал на текст */
-    margin-left: -1.2em;
-    width: 1em;
-    height: 1em;
-    overflow: hidden;
-    text-align: center;
-    font-size: 1em;
-    line-height: 1;
-    border: 1px solid teal;
-    border-radius: 3px;
-    background-color: white;
-    /* Делаем галочку прозрачной */
-    color: transparent;
-  }
-
-  /* В псевдо-элементе допишем саму галочку */
-  .custom-checkbox .checker:after {
-    content: '✓';
-  }
-
-  /* указываем селектор на наш конкретный инпут с типом чекбокс */
-  .custom-checkbox input[type='checkbox'] {
-    /* Выводим стандартный чекбокс за границы label */
-    position: absolute;
-    right: 100%;
-    top: 0;
-  }
-
-  /* Несколько сложноее CSS правило: когда чекбокс будет иметь атрибут checked, его сосед снизу (селектор +) с классом .checker, примет эти стили */
-  .custom-checkbox input[type='checkbox']:checked + .checker {
-    /* Перекрашиваем фон чекбокса и галочку */
-    background-color: teal;
-    color: white;
-  }
-
-  /* Не все люди используют для просмотра веб-страниц мышь, а некоторые из них используют вообще только клавиатуру. Так вот, чтобы интерактивные элементы подсвечивались, когда фокус клавиатуры попадал на них, им нужно задать отдельные стили. */
-  /* Когда скрытый инпут окажется в фокусе, его сосед с классом .checker примет стили */
-  .custom-checkbox input[type='checkbox']:focus + .checker {
-    box-shadow: 0 0 5px 0 teal;
-  }
-
-  /* Когда скрытый интуп нельзя изменить, его сосед с классом .checker примет стили */
-  .custom-checkbox input[type='checkbox']:disabled+.checker {
-    background-color: #999;
-    border-color: #999;
-  }
-
-  /* Этот класс позволяет правильно скрыть элемент с экрана так, чтобы он был доступен для скринридеров */
-  .visually-hidden {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    margin: -1px;
-    border: 0;
-    padding: 0;
-    clip: rect(0 0 0 0);
-    overflow: hidden;
-  }
-  `;
 article#custom-checkbox
   .container
     h2 Вёрстка чекбоксов
@@ -119,7 +37,87 @@ article#custom-checkbox
             </label>
           </p>
 
-      pre(data-lang="css" data-code="custom-checkbox")=customCheckboxCSS
+      pre(data-lang="css" data-code="custom-checkbox,custom-checkbox-gmail")
+        :escape
+          .custom-checkbox {
+            /* Контейнер должен быть релятивным, так как внутри него мы разместим два абсолютно спозиционированных элемента */
+            position: relative;
+            /* скрываем элементы, попадающие за границы label */
+            overflow: hidden;
+            /* По умолчанию, label - это строчный элемент. С высокой вероятностью, нам нужно будет добавлять вертикальный margin, поэтому сразу сделаем его строчно-блочным*/
+            display: inline-block;
+            /* Делаем так, чтобы чекбокс нельзя было выделить курсором, а только нажать */
+            user-select: none;
+            /* Я приверженец того, что все интерактивные элементы должны иметь cursor: pointer, поэтому задаём и его */
+            cursor: pointer;
+            /* Отодвигаем левую часть так, чтобы влез кастомный чекбокс*/
+            padding: 0 1em 0 1.4em;
+            /* Задаём минимальную высоту */
+            min-height: 1em;
+          }
+
+          /* Задаем кастомную галочку для чекбокса и скрываем её по умолчанию */
+          .custom-checkbox .checker {
+            position: absolute;
+            margin-top: 0;
+            /* Выдвигаем чекбокс левее так, чтобы он не наезжал на текст */
+            margin-left: -1.2em;
+            width: 1em;
+            height: 1em;
+            overflow: hidden;
+            text-align: center;
+            font-size: 1em;
+            line-height: 1;
+            border: 1px solid teal;
+            border-radius: 3px;
+            background-color: white;
+            /* Делаем галочку прозрачной */
+            color: transparent;
+          }
+
+          /* В псевдо-элементе допишем саму галочку */
+          .custom-checkbox .checker:after {
+            content: '✓';
+          }
+
+          /* указываем селектор на наш конкретный инпут с типом чекбокс */
+          .custom-checkbox input[type='checkbox'] {
+            /* Выводим стандартный чекбокс за границы label */
+            position: absolute;
+            right: 100%;
+            top: 0;
+          }
+
+          /* Несколько сложноее CSS правило: когда чекбокс будет иметь атрибут checked, его сосед снизу (селектор +) с классом .checker, примет эти стили */
+          .custom-checkbox input[type='checkbox']:checked + .checker {
+            /* Перекрашиваем фон чекбокса и галочку */
+            background-color: teal;
+            color: white;
+          }
+
+          /* Не все люди используют для просмотра веб-страниц мышь, а некоторые из них используют вообще только клавиатуру. Так вот, чтобы интерактивные элементы подсвечивались, когда фокус клавиатуры попадал на них, им нужно задать отдельные стили. */
+          /* Когда скрытый инпут окажется в фокусе, его сосед с классом .checker примет стили */
+          .custom-checkbox input[type='checkbox']:focus + .checker {
+            box-shadow: 0 0 5px 0 teal;
+          }
+
+          /* Когда скрытый интуп нельзя изменить, его сосед с классом .checker примет стили */
+          .custom-checkbox input[type='checkbox']:disabled+.checker {
+            background-color: #999;
+            border-color: #999;
+          }
+
+          /* Этот класс позволяет правильно скрыть элемент с экрана так, чтобы он был доступен для скринридеров */
+          .visually-hidden {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            margin: -1px;
+            border: 0;
+            padding: 0;
+            clip: rect(0 0 0 0);
+            overflow: hidden;
+          }
 
       p
         | Подробнее о visually-hidden можно почитать здесь: 
@@ -127,7 +125,6 @@ article#custom-checkbox
     section
       h3 Задача
       p Сверстать чекбоксы как в gmail.
-      pre(data-lang="css" data-code="custom-checkbox-gmail" hidden)=customCheckboxCSS
       pre(data-lang="css" data-code="custom-checkbox-gmail" hidden)
         :escape
 

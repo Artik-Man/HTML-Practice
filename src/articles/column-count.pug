@@ -20,7 +20,7 @@ article#column-count
       | , объединяющее в себе column-width и column-count. 
 
       p Разберемся на примерах из жизни. Простой пример: нужно сделать так, чтобы список располагался в две колонки. 
-      pre(data-lang="html" data-code="col-count-1" hidden)
+      pre(data-lang="html" data-code="col-count-1,col-count-2" hidden)
         :escape
           <ul>
             <li>Lorem</li>
@@ -41,18 +41,6 @@ article#column-count
             column-count: 2;
           }
       p В результате получим это:
-      pre(data-lang="html" data-code="col-count-2" hidden)
-        :escape
-          <ul>
-            <li>Lorem</li>
-            <li>ipsum</li>
-            <li>dolor</li>
-            <li>sit</li>
-            <li>amet</li>
-            <li>consectetur</li>
-            <li>adipisicing</li>
-            <li>elit</li>
-          </ul>
       div(data-run="col-count-2")
 
       p Просто, не правда ли? А теперь посмотрим на немного более сложный пример. Итак, наши клиенты - люди с планшетами. 

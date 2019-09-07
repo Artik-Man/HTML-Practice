@@ -2,13 +2,15 @@ export const runCode = () => {
   const iframes = new Map();
 
   document.querySelectorAll('[data-code]').forEach((pre: HTMLElement) => {
-    const id = pre.dataset.code;
-    const type = pre.dataset.lang;
-    if (!iframes.has(id)) {
-      iframes.set(id, {});
-    }
-    const item = iframes.get(id);
-    item[type] = (item[type] || '') + pre.innerText;
+    const ids = pre.dataset.code.split(',');
+    ids.forEach(id => {
+      const type = pre.dataset.lang;
+      if (!iframes.has(id)) {
+        iframes.set(id, {});
+      }
+      const item = iframes.get(id);
+      item[type] = (item[type] || '') + pre.innerText;
+    });
   });
 
   document.querySelectorAll('[data-run]').forEach((div: HTMLElement) => {
