@@ -1,0 +1,349 @@
+article#grids
+  .container
+    h2 Сетки
+    p Сетки нужны для того, чтобы правильно расположить содержимое на странице. 
+      | Обычно, системы сеток состоят из контейнеров (container), рядов (row) и колонок (col). 
+      | Распространённой практикой являются двеннадцати-колоночные сетки. 
+      | Наиболее известная система сеток среди верстальщиков - это 
+      a(target="_blank" href="https://bootstrap-4.ru/docs/4.3.1/layout/grid/") Bootstrap Grid layout
+    p В этой главе мы попробуем самостоятельно создать простую систему сеток.
+
+    h3 Float
+    p Когда-то давно существовал лишь один более или менее хороший подход к проектированию сеток - сетки на флоатах.
+    pre(data-lang="html" data-code="grids-1")
+      :escape
+        <div class="container">
+          <div class="row">
+            <div class="col w8">
+              <span>Ячейка w8</span>
+            </div>
+            <div class="col w4">
+              <span>Ячейка w4</span>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col w4">
+              <span>Ячейка w4</span>
+            </div>
+            <div class="col w4">
+              <span>Ячейка w4</span>
+            </div>
+            <div class="col w4">
+              <span>Ячейка w4</span>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col w3">
+              <span>Ячейка w3</span>
+            </div>
+            <div class="col w3">
+              <span>Ячейка <br> w3</span>
+            </div>
+            <div class="col w3">
+              <span>Ячейка w3</span>
+            </div>
+            <div class="col w3">
+              <span>Ячейка w3</span>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col w6">
+              <span>Ячейка w6</span>
+            </div>
+            <div class="col w6">
+              <span>Ячейка w6</span>
+            </div>
+          </div>
+        </div>
+    pre(data-lang="css" data-code="grids-1")
+      :escape
+        * {
+          box-sizing: border-box;
+        }
+        .container {
+          max-width: 800px;
+          margin: 0 auto;
+          padding: 0 5px;
+        }
+        .row {
+          margin: 0 -5px 10px;
+        }
+        .row::after {
+          content: '';
+          display: block;
+          clear: both;
+        }
+        .col {
+          width: calc(100% / 12);
+          float: left;
+          padding: 0 5px;
+        }
+
+        .col.w1  { width: calc(100% / 12); }
+        .col.w2  { width: calc(100% * 2 / 12); }
+        .col.w3  { width: 25%; }
+        .col.w4  { width: calc(100% * 4 / 12); }
+        .col.w5  { width: calc(100% * 5 / 12); }
+        .col.w6  { width: 50%; }
+        .col.w7  { width: calc(100% * 7 / 12); }
+        .col.w8  { width: calc(100% * 8 / 12); }
+        .col.w9  { width: 75%; }
+        .col.w10 { width: calc(100% * 10 / 12); }
+        .col.w11 { width: calc(100% * 11 / 12); }
+        .col.w12 { width: 100%; }
+
+    pre(data-lang="css" data-code="grids-1,grids-2" hidden)
+      :escape
+        .col span{
+          display: block;
+          background: lightblue;
+          padding: 10px;
+          height: 100%;
+        }
+        .col:nth-child(n+1) span{background: cornflowerblue}
+        .col:nth-child(n+2) span{background: darkseagreen}
+        .col:nth-child(n+3) span{background: khaki}
+        .col:nth-child(n+4) span{background: darksalmon}
+
+    div(data-run="grids-1")
+    p Как видим, всё не так уж и плохо. Лишь пара неприятных моментов: 
+      | высоты колонок никак не зависят друг от друга, приходится подстраивать паддинги и 
+      | маргины, чтобы между колонками было расстояние, а ещё приходится писать много кода. 
+
+    h3 Flex
+    p Попробуем исправить предыдущий пример. 
+    pre(data-lang="html" data-code="grids-2")
+      :escape
+        <div class="container">
+          <div class="row">
+            <div class="col w8">
+              <span>Ячейка w8</span>
+            </div>
+            <div class="col w4">
+              <span>Ячейка w4</span>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <span>Ячейка</span>
+            </div>
+            <div class="col">
+              <span>Ячейка</span>
+            </div>
+            <div class="col">
+              <span>Ячейка</span>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <span>Ячейка</span>
+            </div>
+            <div class="col">
+              <span>Ячейка <br> вторая строка</span>
+            </div>
+            <div class="col">
+              <span>Ячейка</span>
+            </div>
+            <div class="col">
+              <span>Ячейка</span>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <span>Ячейка</span>
+            </div>
+            <div class="col">
+              <span>Ячейка</span>
+            </div>
+          </div>
+        </div>
+    pre(data-lang="css" data-code="grids-2")
+      :escape
+        * {
+          box-sizing: border-box;
+        }
+        .container {
+          max-width: 800px;
+          margin: 0 auto;
+          padding: 0 5px;
+        }
+        .row {
+          display: flex;
+          flex-wrap: wrap;
+          margin: 0 -5px 10px;
+        }
+        .col {
+          width: auto;
+          max-width: 100%;
+          flex-shrink: 0;
+          flex-grow: 1;
+          flex-basis: 0;
+          padding: 0 5px;
+        }
+
+        .col.w1  { min-width: calc(100% / 12); flex-basis: calc(100% / 12)}
+        .col.w2  { min-width: calc(100% * 2 / 12); flex-basis:calc(100% * 2 / 12); }
+        .col.w3  { min-width: 25%; flex-basis: 25%; }
+        .col.w4  { min-width: calc(100% * 4 / 12); flex-basis: calc(100% * 4 / 12); }
+        .col.w5  { min-width: calc(100% * 5 / 12); flex-basis: calc(100% * 5 / 12); }
+        .col.w6  { min-width: 50%; flex-basis: 50%; }
+        .col.w7  { min-width: calc(100% * 7 / 12); flex-basis: calc(100% * 7 / 12); }
+        .col.w8  { min-width: calc(100% * 8 / 12); flex-basis: calc(100% * 8 / 12); }
+        .col.w9  { min-width: 75%; flex-basis: 75%; }
+        .col.w10 { min-width: calc(100% * 10 / 12); flex-basis: calc(100% * 10 / 12); }
+        .col.w11 { min-width: calc(100% * 11 / 12); flex-basis: calc(100% * 11 / 12); }
+        .col.w12 { min-width: 100%; flex-basis: 100%; }
+    div(data-run="grids-2")
+    p Как видите, у этого метода есть свои плюсы. Когда нам нужны одинаковые колонки в ряду, 
+      | нам не нужно указывать ширину этих колонок. И, хоть мы и избавились от хака с clear: both,
+      | кода меньше не стало. И снова подстраивать расстояния между блоками приходится не 
+      | без фокусов, хотя и высоты блоков теперь можно сделать зависимыми друг от друга. 
+      | Однако, этот способ действительно гораздо лучше предыдущего. 
+
+    h3 Grid 
+    p Уже из названия этого способа понятно, что он придуман как раз для решения этой проблемы.
+    p Для начала, избавимся от строк. Они нам больше не нужны.
+    pre(data-lang="html" data-code="grids-3")
+      :escape
+        <div class="container">
+          <div class="grid g-2-1">
+            <div class="ceil">
+              Ячейка
+            </div>
+            <div class="ceil">
+              Ячейка
+            </div>
+          </div>
+          <div class="grid g-1-1-1">
+            <div class="ceil">
+              Ячейка
+            </div>
+            <div class="ceil">
+              Ячейка
+            </div>
+            <div class="ceil">
+              Ячейка
+            </div>
+          </div>
+          <div class="grid g-1-1-1-1">
+            <div class="ceil">
+              Ячейка
+            </div>
+            <div class="ceil">
+              Ячейка <br> вторая строка
+            </div>
+            <div class="ceil">
+              Ячейка
+            </div>
+            <div class="ceil">
+              Ячейка
+            </div>
+          </div>
+          <div class="grid g-1-1">
+            <div class="ceil">
+              Ячейка
+            </div>
+            <div class="ceil">
+              Ячейка
+            </div>
+          </div>
+        </div>
+
+    pre(data-lang="css" data-code="grids-3")
+      :escape
+        .container {
+          max-width: 800px;
+          margin: 0 auto;
+        }        
+        .ceil {
+          padding: 0 10px;
+        }
+        .grid {
+          display: grid;
+          gap: 10px;
+          margin-bottom: 10px;
+        }
+
+        .grid.g-2-1 {
+          grid-template-columns: 2fr 1fr;
+        }
+        .grid.g-1-1 {
+          grid-template-columns: 1fr 1fr;
+        }
+        .grid.g-1-1-1 {
+          grid-template-columns: repeat(3, 1fr);
+        }
+        .grid.g-1-1-1-1 {
+          grid-template-columns: repeat(4, 1fr);
+        }
+    pre(data-lang="css" data-code="grids-3,grids-4" hidden)
+      :escape
+        .ceil {
+          background: lightblue;
+          padding-top: 10px !important;
+          padding-bottom: 10px !important;
+        }
+        .ceil:nth-child(4n+1){background: cornflowerblue}
+        .ceil:nth-child(4n+2){background: darkseagreen}
+        .ceil:nth-child(4n+3){background: khaki}
+        .ceil:nth-child(4n+4){background: darksalmon}
+    div(data-run="grids-3")
+    p Это совершенно иной подход к организации сеток. Как видите, здесь уже нет проблем с 
+      | расстояниями между колонками, благодаря свойству 
+      a(target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/CSS/gap") gap
+      | , кроме того, если вам нужна ровная сетка, кода станет гораздо меньше:
+
+    pre(data-lang="html" data-code="grids-4")
+      :escape
+        <div class="container">
+          <div class="ceil">
+            Ячейка
+          </div>
+          <div class="ceil">
+            Ячейка
+          </div>
+          <div class="ceil">
+            Ячейка <br> вторая строка
+          </div>
+          <div class="ceil">
+            Ячейка
+          </div>
+          <div class="ceil">
+            Ячейка
+          </div>
+          <div class="ceil">
+            Ячейка
+          </div>
+          <div class="ceil">
+            Ячейка
+          </div>
+          <div class="ceil">
+            Ячейка
+          </div>
+          <div class="ceil">
+            Ячейка
+          </div>
+        </div>
+
+    pre(data-lang="css" data-code="grids-4")
+      :escape
+        .container {
+          max-width: 800px;
+          margin: 0 auto;
+          display: grid;
+          gap: 10px;
+          grid-template-columns: repeat(3, 1fr);
+        }
+        .ceil {
+          padding: 0 10px;
+        }
+    div(data-run="grids-4")
+
+    p Теперь нам не обязательно иметь строки, а сам грид может быть совмещён с контейнером.
+    p Поэкспериментировать с этим примером можно здесь:
+    a.codepen.button(data-id="ExYLLqj" data-height="500") Запустить пример
+
+    p Кроме того, с помощью CSS Grid можно создавать вот такие необычные сетки:
+    a.codepen.button(data-id="eYOrKJY" data-height="500" data-default-tab="result") Запустить пример
+
+    
