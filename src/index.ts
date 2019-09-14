@@ -4,35 +4,15 @@ import { runCode } from './lib/runCode';
 import { tableOfContents } from './lib/tableOfContents';
 import { initYoutube } from './lib/initYouTube';
 import { initCodePen } from './lib/initCodePen';
+import { simpleVirtualScroll } from './lib/simpleVirtualScroll';
 
 document.addEventListener('DOMContentLoaded', () => {
-  try {
-    tableOfContents();
-  } catch (e) {
-    console.warn(e);
-  }
-
-  try {
-    runCode();
-  } catch (e) {
-    console.warn(e);
-  }
-
-  try {
-    highlight();
-  } catch (e) {
-    console.warn(e);
-  }
-
-  try {
-    initYoutube();
-  } catch (e) {
-    console.warn(e);
-  }
-
-  try {
-    initCodePen();
-  } catch (e) {
-    console.warn(e);
-  }
+  const imports = [tableOfContents, runCode, highlight, initYoutube, initCodePen, simpleVirtualScroll];
+  imports.forEach(fn => {
+    try {
+      fn();
+    } catch (e) {
+      console.warn(e);
+    }
+  });
 });

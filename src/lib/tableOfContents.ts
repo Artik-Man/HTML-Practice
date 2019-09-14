@@ -1,4 +1,4 @@
-import { debounce } from './debounce';
+import { articlesObserver } from './articlesObserver';
 
 export const tableOfContents = () => {
   const contents = document.getElementById('contents').querySelector('ul');
@@ -20,28 +20,19 @@ export const tableOfContents = () => {
   const mainMenu = document.getElementById('menu');
   mainMenu.innerHTML = contents.innerHTML;
 
-  if (window.innerWidth > 1000) {
-    const debouncedScroll = debounce(() => {
-      articles.forEach(article => {
-        const activeArticle = mainMenu.querySelector(`[href="#${article.id}"]`);
-        if (window.scrollY > article.offsetTop - window.innerHeight / 2) {
-          mainMenu.querySelectorAll('.active').forEach(a => {
-            a.classList.remove('active');
-          });
-          activeArticle.classList.add('active');
-          if (document.location.hash !== '#' + article.id) {
-            history.pushState(null, null, '#' + article.id);
-          }
-        } else {
-          activeArticle.classList.remove('active');
+  articlesObserver(entries => {
+    entries.forEach(entry => {
+      const article: HTMLElement = entry.target as HTMLElement;
+      if (entry.intersectionRatio > 0) {
+        mainMenu.querySelector(`[href="#${article.id}"]`).classList.add('active');
+        if (document.location.hash !== '#' + article.id) {
+          history.pushState(null, null, '#' + article.id);
         }
-      });
-    }, 500);
-
-    window.addEventListener('scroll', () => {
-      debouncedScroll();
+      } else {
+        mainMenu.querySelector(`[href="#${article.id}"]`).classList.remove('active');
+      }
     });
-  }
+  });
 
   let withoutMenu = !!localStorage.getItem('menu-switch-button');
   if (withoutMenu) {
