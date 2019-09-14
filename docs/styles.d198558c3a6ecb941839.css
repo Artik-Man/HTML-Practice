@@ -109,6 +109,7 @@ section,
 .no-print-break,
 ul li,
 ol li,
+pre,
 [data-run] {
   page-break-inside: avoid;
 }
@@ -386,6 +387,10 @@ main.without-menu > .main-menu menu {
     min-height: auto;
     border-bottom: none;
     padding: 0;
+    visibility: visible !important;
+  }
+  li a[target='_blank'] {
+    vertical-align: top;
   }
   a[target='_blank'] {
     display: inline-block;
@@ -412,4 +417,4 @@ main.without-menu > .main-menu menu {
 }
 
 
-/*# sourceMappingURL=styles.888751b60711a845fbb4.css.map*/
+/*# sourceMappingURL=styles.d198558c3a6ecb941839.css.map*/

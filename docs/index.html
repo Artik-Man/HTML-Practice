@@ -15,7 +15,7 @@
     <meta name="theme-color" content="#ffffff">
     <link href="https://fonts.googleapis.com/css?family=Philosopher&amp;display=swap&amp;subset=cyrillic" rel="stylesheet">
     <title>HTML Practice</title>
-  <link href="styles.888751b60711a845fbb4.css" rel="stylesheet"></head>
+  <link href="styles.d198558c3a6ecb941839.css" rel="stylesheet"></head>
   <body>
     <main>
       <div class="main-menu">
@@ -33,7 +33,6 @@
     <ul>
     </ul>
     <ul>
-      <li>Вёрстка тултипов </li>
       <li>Вёрстка выпадающего меню</li>
       <li>Вёрстка модальных окон</li>
       <li>Вёрстка форм</li>
@@ -1283,12 +1282,13 @@ h3 {
 &lt;/div&gt;
 </pre>
     <p>Если мы запустим это прямо сейчас, мы лишь увидим, как все эти элементы расположились друг под другом. Придётся добавить стилей. </p>
-    <h3>Float</h3>
-    <p>
-      В древние времена существовало несколько вариантов вёрстки макетов, а самым адекватным из них был float. Как мы выяснили в одной из предыдущих глав,с помощью float можно сделать так, чтобы картинка обтекалась текстом. То же можно применить и к блокам. Если мы возьмём два блочных элемента
-      с определенными заранее шириной и высотой, то, добавив к ним <code>float: left;</code>, мы увидим, как эти два блочных элемента выстроятся в один ряд, если ширина страницы это позволит. 
-    </p>
-    <pre data-lang="css" data-code="lay1">.main-container {
+    <section> 
+      <h3>Float</h3>
+      <p>
+        В древние времена существовало несколько вариантов вёрстки макетов, а самым адекватным из них был float. Как мы выяснили в одной из предыдущих глав,с помощью float можно сделать так, чтобы картинка обтекалась текстом. То же можно применить и к блокам. Если мы возьмём два блочных элемента
+        с определенными заранее шириной и высотой, то, добавив к ним <code>float: left;</code>, мы увидим, как эти два блочных элемента выстроятся в один ряд, если ширина страницы это позволит. 
+      </p>
+      <pre data-lang="css" data-code="lay1">.main-container {
   margin: 0 auto;
   max-width: 800px;
 }
@@ -1314,17 +1314,19 @@ footer {
   background: darkseagreen;
 }
 </pre>
-    <div data-run="lay1"></div>
-    <p>Казалось бы, на этом можно закончить наш урок, но, если хорошо подумать, можно увидеть, как много проблем мы породили этим решением:</p>
-    <ol>
-      <li>Мы не можем жёстко зафиксировать ширину навигационного меню</li>
-      <li>Если перед футером нам потребуется вставить какой-то блок, например, рекламный, вёрстка "поедет", ведь мы благополучно забудем про <code>clear: both;</code></li>
-      <li>Высота навигации никак не зависит от высоты контента и наоборот. Под более коротким блоком будет пустота.</li>
-    </ol>
-    <p>Подробнее о float читайте тут:<a target="_blank" href="https://developer.mozilla.org/ru/docs/Web/CSS/float">float</a></p>
-    <h3>Flex</h3>
-    <p>Рассмотрим более современный способ. Мы можем использовать<code>display: flex;</code>у <code>.main-container</code>, тогда мы сможем избавиться от пары недостатков предыдущего примера. </p>
-    <pre data-lang="css" data-code="lay2,lay4">.main-container {
+      <div data-run="lay1"></div>
+      <p>Казалось бы, на этом можно закончить наш урок, но, если хорошо подумать, можно увидеть, как много проблем мы породили этим решением:</p>
+      <ol>
+        <li>Мы не можем жёстко зафиксировать ширину навигационного меню</li>
+        <li>Если перед футером нам потребуется вставить какой-то блок, например, рекламный, вёрстка "поедет", ведь мы благополучно забудем про <code>clear: both;</code></li>
+        <li>Высота навигации никак не зависит от высоты контента и наоборот. Под более коротким блоком будет пустота.</li>
+      </ol>
+      <p>Подробнее о float читайте тут:<a target="_blank" href="https://developer.mozilla.org/ru/docs/Web/CSS/float">float</a></p>
+    </section>
+    <section>
+      <h3>Flex</h3>
+      <p>Рассмотрим более современный способ. Мы можем использовать<code>display: flex;</code>у <code>.main-container</code>, тогда мы сможем избавиться от пары недостатков предыдущего примера. </p>
+      <pre data-lang="css" data-code="lay2,lay4">.main-container {
   margin: 0 auto;
   max-width: 800px;
   display: flex;        /* Объявляем контейнер флексом */
@@ -1350,19 +1352,21 @@ footer {
   height: 50px;
   background: darkseagreen;
 }</pre>
-    <div data-run="lay2"></div>
-    <p>
-      Как мы видим, каким бы длинным ни был контент, под навигацией не образуется пробела, а так как больше нет флоатов, то перед футером можно вставить любой блок.К сожалению, таким способом мы не смогли решить последнюю проблему: как задать у меню фиксированную ширину, а ширина контента при этом была переменной?</p>
-    <p>Больше о flex здесь:</p>
-    <ul>
-      <li><a target="_blank" href="https://developer.mozilla.org/ru/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox">Основные понятия Flexbox</a></li>
-      <li><a target="_blank" href="https://developer.mozilla.org/ru/docs/Web/CSS/flex-wrap">flex-wrap</a></li>
-      <li><a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Aligning_Items_in_a_Flex_Container">align-items and justify-content</a></li>
-    </ul>
-    <h3>Grid</h3>
-    <p>
-      Самым современным способом вёрстки макетов на сегодняшний день является т.н. Grid layout. Грид позволяет выстраивать элементы внутри себя по заранее заданной сетке. Для начала разберём пример, а затем разберёмся подробнее, как это работает.</p>
-    <pre data-lang="css" data-code="lay3">.main-container {
+      <div data-run="lay2"></div>
+      <p>
+        Как мы видим, каким бы длинным ни был контент, под навигацией не образуется пробела, а так как больше нет флоатов, то перед футером можно вставить любой блок.К сожалению, таким способом мы не смогли решить последнюю проблему: как задать у меню фиксированную ширину, а ширина контента при этом была переменной?</p>
+      <p>Больше о flex здесь:</p>
+      <ul>
+        <li><a target="_blank" href="https://developer.mozilla.org/ru/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox">Основные понятия Flexbox</a></li>
+        <li><a target="_blank" href="https://developer.mozilla.org/ru/docs/Web/CSS/flex-wrap">flex-wrap</a></li>
+        <li><a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Aligning_Items_in_a_Flex_Container">align-items and justify-content</a></li>
+      </ul>
+    </section>
+    <section>
+      <h3>Grid</h3>
+      <p>
+        Самым современным способом вёрстки макетов на сегодняшний день является т.н. Grid layout. Грид позволяет выстраивать элементы внутри себя по заранее заданной сетке. Для начала разберём пример, а затем разберёмся подробнее, как это работает.</p>
+      <pre data-lang="css" data-code="lay3">.main-container {
   margin: 0 auto;
   max-width: 800px;
   display: grid;                        /* Объявляем контейнер гридом */
@@ -1389,39 +1393,43 @@ footer {
   grid-area: footer;  /* Футер - footer */
   background: darkseagreen;
 }</pre>
-    <div data-run="lay3"></div>
-    <p>Как можно заметить, мы избавились от всех негативных последствий. А теперь разберёмся подробнее, как это работает.</p>
-    <ol>
-      <li> <code>grid-template-rows: 50px 1fr 50px;</code>означает, что если смотреть на сайт по вертикали, то у нас образуются три строки: шапка, навигация с контентом, футер. 
-        Высоту первой строки, шапки, установим равной 50px, высота второй строки нам неизвестна, а высота третьей, футера, тоже 50px.
-      </li>
-      <li> <code>grid-template-columns: 200px 1fr;</code>означает, что если смотреть на сайт по горизонтали, то образуются два столбца: слева навигация, справа контент.
-        Ширину навигации установим равной 200px, а ширина контента нам неизвестна и она займёт всё доступное пространство.
-      </li>
-      <li>
-         Итак, на этом этапе мы поняли, что у нас будет три строки и два столбца. Это и указываем далее:<code> grid-template-areas: 'header header'  'nav content'  'footer footer';</code>. Этот код создаёт три строки и два столбца, состоящие из именованных областей. Именовать эти области можно как угодно,
-        их названия будут указаны в дочерних элементах в свойстве <code>grid-area</code>. Здесь мы видим, что шапка займёт две колонки; навигация - одну, левую колонку; контент - одну правую; футер - две колонки.
-      </li>
-    </ol>
-    <p>Таким образом, мы получили идеальную сетку для нашего сайта. Подробнее о grid layout читать здесь:</p>
-    <ul>
-      <li><a target="_blank" href="https://developer.mozilla.org/ru/docs/Web/CSS/CSS_Grid_Layout">CSS Grid layout</a></li>
-      <li><a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template">grid-template</a></li>
-      <li> <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/CSS/grid-area">grid-area</a></li>
-    </ul>
-    <h3>Calc</h3>
-    <p>А теперь настало время удивляться. Вернёмся к примеру с флексом и добавим еще немного CSS:</p>
-    <pre data-lang="css" data-code="lay4">nav {
+      <div data-run="lay3"></div>
+      <p>Как можно заметить, мы избавились от всех негативных последствий. А теперь разберёмся подробнее, как это работает.</p>
+      <ol>
+        <li> <code>grid-template-rows: 50px 1fr 50px;</code>означает, что если смотреть на сайт по вертикали, то у нас образуются три строки: шапка, навигация с контентом, футер. 
+          Высоту первой строки, шапки, установим равной 50px, высота второй строки нам неизвестна, а высота третьей, футера, тоже 50px.
+        </li>
+        <li> <code>grid-template-columns: 200px 1fr;</code>означает, что если смотреть на сайт по горизонтали, то образуются два столбца: слева навигация, справа контент.
+          Ширину навигации установим равной 200px, а ширина контента нам неизвестна и она займёт всё доступное пространство.
+        </li>
+        <li>
+           Итак, на этом этапе мы поняли, что у нас будет три строки и два столбца. Это и указываем далее:<code> grid-template-areas: 'header header'  'nav content'  'footer footer';</code>. Этот код создаёт три строки и два столбца, состоящие из именованных областей. Именовать эти области можно как угодно,
+          их названия будут указаны в дочерних элементах в свойстве <code>grid-area</code>. Здесь мы видим, что шапка займёт две колонки; навигация - одну, левую колонку; контент - одну правую; футер - две колонки.
+        </li>
+      </ol>
+      <p>Таким образом, мы получили идеальную сетку для нашего сайта. Подробнее о grid layout читать здесь:</p>
+      <ul>
+        <li><a target="_blank" href="https://developer.mozilla.org/ru/docs/Web/CSS/CSS_Grid_Layout">CSS Grid layout</a></li>
+        <li><a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template">grid-template</a></li>
+        <li> <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/CSS/grid-area">grid-area</a></li>
+      </ul>
+    </section>
+    <section>
+      <h3>Calc</h3>
+      <p>А теперь настало время удивляться. Вернёмся к примеру с флексом и добавим еще немного CSS:</p>
+      <pre data-lang="css" data-code="lay4">nav {
   width: 200px;
 }
 main {
   width: calc(100% - 200px);
 }</pre>
-    <div data-run="lay4"></div>
-    <p>Таким образом мы избавились от проблемы фиксированной ширины меню. Благодаря функции <code>calc()</code>, мы заставили ширину контента зависеть от ширины блока навигации. <a target="_blank" href="https://developer.mozilla.org/ru/docs/Web/CSS/calc">О calc() можно почитать здесь</a></p>
-    <h3>Ещё один вариант вёрстки шаблона</h3>
-    <p>На самом деле, есть еще один вариант. Он сложный и ненадёжный, но для общего развития, стоит упомянуть и его.</p>
-    <pre data-lang="css" data-code="lay5">.main-container {
+      <div data-run="lay4"></div>
+      <p>Таким образом мы избавились от проблемы фиксированной ширины меню. Благодаря функции <code>calc()</code>, мы заставили ширину контента зависеть от ширины блока навигации. <a target="_blank" href="https://developer.mozilla.org/ru/docs/Web/CSS/calc">О calc() можно почитать здесь</a></p>
+    </section>
+    <section>
+      <h3>Ещё один вариант вёрстки шаблона</h3>
+      <p>На самом деле, есть еще один вариант. Он сложный и ненадёжный, но для общего развития, стоит упомянуть и его.</p>
+      <pre data-lang="css" data-code="lay5">.main-container {
   margin: 0 auto;
   max-width: 800px;
   position: relative;
@@ -1458,15 +1466,16 @@ footer {
   height: 50px;
   background: darkseagreen;
 }</pre>
-    <div data-run="lay5"></div>
-    <p>Что тут сделано?</p>
-    <ol>
-      <li>Основной контейнер спозиционирован относительно, чтобы абсолютно-спозиционированные элементы выстраивались внутри него.</li>
-      <li>Шапка и футер прижимаются к верхней и нижней части контейнера.</li>
-      <li>Навигация прижимается к левой части контейнера.</li>
-      <li>Чтобы блоки не налезали друг на друга, с помощью внутренних отступов у основного контейнера, отделим контент от остальных блоков.</li>
-      <li>Так как теперь высота блока навигации зависит от высоты контента, добавляем свойство<code>overflow</code>, чтобы при недостаточной высоте навигации, внутри неё появлялся скроллбар.</li>
-    </ol>
+      <div data-run="lay5"></div>
+      <p>Что тут сделано?</p>
+      <ol>
+        <li>Основной контейнер спозиционирован относительно, чтобы абсолютно-спозиционированные элементы выстраивались внутри него.</li>
+        <li>Шапка и футер прижимаются к верхней и нижней части контейнера.</li>
+        <li>Навигация прижимается к левой части контейнера.</li>
+        <li>Чтобы блоки не налезали друг на друга, с помощью внутренних отступов у основного контейнера, отделим контент от остальных блоков.</li>
+        <li>Так как теперь высота блока навигации зависит от высоты контента, добавляем свойство<code>overflow</code>, чтобы при недостаточной высоте навигации, внутри неё появлялся скроллбар.</li>
+      </ol>
+    </section>
   </div>
 </article>
 <article id="grids">
@@ -1478,9 +1487,10 @@ footer {
       Наиболее известная система сеток среди верстальщиков - это <a target="_blank" href="https://bootstrap-4.ru/docs/4.3.1/layout/grid/">Bootstrap Grid layout</a>
     </p>
     <p>В этой главе мы попробуем самостоятельно создать простую систему сеток.</p>
-    <h3>Float</h3>
-    <p>Когда-то давно существовал лишь один более или менее хороший подход к проектированию сеток - сетки на флоатах.</p>
-    <pre data-lang="html" data-code="grids-1">&lt;div class="container"&gt;
+    <section>
+      <h3>Float</h3>
+      <p>Когда-то давно существовал лишь один более или менее хороший подход к проектированию сеток - сетки на флоатах.</p>
+      <pre data-lang="html" data-code="grids-1">&lt;div class="container"&gt;
   &lt;div class="row"&gt;
     &lt;div class="col w8"&gt;
       &lt;span&gt;Ячейка w8&lt;/span&gt;
@@ -1523,7 +1533,7 @@ footer {
     &lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;</pre>
-    <pre data-lang="css" data-code="grids-1">* {
+      <pre data-lang="css" data-code="grids-1">* {
   box-sizing: border-box;
 }
 .container {
@@ -1558,7 +1568,7 @@ footer {
 .col.w11 { width: calc(100% * 11 / 12); }
 .col.w12 { width: 100%; }
 </pre>
-    <pre data-lang="css" data-code="grids-1,grids-2" hidden>.col span{
+      <pre data-lang="css" data-code="grids-1,grids-2" hidden>.col span{
   display: block;
   background: lightblue;
   padding: 10px;
@@ -1569,14 +1579,16 @@ footer {
 .col:nth-child(n+3) span{background: khaki}
 .col:nth-child(n+4) span{background: darksalmon}
 </pre>
-    <div data-run="grids-1"></div>
-    <p>
-      Как видим, всё не так уж и плохо. Лишь пара неприятных моментов: высоты колонок никак не зависят друг от друга, приходится подстраивать паддинги и 
-      маргины, чтобы между колонками было расстояние, а ещё приходится писать много кода. 
-    </p>
-    <h3>Flex</h3>
-    <p>Попробуем исправить предыдущий пример. </p>
-    <pre data-lang="html" data-code="grids-2">&lt;div class="container"&gt;
+      <div data-run="grids-1"></div>
+      <p>
+        Как видим, всё не так уж и плохо. Лишь пара неприятных моментов: высоты колонок никак не зависят друг от друга, приходится подстраивать паддинги и 
+        маргины, чтобы между колонками было расстояние, а ещё приходится писать много кода. 
+      </p>
+    </section>
+    <section>
+      <h3>Flex</h3>
+      <p>Попробуем исправить предыдущий пример. </p>
+      <pre data-lang="html" data-code="grids-2">&lt;div class="container"&gt;
   &lt;div class="row"&gt;
     &lt;div class="col w8"&gt;
       &lt;span&gt;Ячейка w8&lt;/span&gt;
@@ -1619,7 +1631,7 @@ footer {
     &lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;</pre>
-    <pre data-lang="css" data-code="grids-2">* {
+      <pre data-lang="css" data-code="grids-2">* {
   box-sizing: border-box;
 }
 .container {
@@ -1653,17 +1665,19 @@ footer {
 .col.w10 { min-width: calc(100% * 10 / 12); flex-basis: calc(100% * 10 / 12); }
 .col.w11 { min-width: calc(100% * 11 / 12); flex-basis: calc(100% * 11 / 12); }
 .col.w12 { min-width: 100%; flex-basis: 100%; }</pre>
-    <div data-run="grids-2"></div>
-    <p>
-      Как видите, у этого метода есть свои плюсы. Когда нам нужны одинаковые колонки в ряду, нам не нужно указывать ширину этих колонок. И, хоть мы и избавились от хака с clear: both,
-      кода меньше не стало. И снова подстраивать расстояния между блоками приходится не 
-      без фокусов, хотя и высоты блоков теперь можно сделать зависимыми друг от друга. 
-      Однако, этот способ действительно гораздо лучше предыдущего. 
-    </p>
-    <h3>Grid </h3>
-    <p>Уже из названия этого способа понятно, что он придуман как раз для решения этой проблемы.</p>
-    <p>Для начала, избавимся от строк. Они нам больше не нужны.</p>
-    <pre data-lang="html" data-code="grids-3">&lt;div class="container"&gt;
+      <div data-run="grids-2"></div>
+      <p>
+        Как видите, у этого метода есть свои плюсы. Когда нам нужны одинаковые колонки в ряду, нам не нужно указывать ширину этих колонок. И, хоть мы и избавились от хака с clear: both,
+        кода меньше не стало. И снова подстраивать расстояния между блоками приходится не 
+        без фокусов, хотя и высоты блоков теперь можно сделать зависимыми друг от друга. 
+        Однако, этот способ действительно гораздо лучше предыдущего. 
+      </p>
+    </section>
+    <section>
+      <h3>Grid </h3>
+      <p>Уже из названия этого способа понятно, что он придуман как раз для решения этой проблемы.</p>
+      <p>Для начала, избавимся от строк. Они нам больше не нужны.</p>
+      <pre data-lang="html" data-code="grids-3">&lt;div class="container"&gt;
   &lt;div class="grid g-2-1"&gt;
     &lt;div class="ceil"&gt;
       Ячейка
@@ -1707,7 +1721,7 @@ footer {
   &lt;/div&gt;
 &lt;/div&gt;
 </pre>
-    <pre data-lang="css" data-code="grids-3">.container {
+      <pre data-lang="css" data-code="grids-3">.container {
   max-width: 800px;
   margin: 0 auto;
 }        
@@ -1732,7 +1746,7 @@ footer {
 .grid.g-1-1-1-1 {
   grid-template-columns: repeat(4, 1fr);
 }</pre>
-    <pre data-lang="css" data-code="grids-3,grids-4" hidden>.ceil {
+      <pre data-lang="css" data-code="grids-3,grids-4" hidden>.ceil {
   background: lightblue;
   padding-top: 10px !important;
   padding-bottom: 10px !important;
@@ -1741,10 +1755,10 @@ footer {
 .ceil:nth-child(4n+2){background: darkseagreen}
 .ceil:nth-child(4n+3){background: khaki}
 .ceil:nth-child(4n+4){background: darksalmon}</pre>
-    <div data-run="grids-3"></div>
-    <p>
-      Это совершенно иной подход к организации сеток. Как видите, здесь уже нет проблем с расстояниями между колонками, благодаря свойству <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/CSS/gap">gap</a>, кроме того, если вам нужна ровная сетка, кода станет гораздо меньше:</p>
-    <pre data-lang="html" data-code="grids-4">&lt;div class="container"&gt;
+      <div data-run="grids-3"></div>
+      <p>
+        Это совершенно иной подход к организации сеток. Как видите, здесь уже нет проблем с расстояниями между колонками, благодаря свойству <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/CSS/gap">gap</a>, кроме того, если вам нужна ровная сетка, кода станет гораздо меньше:</p>
+      <pre data-lang="html" data-code="grids-4">&lt;div class="container"&gt;
   &lt;div class="ceil"&gt;
     Ячейка
   &lt;/div&gt;
@@ -1774,7 +1788,7 @@ footer {
   &lt;/div&gt;
 &lt;/div&gt;
 </pre>
-    <pre data-lang="css" data-code="grids-4">.container {
+      <pre data-lang="css" data-code="grids-4">.container {
   max-width: 800px;
   margin: 0 auto;
   display: grid;
@@ -1784,10 +1798,139 @@ footer {
 .ceil {
   padding: 0 10px;
 }</pre>
-    <div data-run="grids-4"></div>
-    <p>Теперь нам не обязательно иметь строки, а сам грид может быть совмещён с контейнером.</p>
-    <p>Поэкспериментировать с этим примером можно здесь:</p><a class="codepen button" data-id="ExYLLqj" data-height="500">Запустить пример</a>
-    <p>Кроме того, с помощью CSS Grid можно создавать вот такие необычные сетки:</p><a class="codepen button" data-id="eYOrKJY" data-height="500" data-default-tab="result">Запустить пример</a>
+      <div data-run="grids-4"></div>
+      <p>Теперь нам не обязательно иметь строки, а сам грид может быть совмещён с контейнером.</p>
+      <p>Поэкспериментировать с этим примером можно здесь:</p><a class="codepen button" data-id="ExYLLqj" data-height="500">Запустить пример</a>
+      <p>Кроме того, с помощью CSS Grid можно создавать вот такие необычные сетки:</p><a class="codepen button" data-id="eYOrKJY" data-height="500" data-default-tab="result">Запустить пример</a>
+    </section>
+  </div>
+</article>
+<article id="tooltip">
+  <div class="container">
+    <h2>Вёрстка тултипов</h2>
+    <p>
+      HTML имеет свои встроенные тултипы, но часто их дизайн не соответствует требованиям стиля макета. Наведите мышь на следующее предложение, чтобы понять, что такое тултип и как он выглядит по умолчанию. <span title="Тултип" style="border-bottom: 1px dotted black">Это предложение имеет тултип.</span> Сейчас мы научимся стилизовать тултипы. Для начала, нужно понять, что стандартный тултип - это своеобразное описание для элемента.</p>
+    <p>Самый простой вид тултипа, который мы здесь будем рассматривать, не требует от HTML практически ничего. Мы будем использовать атрибут <a target="_blank" href="https://developer.mozilla.org/ru/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-label_attribute">aria-label</a>, который служит для описания элементов скринридерам (в основном, для людей с нарушениями зрения). </p>
+    <p>Для того, чтобы через CSS "захватить" значение атрибута, необходимо использовать свойство <a target="_blank" href="http://htmlbook.ru/css/content">content</a>, использующееся с псевдоэлементами <a target="_blank" href="http://htmlbook.ru/css/before">::before</a> и <a target="_blank" href="http://htmlbook.ru/css/after">::after</a>.</p>
+    <section>
+      <h3>Итак, рассмотрим код:</h3>
+      <pre data-lang="css" data-code="tooltip-1">.tooltip {
+  position: relative; /* Элемент должен быть спозиционирован не статично, чтобы внутри него можно было разместить абсолютно-спозиционированный элемент */
+}
+.tooltip:hover::after {
+  content: attr(aria-label); /* Захватываем атрибут aria-label и отображаем его в ::after псевдоэлементе */
+
+  position: absolute; /* Позиционируем псевдоэлемент абсолютно */
+  bottom: 100%;
+  left: 0;
+
+  background: rgba(0,0,0,.5);
+  color: white;
+  border-radius: 4px;
+  padding: 8px 16px;
+  font-size: 12px;
+  cursor: default;
+}
+
+.like-button {
+  /* Какие-то стили для кнопки */
+}
+</pre>
+      <pre data-lang="css" data-code="tooltip-1,tooltip-2" hidden>.like-button {
+  position: relative;
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: 24px;
+  color: tomato;
+  margin: 40px 0;
+  cursor: pointer;
+}
+.like-button:hover {
+  color: darkred;
+}
+a {
+  color: white;
+}
+a:hover {
+  text-decoration: none;
+}
+@media print {
+  .like-button.tooltip::after {
+    content: attr(aria-label);
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    background: rgba(0,0,0,.5);
+    color: white;
+    border-radius: 4px;
+    padding: 8px 16px;
+    font-size: 12px;
+    cursor: default;
+  }
+  .like-button .tooltip {
+    display: inline-block !important;
+  }
+}
+</pre>
+      <pre data-lang="html" data-code="tooltip-1">&lt;button class="like-button tooltip" aria-label="Like"&gt;❤&lt;/button&gt;
+</pre>
+      <p>Наведи на сердечко, чтобы увидеть тултип</p>
+      <div data-run="tooltip-1"></div>
+    </section>
+    <section>
+      <h3>Тултип в виде HTML-элемента</h3>
+      <p>
+        К сожалению, рассмотренный выше тултип не идеален. Что делать, если внутри него нужно разместить ссылку? А многострочный текст? Да, бывают и такие задачи. Чтобы решить эту задачу, нам придётся использовать тултип в виде HTML-элемента.</p>
+      <pre data-lang="css" data-code="tooltip-2">.has-tooltip {
+  position: relative;
+}
+.has-tooltip:hover .tooltip {
+  display: inline-block; /* Отображаем тултип только если навели мышью на элемент, его содержащий */
+}
+
+.tooltip {
+  display: none; /* Скрываем тултип по умолчанию */
+
+  position: absolute; 
+  bottom: 100%;
+  left: 0;
+
+  min-width: 350px;
+  text-align: left;
+  background: rgba(0,0,0,.5);
+  color: white;
+  border-radius: 4px;
+  padding: 8px 16px;
+  font-size: 12px;
+  margin-bottom: 8px;
+  cursor: default;
+}
+.tooltip::after {
+  /* Это уголок */
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 4px;
+  border: 8px solid transparent;
+  border-top-color: rgba(0,0,0,.5);
+}
+</pre>
+      <pre data-lang="html" data-code="tooltip-2">&lt;button class="like-button has-tooltip" aria-label="Like"&gt;
+  ❤
+  &lt;span class="tooltip"&gt;
+    А здесь мы уже можем размещать различную информацию, 
+    &lt;br&gt;
+    в том числе многострочный текст и даже
+    &lt;a href="//google.com"&gt;ссылки&lt;/a&gt;
+  &lt;/span&gt;
+&lt;/button&gt;
+</pre>
+      <div data-run="tooltip-2"></div>
+      <p>В примере показано не совсем корректное скрытие тултипа. Рекомендую использовать <a href="https://allyjs.io/tutorials/hiding-elements.html#how-to-hide-elements-visually" target="_blank">.visually-hidden</a>.</p>
+      <p>
+        Существует еще множество способов сделать тултип, но многие из них подразумевают использование JavaScript, а эта книга не о нём. На мой взгляд, то, что можно сделать без JavaScript, нужно делать без JavaScript. Конечно, и из этого правила есть исключения.</p>
+    </section>
   </div>
 </article>
 <article id="custom-checkbox">
@@ -2026,5 +2169,5 @@ footer {
 </article>
       </div>
     </main>
-  <script type="text/javascript" src="script.888751b60711a845fbb4.js"></script></body>
+  <script type="text/javascript" src="script.d198558c3a6ecb941839.js"></script></body>
 </html>
