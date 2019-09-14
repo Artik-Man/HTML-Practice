@@ -17,229 +17,233 @@ article#layouts
         </div>
 
     p Если мы запустим это прямо сейчас, мы лишь увидим, как все эти элементы расположились друг под другом. Придётся добавить стилей. 
+    section 
+      h3 Float
+      p В древние времена существовало несколько вариантов вёрстки макетов, а самым адекватным из них был float. Как мы выяснили в одной из предыдущих глав,
+        | с помощью float можно сделать так, чтобы картинка обтекалась текстом. То же можно применить и к блокам. Если мы возьмём два блочных элемента
+        | с определенными заранее шириной и высотой, то, добавив к ним 
+        code float: left;
+        | , мы увидим, как эти два блочных элемента выстроятся в один ряд, если ширина страницы это позволит. 
 
-    h3 Float
-    p В древние времена существовало несколько вариантов вёрстки макетов, а самым адекватным из них был float. Как мы выяснили в одной из предыдущих глав,
-      | с помощью float можно сделать так, чтобы картинка обтекалась текстом. То же можно применить и к блокам. Если мы возьмём два блочных элемента
-      | с определенными заранее шириной и высотой, то, добавив к ним 
-      code float: left;
-      | , мы увидим, как эти два блочных элемента выстроятся в один ряд, если ширина страницы это позволит. 
-
-    pre(data-lang="css" data-code="lay1")
-      :escape
-        .main-container {
-          margin: 0 auto;
-          max-width: 800px;
-        }
-        header {
-          height: 50px;
-          background: cornflowerblue;
-        }
-        nav {
-          height: 80px;
-          background: darksalmon;
-          width: 20%;   /* Задаём ширину блока навигации */
-          float: left;  /* Устанавливаем обтекание */  
-        }
-        main {
-          height: 120px;
-          background: khaki;
-          width: 80%;   /* Задаём ширину контента */
-          float: left;  /* Устанавливаем обтекание */
-        }
-        footer {
-          clear: both;  /* Сбрасываем обтекание */
-          height: 50px;
-          background: darkseagreen;
-        }
-
-    div(data-run="lay1")
-
-    p Казалось бы, на этом можно закончить наш урок, но, если хорошо подумать, можно увидеть, как много проблем мы породили этим решением:
-    ol
-      li Мы не можем жёстко зафиксировать ширину навигационного меню
-      li Если перед футером нам потребуется вставить какой-то блок, например, рекламный, вёрстка "поедет", ведь мы благополучно забудем про 
-        code clear: both;
-      li Высота навигации никак не зависит от высоты контента и наоборот. Под более коротким блоком будет пустота.
-    p Подробнее о float читайте тут:
-      a(target="_blank" href="https://developer.mozilla.org/ru/docs/Web/CSS/float") float
-    h3 Flex
-    p Рассмотрим более современный способ. Мы можем использовать
-      code display: flex;
-      | у 
-      code .main-container
-      | , тогда мы сможем избавиться от пары недостатков предыдущего примера. 
-
-    pre(data-lang="css" data-code="lay2,lay4")
-      :escape
-        .main-container {
-          margin: 0 auto;
-          max-width: 800px;
-          display: flex;        /* Объявляем контейнер флексом */
-          align-items: stretch; /* Высота элементов должна подстраиваться по высоте самого высокого элемента */
-          flex-wrap: wrap;      /* Если не хватает места в строке, переносить блок на следующую */
-        }
-        header {
-          width: 100%;          /* Обязательно задаём ширину для шапки */
-          height: 50px;
-          background: cornflowerblue;
-        }
-        nav {
-          background: darksalmon;
-          width: 20%;           /* Задаём ширину навигационного меню */
-        }
-        main {
-          height: 120px;
-          background: khaki;
-          width: 80%;           /* Задаём ширину контента */
-        }
-        footer {
-          width: 100%;          /* Обязательно задаём ширину для футера */
-          height: 50px;
-          background: darkseagreen;
-        }
-    div(data-run="lay2")
-    p Как мы видим, каким бы длинным ни был контент, под навигацией не образуется пробела, а так как больше нет флоатов, то перед футером можно вставить любой блок.
-      | К сожалению, таким способом мы не смогли решить последнюю проблему: как задать у меню фиксированную ширину, а ширина контента при этом была переменной?
-    p Больше о flex здесь:
-    ul
-      li
-        a(target="_blank" href="https://developer.mozilla.org/ru/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox") Основные понятия Flexbox
-      li
-        a(target="_blank" href="https://developer.mozilla.org/ru/docs/Web/CSS/flex-wrap") flex-wrap
-      li
-        a(target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Aligning_Items_in_a_Flex_Container") align-items and justify-content
-
-
-    h3 Grid
-    p Самым современным способом вёрстки макетов на сегодняшний день является т.н. Grid layout. Грид позволяет выстраивать элементы внутри себя по заранее заданной 
-      | сетке. Для начала разберём пример, а затем разберёмся подробнее, как это работает.
-
-
-    pre(data-lang="css" data-code="lay3")
-      :escape
-        .main-container {
-          margin: 0 auto;
-          max-width: 800px;
-          display: grid;                        /* Объявляем контейнер гридом */
-          grid-template-rows: 50px 1fr 50px;    /* (1) Задаём строки*/
-          grid-template-columns: 200px 1fr;     /* (2) Задаём колонки*/
-          grid-template-areas: 'header header'  /* (3) Задаём названия областей*/
-            'nav content' 
-            'footer footer'; 
-        }
+      pre(data-lang="css" data-code="lay1")
+        :escape
+          .main-container {
+            margin: 0 auto;
+            max-width: 800px;
+          }
           header {
-            grid-area: header;  /* Шапка займёт область с названием header */
+            height: 50px;
             background: cornflowerblue;
-        }
-        nav {
-          background: darksalmon;
-          grid-area: nav;     /* Навигация займет область nav */
-        }
-        main {
-          height: 120px;
-          background: khaki;
-          grid-area: content;  /* Контент займёт content */
-        }
-        footer {
-          grid-area: footer;  /* Футер - footer */
-          background: darkseagreen;
-        }
-    div(data-run="lay3")
-    p Как можно заметить, мы избавились от всех негативных последствий. А теперь разберёмся подробнее, как это работает.
-    ol
-      li 
-        code grid-template-rows: 50px 1fr 50px;
-        | означает, что если смотреть на сайт по вертикали, то у нас образуются три строки: шапка, навигация с контентом, футер. 
-        | Высоту первой строки, шапки, установим равной 50px, высота второй строки нам неизвестна, а высота третьей, футера, тоже 50px.
+          }
+          nav {
+            height: 80px;
+            background: darksalmon;
+            width: 20%;   /* Задаём ширину блока навигации */
+            float: left;  /* Устанавливаем обтекание */  
+          }
+          main {
+            height: 120px;
+            background: khaki;
+            width: 80%;   /* Задаём ширину контента */
+            float: left;  /* Устанавливаем обтекание */
+          }
+          footer {
+            clear: both;  /* Сбрасываем обтекание */
+            height: 50px;
+            background: darkseagreen;
+          }
 
-      li 
-        code grid-template-columns: 200px 1fr;
-        | означает, что если смотреть на сайт по горизонтали, то образуются два столбца: слева навигация, справа контент.
-        | Ширину навигации установим равной 200px, а ширина контента нам неизвестна и она займёт всё доступное пространство.
+      div(data-run="lay1")
 
-      li 
-        | Итак, на этом этапе мы поняли, что у нас будет три строки и два столбца. Это и указываем далее:
-        code  grid-template-areas: 'header header'  'nav content'  'footer footer';
-        | . Этот код создаёт три строки и два столбца, состоящие из именованных областей. Именовать эти области можно как угодно,
-        | их названия будут указаны в дочерних элементах в свойстве 
-        code grid-area
-        | . Здесь мы видим, что шапка займёт две колонки; навигация - одну, левую колонку; контент - одну правую; футер - две колонки.
+      p Казалось бы, на этом можно закончить наш урок, но, если хорошо подумать, можно увидеть, как много проблем мы породили этим решением:
+      ol
+        li Мы не можем жёстко зафиксировать ширину навигационного меню
+        li Если перед футером нам потребуется вставить какой-то блок, например, рекламный, вёрстка "поедет", ведь мы благополучно забудем про 
+          code clear: both;
+        li Высота навигации никак не зависит от высоты контента и наоборот. Под более коротким блоком будет пустота.
+      p Подробнее о float читайте тут:
+        a(target="_blank" href="https://developer.mozilla.org/ru/docs/Web/CSS/float") float
+    section
+      h3 Flex
+      p Рассмотрим более современный способ. Мы можем использовать
+        code display: flex;
+        | у 
+        code .main-container
+        | , тогда мы сможем избавиться от пары недостатков предыдущего примера. 
 
-    p Таким образом, мы получили идеальную сетку для нашего сайта. Подробнее о grid layout читать здесь:
-    ul
-      li
-        a(target="_blank" href="https://developer.mozilla.org/ru/docs/Web/CSS/CSS_Grid_Layout") CSS Grid layout
-      li
-        a(target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template") grid-template
-      li 
-        a(target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/CSS/grid-area") grid-area
-    h3 Calc
-    p А теперь настало время удивляться. Вернёмся к примеру с флексом и добавим еще немного CSS:
-    pre(data-lang="css" data-code="lay4")
-      :escape
-        nav {
-          width: 200px;
-        }
-        main {
-          width: calc(100% - 200px);
-        }
-    div(data-run="lay4")
-    p Таким образом мы избавились от проблемы фиксированной ширины меню. Благодаря функции 
-      code calc()
-      | , мы заставили ширину контента зависеть от ширины блока навигации. 
-      a(target="_blank" href="https://developer.mozilla.org/ru/docs/Web/CSS/calc") О calc() можно почитать здесь
+      pre(data-lang="css" data-code="lay2,lay4")
+        :escape
+          .main-container {
+            margin: 0 auto;
+            max-width: 800px;
+            display: flex;        /* Объявляем контейнер флексом */
+            align-items: stretch; /* Высота элементов должна подстраиваться по высоте самого высокого элемента */
+            flex-wrap: wrap;      /* Если не хватает места в строке, переносить блок на следующую */
+          }
+          header {
+            width: 100%;          /* Обязательно задаём ширину для шапки */
+            height: 50px;
+            background: cornflowerblue;
+          }
+          nav {
+            background: darksalmon;
+            width: 20%;           /* Задаём ширину навигационного меню */
+          }
+          main {
+            height: 120px;
+            background: khaki;
+            width: 80%;           /* Задаём ширину контента */
+          }
+          footer {
+            width: 100%;          /* Обязательно задаём ширину для футера */
+            height: 50px;
+            background: darkseagreen;
+          }
+      div(data-run="lay2")
+      p Как мы видим, каким бы длинным ни был контент, под навигацией не образуется пробела, а так как больше нет флоатов, то перед футером можно вставить любой блок.
+        | К сожалению, таким способом мы не смогли решить последнюю проблему: как задать у меню фиксированную ширину, а ширина контента при этом была переменной?
+      p Больше о flex здесь:
+      ul
+        li
+          a(target="_blank" href="https://developer.mozilla.org/ru/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox") Основные понятия Flexbox
+        li
+          a(target="_blank" href="https://developer.mozilla.org/ru/docs/Web/CSS/flex-wrap") flex-wrap
+        li
+          a(target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Aligning_Items_in_a_Flex_Container") align-items and justify-content
 
-    h3 Ещё один вариант вёрстки шаблона
-    p На самом деле, есть еще один вариант. Он сложный и ненадёжный, но для общего развития, стоит упомянуть и его.
-    pre(data-lang="css" data-code="lay5")
-      :escape
+    section
+      h3 Grid
+      p Самым современным способом вёрстки макетов на сегодняшний день является т.н. Grid layout. Грид позволяет выстраивать элементы внутри себя по заранее заданной 
+        | сетке. Для начала разберём пример, а затем разберёмся подробнее, как это работает.
 
-        .main-container {
-          margin: 0 auto;
-          max-width: 800px;
-          position: relative;
-          padding: 50px 0 50px 200px;
-          box-sizing: border-box;
-        }
-        header {
-          position: absolute;
-          top: 0;
-          right: 0;
-          left: 0;
-          height: 50px;
-          background: cornflowerblue;
-        }
-        nav {
-          background: darksalmon;
-          position: absolute;
-          top: 50px;
-          bottom: 50px;
-          left: 0;
-          width: 200px;
-          overflow-y: auto;
-        }
-        main {
-          height: 120px;
-          background: khaki;
-          width: 100%;
-        }
-        footer {
-          position: absolute;
-          bottom: 0;
-          right: 0;
-          left: 0;
-          height: 50px;
-          background: darkseagreen;
-        }
-    div(data-run="lay5")
 
-    p Что тут сделано?
-    ol
-      li Основной контейнер спозиционирован относительно, чтобы абсолютно-спозиционированные элементы выстраивались внутри него.
-      li Шапка и футер прижимаются к верхней и нижней части контейнера.
-      li Навигация прижимается к левой части контейнера.
-      li Чтобы блоки не налезали друг на друга, с помощью внутренних отступов у основного контейнера, отделим контент от остальных блоков.
-      li Так как теперь высота блока навигации зависит от высоты контента, добавляем свойство
-        code overflow
-        | , чтобы при недостаточной высоте навигации, внутри неё появлялся скроллбар.
+      pre(data-lang="css" data-code="lay3")
+        :escape
+          .main-container {
+            margin: 0 auto;
+            max-width: 800px;
+            display: grid;                        /* Объявляем контейнер гридом */
+            grid-template-rows: 50px 1fr 50px;    /* (1) Задаём строки*/
+            grid-template-columns: 200px 1fr;     /* (2) Задаём колонки*/
+            grid-template-areas: 'header header'  /* (3) Задаём названия областей*/
+              'nav content' 
+              'footer footer'; 
+          }
+            header {
+              grid-area: header;  /* Шапка займёт область с названием header */
+              background: cornflowerblue;
+          }
+          nav {
+            background: darksalmon;
+            grid-area: nav;     /* Навигация займет область nav */
+          }
+          main {
+            height: 120px;
+            background: khaki;
+            grid-area: content;  /* Контент займёт content */
+          }
+          footer {
+            grid-area: footer;  /* Футер - footer */
+            background: darkseagreen;
+          }
+      div(data-run="lay3")
+      p Как можно заметить, мы избавились от всех негативных последствий. А теперь разберёмся подробнее, как это работает.
+      ol
+        li 
+          code grid-template-rows: 50px 1fr 50px;
+          | означает, что если смотреть на сайт по вертикали, то у нас образуются три строки: шапка, навигация с контентом, футер. 
+          | Высоту первой строки, шапки, установим равной 50px, высота второй строки нам неизвестна, а высота третьей, футера, тоже 50px.
+
+        li 
+          code grid-template-columns: 200px 1fr;
+          | означает, что если смотреть на сайт по горизонтали, то образуются два столбца: слева навигация, справа контент.
+          | Ширину навигации установим равной 200px, а ширина контента нам неизвестна и она займёт всё доступное пространство.
+
+        li 
+          | Итак, на этом этапе мы поняли, что у нас будет три строки и два столбца. Это и указываем далее:
+          code  grid-template-areas: 'header header'  'nav content'  'footer footer';
+          | . Этот код создаёт три строки и два столбца, состоящие из именованных областей. Именовать эти области можно как угодно,
+          | их названия будут указаны в дочерних элементах в свойстве 
+          code grid-area
+          | . Здесь мы видим, что шапка займёт две колонки; навигация - одну, левую колонку; контент - одну правую; футер - две колонки.
+
+      p Таким образом, мы получили идеальную сетку для нашего сайта. Подробнее о grid layout читать здесь:
+      ul
+        li
+          a(target="_blank" href="https://developer.mozilla.org/ru/docs/Web/CSS/CSS_Grid_Layout") CSS Grid layout
+        li
+          a(target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template") grid-template
+        li 
+          a(target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/CSS/grid-area") grid-area
+
+    section
+      h3 Calc
+      p А теперь настало время удивляться. Вернёмся к примеру с флексом и добавим еще немного CSS:
+      pre(data-lang="css" data-code="lay4")
+        :escape
+          nav {
+            width: 200px;
+          }
+          main {
+            width: calc(100% - 200px);
+          }
+      div(data-run="lay4")
+      p Таким образом мы избавились от проблемы фиксированной ширины меню. Благодаря функции 
+        code calc()
+        | , мы заставили ширину контента зависеть от ширины блока навигации. 
+        a(target="_blank" href="https://developer.mozilla.org/ru/docs/Web/CSS/calc") О calc() можно почитать здесь
+
+    section
+      h3 Ещё один вариант вёрстки шаблона
+      p На самом деле, есть еще один вариант. Он сложный и ненадёжный, но для общего развития, стоит упомянуть и его.
+      pre(data-lang="css" data-code="lay5")
+        :escape
+
+          .main-container {
+            margin: 0 auto;
+            max-width: 800px;
+            position: relative;
+            padding: 50px 0 50px 200px;
+            box-sizing: border-box;
+          }
+          header {
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            height: 50px;
+            background: cornflowerblue;
+          }
+          nav {
+            background: darksalmon;
+            position: absolute;
+            top: 50px;
+            bottom: 50px;
+            left: 0;
+            width: 200px;
+            overflow-y: auto;
+          }
+          main {
+            height: 120px;
+            background: khaki;
+            width: 100%;
+          }
+          footer {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            height: 50px;
+            background: darkseagreen;
+          }
+      div(data-run="lay5")
+
+      p Что тут сделано?
+      ol
+        li Основной контейнер спозиционирован относительно, чтобы абсолютно-спозиционированные элементы выстраивались внутри него.
+        li Шапка и футер прижимаются к верхней и нижней части контейнера.
+        li Навигация прижимается к левой части контейнера.
+        li Чтобы блоки не налезали друг на друга, с помощью внутренних отступов у основного контейнера, отделим контент от остальных блоков.
+        li Так как теперь высота блока навигации зависит от высоты контента, добавляем свойство
+          code overflow
+          | , чтобы при недостаточной высоте навигации, внутри неё появлялся скроллбар.

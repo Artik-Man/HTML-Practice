@@ -1,0 +1,151 @@
+article#tooltip
+  .container
+    h2 Вёрстка тултипов
+    p HTML имеет свои встроенные тултипы, но часто их дизайн не соответствует требованиям стиля макета. Наведите мышь на следующее предложение, чтобы понять, 
+      | что такое тултип и как он выглядит по умолчанию. 
+      span(title="Тултип" style="border-bottom: 1px dotted black") Это предложение имеет тултип.
+      |  Сейчас мы научимся стилизовать тултипы. Для начала, нужно понять, что стандартный тултип - это своеобразное описание для элемента.
+    p Самый простой вид тултипа, который мы здесь будем рассматривать, не требует от HTML практически ничего. Мы будем использовать атрибут 
+      a(target="_blank" href="https://developer.mozilla.org/ru/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-label_attribute") aria-label
+      | , который служит для описания элементов скринридерам (в основном, для людей с нарушениями зрения). 
+    p Для того, чтобы через CSS "захватить" значение атрибута, необходимо использовать свойство 
+      a(target="_blank" href="http://htmlbook.ru/css/content") content
+      | , использующееся с псевдоэлементами 
+      a(target="_blank" href="http://htmlbook.ru/css/before") ::before
+      |  и 
+      a(target="_blank" href="http://htmlbook.ru/css/after") ::after
+      | .
+    section
+      h3 Итак, рассмотрим код:
+      pre(data-lang="css" data-code="tooltip-1")
+        :escape
+          .tooltip {
+            position: relative; /* Элемент должен быть спозиционирован не статично, чтобы внутри него можно было разместить абсолютно-спозиционированный элемент */
+          }
+          .tooltip:hover::after {
+            content: attr(aria-label); /* Захватываем атрибут aria-label и отображаем его в ::after псевдоэлементе */
+
+            position: absolute; /* Позиционируем псевдоэлемент абсолютно */
+            bottom: 100%;
+            left: 0;
+
+            background: rgba(0,0,0,.5);
+            color: white;
+            border-radius: 4px;
+            padding: 8px 16px;
+            font-size: 12px;
+            cursor: default;
+          }
+
+          .like-button {
+            /* Какие-то стили для кнопки */
+          }
+
+      pre(data-lang="css" data-code="tooltip-1,tooltip-2" hidden)
+        :escape
+          .like-button {
+            position: relative;
+            background: none;
+            border: none;
+            padding: 0;
+            font-size: 24px;
+            color: tomato;
+            margin: 40px 0;
+            cursor: pointer;
+          }
+          .like-button:hover {
+            color: darkred;
+          }
+          a {
+            color: white;
+          }
+          a:hover {
+            text-decoration: none;
+          }
+          @media print {
+            .like-button.tooltip::after {
+              content: attr(aria-label);
+              position: absolute;
+              bottom: 100%;
+              left: 0;
+              background: rgba(0,0,0,.5);
+              color: white;
+              border-radius: 4px;
+              padding: 8px 16px;
+              font-size: 12px;
+              cursor: default;
+            }
+            .like-button .tooltip {
+              display: inline-block !important;
+            }
+          }
+
+      pre(data-lang="html" data-code="tooltip-1")
+        :escape
+          <button class="like-button tooltip" aria-label="Like">❤</button>
+
+      p Наведи на сердечко, чтобы увидеть тултип
+      div(data-run="tooltip-1")
+
+    section
+      h3 Тултип в виде HTML-элемента
+
+      p К сожалению, рассмотренный выше тултип не идеален. Что делать, если внутри него нужно разместить ссылку? А многострочный текст? Да, бывают и такие задачи. 
+        | Чтобы решить эту задачу, нам придётся использовать тултип в виде HTML-элемента.
+
+      pre(data-lang="css" data-code="tooltip-2")
+        :escape
+          .has-tooltip {
+            position: relative;
+          }
+          .has-tooltip:hover .tooltip {
+            display: inline-block; /* Отображаем тултип только если навели мышью на элемент, его содержащий */
+          }
+
+          .tooltip {
+            display: none; /* Скрываем тултип по умолчанию */
+
+            position: absolute; 
+            bottom: 100%;
+            left: 0;
+
+            min-width: 350px;
+            text-align: left;
+            background: rgba(0,0,0,.5);
+            color: white;
+            border-radius: 4px;
+            padding: 8px 16px;
+            font-size: 12px;
+            margin-bottom: 8px;
+            cursor: default;
+          }
+          .tooltip::after {
+            /* Это уголок */
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 4px;
+            border: 8px solid transparent;
+            border-top-color: rgba(0,0,0,.5);
+          }
+
+      pre(data-lang="html" data-code="tooltip-2")
+        :escape
+          <button class="like-button has-tooltip" aria-label="Like">
+            ❤
+            <span class="tooltip">
+              А здесь мы уже можем размещать различную информацию, 
+              <br>
+              в том числе многострочный текст и даже
+              <a href="//google.com">ссылки</a>
+            </span>
+          </button>
+
+      div(data-run="tooltip-2")
+
+      p В примере показано не совсем корректное скрытие тултипа. Рекомендую использовать 
+        a(href="https://allyjs.io/tutorials/hiding-elements.html#how-to-hide-elements-visually" target="_blank") .visually-hidden
+        | .
+
+      p Существует еще множество способов сделать тултип, но многие из них подразумевают использование JavaScript, а эта книга не о нём. 
+        | На мой взгляд, то, что можно сделать без JavaScript, нужно делать без JavaScript. Конечно, и из этого правила есть исключения.

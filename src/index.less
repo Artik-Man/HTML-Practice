@@ -33,6 +33,7 @@ section,
 .no-print-break,
 ul li,
 ol li,
+pre,
 [data-run] {
   page-break-inside: avoid;
 }
@@ -338,6 +339,11 @@ main {
     min-height: auto;
     border-bottom: none;
     padding: 0;
+    visibility: visible !important;
+  }
+
+  li a[target='_blank'] {
+    vertical-align: top;
   }
 
   a[target='_blank'] {
