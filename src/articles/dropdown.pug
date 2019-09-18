@@ -97,10 +97,19 @@ article#dropdown
           text-align: left;
         }
 
+      pre(data-lang="css" data-code="dropdown,dropdown-menu" hidden)
+        :escape
+          @media print {
+            .dropdown {
+              display: block !important;
+            }
+            menu {
+              margin-bottom: 250px;
+            }
+          }
     p Результат представлен ниже. Попробуйте навести мышью на элементы меню.
 
     div(data-run="dropdown-menu")
-
 
     p Похожим способом можно сделать и дропдаун для кнопки
 
