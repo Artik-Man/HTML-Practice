@@ -1,0 +1,154 @@
+article#dropdown
+  .container
+    h2 Выпадающее меню и дропдауны
+    p Пользуясь интернетом, вы наверняка уже видели выпадающее меню. Это когда наводишь мышью на элемент меню и появляется подменю.
+    p Сразу же перейдём к вёрстке. HTML предельно прост: есть меню, состоящее из четырёх элементов, а во втором элементе, помимо ссылки, есть вложенное меню.
+
+    pre(data-lang="html" data-code="dropdown-menu")
+      :escape
+        <menu>
+          <li>
+            <a href="">Магазины</a>
+          </li>
+          <li>
+            <a href="">Покупателям</a>
+            <menu class="dropdown">
+              <li>
+                <a href="">Бонусная программа</a>
+              </li>
+              <li>
+                <a href="">Подарочные карты</a>
+              </li>
+              <li>
+                <a href="">Доставка</a>
+              </li>
+            </menu>
+          </li>
+          <li>
+            <a href="">Юридическим лицам</a>
+          </li>
+          <li>
+            <a href="">Контакты</a>
+          </li>
+        </menu>
+
+    p CSS тоже не слишком сложный. Фактически, все стили вертятся вокруг оформления. Единственное - применен "магический" селектор. 
+      | На самом деле, никакой магии здесь нет. 
+      code menu li:hover .dropdown
+      | означает, что при наведении курсора мыши (
+      code :hover
+      | ), на элемент меню (
+      code menu li
+      | ), дропдаун (
+      code .dropdown
+      | ) получит некоторые стили, в данном случае, 
+      code display: block
+      | .
+
+    pre(data-lang="css" data-code="dropdown-menu")
+      :escape
+        * {
+          box-sizing: border-box;
+        }
+        menu {
+          list-style: none;
+          padding: 0;
+          margin: 0 auto 100px;
+          max-width: 800px;
+          display: flex;
+        }
+        menu li {
+          display: block;
+          position: relative;
+          width: 25%;
+        }
+        menu li a {
+          padding: 8px 16px;
+          background: lightblue;
+          display: inline-block;
+          width: 100%;
+          text-decoration: none;
+          color: black;
+          text-align: center;
+        }
+        menu li a:hover { 
+          background: teal;
+          color: white;
+        }
+        menu li:hover .dropdown { /* Магия здесь */
+          display: block;
+        }
+
+        .dropdown {
+          display: none;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          padding: 0;
+          margin: 0;
+          min-width: 100%;
+          list-style: none;
+        }
+        .dropdown li {
+          display: block;
+          width: auto;
+        }
+        .dropdown li a {
+          text-align: left;
+        }
+
+    p Результат представлен ниже. Попробуйте навести мышью на элементы меню.
+
+    div(data-run="dropdown-menu")
+
+
+    p Похожим способом можно сделать и дропдаун для кнопки
+
+    pre(data-lang="html" data-code="dropdown")
+      :escape
+        <button>О нас
+          <ul class="dropdown">
+            <li><a href="">О компании прессе</a></li>
+            <li><a href="">Юридическая информация</a></li>
+            <li><a href="">Контактная информация</a></li>
+          </ul>
+        </button>
+
+    pre(data-lang="css" data-code="dropdown")
+      :escape
+        button {
+          background: white;
+          border: 1px solid gray;
+          border-radius: 4px;
+          padding: 8px 16px;
+          position: relative;
+          margin-bottom: 100px;
+        }
+        button:hover {
+          background: lightblue;
+        }
+        *:hover > .dropdown { /* при наведении на любой элемент, содержащий .dropdown ... */
+          display: block;
+        }
+        .dropdown {
+          display: none;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          padding: 16px;
+          margin: 0;
+          list-style: none;
+          box-shadow: 0 0 5px 0 black;
+          border-radius: 4px;
+          background: white;
+          min-width: 200px;
+        }
+        .dropdown li {
+          display: block;
+          margin-bottom: 8px;
+          text-align: left;
+        }
+
+    
+    div(data-run="dropdown")
+
