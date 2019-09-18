@@ -15,7 +15,7 @@
     <meta name="theme-color" content="#ffffff">
     <link href="https://fonts.googleapis.com/css?family=Philosopher&amp;display=swap&amp;subset=cyrillic" rel="stylesheet">
     <title>HTML Practice</title>
-  <link href="styles.d198558c3a6ecb941839.css" rel="stylesheet"></head>
+  <link href="styles.bbd0a83d33a3b0493fd9.css" rel="stylesheet"></head>
   <body>
     <main>
       <div class="main-menu">
@@ -227,7 +227,7 @@ git config --global user.email myEmail@example.com</pre>
     <p>
       А что если у нас есть два блока в грид-контейнере, ширина которых должа относиться друг к другу как 1 к 3? Получается, всего частей у нас 4 (1+3), тогда ширина первого будет 25%, а второго 75%. И зачем же нам fr? Мы можем задать ширину первого 1fr, а второго 3fr и получить такой же результат. 
       Но почему бы просто ни использовать проценты? А что если мы точно знаем, что первый блок должен быть 50px в ширину, а второй и третий - делить между собой 
-      оставшееся пространство так, чтобы первому досталось 25%, а второму 75%? Если задать "50px 25% 75%", ничего не получится, потому что общая сумма будет равна 
+      оставшееся пространство так, чтобы второму досталось 25%, а третьему 75%? Если задать "50px 25% 75%", ничего не получится, потому что общая сумма будет равна 
       25% ширины контейнера + 75% ширины контейнера + 50px, что уже точно больше, чем 100% и блок выйдет за границу контейнера. Как раз здесь нам и 
       нужно использовать fr. Мы можем задать "50px 1fr 3fr" - и вуаля! Ведь fr разделить именно свободное пространство.
     </p>
@@ -1851,6 +1851,7 @@ footer {
 }
 a {
   color: white;
+  font-size: inherit;
 }
 a:hover {
   text-decoration: none;
@@ -1931,6 +1932,137 @@ a:hover {
       <p>
         Существует еще множество способов сделать тултип, но многие из них подразумевают использование JavaScript, а эта книга не о нём. На мой взгляд, то, что можно сделать без JavaScript, нужно делать без JavaScript. Конечно, и из этого правила есть исключения.</p>
     </section>
+  </div>
+</article>
+<article id="dropdown">
+  <div class="container">
+    <h2>Выпадающее меню и дропдауны</h2>
+    <p>Пользуясь интернетом, вы наверняка уже видели выпадающее меню. Это когда наводишь мышью на элемент меню и появляется подменю.</p>
+    <p>Сразу же перейдём к вёрстке. HTML предельно прост: есть меню, состоящее из четырёх элементов, а во втором элементе, помимо ссылки, есть вложенное меню.</p>
+    <pre data-lang="html" data-code="dropdown-menu">&lt;menu&gt;
+  &lt;li&gt;
+    &lt;a href=""&gt;Магазины&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;a href=""&gt;Покупателям&lt;/a&gt;
+    &lt;menu class="dropdown"&gt;
+      &lt;li&gt;
+        &lt;a href=""&gt;Бонусная программа&lt;/a&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;a href=""&gt;Подарочные карты&lt;/a&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;a href=""&gt;Доставка&lt;/a&gt;
+      &lt;/li&gt;
+    &lt;/menu&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;a href=""&gt;Юридическим лицам&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;a href=""&gt;Контакты&lt;/a&gt;
+  &lt;/li&gt;
+&lt;/menu&gt;
+</pre>
+    <p>
+      CSS тоже не слишком сложный. Фактически, все стили вертятся вокруг оформления. Единственное - применен "магический" селектор. На самом деле, никакой магии здесь нет. <code>menu li:hover .dropdown</code>означает, что при наведении курсора мыши (<code>:hover</code>), на элемент меню (<code>menu li</code>), дропдаун (<code>.dropdown</code>) получит некоторые стили, в данном случае, <code>display: block</code>.</p>
+    <pre data-lang="css" data-code="dropdown-menu">* {
+  box-sizing: border-box;
+}
+menu {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto 100px;
+  max-width: 800px;
+  display: flex;
+}
+menu li {
+  display: block;
+  position: relative;
+  width: 25%;
+}
+menu li a {
+  padding: 8px 16px;
+  background: lightblue;
+  display: inline-block;
+  width: 100%;
+  text-decoration: none;
+  color: black;
+  text-align: center;
+}
+menu li a:hover { 
+  background: teal;
+  color: white;
+}
+menu li:hover .dropdown { /* Магия здесь */
+  display: block;
+}
+
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  padding: 0;
+  margin: 0;
+  min-width: 100%;
+  list-style: none;
+}
+.dropdown li {
+  display: block;
+  width: auto;
+}
+.dropdown li a {
+  text-align: left;
+}
+</pre>
+    <p>Результат представлен ниже. Попробуйте навести мышью на элементы меню.</p>
+    <div data-run="dropdown-menu"></div>
+    <p>Похожим способом можно сделать и дропдаун для кнопки</p>
+    <pre data-lang="html" data-code="dropdown">&lt;button&gt;О нас
+  &lt;ul class="dropdown"&gt;
+    &lt;li&gt;&lt;a href=""&gt;О компании прессе&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=""&gt;Юридическая информация&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=""&gt;Контактная информация&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/button&gt;
+</pre>
+    <pre data-lang="css" data-code="dropdown">button {
+  background: white;
+  border: 1px solid gray;
+  border-radius: 4px;
+  padding: 8px 16px;
+  position: relative;
+  margin-bottom: 100px;
+}
+button:hover {
+  background: lightblue;
+}
+*:hover &gt; .dropdown { /* при наведении на любой элемент, содержащий .dropdown ... */
+  display: block;
+}
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  padding: 16px;
+  margin: 0;
+  list-style: none;
+  box-shadow: 0 0 5px 0 black;
+  border-radius: 4px;
+  background: white;
+  min-width: 200px;
+}
+.dropdown li {
+  display: block;
+  margin-bottom: 8px;
+  text-align: left;
+}
+
+</pre>
+    <div data-run="dropdown"></div>
   </div>
 </article>
 <article id="custom-checkbox">
@@ -2169,5 +2301,5 @@ a:hover {
 </article>
       </div>
     </main>
-  <script type="text/javascript" src="script.d198558c3a6ecb941839.js"></script></body>
+  <script type="text/javascript" src="script.bbd0a83d33a3b0493fd9.js"></script></body>
 </html>
