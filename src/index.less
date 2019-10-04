@@ -218,6 +218,62 @@ ol {
   }
 }
 
+iframe {
+  resize: both;
+  max-width: 100%;
+  max-height: 100vh;
+  min-width: 320px;
+  min-height: 480px;
+  border: none;
+  width: 100%;
+  height: 600px;
+  border: 1px solid var(--accent);
+}
+
+.internal-code-frame {
+  display: none;
+  margin: 30px 0;
+  flex-direction: column;
+  align-items: center;
+  &.run {
+    display: flex;
+  }
+}
+
+.switch {
+  display: flex;
+  button {
+    background-color: white;
+    box-shadow: none;
+    border: none;
+    border-radius: 0;
+    font-size: 24px;
+    padding: 4px 27px;
+    display: none;
+
+    &:hover {
+      background-color: white;
+      box-shadow: inset 0 -10px 10px -12px var(--accent);
+    }
+    @media (min-width: 500px) {
+      &:nth-child(1),
+      &:nth-child(2) {
+        display: block;
+      }
+    }
+    @media (min-width: 1300px) {
+      &:nth-child(3) {
+        display: block;
+      }
+    }
+    @media (min-width: 1900px) {
+      &:nth-child(4) {
+        display: block;
+      }
+    }
+  }
+}
+
 .columns-2 {
   column-count: 2;
 }
@@ -234,8 +290,9 @@ button {
   box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
   transition: background-color, box-shadow 150ms ease-in-out;
   cursor: pointer;
+  font-family: inherit;
   &:hover {
-    background: var(--accent-light);
+    background-color: var(--accent-light);
     color: white;
     box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2), 0 8px 10px 1px rgba(0, 0, 0, 0.14),
       0 3px 14px 2px rgba(0, 0, 0, 0.12);
@@ -371,5 +428,25 @@ main {
 
   p a {
     text-align: left;
+  }
+}
+
+.icon {
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  &.icon-mobile {
+    background-image: url("data:image/svg+xml,%3Csvg aria-hidden='true' focusable='false' data-prefix='fal' data-icon='mobile' role='img' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 512' class='svg-inline--fa fa-mobile fa-w-10 fa-3x'%3E%3Cpath fill='currentColor' d='M192 416c0 17.7-14.3 32-32 32s-32-14.3-32-32 14.3-32 32-32 32 14.3 32 32zM320 48v416c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V48C0 21.5 21.5 0 48 0h224c26.5 0 48 21.5 48 48zm-32 0c0-8.8-7.2-16-16-16H48c-8.8 0-16 7.2-16 16v416c0 8.8 7.2 16 16 16h224c8.8 0 16-7.2 16-16V48z' class=''%3E%3C/path%3E%3C/svg%3E");
+  }
+  &.icon-tablet {
+    background-image: url("data:image/svg+xml,%3Csvg aria-hidden='true' focusable='false' data-prefix='fal' data-icon='tablet' role='img' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512' class='svg-inline--fa fa-tablet fa-w-14 fa-3x'%3E%3Cpath fill='currentColor' d='M256 416c0 17.7-14.3 32-32 32s-32-14.3-32-32c0-21.3 14.3-32 32-32s32 14.3 32 32zM448 48v416c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V48C0 21.5 21.5 0 48 0h352c26.5 0 48 21.5 48 48zm-32 0c0-8.8-7.2-16-16-16H48c-8.8 0-16 7.2-16 16v416c0 8.8 7.2 16 16 16h352c8.8 0 16-7.2 16-16V48z' class=''%3E%3C/path%3E%3C/svg%3E");
+  }
+  &.icon-laptop {
+    background-image: url("data:image/svg+xml,%3Csvg aria-hidden='true' focusable='false' data-prefix='fal' data-icon='laptop' role='img' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 512' class='svg-inline--fa fa-laptop fa-w-20 fa-3x'%3E%3Cpath fill='currentColor' d='M624 368h-48V96c0-35.3-28.72-64-64-64H128c-35.28 0-64 28.7-64 64v272H16c-8.84 0-16 7.16-16 16v48c0 44.11 35.88 80 80 80h480c44.12 0 80-35.89 80-80v-48c0-8.84-7.16-16-16-16zM96 96c0-17.67 14.33-32 32-32h384c17.67 0 32 14.33 32 32v272H391.13c-4.06 0-7.02 3.13-7.92 7.09C379.98 389.35 367.23 400 352 400h-64c-15.23 0-27.98-10.65-31.21-24.91-.9-3.96-3.86-7.09-7.92-7.09H96V96zm512 336c0 26.47-21.53 48-48 48H80c-26.47 0-48-21.53-48-48v-32h194.75c6.59 18.62 24.38 32 45.25 32h96c20.88 0 38.66-13.38 45.25-32H608v32z' class=''%3E%3C/path%3E%3C/svg%3E");
+  }
+  &.icon-tv {
+    background-image: url("data:image/svg+xml,%3Csvg aria-hidden='true' focusable='false' data-prefix='fal' data-icon='tv' role='img' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 512' class='svg-inline--fa fa-tv fa-w-20 fa-3x'%3E%3Cpath fill='currentColor' d='M592 0H48A48 48 0 0 0 0 48v320a48 48 0 0 0 48 48h256v64H136a8 8 0 0 0-8 8v16a8 8 0 0 0 8 8h368a8 8 0 0 0 8-8v-16a8 8 0 0 0-8-8H336v-64h256a48 48 0 0 0 48-48V48a48 48 0 0 0-48-48zm16 368a16 16 0 0 1-16 16H48a16 16 0 0 1-16-16V48a16 16 0 0 1 16-16h544a16 16 0 0 1 16 16z' class=''%3E%3C/path%3E%3C/svg%3E");
   }
 }

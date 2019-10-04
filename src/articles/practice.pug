@@ -1,0 +1,182 @@
+article#practice
+  .container
+    h2 Практика
+    p Настало время практики. попробуем сверстать простенький сайт, который, возможно, послужит вам первым резюме. 
+      | Сразу оговорюсь по поводу картинок - в этом примере используется генерация людей нейросетью, этих людей никогда не существовало. 
+      | Если вы увидите что-то необычное или пугающее, просто обновите страницу, и, возможно, в этот раз нейросеть сгенерирует что-то более человечное. 
+      a(target="_blank" href="https://pikabu.ru/story/yetogo_cheloveka_ne_sushchestvuet_6506553") Описание на русском.
+
+    p Вы можете изменять размер вьюпорта (мобильный вид / планшетный / ноутбук / монитор), потянув за правый нижний угол или используя переключатели сверху. 
+      | По итогу, должно получиться примерно так:
+    button.internal-code(data-id="practice" data-height="90vh") Запустить пример
+
+  .internal-code-frame(data-id="practice")
+    .switch
+      button(data-id="practice" data-width="320" data-height="480")
+        span.icon.icon-mobile
+      button(data-id="practice" data-width="700" data-height="600")
+        span.icon.icon-tablet
+      button(data-id="practice" data-width="1300" data-height="650")
+        span.icon.icon-laptop
+      button(data-id="practice" data-width="1900" data-height="950")
+        span.icon.icon-tv
+    iframe(src="./assets/practice/index.html")
+
+  section.container
+    h3 Разметка
+    p Итак, приступим к вёрстке. Первым делом необходимо создать HTML-разметку. И сразу же подключим необходимые нам шрифты с 
+     a(target="_blank" href="https://fonts.google.com/") Google Fonts
+     | . Мы будем использовать шрифт Open Sans. Кроме того, мы будем использовать иконки из пака 
+     a(target="_blank" href="https://fontawesome.com/") Font awesome
+     | . Ну и сразу же создадим и подключим файл стилей. Назовём его, к примеру, 
+     code style.css 
+     | .
+
+    pre(data-lang="html")
+      :escape
+        <!DOCTYPE html>
+        <html lang="ru">
+          <head>
+            <meta charset="UTF-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            <title>Портфолио</title>
+            <link rel="stylesheet" href="styles.css" />
+
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600&display=swap&subset=cyrillic" />
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css" />
+          </head>
+          <body>
+
+          </body>
+        </html>
+    
+    p Возможно, у вас возникли некоторые вопросы по нашей отправной точке. Постараюсь ответить на них последовательно. 
+      code &lt;html lang="ru"&gt;
+      | в этой строке мы указываем язык страницы.
+      code &lt;meta charset="UTF-8" /&gt;
+      | означает, что кодировка страницы 
+      a(target="_blank" href="https://ru.wikipedia.org/wiki/UTF-8") UTF-8
+      | .
+      code &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;
+      | указывает, что сайт является адаптивным и самостоятельно подстроится под дисплей любого размера.
+      
+    p Сразу подумаем, как должен выглядеть будущий сайт как на мобильных устройствах, так и на устройствах с большим дисплеем. 
+      | Судя по макету, максимальная ширина сайта - 1200px, а если дисплей шире, то сайт выстраивается посередине. 
+      | Самый простой способ сделать так - использовать какой-то внешний контейнер. Внутри этого контейнера будет блок с краткой информацией 
+      | о человеке и блок с основным контентом. 
+
+    pre(data-lang="html")
+      :escape
+        <body>
+          <main class="container">
+            <div class="info">...</div>
+            <div class="content">...</div>
+          </main>
+        </body>
+
+    p Теперь посмотрим, что у нас есть в блоке с информацией (.info). Там есть фото, его имя, и три пары заголовок-контент. Попробуем это воссоздать.
+    
+    pre(data-lang="html")
+      :escape
+        <div class="info">
+          <div class="photo">
+            <img ... />
+          </div>
+          <h1>...</h1>
+          <section>
+            <h2>...</h2>
+            ...
+          </section>
+          <section>
+            <h2>...</h2>
+            ...
+          </section>
+          <section>
+            <h2>...</h2>
+            ...
+          </section>
+        </div>
+
+    p Блок с основным контентом представляет собой четыре пары заголовок-список. Так и напишем в коде:
+   
+    pre(data-lang="html")
+      :escape
+        <div class="content">
+          <section>
+            <h2>...</h2>
+            <ul>...</ul>
+          </section>
+          <section>
+            <h2>...</h2>
+            <ul>...</ul>
+          </section>
+          <section>
+            <h2>...</h2>
+            <ul>...</ul>
+          </section>
+          <section>
+            <h2>...</h2>
+            <ul>...</ul>
+          </section>
+        </div>
+
+  section.container
+      h3 Начальная стилизация
+      p Приступим, наконец, к стилям. Прежде всего, нужно определиться с цветами, шрифтами и прочим. Используем CSS-переменные и занесём туда все цвета макета, 
+        | примем border-box в качестве правила хорошего тона (об этом читай в статье 
+        a(href="#box-sizing") Блочная модель и box-sizing
+        | ), установим для странички основным шрифтом Open Sans, кегль шрифта - 16px (берём за основу кегль основного текста в макете), цвет шрифта сразу же установим
+        | согласно цвету основного текста в макете. Также обнулим значение margin по умолчанию для body.
+
+      pre(data-lang="css")
+        :escape
+          :root {
+            --back: #404042;
+            --accent: #e61d31;
+            --middle: #bbb;
+            --light: #f2f2f2;
+          }
+
+          * {
+            box-sizing: border-box;
+          }
+
+          body {
+            margin: 0;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 16px;
+            color: var(--back);
+          } 
+
+      p Как мы и говорили раньше, максимальный размер контейнера - 1200px. Блоку с информацией присвоим тёмный фон, согласно макету, светлый цвет текста, внутренний отступ (можете подобрать любое значение, лишь бы потом не забыть сделать как по макету). Блоку с основным контентом тоже присвоим какой-то внутренний отступ и белый фон.
+      pre(data-lang="css")
+        :escape
+          .container {
+            max-width: 1200px;
+          }
+
+          .info {
+            background-color: var(--back);
+            color: var(--light);
+            padding: 1rem;
+          }
+      
+          .content {
+            background-color: white;
+            padding: 1rem;
+          }
+  section.container
+    h3 Вёрстка блоков
+    h4 Фото профиля
+    p Приступим к вёрстке отдельных блоков. Как было сказано выше, автор использует фотографии несуществующих людей, сгенерированные нейросетью. Ссылку на сгенерированную фотографию можно увидеть в коде. Обязательно указываем атрибут alt с описанием, что это за изображение.
+    pre(data-lang="html")
+      :escape
+        <div class="info">
+          <div class="photo">
+            <img src="https://thispersondoesnotexist.com/image" alt="Фото профиля" />
+          </div>
+          ...
+        </div>
+    pre(data-lang="css")
+      :escape
+        

@@ -5,7 +5,6 @@ window['initCodePen'] = () => {
     pen.setAttribute('href', 'https://codepen.io/artik-man/pen/' + id);
     pen.setAttribute('target', '_blank');
     pen.addEventListener('click', event => {
-      pen.dataset.height = pen.dataset.height || '300';
       pen.dataset.themeId = pen.dataset.themeId || 'dark';
       pen.dataset.defaultTab = pen.dataset.defaultTab || 'css,result';
       pen.dataset.preview = pen.dataset.preview || 'false';
@@ -13,6 +12,11 @@ window['initCodePen'] = () => {
       pen.dataset.penTitle = pen.dataset.penTitle || id;
       pen.dataset.slugHash = pen.dataset.slugHash || id;
       pen.dataset.editable = pen.dataset.editable || 'editable';
+      if (pen.dataset.height && pen.dataset.height.includes('vh')) {
+        pen.dataset.height = (window.innerHeight * parseInt(pen.dataset.height, 10)) / 100 + '';
+      } else {
+        pen.dataset.height = pen.dataset.height || '300';
+      }
 
       const span = document.createElement('span');
       span.innerHTML = `See the Pen <a href="https://codepen.io/artik-man/pen/${id}/"> ${id} </a> 
