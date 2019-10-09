@@ -15,7 +15,9 @@
     <meta name="theme-color" content="#ffffff">
     <link href="https://fonts.googleapis.com/css?family=Philosopher&amp;display=swap&amp;subset=cyrillic" rel="stylesheet">
     <title>HTML Practice</title>
-  <link href="styles.3d77e9e66d68b176c031.css" rel="stylesheet"></head>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600&amp;display=swap&amp;subset=cyrillic" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css">
+  <link href="styles.05a80074638415c0dfed.css" rel="stylesheet"></head>
   <body>
     <main>
       <div class="main-menu">
@@ -124,33 +126,33 @@
     <h2>Кратко о GIT</h2>
     <p>
       GIT — это система контроля версий. Позволяет отслеживать и фиксировать изменения в коде, смотреть,
-      как развивался проект и какие люди вкладывали в него своё время. Без базовых знаний гита, работать
+      как развивался проект и какие люди вкладывали в него своё время. Без базовых знаний гита работать
       frontend-разработчиком просто нельзя.
     </p>
     <h3>Установка</h3>
-    <p>По этой ссылке, вы найдете инструкцию по установке GIT на свой компьютер: <a href="https://git-scm.com/downloads" target="_blank">Download GIT</a></p>
+    <p>По этой ссылке вы найдете инструкцию по установке GIT на свой компьютер: <a href="https://git-scm.com/downloads" target="_blank">Download GIT</a></p>
     <h3>Настройка</h3>
     <p>После установки, нам нужно настроить GIT. Самое главное - выполнить команды:</p>
     <pre data-lang="bash">git config --global user.name "My Name"
 git config --global user.email myEmail@example.com</pre>
     <h3>GitHub</h3>
     <p>
-      Теперь нужно зарегистрироваться на GitHub или на любом другом сервисе для хостинга проектов, основанной
+      Теперь нужно зарегистрироваться на GitHub или на любом другом сервисе для хостинга проектов, основанном
       на системе контроля версий GIT.
     </p>
     <p><a href="https://github.com/" target="_blank">GitHub.com</a></p>
-    <p>С помощью генератора ключей, нужно создать новый ключ для репозитория. Для этого, воспользуйтесь командой</p>
+    <p>С помощью генератора ключей нужно создать новый ключ для репозитория. Для этого воспользуйтесь командой</p>
     <pre data-lang="bash">ssh-keygen</pre>
     <p>
-      Следуйте инструкциям. После создания ключей, поместите их в папку C:\Users\YOUR_NAME\.ssh, для
-      пользователей Windows или в папку ~/.ssh, для пользователей Linux или MacOS.
+      Следуйте инструкциям. После создания ключей поместите их в папку C:\Users\YOUR_NAME\.ssh для
+      пользователей Windows или в папку ~/.ssh для пользователей Linux или MacOS.
     </p>
     <p>
       На сайте GitHub.com добавьте публичный (id_rsa.pub) ssh-ключ. Это можно сделать в разделе настройки
       пользователя.
     </p>
     <p>
-      Создайте на сайте новый проект. После создания проекта, вы найдете ссылку вида
+      Создайте на сайте новый проект. После создания проекта вы найдете ссылку вида
       git@github.com:YOUR_LOGIN/YOUR_PROJECT.git
     </p>
     <p>
@@ -176,7 +178,7 @@ git config --global user.email myEmail@example.com</pre>
     <pre data-lang="bash">git push          </pre>
     <p>Чтобы получить изменения с сервера, существует команда:</p>
     <pre data-lang="bash">git pull          </pre>
-    <p>Кроме того, вам стоит изучить такие команды, как merge, status, branch checkout, revert и многие другие.</p>
+    <p>Кроме того, вам стоит изучить такие команды, как merge, status, branch, checkout, revert и многие другие.</p>
     <p>Больше подробностей читать здесь: </p>
     <ul>
       <li><a href="https://proglib.io/p/git-for-half-an-hour/" target="_blank">Git за полчаса: руководство для начинающих</a></li>
@@ -1923,7 +1925,7 @@ a:hover {
     А здесь мы уже можем размещать различную информацию, 
     &lt;br&gt;
     в том числе многострочный текст и даже
-    &lt;a href="//google.com"&gt;ссылки&lt;/a&gt;
+    &lt;a&gt;ссылки&lt;/a&gt;
   &lt;/span&gt;
 &lt;/button&gt;
 </pre>
@@ -1941,27 +1943,27 @@ a:hover {
     <p>Сразу же перейдём к вёрстке. HTML предельно прост: есть меню, состоящее из четырёх элементов, а во втором элементе, помимо ссылки, есть вложенное меню.</p>
     <pre data-lang="html" data-code="dropdown-menu">&lt;menu&gt;
   &lt;li&gt;
-    &lt;a href=""&gt;Магазины&lt;/a&gt;
+    &lt;a&gt;Магазины&lt;/a&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;a href=""&gt;Покупателям&lt;/a&gt;
+    &lt;a&gt;Покупателям&lt;/a&gt;
     &lt;menu class="dropdown"&gt;
       &lt;li&gt;
-        &lt;a href=""&gt;Бонусная программа&lt;/a&gt;
+        &lt;a&gt;Бонусная программа&lt;/a&gt;
       &lt;/li&gt;
       &lt;li&gt;
-        &lt;a href=""&gt;Подарочные карты&lt;/a&gt;
+        &lt;a&gt;Подарочные карты&lt;/a&gt;
       &lt;/li&gt;
       &lt;li&gt;
-        &lt;a href=""&gt;Доставка&lt;/a&gt;
+        &lt;a&gt;Доставка&lt;/a&gt;
       &lt;/li&gt;
     &lt;/menu&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;a href=""&gt;Юридическим лицам&lt;/a&gt;
+    &lt;a&gt;Юридическим лицам&lt;/a&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;a href=""&gt;Контакты&lt;/a&gt;
+    &lt;a&gt;Контакты&lt;/a&gt;
   &lt;/li&gt;
 &lt;/menu&gt;
 </pre>
@@ -2030,9 +2032,9 @@ menu li:hover .dropdown { /* Магия здесь */
     <p>Похожим способом можно сделать и дропдаун для кнопки</p>
     <pre data-lang="html" data-code="dropdown">&lt;button&gt;О нас
   &lt;ul class="dropdown"&gt;
-    &lt;li&gt;&lt;a href=""&gt;О компании прессе&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=""&gt;Юридическая информация&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=""&gt;Контактная информация&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a&gt;О компании прессе&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a&gt;Юридическая информация&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a&gt;Контактная информация&lt;/a&gt;&lt;/li&gt;
   &lt;/ul&gt;
 &lt;/button&gt;
 </pre>
@@ -2307,7 +2309,176 @@ button:hover {
     </section>
   </div>
 </article>
+<article id="practice">
+  <div class="container">
+    <h2>Практика</h2>
+    <p>
+      Настало время практики. попробуем сверстать простенький сайт, который, возможно, послужит вам первым резюме. Сразу оговорюсь по поводу картинок - в этом примере используется генерация людей нейросетью, этих людей никогда не существовало. 
+      Если вы увидите что-то необычное или пугающее, просто обновите страницу, и, возможно, в этот раз нейросеть сгенерирует что-то более человечное. <a target="_blank" href="https://pikabu.ru/story/yetogo_cheloveka_ne_sushchestvuet_6506553">Описание на русском.</a>
+    </p>
+    <p>
+      Вы можете изменять размер вьюпорта (мобильный вид / планшетный / ноутбук / монитор), потянув за правый нижний угол или используя переключатели сверху. По итогу, должно получиться примерно так:</p>
+    <button class="internal-code" data-id="practice" data-height="90vh">Запустить пример</button>
+  </div>
+  <div class="internal-code-frame" data-id="practice">
+    <div class="switch">
+      <button data-id="practice" data-width="320" data-height="480"><span class="icon icon-mobile"></span></button>
+      <button data-id="practice" data-width="700" data-height="600"><span class="icon icon-tablet"></span></button>
+      <button data-id="practice" data-width="1300" data-height="650"><span class="icon icon-laptop"></span></button>
+      <button data-id="practice" data-width="1900" data-height="950"><span class="icon icon-tv"></span></button>
+    </div>
+    <iframe src="./assets/practice/index.html"></iframe>
+  </div>
+  <section class="container">
+    <h3>Разметка</h3>
+    <p>Итак, приступим к вёрстке. Первым делом необходимо создать HTML-разметку. И сразу же подключим необходимые нам шрифты с <a target="_blank" href="https://fonts.google.com/">Google Fonts</a>. Мы будем использовать шрифт Open Sans. Кроме того, мы будем использовать иконки из пака <a target="_blank" href="https://fontawesome.com/">Font awesome</a>. Ну и сразу же создадим и подключим файл стилей. Назовём его, к примеру, <code>style.css </code>.</p>
+    <pre data-lang="html">&lt;!DOCTYPE html&gt;
+&lt;html lang="ru"&gt;
+  &lt;head&gt;
+    &lt;meta charset="UTF-8" /&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;
+    &lt;title&gt;Портфолио&lt;/title&gt;
+    &lt;link rel="stylesheet" href="styles.css" /&gt;
+
+    &lt;link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600&display=swap&subset=cyrillic" /&gt;
+    &lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css" /&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+
+  &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+    <p>Возможно, у вас возникли некоторые вопросы по нашей отправной точке. Постараюсь ответить на них последовательно. <code>&lt;html lang="ru"&gt;</code>в этой строке мы указываем язык страницы.<code>&lt;meta charset="UTF-8" /&gt;</code>означает, что кодировка страницы <a target="_blank" href="https://ru.wikipedia.org/wiki/UTF-8">UTF-8</a>.<code>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;</code>указывает, что сайт является адаптивным и самостоятельно подстроится под дисплей любого размера.</p>
+    <p>
+      Сразу подумаем, как должен выглядеть будущий сайт как на мобильных устройствах, так и на устройствах с большим дисплеем. Судя по макету, максимальная ширина сайта - 1200px, а если дисплей шире, то сайт выстраивается посередине. 
+      Самый простой способ сделать так - использовать какой-то внешний контейнер. Внутри этого контейнера будет блок с краткой информацией 
+      о человеке и блок с основным контентом. 
+    </p>
+    <pre data-lang="html">&lt;body&gt;
+  &lt;main class="container"&gt;
+    &lt;div class="info"&gt;...&lt;/div&gt;
+    &lt;div class="content"&gt;...&lt;/div&gt;
+  &lt;/main&gt;
+&lt;/body&gt;
+</pre>
+    <p>Теперь посмотрим, что у нас есть в блоке с информацией (.info). Там есть фото, его имя, и три пары заголовок-контент. Попробуем это воссоздать.</p>
+    <pre data-lang="html">&lt;div class="info"&gt;
+  &lt;div class="photo"&gt;
+    &lt;img ... /&gt;
+  &lt;/div&gt;
+  &lt;h1&gt;...&lt;/h1&gt;
+  &lt;section&gt;
+    &lt;h2&gt;...&lt;/h2&gt;
+    ...
+  &lt;/section&gt;
+  &lt;section&gt;
+    &lt;h2&gt;...&lt;/h2&gt;
+    ...
+  &lt;/section&gt;
+  &lt;section&gt;
+    &lt;h2&gt;...&lt;/h2&gt;
+    ...
+  &lt;/section&gt;
+&lt;/div&gt;
+</pre>
+    <p>Блок с основным контентом представляет собой четыре пары заголовок-список. Так и напишем в коде:</p>
+    <pre data-lang="html">&lt;div class="content"&gt;
+  &lt;section&gt;
+    &lt;h2&gt;...&lt;/h2&gt;
+    &lt;ul&gt;...&lt;/ul&gt;
+  &lt;/section&gt;
+  &lt;section&gt;
+    &lt;h2&gt;...&lt;/h2&gt;
+    &lt;ul&gt;...&lt;/ul&gt;
+  &lt;/section&gt;
+  &lt;section&gt;
+    &lt;h2&gt;...&lt;/h2&gt;
+    &lt;ul&gt;...&lt;/ul&gt;
+  &lt;/section&gt;
+  &lt;section&gt;
+    &lt;h2&gt;...&lt;/h2&gt;
+    &lt;ul&gt;...&lt;/ul&gt;
+  &lt;/section&gt;
+&lt;/div&gt;
+</pre>
+  </section>
+  <section class="container">
+    <h3>Начальная стилизация</h3>
+    <p>
+      Приступим, наконец, к стилям. Прежде всего, нужно определиться с цветами, шрифтами и прочим. Используем CSS-переменные и занесём туда все цвета макета, примем border-box в качестве правила хорошего тона (об этом читай в статье <a href="#box-sizing">Блочная модель и box-sizing</a>), установим для странички основным шрифтом Open Sans, кегль шрифта - 16px (берём за основу кегль основного текста в макете), цвет шрифта сразу же установим
+      согласно цвету основного текста в макете. Также обнулим значение margin по умолчанию для body.
+    </p>
+    <pre data-lang="css">:root {
+  --back: #404042;
+  --accent: #e61d31;
+  --middle: #bbb;
+  --light: #f2f2f2;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  color: var(--back);
+} 
+</pre>
+    <p>Как мы и говорили раньше, максимальный размер контейнера - 1200px. Блоку с информацией присвоим тёмный фон, согласно макету, светлый цвет текста, внутренний отступ (можете подобрать любое значение, лишь бы потом не забыть сделать как по макету). Блоку с основным контентом тоже присвоим какой-то внутренний отступ и белый фон.</p>
+    <pre data-lang="css">.container {
+  max-width: 1200px;
+}
+
+.info {
+  background-color: var(--back);
+  color: var(--light);
+  padding: 1rem;
+}
+
+.content {
+  background-color: white;
+  padding: 1rem;
+}</pre>
+  </section>
+  <section class="container">
+    <h3>Вёрстка блоков</h3>
+    <p>
+      Существует два основных подхода к вёрстке адаптивных (подстраивающихся под устройство) сайтов: mobile-first и desktop-first. Первый считается общепризнанным стандартом, так как позволяет, теоретически, упростить вычисление CSS для мобильных устройств. Дело в том, что мобильные телефоны считаются более слабыми по сравнению с компьютерами. В случае, когда мы используем подход mobile-first, сайт изначально выглядит так, как нужно мобильным устройствам, а если ширина экрана это позволяет, подключает дополнительные CSS-правила, позволяющие расположить элементы, используя большую ширину экрана, нежели у телефона. 
+      И так, постепенно наращивая количество правил, включающихся по мере роста ширины экрана, раскладка становится подходящей для широких экранов компьютера. В подходе desktop-first происходит наоборот - сначала сайт ведет себя как сайт для полноценных компьютеров, а если ширины экрана недостаточно, подключает стили, изменяющие раскладку элементов на раскладку, подходящую для мобильных устройств. 
+      От этой дополнительной вычислительной нагрузки на мобильных устройствах принято отказываться по двум причинам:
+    </p>
+    <ol>
+      <li>как было сказано выше, мобильные устройства не так производительны;</li>
+      <li>более половины пользователей интернета используют, в первую очередь, мобильные устройства.</li>
+    </ol>
+    <p>Именно поэтому мы будем сначала верстать под мобильные устройства, а затем постепенно увеличивать экран.</p>
+    <h4>Фото профиля</h4>
+    <p>Приступим к вёрстке отдельных блоков. Как было сказано выше, автор использует фотографии несуществующих людей, сгенерированные нейросетью. Ссылку на сгенерированную фотографию можно увидеть в коде. Обязательно указываем атрибут alt с описанием, что это за изображение.</p>
+    <pre data-lang="html">&lt;div class="info"&gt;
+  &lt;div class="photo"&gt;
+    &lt;img src="https://thispersondoesnotexist.com/image" alt="Фото профиля" /&gt;
+  &lt;/div&gt;
+  ...
+&lt;/div&gt;</pre>
+    <pre data-lang="css">.photo {
+  padding: 1rem;
+}
+
+.photo img {
+  width: 100%;
+  display: block;
+  border-radius: 50%;
+  filter: grayscale(1) contrast(1.2);
+}
+</pre>
+    <p>
+      Здесь мы указываем просто оформляем блок с фото. Чтобы квадратное фото сделать круглым, нужно задать border-radius: 50%. Однако, если фото не будет квадратным, то рекомендую указать значение этого свойства в пикселях, дабы не получить овал. В этом проекте автор использует неподготовленные для сайта фотографии, поэтому было принято решение обработать их согласно специфике сайта. Для этого используется <a target="_blank" href="https://developer.mozilla.org/ru/docs/Web/CSS/filter">CSS Filter</a>. </p>
+    <p>Продолжение будет позже</p>
+  </section>
+</article>
       </div>
     </main>
-  <script type="text/javascript" src="script.3d77e9e66d68b176c031.js"></script></body>
+  <script type="text/javascript" src="script.05a80074638415c0dfed.js"></script></body>
 </html>
