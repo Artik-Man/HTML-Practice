@@ -17,7 +17,7 @@
     <title>HTML Practice</title>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600&amp;display=swap&amp;subset=cyrillic" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css">
-  <link href="styles.05a80074638415c0dfed.css" rel="stylesheet"></head>
+  <link href="styles.5846590c5a56abd0e5ff.css" rel="stylesheet"></head>
   <body>
     <main>
       <div class="main-menu">
@@ -35,7 +35,7 @@
     <ul>
     </ul>
     <ul>
-      <li>Вёрстка выпадающего меню</li>
+      <li>SVG</li>
       <li>Вёрстка модальных окон</li>
       <li>Вёрстка форм</li>
       <li>Градиенты, тени и фильтры</li>
@@ -2313,7 +2313,7 @@ button:hover {
   <div class="container">
     <h2>Практика</h2>
     <p>
-      Настало время практики. попробуем сверстать простенький сайт, который, возможно, послужит вам первым резюме. Сразу оговорюсь по поводу картинок - в этом примере используется генерация людей нейросетью, этих людей никогда не существовало. 
+      Настало время практики. попробуем сверстать простенький сайт, который, возможно, послужит вам первым резюме. Сразу оговорюсь по поводу картинок &mdash; в этом примере используется генерация людей нейросетью, этих людей никогда не существовало. 
       Если вы увидите что-то необычное или пугающее, просто обновите страницу, и, возможно, в этот раз нейросеть сгенерирует что-то более человечное. <a target="_blank" href="https://pikabu.ru/story/yetogo_cheloveka_ne_sushchestvuet_6506553">Описание на русском.</a>
     </p>
     <p>
@@ -2350,8 +2350,8 @@ button:hover {
 </pre>
     <p>Возможно, у вас возникли некоторые вопросы по нашей отправной точке. Постараюсь ответить на них последовательно. <code>&lt;html lang="ru"&gt;</code>в этой строке мы указываем язык страницы.<code>&lt;meta charset="UTF-8" /&gt;</code>означает, что кодировка страницы <a target="_blank" href="https://ru.wikipedia.org/wiki/UTF-8">UTF-8</a>.<code>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;</code>указывает, что сайт является адаптивным и самостоятельно подстроится под дисплей любого размера.</p>
     <p>
-      Сразу подумаем, как должен выглядеть будущий сайт как на мобильных устройствах, так и на устройствах с большим дисплеем. Судя по макету, максимальная ширина сайта - 1200px, а если дисплей шире, то сайт выстраивается посередине. 
-      Самый простой способ сделать так - использовать какой-то внешний контейнер. Внутри этого контейнера будет блок с краткой информацией 
+      Сразу подумаем, как должен выглядеть будущий сайт как на мобильных устройствах, так и на устройствах с большим дисплеем. Судя по макету, максимальная ширина сайта &mdash; 1200px, а если дисплей шире, то сайт выстраивается посередине. 
+      Самый простой способ сделать так &mdash; использовать какой-то внешний контейнер. Внутри этого контейнера будет блок с краткой информацией 
       о человеке и блок с основным контентом. 
     </p>
     <pre data-lang="html">&lt;body&gt;
@@ -2405,7 +2405,7 @@ button:hover {
   <section class="container">
     <h3>Начальная стилизация</h3>
     <p>
-      Приступим, наконец, к стилям. Прежде всего, нужно определиться с цветами, шрифтами и прочим. Используем CSS-переменные и занесём туда все цвета макета, примем border-box в качестве правила хорошего тона (об этом читай в статье <a href="#box-sizing">Блочная модель и box-sizing</a>), установим для странички основным шрифтом Open Sans, кегль шрифта - 16px (берём за основу кегль основного текста в макете), цвет шрифта сразу же установим
+      Приступим, наконец, к стилям. Прежде всего, нужно определиться с цветами, шрифтами и прочим. Используем CSS-переменные и занесём туда все цвета макета, примем border-box в качестве правила хорошего тона (об этом читай в статье <a href="#box-sizing">Блочная модель и box-sizing</a>), установим для странички основным шрифтом Open Sans, кегль шрифта &mdash; 16px (берём за основу кегль основного текста в макете), цвет шрифта сразу же установим
       согласно цвету основного текста в макете. Также обнулим значение margin по умолчанию для body.
     </p>
     <pre data-lang="css">:root {
@@ -2426,7 +2426,7 @@ body {
   color: var(--back);
 } 
 </pre>
-    <p>Как мы и говорили раньше, максимальный размер контейнера - 1200px. Блоку с информацией присвоим тёмный фон, согласно макету, светлый цвет текста, внутренний отступ (можете подобрать любое значение, лишь бы потом не забыть сделать как по макету). Блоку с основным контентом тоже присвоим какой-то внутренний отступ и белый фон.</p>
+    <p>Как мы и говорили раньше, максимальный размер контейнера &mdash; 1200px. Блоку с информацией присвоим тёмный фон, согласно макету, светлый цвет текста, внутренний отступ (можете подобрать любое значение, лишь бы потом не забыть сделать как по макету). Блоку с основным контентом тоже присвоим какой-то внутренний отступ и белый фон.</p>
     <pre data-lang="css">.container {
   max-width: 1200px;
 }
@@ -2440,13 +2440,33 @@ body {
 .content {
   background-color: white;
   padding: 1rem;
-}</pre>
+}
+</pre>
+    <p>И сразу же зададим стили для абзацев и ссылок:</p>
+    <pre data-lang="css">p {
+  font-size: 1rem;
+  margin: 0 0 0.5em;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a .fab,
+a .fas {
+  margin-right: 0.5em;
+}
+</pre>
   </section>
   <section class="container">
     <h3>Вёрстка блоков</h3>
     <p>
       Существует два основных подхода к вёрстке адаптивных (подстраивающихся под устройство) сайтов: mobile-first и desktop-first. Первый считается общепризнанным стандартом, так как позволяет, теоретически, упростить вычисление CSS для мобильных устройств. Дело в том, что мобильные телефоны считаются более слабыми по сравнению с компьютерами. В случае, когда мы используем подход mobile-first, сайт изначально выглядит так, как нужно мобильным устройствам, а если ширина экрана это позволяет, подключает дополнительные CSS-правила, позволяющие расположить элементы, используя большую ширину экрана, нежели у телефона. 
-      И так, постепенно наращивая количество правил, включающихся по мере роста ширины экрана, раскладка становится подходящей для широких экранов компьютера. В подходе desktop-first происходит наоборот - сначала сайт ведет себя как сайт для полноценных компьютеров, а если ширины экрана недостаточно, подключает стили, изменяющие раскладку элементов на раскладку, подходящую для мобильных устройств. 
+      И так, постепенно наращивая количество правил, включающихся по мере роста ширины экрана, раскладка становится подходящей для широких экранов компьютера. В подходе desktop-first происходит наоборот &mdash; сначала сайт ведет себя как сайт для полноценных компьютеров, а если ширины экрана недостаточно, подключает стили, изменяющие раскладку элементов на раскладку, подходящую для мобильных устройств. 
       От этой дополнительной вычислительной нагрузки на мобильных устройствах принято отказываться по двум причинам:
     </p>
     <ol>
@@ -2454,6 +2474,17 @@ body {
       <li>более половины пользователей интернета используют, в первую очередь, мобильные устройства.</li>
     </ol>
     <p>Именно поэтому мы будем сначала верстать под мобильные устройства, а затем постепенно увеличивать экран.</p>
+    <h4>Блок с информацией</h4>
+    <p>Как видно на макете, цвета ссылок, а так же толщина шрифта ссылок и абзацев в блоке с тёмным фоном отличаются от этих параметров в блоке с основным контентом. Добавим для этого дополнительные стили:</p>
+    <pre data-lang="css">.info a {
+  color: var(--light);
+  font-weight: 300;
+}
+
+.info h2 {
+  font-weight: 300;
+}
+</pre>
     <h4>Фото профиля</h4>
     <p>Приступим к вёрстке отдельных блоков. Как было сказано выше, автор использует фотографии несуществующих людей, сгенерированные нейросетью. Ссылку на сгенерированную фотографию можно увидеть в коде. Обязательно указываем атрибут alt с описанием, что это за изображение.</p>
     <pre data-lang="html">&lt;div class="info"&gt;
@@ -2475,10 +2506,356 @@ body {
 </pre>
     <p>
       Здесь мы указываем просто оформляем блок с фото. Чтобы квадратное фото сделать круглым, нужно задать border-radius: 50%. Однако, если фото не будет квадратным, то рекомендую указать значение этого свойства в пикселях, дабы не получить овал. В этом проекте автор использует неподготовленные для сайта фотографии, поэтому было принято решение обработать их согласно специфике сайта. Для этого используется <a target="_blank" href="https://developer.mozilla.org/ru/docs/Web/CSS/filter">CSS Filter</a>. </p>
-    <p>Продолжение будет позже</p>
+    <h4>Заголовок</h4>
+    <p>Вёрстка этого блока довольно проста: имя человека и его позиция является заголовком первого уровня. Чтобы отделить перенести должность на другую строку, нужно вынести её в отдельный тег и использовать <code>display: block</code>. </p>
+    <pre data-lang="html">&lt;h1&gt;
+  Дэми Браун
+  &lt;small&gt;Junior front-end developer&lt;/small&gt;
+&lt;/h1&gt;</pre>
+    <pre data-lang="css">h1 {
+  font-size: 2rem;
+  font-weight: 300;
+  margin: 0 0 0.2em;
+  line-height: 1;
+  text-align: center;
+  color: var(--accent);
+  text-transform: uppercase;
+}
+
+h1 small {
+  display: block;
+  font-size: 1rem;
+  color: white;
+  font-weight: 300;
+  padding: 1em 0;
+}
+</pre>
+    <h4>Секция с контактной информацией</h4>
+    <p>Эта секция состоит из заголовка и списка ссылок с иконками. Вёрстка так же предельно проста:</p>
+    <pre data-lang="html">&lt;section class="contacts"&gt;
+  &lt;h2&gt;Контакты&lt;/h2&gt;
+  &lt;ul&gt;
+    &lt;li&gt;
+      &lt;a href="//linkedin.com" target="_blank" rel="noreferrer"&gt;
+        &lt;i class="fab fa-linkedin" aria-hidden="true"&gt;&lt;/i&gt;
+        LinkedIn
+      &lt;/a&gt;
+    &lt;/li&gt;
+    ...
+  &lt;/ul&gt;
+&lt;/section&gt;</pre>
+    <p>Задачей CSS является просто немного подвигать элементы и задать размеры иконкам:</p>
+    <pre data-lang="css">.contacts .fab,
+.contacts .fas {
+  font-size: 1.5em;
+  vertical-align: middle;
+}
+
+.contacts ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.contacts li {
+  margin-bottom: 1.5em;
+}
+
+h2 {
+  font-size: 1.5rem;
+  padding: 0 0 0.7em;
+  margin: 2.5em 0 1em;
+  border-bottom: 2px solid var(--middle);
+  text-transform: uppercase;
+  font-weight: 600;
+  position: relative;
+}
+
+h2::after {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 4rem;
+  border-bottom: 0.6rem solid var(--accent);
+}</pre>
+    <h5>Заголовок</h5>
+    <p>Заголовок второго уровня имеет необычный элемент красного цвета под собой. Он спозиционирован относительно заголовка и представляет собой красный прямоугольник, находящийся на той же высоте, что и border заголовка.</p>
+    <h5>Пара слов о ссылках</h5>
+    <p>Оформление ссылок &mdash; это важная задача, игнорировать которую ни в коем случае нельзя, ведь это косвенно влияет на приток клиентов. К примеру, если у нас будет указан номер телефона, по нажатию на который ничего не произойдёт, мало какой клиент начнёт переписывать его в свой телефон для вызова. </p>
+    <p>
+      Для оформления ссылок на сторонние ресурсы, необходимо добавлять два атрибута у ссылок: target и rel. Атрибут target позволяет управлять поведением открытия страницы по ссылке. К примеру, значение этого атрибута _blank откроет страницу в новой вкладке. Именно его и нужно использовать для указания ссылок на сторонние ресурсы.Кроме того, необходимо указывать атрибут rel со значением noreferrer или nofollow. Этот атрибут говорит поисковым машинам, что ссылка ведёт на сторонний ресурс, индексировать который нам не обязательно.</p>
+    <p>Оформление номера телефона обязательно сопровождается ссылкой, атрибут href которой начинается с tel. Телефон указывается в международном формате. К примеру, </p>
+    <pre data-lang="html">&lt;a href="tel:+12345678900" rel="noreferrer"&gt;
+  +1(234) 567-89-00
+&lt;/a&gt;</pre>
+    <p>Чтобы оформить ссылку на почту, используйте этот формат:</p>
+    <pre data-lang="html">&lt;a href="mailto:mail@gmail.com" rel="noreferrer"&gt;
+  mail@gmail.com
+&lt;/a&gt;</pre>
+    <p>Также можно оформлять ссылки на чат, к примеру, в WhatsApp, Telegram или Viber:</p>
+    <pre data-lang="html">&lt;a href="https://wa.me/1234567890" rel="noreferrer"&gt; WhatsApp (+1234567890)&lt;/a&gt;</pre>
+    <pre data-lang="html">&lt;a href="tg://resolve?domain=YOUR_NICKNAME" rel="noreferrer"&gt; Telegram (@YOUR_NICKNAME)&lt;/a&gt;</pre>
+    <pre data-lang="html">&lt;a href="viber://chat?number=1234567890" rel="noreferrer"&gt; Viber (+1234567890)&lt;/a&gt;
+</pre>
+    <h4>Секции навыков и знания языков</h4>
+    <p>Эта секция представляет собой заголовок и пары название-освоение. Ничего сложного:</p>
+    <pre data-lang="html">&lt;section class="skills"&gt;
+  &lt;h2&gt;Навыки&lt;/h2&gt;
+
+  &lt;figure class="skill"&gt;
+    &lt;figcaption class="title"&gt;HTML&lt;/figcaption&gt;
+    &lt;svg class="progress" aria-label="50%"&gt;
+      &lt;rect class="bar" style="width: 50%"&gt;&lt;/rect&gt;
+    &lt;/svg&gt;
+  &lt;/figure&gt;
+
+  ...
+&lt;/section&gt;
+</pre>
+    <pre data-lang="css">.skills .skill {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 1rem;
+  align-items: center;
+  margin: 0 0 1em;
+}
+
+.skills .skill .title {
+  font-weight: 300;
+}
+
+.progress {
+  background-color: var(--middle);
+  width: 100%;
+  height: 4px;
+}
+
+.progress .bar {
+  fill: var(--accent);
+  height: 100%;
+}
+</pre>
+    <p>Разберёмся подробнее. Каждая фигура <code>&lt;figure class="skill"&gt;</code>является гридом. Внутри находится название<code>&lt;figcaption class="title"&gt;</code>и сама фигура, в данном случае, являющаяся inline-svg:<code>&lt;svg class="progress"&gt;</code>. По умолчанию SVG имеем какой-то размер, поэтому мы устанавливаем его своим:</p>
+    <pre data-lang="css">.progress {
+  width: 100%;
+  height: 4px;
+}</pre>
+    <p>А чтобы перекрасить сам столбик прогресса, мы должны воспользоваться свойством <code>fill</code>, так как SVG-элементы не имеют свойства <code>background-color</code>.</p>
+  </section>
+  <section class="container"> 
+    <h3>Основной контент</h3>
+    <p>В этой части практики мы поговорим о блоке с контентом. Он состоит из четырёх секций: опыт, образование, интересы и проекты.</p>
+    <h4>Секции "Опыт" и "Образование"</h4>
+    <p>В секции "Опыт", помимо заголовка, находится список мест работы. Элементы списка содержат позицию как сотрудника компании, даты начала и окончания трудового договора, название компании, достижения и обязанности сотрудника.</p>
+    <p>Секция "Образование" представляет собой точно такую же вёрстку, но другую информацию: вместо позиции &mdash; получаемую учёную степень; вместо дат трудового договора &mdash; даты начала и конца обучения; вместо названия компании &mdash; название ВУЗа; вместо обязанностей &mdash; кратко о полученных знаниях.</p>
+    <pre data-lang="html">&lt;div class="content"&gt;
+  &lt;section&gt;
+    &lt;h2&gt;Опыт&lt;/h2&gt;
+
+    &lt;ul class="experience"&gt;
+      &lt;li&gt;
+        &lt;div class="short-info"&gt;
+          &lt;div class="position"&gt;Junior front end developer&lt;/div&gt;
+          &lt;div class="date-range"&gt;
+            &lt;time&gt;Сентябрь 2019&lt;/time&gt;
+            &mdash;
+            &lt;time&gt;По настоящее время&lt;/time&gt;
+          &lt;/div&gt;
+          &lt;div class="company"&gt;ООО &laquo;Рога и копыта&raquo;&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="responsibilities"&gt;
+          &lt;p&gt;
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt minima temporibus ratione quae
+            dolorem accusamus doloribus consectetur dolor in aut at vel repellat rerum praesentium voluptate
+            libero, eveniet pariatur? Quos?
+          &lt;/p&gt;
+        &lt;/div&gt;
+      &lt;/li&gt;
+      
+      ...
+
+    &lt;/ul&gt;
+  &lt;/section&gt;
+
+  &lt;section&gt;
+    &lt;h2&gt;Образование&lt;/h2&gt;
+
+    ...
+
+  &lt;/section&gt;
+  ...
+
+&lt;/div&gt;
+</pre>
+    <pre data-lang="css">.experience li {
+  display: block;
+  margin-bottom: 2rem;
+}
+
+.experience .short-info {
+  margin-bottom: 1rem;
+}
+
+.experience .position {
+  font-weight: 600;
+}
+
+.experience .date-range time {
+  font-size: 0.7rem;
+}
+</pre>
+    <p>Надеюсь, этот блок не доставит вам больших проблем в понимании.</p>
+    <h4>Интересы </h4>
+    <p>Этот блок состоит из списка иконок. Как мы понимаем, для незрячих людей, использующих скринридер, иконки это ничто. Поэтому им необходимо задать описание. Кроме того стоит подумать о том, как объяснить человеку, что скрывается за иконкой футбольного мяча? Футбол? Спорт? Мяч? Что-то ещё? Убить двух зайцев нам поможет атрибут <code>title</code>. Посмотрим, как это будет выглядеть:</p>
+    <pre data-lang="html">&lt;section&gt;
+  &lt;h2&gt;Интересы&lt;/h2&gt;
+
+  &lt;ul class="interests"&gt;
+    &lt;li&gt;
+      &lt;i class="fas fa-futbol" title="Спорт"&gt;&lt;/i&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;i class="fas fa-camera-retro" title="Фотография"&gt;&lt;/i&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;i class="fas fa-guitar" title="Музыка"&gt;&lt;/i&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;i class="fas fa-suitcase-rolling" title="Путешествия"&gt;&lt;/i&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/section&gt;
+</pre>
+    <pre data-lang="css">.interests {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 3rem;
+  opacity: 0.8;
+}
+
+.interests li {
+  margin-right: 1rem;
+}
+</pre>
+    <p>Простое оформление списка в одну строку и немного стилей для размещения иконок. </p>
+    <h4>Секция "Проекты"</h4>
+    <p>Последняя часть разметки &mdash; секция "Проекты". Она содержит заголовок и список проектов, представляющих собой иконку, заголовок проекта с ссылкой на страницу проекта и описание.</p>
+    <pre data-lang="html">&lt;section&gt;
+    &lt;h2&gt;Проекты&lt;/h2&gt;
+
+    &lt;ul class="projects"&gt;
+      &lt;li&gt;
+        &lt;i class="fas fa-file-code" aria-hidden="true"&gt;&lt;/i&gt;
+        &lt;h3&gt;
+          &lt;a href="#"&gt;
+            Проект
+          &lt;/a&gt;
+        &lt;/h3&gt;
+        &lt;p&gt;Описание проекта&lt;/p&gt;
+      &lt;/li&gt;
+      
+      ...
+
+    &lt;/ul&gt;
+  &lt;/section&gt;
+</pre>
+    <pre data-lang="css">h3 {
+  font-size: 1.2rem;
+  margin: 0 0 0.5em;
+}
+
+.projects {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.projects li {
+  margin-bottom: 1em;
+  position: relative;
+  padding-left: 3em;
+}
+
+.projects a {
+  color: var(--back);
+}
+
+.projects .fas {
+  position: absolute;
+  top: 0.2em;
+  left: 0;
+  font-size: 2.5em;
+  opacity: 0.8;
+}
+</pre>
+    <p>Так как название и описание проекта находится в отдельных тегах, для слабовидящих людей иконка не несёт никакой смысловой нагрузки, поэтому её можно скрыть атрибутом <code>aria-hidden="true"</code>. Для зрячих же людей, спозиционируем картинку относительно элемента списка, представляющего собой проект. Мы могли бы также воспользоваться и flex-контейнером. </p>
+  </section>
+  <section class="container">
+    <h3>Адаптивность и отзывчивость</h3>
+    <p>
+      К этому моменту у нас уже есть полностью функционирующая мобильная версия проекта. Однако, на этом этапе, она выглядит хорошо только до размера экрана примерно в 500px. Нам нужно создать медиа-выражение, изменяющее расположение блоков при достижении ширины экрана 500px. 
+      Всё, что должно произойти к этому моменту &mdash; <code>.info</code>должен оказаться в левой части экрана, а блок<code>.content</code>&mdash; в правой.
+    </p>
+    <p>Как мы помним, HTML выглядит так:</p>
+    <pre data-lang="html">&lt;body&gt;
+  &lt;main class="container"&gt;
+    &lt;div class="info"&gt;...&lt;/div&gt;
+    &lt;div class="content"&gt;...&lt;/div&gt;
+  &lt;/main&gt;
+&lt;/body&gt;</pre>
+    <p>Чтобы эти блоки расположились рядом, нужно прочитать статью <a href="#layouts">Многоколоночные макеты </a>и использовать один из представленных там методов. Для примера, я использую гриды:</p>
+    <pre data-lang="css">@media (min-width: 500px) {
+  .container {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+  }
+}</pre>
+    <p>Этот код читать нужно так: если ширина экрана более 500 пикселей, то блок<code>.container</code>станет гридом с раскладкой<code>200px 1fr.</code></p>
+    <p>Увеличим ширину экрана ещё. На отметке примерно в 700px мы снова увидим, что вёрстка выглядит не очень хорошо. Создадим ещё одно правило:</p>
+    <pre data-lang="css">@media (min-width: 700px) {
+  body {
+    background: linear-gradient(135deg, rgba(240, 240, 240, 1) 50%, rgba(225, 225, 225, 1) 50%);
+  }
+
+  .container {
+    grid-template-columns: 2fr 3fr;
+  }
+
+  .info,
+  .content {
+    padding: 3rem;
+  }
+}</pre>
+    <p>При достижении ширины экрана в 700px, установим на фон страницы градиент, изменим раскладку грида блока <code>.container </code>и зададим большие отступы для его дочерних блоков.</p>
+    <p>Последние две точки адаптивности посвятим блокам <code>.experience </code>и блоку<code>.container</code>.</p>
+    <pre data-lang="css">@media (min-width: 900px) {
+  .experience li {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    gap: 2rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    margin: 5vh auto;
+    box-shadow: 30px 50px 40px 20px rgba(0, 0, 0, 0.3);
+  }
+}
+</pre>
+  </section>
+  <section class="container">
+    <h3>Заключение</h3>
+    <p>
+      Таким образом, нам удалось сверстать простенькую страничку, которая может стать вашим стартом и первым проектом в области Font end разработки.  </p>
   </section>
 </article>
       </div>
     </main>
-  <script type="text/javascript" src="script.05a80074638415c0dfed.js"></script></body>
+  <script type="text/javascript" src="script.5846590c5a56abd0e5ff.js"></script></body>
 </html>

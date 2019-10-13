@@ -128,22 +128,22 @@ a .fas {
   grid-template-columns: 1fr 2fr;
   gap: 1rem;
   align-items: center;
-  margin-bottom: 1em;
+  margin: 0 0 1em;
 }
 
-.skills .skill p {
+.skills .skill .title {
   font-weight: 300;
 }
 
 .progress {
   background-color: var(--middle);
+  width: 100%;
+  height: 4px;
 }
 
 .progress .bar {
-  background-color: var(--accent);
-  height: 4px;
-  color: transparent;
-  font-size: 1px;
+  fill: var(--accent);
+  height: 100%;
 }
 
 .content {
@@ -212,13 +212,6 @@ a .fas {
   opacity: 0.8;
 }
 
-.aria-only {
-  color: transparent;
-  font-size: 1px;
-  width: 1px;
-  height: 1px;
-}
-
 @media (min-width: 500px) {
   .container {
     display: grid;
@@ -228,12 +221,10 @@ a .fas {
 
 @media (min-width: 700px) {
   body {
-    background-color: var(--light);
     background: linear-gradient(135deg, rgba(240, 240, 240, 1) 50%, rgba(225, 225, 225, 1) 50%);
   }
 
   .container {
-    display: grid;
     grid-template-columns: 2fr 3fr;
   }
 
