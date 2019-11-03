@@ -151,6 +151,7 @@ code {
   display: inline-block;
 }
 [data-run] {
+  position: relative;
   padding: 15px;
   border: none;
   width: 100%;
@@ -489,4 +490,4 @@ main.without-menu > .main-menu menu {
 }
 
 
-/*# sourceMappingURL=styles.56af08dd58123adfd28b.css.map*/
+/*# sourceMappingURL=styles.f9042d0f6b2f297488b9.css.map*/
