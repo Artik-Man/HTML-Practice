@@ -123,13 +123,13 @@ article#layouts
             margin: 0 auto;
             max-width: 800px;
             display: grid;                        /* Объявляем контейнер гридом */
-            grid-template-rows: 50px 1fr 50px;    /* (1) Задаём строки*/
-            grid-template-columns: 200px 1fr;     /* (2) Задаём колонки*/
-            grid-template-areas: 'header header'  /* (3) Задаём названия областей*/
+            grid-template-rows: 50px 1fr 50px;    /* (1) Задаём строки */
+            grid-template-columns: 200px 1fr;     /* (2) Задаём колонки */
+            grid-template-areas: 'header header'  /* (3) Задаём названия областей */
               'nav content' 
               'footer footer'; 
           }
-            header {
+          header {
               grid-area: header;  /* Шапка займёт область с названием header */
               background: cornflowerblue;
           }
@@ -165,7 +165,7 @@ article#layouts
           | . Этот код создаёт три строки и два столбца, состоящие из именованных областей. Именовать эти области можно как угодно,
           | их названия будут указаны в дочерних элементах в свойстве 
           code grid-area
-          | . Здесь мы видим, что шапка займёт две колонки; навигация - одну, левую колонку; контент - одну правую; футер - две колонки.
+          | . Здесь мы видим, что шапка займёт две колонки; навигация &mdash; одну, левую колонку; контент &mdash; одну правую; футер &mdash; две колонки.
 
       p Таким образом, мы получили идеальную сетку для нашего сайта. Подробнее о grid layout читать здесь:
       ul
