@@ -17,7 +17,7 @@
     <title>HTML Practice</title>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600&amp;display=swap&amp;subset=cyrillic" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css">
-  <link href="styles.c4a887dbaf087c08e77c.css" rel="stylesheet"></head>
+  <link href="styles.8e35d0a142d942b631b3.css" rel="stylesheet"></head>
   <body>
     <main>
       <div class="main-menu">
@@ -704,7 +704,7 @@ git config --global user.email myEmail@example.com</pre>
 }</pre>
     <p>К следующему редизайну, когда <code>#3bff00 </code>поменяется на <code>#00ad68</code>, мы лишь изменим код цвета в <code>:root </code>, и весь проект перекрасится. Одна секунда вместо часов страданий. </p>
     <p>
-      Рекомендую называть переменные не так, как в примере. Наиболее правильными будут названия, исходя из того, где используется цвет или вообще какие-то абстрактныеназвания. Например <code>--accent, --dark-bg, --light-shadow</code>, ... </p>
+      Рекомендую называть переменные не так, как в примере. Наиболее правильными будут названия, исходя из того, где используется цвет или вообще какие-то абстрактные названия. Например <code>--accent, --primary, --frame-shadow</code>, ... </p>
     <section>
       <h3>Улучшение адаптивности</h3>
       <p>В CSS переменные можно задавать не только цвета, но и числа. А ещё мы можем изменять переменные, в зависимости от того, </p>каким устройством пользуется посетитель нашего сайта. 
@@ -1370,13 +1370,13 @@ footer {
   margin: 0 auto;
   max-width: 800px;
   display: grid;                        /* Объявляем контейнер гридом */
-  grid-template-rows: 50px 1fr 50px;    /* (1) Задаём строки*/
-  grid-template-columns: 200px 1fr;     /* (2) Задаём колонки*/
-  grid-template-areas: 'header header'  /* (3) Задаём названия областей*/
+  grid-template-rows: 50px 1fr 50px;    /* (1) Задаём строки */
+  grid-template-columns: 200px 1fr;     /* (2) Задаём колонки */
+  grid-template-areas: 'header header'  /* (3) Задаём названия областей */
     'nav content' 
     'footer footer'; 
 }
-  header {
+header {
     grid-area: header;  /* Шапка займёт область с названием header */
     background: cornflowerblue;
 }
@@ -1404,7 +1404,7 @@ footer {
         </li>
         <li>
            Итак, на этом этапе мы поняли, что у нас будет три строки и два столбца. Это и указываем далее:<code> grid-template-areas: 'header header'  'nav content'  'footer footer';</code>. Этот код создаёт три строки и два столбца, состоящие из именованных областей. Именовать эти области можно как угодно,
-          их названия будут указаны в дочерних элементах в свойстве <code>grid-area</code>. Здесь мы видим, что шапка займёт две колонки; навигация - одну, левую колонку; контент - одну правую; футер - две колонки.
+          их названия будут указаны в дочерних элементах в свойстве <code>grid-area</code>. Здесь мы видим, что шапка займёт две колонки; навигация &mdash; одну, левую колонку; контент &mdash; одну правую; футер &mdash; две колонки.
         </li>
       </ol>
       <p>Таким образом, мы получили идеальную сетку для нашего сайта. Подробнее о grid layout читать здесь:</p>
@@ -1489,7 +1489,7 @@ footer {
     <p>В этой главе мы попробуем самостоятельно создать простую систему сеток.</p>
     <section>
       <h3>Float</h3>
-      <p>Когда-то давно существовал лишь один более или менее хороший подход к проектированию сеток - сетки на флоатах.</p>
+      <p>Когда-то давно существовал лишь один более или менее хороший подход к проектированию сеток &mdash; сетки на флоатах.</p>
       <pre data-lang="html" data-code="grids-1">&lt;div class="container"&gt;
   &lt;div class="row"&gt;
     &lt;div class="col w8"&gt;
@@ -3004,5 +3004,5 @@ h2::after {
 </article>
       </div>
     </main>
-  <script type="text/javascript" src="script.c4a887dbaf087c08e77c.js"></script></body>
+  <script type="text/javascript" src="script.8e35d0a142d942b631b3.js"></script></body>
 </html>
