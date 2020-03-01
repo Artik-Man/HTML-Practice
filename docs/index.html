@@ -17,7 +17,7 @@
     <title>HTML Practice</title>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600&amp;display=swap&amp;subset=cyrillic" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css">
-  <link href="styles.8e35d0a142d942b631b3.css" rel="stylesheet"></head>
+  <link href="styles.a936d31525aba20e960c.css" rel="stylesheet"></head>
   <body>
     <main>
       <div class="main-menu">
@@ -1679,43 +1679,43 @@ footer {
       <p>Для начала, избавимся от строк. Они нам больше не нужны.</p>
       <pre data-lang="html" data-code="grids-3">&lt;div class="container"&gt;
   &lt;div class="grid g-2-1"&gt;
-    &lt;div class="ceil"&gt;
+    &lt;div class="cell"&gt;
       Ячейка
     &lt;/div&gt;
-    &lt;div class="ceil"&gt;
+    &lt;div class="cell"&gt;
       Ячейка
     &lt;/div&gt;
   &lt;/div&gt;
   &lt;div class="grid g-1-1-1"&gt;
-    &lt;div class="ceil"&gt;
+    &lt;div class="cell"&gt;
       Ячейка
     &lt;/div&gt;
-    &lt;div class="ceil"&gt;
+    &lt;div class="cell"&gt;
       Ячейка
     &lt;/div&gt;
-    &lt;div class="ceil"&gt;
+    &lt;div class="cell"&gt;
       Ячейка
     &lt;/div&gt;
   &lt;/div&gt;
   &lt;div class="grid g-1-1-1-1"&gt;
-    &lt;div class="ceil"&gt;
+    &lt;div class="cell"&gt;
       Ячейка
     &lt;/div&gt;
-    &lt;div class="ceil"&gt;
+    &lt;div class="cell"&gt;
       Ячейка &lt;br&gt; вторая строка
     &lt;/div&gt;
-    &lt;div class="ceil"&gt;
+    &lt;div class="cell"&gt;
       Ячейка
     &lt;/div&gt;
-    &lt;div class="ceil"&gt;
+    &lt;div class="cell"&gt;
       Ячейка
     &lt;/div&gt;
   &lt;/div&gt;
   &lt;div class="grid g-1-1"&gt;
-    &lt;div class="ceil"&gt;
+    &lt;div class="cell"&gt;
       Ячейка
     &lt;/div&gt;
-    &lt;div class="ceil"&gt;
+    &lt;div class="cell"&gt;
       Ячейка
     &lt;/div&gt;
   &lt;/div&gt;
@@ -1725,7 +1725,7 @@ footer {
   max-width: 800px;
   margin: 0 auto;
 }        
-.ceil {
+.cell {
   padding: 0 10px;
 }
 .grid {
@@ -1746,44 +1746,44 @@ footer {
 .grid.g-1-1-1-1 {
   grid-template-columns: repeat(4, 1fr);
 }</pre>
-      <pre data-lang="css" data-code="grids-3,grids-4" hidden>.ceil {
+      <pre data-lang="css" data-code="grids-3,grids-4" hidden>.cell {
   background: lightblue;
   padding-top: 10px !important;
   padding-bottom: 10px !important;
 }
-.ceil:nth-child(4n+1){background: cornflowerblue}
-.ceil:nth-child(4n+2){background: darkseagreen}
-.ceil:nth-child(4n+3){background: khaki}
-.ceil:nth-child(4n+4){background: darksalmon}</pre>
+.cell:nth-child(4n+1){background: cornflowerblue}
+.cell:nth-child(4n+2){background: darkseagreen}
+.cell:nth-child(4n+3){background: khaki}
+.cell:nth-child(4n+4){background: darksalmon}</pre>
       <div data-run="grids-3"></div>
       <p>
         Это совершенно иной подход к организации сеток. Как видите, здесь уже нет проблем с расстояниями между колонками, благодаря свойству <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/CSS/gap">gap</a>, кроме того, если вам нужна ровная сетка, кода станет гораздо меньше:</p>
       <pre data-lang="html" data-code="grids-4">&lt;div class="container"&gt;
-  &lt;div class="ceil"&gt;
+  &lt;div class="cell"&gt;
     Ячейка
   &lt;/div&gt;
-  &lt;div class="ceil"&gt;
+  &lt;div class="cell"&gt;
     Ячейка
   &lt;/div&gt;
-  &lt;div class="ceil"&gt;
+  &lt;div class="cell"&gt;
     Ячейка &lt;br&gt; вторая строка
   &lt;/div&gt;
-  &lt;div class="ceil"&gt;
+  &lt;div class="cell"&gt;
     Ячейка
   &lt;/div&gt;
-  &lt;div class="ceil"&gt;
+  &lt;div class="cell"&gt;
     Ячейка
   &lt;/div&gt;
-  &lt;div class="ceil"&gt;
+  &lt;div class="cell"&gt;
     Ячейка
   &lt;/div&gt;
-  &lt;div class="ceil"&gt;
+  &lt;div class="cell"&gt;
     Ячейка
   &lt;/div&gt;
-  &lt;div class="ceil"&gt;
+  &lt;div class="cell"&gt;
     Ячейка
   &lt;/div&gt;
-  &lt;div class="ceil"&gt;
+  &lt;div class="cell"&gt;
     Ячейка
   &lt;/div&gt;
 &lt;/div&gt;
@@ -1795,7 +1795,7 @@ footer {
   gap: 10px;
   grid-template-columns: repeat(3, 1fr);
 }
-.ceil {
+.cell {
   padding: 0 10px;
 }</pre>
       <div data-run="grids-4"></div>
@@ -1803,6 +1803,57 @@ footer {
       <p>Поэкспериментировать с этим примером можно здесь:</p><a class="codepen button" data-id="ExYLLqj" data-height="500">Запустить пример</a>
       <p>Кроме того, с помощью CSS Grid можно создавать вот такие необычные сетки:</p><a class="codepen button" data-id="eYOrKJY" data-height="500" data-default-tab="result">Запустить пример</a>
     </section>
+  </div>
+</article>
+<article id="media-queries">
+  <div class="container">
+    <h2>Отзывчивый дизайн и медиавыражения</h2>
+    <p>Практически любой сайт (или веб-приложение) проектируется как для компьютера, так и для мобильного телефона. На сегодняшний день мобильный трафик несколько обходит трафик персональных компьютеров, что означает, что нашей задачей, как разработчиков интерфейсов, является адаптация интерфейса как под экраны компьютеров, так и под экраны телевизоров и мобильных телефонов.</p>
+    <p>CSS содержит специальные правила, которые могут включаться в зависимости от разрешения экрана пользователя. Здесь мы рассмотрим лишь базовые примеры, но настоятельно рекомендую углубиться в эту тему.</p>
+    <p>Существует два подхода к вёрстке: desktop-first и mobile-first. Когда мы говорим о desktop-first, это означает, что сайт изначально проектируется под большой экран, а далее видоизменяется к меньшим разрешениям, подключая дополнительные правила. При использовании подхода mobile-first, сайт проектируется под экраны мобильных телефонов, а затем, если разрешение экрана позволяет, подключает дополнительные правила расположения блоков на странице, чтобы сайт перестраивался под большие экраны. Общепринятым стандартом является использование подхода mobile-first. Дело в том, что мобильные устройства считаются более слабыми, поэтому мы можем сэкономить их вычислительный ресурс, не давая включать правила для больших экранов. Пойдём от обратного. Представим, что мы используем подход desktop-first. Тогда, при открытии сайта с телефона, браузер сначала рассчитает все правила для больших экранов, затем поймет, что разрешение экрана маленькое и включит еще слой дополнительных правил. Именно в этом месте у нас и произойдет экономия. Пусть устройства с большими экранами подключают дополнительные правила, ведь почти всегда эти устройства имеют большую вычислительную мощность.</p>
+    <p>Для задания правила используется ключевое слово @media, где указывается, например, минимальная (для подхода mobile-first) ширина экрана.</p>
+    <p>Рассмотрим пример:</p>
+    <pre data-lang="css">@media(min-width: 720px) {
+  ...
+}
+</pre>
+    <p>Здесь мы видим, что если разрешение экрана больше 720 точек, мы включим дополнительные CSS-правила, позволяющие иначе расположить блоки на странице. Внутри фигурных скобок мы можем писать обычный CSS-код.</p>
+    <p>Разберём задачу. Пусть нам необходимо расположить 6 прямоугольных блоков на странице таким образом, чтобы на экране мобильного телефона они располагались друг под другом, на экране планшета мы видели по два блока на строку, а на экране компьютера — по три блока на строку.</p>
+    <p>Используем подход mobile-first. Опишем изначальный HTML:</p>
+    <pre data-lang="html">&lt;ul&gt;
+  &lt;li&gt;1&lt;/li&gt;
+  &lt;li&gt;2&lt;/li&gt;
+  &lt;li&gt;3&lt;/li&gt;
+  &lt;li&gt;4&lt;/li&gt;
+  &lt;li&gt;5&lt;/li&gt;
+  &lt;li&gt;6&lt;/li&gt;
+&lt;/ul&gt;</pre>
+    <p>И CSS:</p>
+    <pre data-lang="css">ul {
+  display: block;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+li {
+  display: block;
+  width: 100%;
+  float: left;
+}</pre>
+    <p>Теперь сделаем так, чтобы на планшетах в одной строке было два блока. Сделаем предположение, что планшеты - это устройства с экранами более 720 точек в ширину.</p>
+    <pre data-lang="css">@media(min-width: 720px) {
+  li {
+    width: 50%;
+  }
+}</pre>
+    <p>И сделаем ещё одно правило для крупных устройств:</p>
+    <pre data-lang="css">@media(min-width: 1200px) {
+  li {
+    width: 33%;
+  }
+}
+</pre>
+    <p>Таким образом мы реализовали отзывчивый список, который подстраивается под любое разрешение экранов. Проверить его работы можно ниже. Изменяйте размер примера с помощью ресайзера внизу справа или изменяйте размер окна браузера, чтобы увидеть пример в действии. </p><a class="codepen button" data-id="oNgVqXp" data-default-tab="result">Запустить пример</a>
   </div>
 </article>
 <article id="tooltip">
@@ -3004,5 +3055,5 @@ h2::after {
 </article>
       </div>
     </main>
-  <script type="text/javascript" src="script.8e35d0a142d942b631b3.js"></script></body>
+  <script type="text/javascript" src="script.a936d31525aba20e960c.js"></script></body>
 </html>
