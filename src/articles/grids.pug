@@ -210,43 +210,43 @@ article#grids
         :escape
           <div class="container">
             <div class="grid g-2-1">
-              <div class="ceil">
+              <div class="cell">
                 Ячейка
               </div>
-              <div class="ceil">
+              <div class="cell">
                 Ячейка
               </div>
             </div>
             <div class="grid g-1-1-1">
-              <div class="ceil">
+              <div class="cell">
                 Ячейка
               </div>
-              <div class="ceil">
+              <div class="cell">
                 Ячейка
               </div>
-              <div class="ceil">
+              <div class="cell">
                 Ячейка
               </div>
             </div>
             <div class="grid g-1-1-1-1">
-              <div class="ceil">
+              <div class="cell">
                 Ячейка
               </div>
-              <div class="ceil">
+              <div class="cell">
                 Ячейка <br> вторая строка
               </div>
-              <div class="ceil">
+              <div class="cell">
                 Ячейка
               </div>
-              <div class="ceil">
+              <div class="cell">
                 Ячейка
               </div>
             </div>
             <div class="grid g-1-1">
-              <div class="ceil">
+              <div class="cell">
                 Ячейка
               </div>
-              <div class="ceil">
+              <div class="cell">
                 Ячейка
               </div>
             </div>
@@ -258,7 +258,7 @@ article#grids
             max-width: 800px;
             margin: 0 auto;
           }        
-          .ceil {
+          .cell {
             padding: 0 10px;
           }
           .grid {
@@ -281,15 +281,15 @@ article#grids
           }
       pre(data-lang="css" data-code="grids-3,grids-4" hidden)
         :escape
-          .ceil {
+          .cell {
             background: lightblue;
             padding-top: 10px !important;
             padding-bottom: 10px !important;
           }
-          .ceil:nth-child(4n+1){background: cornflowerblue}
-          .ceil:nth-child(4n+2){background: darkseagreen}
-          .ceil:nth-child(4n+3){background: khaki}
-          .ceil:nth-child(4n+4){background: darksalmon}
+          .cell:nth-child(4n+1){background: cornflowerblue}
+          .cell:nth-child(4n+2){background: darkseagreen}
+          .cell:nth-child(4n+3){background: khaki}
+          .cell:nth-child(4n+4){background: darksalmon}
       div(data-run="grids-3")
       p Это совершенно иной подход к организации сеток. Как видите, здесь уже нет проблем с 
         | расстояниями между колонками, благодаря свойству 
@@ -299,31 +299,31 @@ article#grids
       pre(data-lang="html" data-code="grids-4")
         :escape
           <div class="container">
-            <div class="ceil">
+            <div class="cell">
               Ячейка
             </div>
-            <div class="ceil">
+            <div class="cell">
               Ячейка
             </div>
-            <div class="ceil">
+            <div class="cell">
               Ячейка <br> вторая строка
             </div>
-            <div class="ceil">
+            <div class="cell">
               Ячейка
             </div>
-            <div class="ceil">
+            <div class="cell">
               Ячейка
             </div>
-            <div class="ceil">
+            <div class="cell">
               Ячейка
             </div>
-            <div class="ceil">
+            <div class="cell">
               Ячейка
             </div>
-            <div class="ceil">
+            <div class="cell">
               Ячейка
             </div>
-            <div class="ceil">
+            <div class="cell">
               Ячейка
             </div>
           </div>
@@ -337,7 +337,7 @@ article#grids
             gap: 10px;
             grid-template-columns: repeat(3, 1fr);
           }
-          .ceil {
+          .cell {
             padding: 0 10px;
           }
       div(data-run="grids-4")
