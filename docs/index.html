@@ -17,7 +17,7 @@
     <title>HTML Practice</title>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600&amp;display=swap&amp;subset=cyrillic" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css">
-  <link href="styles.a936d31525aba20e960c.css" rel="stylesheet"></head>
+  <link href="styles.72fe9498cba561269215.css" rel="stylesheet"></head>
   <body>
     <main>
       <div class="main-menu">
@@ -1989,14 +1989,15 @@ a:hover {
   <div class="container">
     <h2>Выпадающее меню и дропдауны</h2>
     <p>Пользуясь интернетом, вы наверняка уже видели выпадающее меню. Это когда наводишь мышью на элемент меню и появляется подменю.</p>
+    <p>Весь секрет в том, чтобы изначально скрыть выпадающее меню, а при наступлении какого-то события (наведение мыши на какую-то кнопку), отобразить выпадающее меню.</p>
     <p>Сразу же перейдём к вёрстке. HTML предельно прост: есть меню, состоящее из четырёх элементов, а во втором элементе, помимо ссылки, есть вложенное меню.</p>
-    <pre data-lang="html" data-code="dropdown-menu">&lt;menu&gt;
+    <pre data-lang="html" data-code="dropdown-menu">&lt;nav&gt;
   &lt;li&gt;
     &lt;a&gt;Магазины&lt;/a&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;a&gt;Покупателям&lt;/a&gt;
-    &lt;menu class="dropdown"&gt;
+    &lt;ul class="dropdown"&gt;
       &lt;li&gt;
         &lt;a&gt;Бонусная программа&lt;/a&gt;
       &lt;/li&gt;
@@ -2006,7 +2007,7 @@ a:hover {
       &lt;li&gt;
         &lt;a&gt;Доставка&lt;/a&gt;
       &lt;/li&gt;
-    &lt;/menu&gt;
+    &lt;/ul&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;a&gt;Юридическим лицам&lt;/a&gt;
@@ -2014,26 +2015,26 @@ a:hover {
   &lt;li&gt;
     &lt;a&gt;Контакты&lt;/a&gt;
   &lt;/li&gt;
-&lt;/menu&gt;
+&lt;/nav&gt;
 </pre>
     <p>
       CSS тоже не слишком сложный. Фактически, все стили вертятся вокруг оформления. Единственное - применен "магический" селектор. На самом деле, никакой магии здесь нет. <code>menu li:hover .dropdown</code>означает, что при наведении курсора мыши (<code>:hover</code>), на элемент меню (<code>menu li</code>), дропдаун (<code>.dropdown</code>) получит некоторые стили, в данном случае, <code>display: block</code>.</p>
     <pre data-lang="css" data-code="dropdown-menu">* {
   box-sizing: border-box;
 }
-menu {
+nav {
   list-style: none;
   padding: 0;
   margin: 0 auto 100px;
   max-width: 800px;
   display: flex;
 }
-menu li {
+nav li {
   display: block;
   position: relative;
   width: 25%;
 }
-menu li a {
+nav li a {
   padding: 8px 16px;
   background: lightblue;
   display: inline-block;
@@ -2042,11 +2043,11 @@ menu li a {
   color: black;
   text-align: center;
 }
-menu li a:hover { 
+nav li a:hover {
   background: teal;
   color: white;
 }
-menu li:hover .dropdown { /* Магия здесь */
+nav li:hover .dropdown { /* Магия здесь */
   display: block;
 }
 
@@ -2068,11 +2069,17 @@ menu li:hover .dropdown { /* Магия здесь */
   text-align: left;
 }
 
-      <pre data-lang="css" data-code="dropdown,dropdown-menu" hidden>@media print {
+      <pre data-lang="css" data-code="dropdown,dropdown-menu" hidden>a {
+  cursor: pointer !important;
+}
+a:hover {
+  text-decoration: underline;
+}
+@media print {
   .dropdown {
     display: block !important;
   }
-  menu {
+  nav {
     margin-bottom: 250px;
   }
 }</pre></pre>
@@ -2095,12 +2102,15 @@ menu li:hover .dropdown { /* Магия здесь */
   position: relative;
   margin-bottom: 100px;
 }
+
 button:hover {
   background: lightblue;
 }
+
 *:hover &gt; .dropdown { /* при наведении на любой элемент, содержащий .dropdown ... */
   display: block;
 }
+
 .dropdown {
   display: none;
   position: absolute;
@@ -2114,6 +2124,7 @@ button:hover {
   background: white;
   min-width: 200px;
 }
+
 .dropdown li {
   display: block;
   margin-bottom: 8px;
@@ -2201,7 +2212,7 @@ button:hover {
   align-items: flex-start;
   justify-content: center;
   padding: 5vh 0 10vh;
-  /* Через JavaScript мы будем добавлять атрибут open, что должно сделать модальное окно видимым*/
+  /* Через JavaScript мы будем добавлять атрибут open, что должно сделать модальное окно видимым */
 }
 .modal[open] {
   display: flex;
@@ -2278,7 +2289,7 @@ button:hover {
   <div class="container">
     <h2>Вёрстка чекбоксов</h2>
     <p>Вёрстка почти каждой формы предполагает изменение вида стандартных чекбоксов. Изначально, они выглядят вот так: 
-      <input type="checkbox"> и редко когда вписываются в дизайн. Поэтому каждый верстальщик знает, как кастомизировать чекбоксы. Сейчас и мы научимся это делать.
+      <input type="checkbox" checked> и редко когда вписываются в дизайн. Поэтому каждый верстальщик знает, как кастомизировать чекбоксы. Сейчас и мы научимся это делать.
     </p>
     <p>
       В кратце, наша задача - использовать label со скрытым внутри чекбоксом. Дело в том, что в HTML клик по
@@ -2504,7 +2515,133 @@ button:hover {
       <h3>Знаете ли вы, что картинки можно хранить прямо в css-файле?</h3>
       <p>
         Небольшие картинки, используемые, например, в свойстве background-image, можно хранить прямо в css. Лучше всего это работает с SVG-графикой. Для того, чтобы вставить картинку в css, нам придется воспользоваться <a target="_blank" href="http://yoksel.github.io/url-encoder/ru/">простеньким энкодером</a>, который, к тому же, сразу же сгенерирует код для вставки в css. </p>
-      <p>Если же у вас растровая иконка и вы используете <a target="_blank" href="https://lesscss.ru/">LESS</a>, то обратите внимание на <a target="_blank" href="https://lesscss.ru/functions/#misc-functions-data-uri">функцию data-uri</a>, которая принимает в качестве параметра путь к файлу с картинкой, а скомпилированный css-файл уже будет содержать закодированную картинку. </p>
+      <p>Если же у вас растровая иконка и вы используете <a target="_blank" href="https://lesscss.ru/">LESS</a>, то обратите внимание на <a target="_blank" href="https://lesscss.ru/functions/#misc-functions-data-uri">функцию data-uri</a>, которая принимает в качестве параметра путь к файлу с картинкой, а скомпилированный css-файл уже будет содержать закодированную картинку.</p>
+    </section>
+    <section>
+      <h3>Знаете ли вы, что можно совмещать CSS-variables с HSL и calc?</h3>
+      <p>
+        Мы можем создавать темы для сайта, основанные на CSS-переменных. Это будет выглядеть так: все цвета мы задаём на сайте не конкретно, а абстрактно,задавая формулу, по которой в дальнейшем будет вычисляться цвет. Так изменяя всего три CSS-переменные, мы можем полностью перекрасить весь сайт.
+        Цвета можно изменять на основе времени суток на часах пользователя или же в зависимости от его особенностей зрения. Для нас главная возможность &mdash;
+        упростить с этим нашу работу. Задать три переменные проще, чем подключить огромный CSS-файл, который может содержать ошибки по сравнению с главной темой.
+      </p>
+      <p>
+        Чуть больше конкретики. Цвета в CSS можно задавать при помощи HEX-палитры (#c00), RGB-палитры (rgb(204,0,0)) и HSL-палитры (hsl(0,100%,40%)). Нас интересуетсейчас именно палитра HSL. Она позволяет задавать цвет на основе трёх составляющих: Hue, Saturation и Lightness. Hue изменяет цвет от красного до фиолетового,
+        Saturation изменяет насыщенность цвета, Lightness изменяет яркость цвета.
+      </p>
+      <pre data-lang="css" data-code="css-vars-hsl-calc">.theme-1 {
+  --primary-h: 0;
+  --primary-s: 75;
+  --primary-l: 60;
+}
+
+.theme-2 {
+  --primary-h: 200;
+  --primary-s: 100;
+  --primary-l: 65;
+}
+
+.palette {
+  --primary: hsl(
+    var(--primary-h),
+    calc(var(--primary-s) * 1%),
+    calc(var(--primary-l) * 1%)
+  );
+
+  --primary-100: hsl(
+    var(--primary-h),
+    calc(var(--primary-s) * 1.4 * 1%),
+    calc(var(--primary-l) * 1.4 * 1%)
+  );
+
+  --primary-200: hsl(
+    var(--primary-h),
+    calc(var(--primary-s) * 1.3 * 1%),
+    calc(var(--primary-l) * 1.3 * 1%)
+  );
+
+  --primary-300: hsl(
+    var(--primary-h),
+    calc(var(--primary-s) * 1.2 * 1%),
+    calc(var(--primary-l) * 1.2 * 1%)
+  );
+
+  --primary-400: hsl(
+    var(--primary-h),
+    calc(var(--primary-s) * 1.1 * 1%),
+    calc(var(--primary-l) * 1.1 * 1%)
+  );
+
+  --primary-500: var(--primary);
+
+  --primary-600: hsl(
+    var(--primary-h),
+    calc(var(--primary-s) * 0.9 * 1%),
+    calc(var(--primary-l) * 0.9 * 1%)
+  );
+
+  --primary-700: hsl(
+    var(--primary-h),
+    calc(var(--primary-s) * 0.8 * 1%),
+    calc(var(--primary-l) * 0.8 * 1%)
+  );
+
+  --primary-800: hsl(
+    var(--primary-h),
+    calc(var(--primary-s) * 0.7 * 1%),
+    calc(var(--primary-l) * 0.7 * 1%)
+  );
+
+  --primary-900: hsl(
+    var(--primary-h),
+    calc(var(--primary-s) * 0.6 * 1%),
+    calc(var(--primary-l) * 0.6 * 1%)
+  );
+}
+
+ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px;
+}
+
+ul li {
+  display: block;
+  padding: 20px;
+  margin-right: 5px;
+  color: white;
+  text-shadow: 0 0 5px black;
+}</pre>
+      <pre data-lang="html" data-code="css-vars-hsl-calc">&lt;div class="theme-1"&gt;
+  Theme 1
+  &lt;ul class="palette"&gt;
+    &lt;li style="background: var(--primary-100)"&gt;100&lt;/li&gt;
+    &lt;li style="background: var(--primary-200)"&gt;200&lt;/li&gt;
+    &lt;li style="background: var(--primary-300)"&gt;300&lt;/li&gt;
+    &lt;li style="background: var(--primary-400)"&gt;400&lt;/li&gt;
+    &lt;li style="background: var(--primary-500)"&gt;500&lt;/li&gt;
+    &lt;li style="background: var(--primary-600)"&gt;600&lt;/li&gt;
+    &lt;li style="background: var(--primary-700)"&gt;700&lt;/li&gt;
+    &lt;li style="background: var(--primary-800)"&gt;800&lt;/li&gt;
+    &lt;li style="background: var(--primary-900)"&gt;900&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="theme-2"&gt;
+  Theme 2
+  &lt;ul class="palette"&gt;
+    &lt;li style="background: var(--primary-100)"&gt;100&lt;/li&gt;
+    &lt;li style="background: var(--primary-200)"&gt;200&lt;/li&gt;
+    &lt;li style="background: var(--primary-300)"&gt;300&lt;/li&gt;
+    &lt;li style="background: var(--primary-400)"&gt;400&lt;/li&gt;
+    &lt;li style="background: var(--primary-500)"&gt;500&lt;/li&gt;
+    &lt;li style="background: var(--primary-600)"&gt;600&lt;/li&gt;
+    &lt;li style="background: var(--primary-700)"&gt;700&lt;/li&gt;
+    &lt;li style="background: var(--primary-800)"&gt;800&lt;/li&gt;
+    &lt;li style="background: var(--primary-900)"&gt;900&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+</pre>
+      <div data-run="css-vars-hsl-calc"></div>
     </section>
   </div>
 </article>
@@ -3055,5 +3192,5 @@ h2::after {
 </article>
       </div>
     </main>
-  <script type="text/javascript" src="script.a936d31525aba20e960c.js"></script></body>
+  <script type="text/javascript" src="script.72fe9498cba561269215.js"></script></body>
 </html>
