@@ -2,17 +2,18 @@ article#dropdown
   .container
     h2 Выпадающее меню и дропдауны
     p Пользуясь интернетом, вы наверняка уже видели выпадающее меню. Это когда наводишь мышью на элемент меню и появляется подменю.
+    p Весь секрет в том, чтобы изначально скрыть выпадающее меню, а при наступлении какого-то события (наведение мыши на какую-то кнопку), отобразить выпадающее меню.
     p Сразу же перейдём к вёрстке. HTML предельно прост: есть меню, состоящее из четырёх элементов, а во втором элементе, помимо ссылки, есть вложенное меню.
 
     pre(data-lang="html" data-code="dropdown-menu")
       :escape
-        <menu>
+        <nav>
           <li>
             <a>Магазины</a>
           </li>
           <li>
             <a>Покупателям</a>
-            <menu class="dropdown">
+            <ul class="dropdown">
               <li>
                 <a>Бонусная программа</a>
               </li>
@@ -22,7 +23,7 @@ article#dropdown
               <li>
                 <a>Доставка</a>
               </li>
-            </menu>
+            </ul>
           </li>
           <li>
             <a>Юридическим лицам</a>
@@ -30,7 +31,7 @@ article#dropdown
           <li>
             <a>Контакты</a>
           </li>
-        </menu>
+        </nav>
 
     p CSS тоже не слишком сложный. Фактически, все стили вертятся вокруг оформления. Единственное - применен "магический" селектор. 
       | На самом деле, никакой магии здесь нет. 
@@ -50,19 +51,19 @@ article#dropdown
         * {
           box-sizing: border-box;
         }
-        menu {
+        nav {
           list-style: none;
           padding: 0;
           margin: 0 auto 100px;
           max-width: 800px;
           display: flex;
         }
-        menu li {
+        nav li {
           display: block;
           position: relative;
           width: 25%;
         }
-        menu li a {
+        nav li a {
           padding: 8px 16px;
           background: lightblue;
           display: inline-block;
@@ -71,11 +72,11 @@ article#dropdown
           color: black;
           text-align: center;
         }
-        menu li a:hover { 
+        nav li a:hover {
           background: teal;
           color: white;
         }
-        menu li:hover .dropdown { /* Магия здесь */
+        nav li:hover .dropdown { /* Магия здесь */
           display: block;
         }
 
@@ -99,11 +100,17 @@ article#dropdown
 
       pre(data-lang="css" data-code="dropdown,dropdown-menu" hidden)
         :escape
+          a {
+            cursor: pointer !important;
+          }
+          a:hover {
+            text-decoration: underline;
+          }
           @media print {
             .dropdown {
               display: block !important;
             }
-            menu {
+            nav {
               margin-bottom: 250px;
             }
           }
@@ -133,12 +140,15 @@ article#dropdown
           position: relative;
           margin-bottom: 100px;
         }
+
         button:hover {
           background: lightblue;
         }
+
         *:hover > .dropdown { /* при наведении на любой элемент, содержащий .dropdown ... */
           display: block;
         }
+
         .dropdown {
           display: none;
           position: absolute;
@@ -152,6 +162,7 @@ article#dropdown
           background: white;
           min-width: 200px;
         }
+
         .dropdown li {
           display: block;
           margin-bottom: 8px;
