@@ -488,6 +488,64 @@ main.without-menu > .main-menu menu {
 .icon.icon-tv {
   background-image: url("data:image/svg+xml,%3Csvg aria-hidden='true' focusable='false' data-prefix='fal' data-icon='tv' role='img' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 512' class='svg-inline--fa fa-tv fa-w-20 fa-3x'%3E%3Cpath fill='currentColor' d='M592 0H48A48 48 0 0 0 0 48v320a48 48 0 0 0 48 48h256v64H136a8 8 0 0 0-8 8v16a8 8 0 0 0 8 8h368a8 8 0 0 0 8-8v-16a8 8 0 0 0-8-8H336v-64h256a48 48 0 0 0 48-48V48a48 48 0 0 0-48-48zm16 368a16 16 0 0 1-16 16H48a16 16 0 0 1-16-16V48a16 16 0 0 1 16-16h544a16 16 0 0 1 16 16z' class=''%3E%3C/path%3E%3C/svg%3E");
 }
+.scroll-down {
+  width: 24px;
+  height: 36px;
+  border: 2px solid var(--accent);
+  background-color: white;
+  padding: 4px 6px;
+  border-radius: 20px;
+  position: absolute;
+  left: calc(50% - 12px);
+  top: 90vh;
+  animation: mouse-down 2s infinite;
+}
+.scroll-down .wheel {
+  background-color: var(--accent);
+  height: 10px;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+}
+.scroll-down .wheel:before,
+.scroll-down .wheel:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: -1px;
+  left: 0;
+  right: 0;
+  border-bottom: 2px solid white;
+  opacity: 0;
+  animation: scroll-down 1.4s infinite;
+}
+.scroll-down .wheel:after {
+  animation-delay: 0.7s;
+}
+@keyframes scroll-down {
+  from {
+    transform: translateY(0);
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 1;
+  }
+  to {
+    transform: translateY(10px);
+    opacity: 0.2;
+  }
+}
+@keyframes mouse-down {
+  from {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
 
 
-/*# sourceMappingURL=styles.72fe9498cba561269215.css.map*/
+/*# sourceMappingURL=styles.e2f6dea7189f4f193b5c.css.map*/
