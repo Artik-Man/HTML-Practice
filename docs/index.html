@@ -17,7 +17,7 @@
     <title>HTML Practice</title>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600&amp;display=swap&amp;subset=cyrillic" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css">
-  <link href="styles.e2f6dea7189f4f193b5c.css" rel="stylesheet"></head>
+  <link href="styles.7b5fa89b352c7689c366.css" rel="stylesheet"></head>
   <body>
     <main>
       <div class="main-menu">
@@ -1993,7 +1993,7 @@ a:hover {
     <p>Пользуясь интернетом, вы наверняка уже видели выпадающее меню. Это когда наводишь мышью на элемент меню и появляется подменю.</p>
     <p>Весь секрет в том, чтобы изначально скрыть выпадающее меню, а при наступлении какого-то события (наведение мыши на какую-то кнопку), отобразить выпадающее меню.</p>
     <p>Сразу же перейдём к вёрстке. HTML предельно прост: есть меню, состоящее из четырёх элементов, а во втором элементе, помимо ссылки, есть вложенное меню.</p>
-    <pre data-lang="html" data-code="dropdown-menu">&lt;nav&gt;
+    <pre data-lang="html" data-code="dropdown-menu">&lt;ul&gt;
   &lt;li&gt;
     &lt;a&gt;Магазины&lt;/a&gt;
   &lt;/li&gt;
@@ -2017,26 +2017,26 @@ a:hover {
   &lt;li&gt;
     &lt;a&gt;Контакты&lt;/a&gt;
   &lt;/li&gt;
-&lt;/nav&gt;
+&lt;/ul&gt;
 </pre>
     <p>
       CSS тоже не слишком сложный. Фактически, все стили вертятся вокруг оформления. Единственное - применен "магический" селектор. На самом деле, никакой магии здесь нет. <code>menu li:hover .dropdown</code>означает, что при наведении курсора мыши (<code>:hover</code>), на элемент меню (<code>menu li</code>), дропдаун (<code>.dropdown</code>) получит некоторые стили, в данном случае, <code>display: block</code>.</p>
     <pre data-lang="css" data-code="dropdown-menu">* {
   box-sizing: border-box;
 }
-nav {
+ul {
   list-style: none;
   padding: 0;
   margin: 0 auto 100px;
   max-width: 800px;
   display: flex;
 }
-nav li {
+ul li {
   display: block;
   position: relative;
   width: 25%;
 }
-nav li a {
+ul li a {
   padding: 8px 16px;
   background: lightblue;
   display: inline-block;
@@ -2045,11 +2045,11 @@ nav li a {
   color: black;
   text-align: center;
 }
-nav li a:hover {
+ul li a:hover {
   background: teal;
   color: white;
 }
-nav li:hover .dropdown { /* Магия здесь */
+ul li:hover .dropdown { /* Магия здесь */
   display: block;
 }
 
@@ -2081,7 +2081,7 @@ a:hover {
   .dropdown {
     display: block !important;
   }
-  nav {
+  ul {
     margin-bottom: 250px;
   }
 }</pre></pre>
@@ -3263,5 +3263,5 @@ h2::after {
 </article>
       </div>
     </main>
-  <script type="text/javascript" src="script.e2f6dea7189f4f193b5c.js"></script></body>
+  <script type="text/javascript" src="script.7b5fa89b352c7689c366.js"></script></body>
 </html>
