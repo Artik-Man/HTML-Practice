@@ -9,74 +9,77 @@ article#pseudo
     p Псевдоклассы представляют собой ключевое слово, начинающееся с двоеточия (:), которое добавляют после селектора: 
     pre(data-lang="css") selector:pseudo-class { ... }
     p Ниже приведён список наиболее популярных псевдоклассов
-    ul 
+    ul
       li
         a(target="_blank" href="https://developer.mozilla.org/ru/docs/Web/CSS/:hover") :hover
-        br 
+        br
         | Срабатывает при наведении курсора на элемент
 
       li
         a(target="_blank" href="https://developer.mozilla.org/ru/docs/Web/CSS/:visited") :visited
-        br 
+        br
         | Позволяет выбрать посещённые ссылки 
 
       li
         a(target="_blank" href="https://developer.mozilla.org/ru/docs/Web/CSS/:active") :active
-        br 
+        br
         | Срабатывает при нажатии на элемент, но может быть применим только к элементам 
         code &lt;a&gt;
-        | и 
+        |  и
         code &lt;button&gt; 
 
       li
         a(target="_blank" href="https://developer.mozilla.org/ru/docs/Web/CSS/:focus") :focus
-        br 
+        br
         | Срабатывает при получении элементом фокуса. Работает только для элементов 
         code &lt;a&gt;
+        | ,
         code &lt;button&gt;
+        | ,
         code &lt;input&gt;
+        | ,
         code &lt;textarea&gt;
 
       li
         a(target="_blank" href="https://developer.mozilla.org/ru/docs/Web/CSS/:checked") :checked
-        br 
+        br
         | Срабатывает для элемента 
         code &lt;input type="checkbox"&gt; 
-        | или 
-        code &lt;input type="radio"&gt; 
+        |   или
+        code  &lt;input type="radio"&gt;
         | . Позволяет применять стили в том случае, если на элементе стоит отметка  
 
       li
         a(target="_blank" href="https://developer.mozilla.org/ru/docs/Web/CSS/:disabled") :disabled
-        br 
+        br
         | Срабатывает, если элемент имеет атрибут 
         code disabled
-        |, к примеру, элемент  
+        | , к примеру, элемент
         code &lt;input type="..." disabled&gt; 
         | или 
         code &lt;button disabled&gt; 
 
       li
         a(target="_blank" href="https://developer.mozilla.org/ru/docs/Web/CSS/:required") :required
-        br 
+        br
         | Срабатывает, если элемент имеет атрибут  
         code required
-        |, всегда для элемента  
+        | , всегда для элемента
         code &lt;input required&gt;
 
       li
         a(target="_blank" href="https://developer.mozilla.org/ru/docs/Web/CSS/:first-child") :first-child
-        br 
+        br
         | Позволяет выбрать первый элемент в своем родителе
 
       li
         a(target="_blank" href="https://developer.mozilla.org/ru/docs/Web/CSS/:last-child") :last-child
-        br 
+        br
         | Позволяет выбрать последний элемент в своем родителе
 
       li
         a(target="_blank" href="https://developer.mozilla.org/ru/docs/Web/CSS/:nth-child") :nth-child
-        br 
+        br
         | Позволяет выбирать один или более элементов, основываясь на их позиции среди группы соседних элементов. 
         br
         b Примеры:
@@ -91,13 +94,13 @@ article#pseudo
         | Выберет 1,4,7,9 ... и так далее, через два элементы. 
       li
         a(target="_blank" href="https://developer.mozilla.org/ru/docs/Web/CSS/:nth-last-child") :nth-last-child
-        br 
+        br
         | Точно так же, но счёт идёт с последнего элемента к первому. К примеру, для выбора предпоследнего элемента списка:
         code ul li:nth-last-child(2)
 
       li
         a(target="_blank" href="https://developer.mozilla.org/ru/docs/Web/CSS/:not") :not()
-        br 
+        br
         | "НЕ". Это функция, принимающая селектор внутрь скобок. К примеру, нам нужно найти все ссылки, у которых нет атрибута 
         code target
         | :
@@ -124,7 +127,7 @@ article#pseudo
         | Создаёт псевдоэлемент, который будет являться первым потомком элемента. Не работает без свойства 
         code content: '';
         br
-        code 
+        code
           | a::before{
           |   content: '♥';
           | }
