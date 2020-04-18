@@ -37,7 +37,6 @@ module.exports = {
           {
             loader: 'pug-loader',
             options: {
-              pretty: true,
               filters: {
                 escape: code => {
                   return code.replace(/\</g, '&lt;').replace(/\>/g, '&gt;');
