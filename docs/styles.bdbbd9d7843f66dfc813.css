@@ -146,7 +146,7 @@ pre:before {
 }
 code {
   background: aliceblue;
-  margin: 0 8px;
+  margin: 0 0 0 8px;
   font-size: 14px;
   display: inline-block;
 }
@@ -548,4 +548,4 @@ main.without-menu > .main-menu menu {
 }
 
 
-/*# sourceMappingURL=styles.7b5fa89b352c7689c366.css.map*/
+/*# sourceMappingURL=styles.bdbbd9d7843f66dfc813.css.map*/
