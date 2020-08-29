@@ -499,6 +499,7 @@ main.without-menu > .main-menu menu {
   left: calc(50% - 12px);
   top: 90vh;
   animation: mouse-down 2s infinite;
+  content-visibility: auto;
 }
 .scroll-down .wheel {
   background-color: var(--accent);
@@ -548,4 +549,4 @@ main.without-menu > .main-menu menu {
 }
 
 
-/*# sourceMappingURL=styles.79b3ba53dd661087a95f.css.map*/
+/*# sourceMappingURL=styles.2f67e9c0d3cd9d9d3ef3.css.map*/
