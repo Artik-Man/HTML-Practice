@@ -1,0 +1,109 @@
+{
+  "contents": [
+    {
+      "title": "Введение",
+      "id": "introduction"
+    },
+    {
+      "title": "Кратко о GIT",
+      "id": "git"
+    },
+    {
+      "title": "Единицы измерения в CSS",
+      "id": "units"
+    },
+    {
+      "title": "Форматирование текста",
+      "id": "fonts"
+    },
+    {
+      "title": "Многоколоночный текст",
+      "id": "column-count"
+    },
+    {
+      "title": "Свойство display",
+      "id": "display"
+    },
+    {
+      "title": "Блочная модель и box-sizing",
+      "id": "box-sizing"
+    },
+    {
+      "title": "Позиционирование",
+      "id": "position"
+    },
+    {
+      "title": "Псевдоклассы и псевдоэлементы",
+      "id": "pseudo"
+    },
+    {
+      "title": "Картинка в тексте",
+      "id": "image"
+    },
+    {
+      "title": "CSS переменные",
+      "id": "css-variables"
+    },
+    {
+      "title": "Выравнивание блока по центру",
+      "id": "margin-0-auto"
+    },
+    {
+      "title": "Самый правильный способ разнести блоки в разные стороны",
+      "id": "flex"
+    },
+    {
+      "title": "Горизонтальное и вертикальное центрирование блока",
+      "id": "relative-absolute"
+    },
+    {
+      "title": "Многоколоночные макеты",
+      "id": "layouts"
+    },
+    {
+      "title": "Сетки",
+      "id": "grids"
+    },
+    {
+      "title": "Отзывчивый дизайн и медиавыражения",
+      "id": "media-queries"
+    },
+    {
+      "title": "Градиенты, тени и фильтры",
+      "id": "gradients-shadows-filters"
+    },
+    {
+      "title": "Трансформации",
+      "id": "transforms"
+    },
+    {
+      "title": "Вёрстка тултипов",
+      "id": "tooltip"
+    },
+    {
+      "title": "Выпадающее меню и дропдауны",
+      "id": "dropdown"
+    },
+    {
+      "title": "Вёрстка модальных окон",
+      "id": "modals"
+    },
+    {
+      "title": "Вёрстка чекбоксов",
+      "id": "custom-checkbox"
+    },
+    {
+      "title": "Audio и Video",
+      "id": "audio-video"
+    },
+    {
+      "title": "Знаете ли вы?",
+      "id": "do-u-know"
+    },
+    {
+      "title": "Практика",
+      "id": "practice"
+    }
+  ]
+}
+

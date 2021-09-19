@@ -1,0 +1,27 @@
+<article id="transforms"><h2>Трансформации</h2><p>Существует несколько базовых трансформаций:</p><ul><li><code>rotate(45deg)</code>&nbsp; позволяет вращать элемент.</li><li><code>scale(2)</code>&nbsp; масштабирует элемент. Может принимать два параметра, позволяя растягивать элемент или даже отражать его.</li><li><code>skew(10deg, 10deg)</code>&nbsp; наклоняет элемент в одной или двух плоскостях.</li><li><code>translate(10px, 20px)</code>&nbsp; сдвигает элемент по одной или двум осям.</li><li><code>matrix(...)</code>&nbsp; трансформирует элемент согласно &nbsp;<a href="http://htmlbook.ru/blog/matritsa-preobrazovanii" target="_blank">матрице преобразований</a></li></ul><p>Есть и другие виды трансформаций. О них рекомендую почитать здесь: &nbsp;<a href="https://developer.mozilla.org/ru/docs/Web/CSS/CSS_Transforms" target="_blank">MDN: CSS Transforms</a></p><p>Вы можете комбинировать несколько трансформаций. К примеру, можно одновременно сдвинуть и повернуть элемент. ВАЖНО: порядок трансформаций играет роль.</p><pre data-lang="css" data-code="transform1,transform2" hidden="hidden">.figure {
+  font-size: 12px;
+  width: 50px;
+  height: 50px;
+  background: var(--accent);
+  color: var(--white-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 100px;
+  top: 20px;
+}
+
+.border {
+  border: 1px dashed var(--grey);
+  background: transparent;
+}
+
+</pre><pre data-lang="html" data-code="transform1,transform2" hidden="hidden">&lt;div class="figure border"&gt;&lt;/div&gt;
+&lt;div class="figure transform"&gt;ABCD&lt;/div&gt;
+</pre><pre data-lang="css" data-code="transform1">.transform {
+  transform: translate(0px, 100px) rotate(45deg);
+}
+</pre><div data-run="transform1" data-height="200px"></div><pre data-lang="css" data-code="transform2">.transform {
+  transform: rotate(45deg) translate(0px, 100px);
+}</pre><div data-run="transform2" data-height="200px"></div><p>Обратите внимание, что в первом случае фигура была сначала сдвинута на 100px вниз, а затем повёрнута на 45 градусов, а во втором случае &mdash; сначала повёрнута на 45 градусов, а затем сдвинута вниз (относительно своего текущего положения в пространстве; то есть "низом" считается низ самой фигуры).</p></article>

@@ -1,0 +1,29 @@
+{% extends "./templates/_main.njk" %}
+
+{% block base %}
+  <base href="./">
+{% endblock base %}
+{% block nav %}
+  <div></div>
+{% endblock nav %}
+{% block main %}
+  <h1>
+    <a class="logo" href="https://artik-man.github.io/HTML-Practice/">
+      <span class="top">HTML</span>
+      <span class="bottom">Practice</span>
+    </a>
+  </h1>
+  <p>Автор: <a href="//artik.me" target="_blank">Artik Man</a></p>
+  <p><a href="./full">К одностраничной версии</a></p>
+
+  <section id="contents">
+    <h2>Содержание</h2>
+    <ul>
+      {% for article in contents %}
+        <li><a href="./articles/{{ article.id }}">{{ article.title }}</a></li>
+      {% endfor %}
+    </ul>
+  </section>
+
+{% endblock %}
+

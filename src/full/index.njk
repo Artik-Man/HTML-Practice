@@ -1,0 +1,51 @@
+{% extends "../templates/_main.njk" %}
+
+{% block base %}
+  <base href="../">
+{% endblock base %}
+
+{% block nav %}
+  <nav style="margin-top: 220vh">
+    <ul>
+      {% for article in contents %}
+        <li><a href="./full/#{{ article.id }}">{{ article.title }}</a></li>
+      {% endfor %}
+    </ul>
+  </nav>
+{% endblock nav %}
+
+{% block main %}
+  <h1 class="fullpage">
+    <a class="logo" href="https://artik-man.github.io/HTML-Practice/">
+      <span class="top">HTML</span>
+      <span class="bottom">Practice</span>
+    </a>
+    <span class="scroll-down" aria-hidden="true">
+      <span class="wheel"></span>
+    </span>
+  </h1>
+
+  <p>Автор: <a href="//artik.me" target="_blank">Artik Man</a></p>
+  <p><a href="./index.html">К многостраничной версии</a></p>
+
+  {% set contents = loadJson('src/index.json').contents %}
+
+  <section id="contents">
+    <h2>Содержание</h2>
+    <ul>
+      {% for article in contents %}
+        <li><a href="./full/#{{ article.id }}">{{ article.title }}</a></li>
+      {% endfor %}
+    </ul>
+  </section>
+
+
+  {% for article in contents %}
+    {% include ("../articles/"+article.id+"/_index.njk") %}
+  {% endfor %}
+
+
+{% endblock %}
+
+
+

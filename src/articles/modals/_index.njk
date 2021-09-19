@@ -1,0 +1,119 @@
+<article id="modals"><h2>Вёрстка модальных окон</h2><p>Практически каждый сайт использует модальные окна для различных целей: отображение уведомлений, подтверждение действий, сбор информации и прочее. В этой главе мы рассмотрим два способа отображения модальных окон: новый и универсальный.</p><h3>Новые модальные окна</h3><p>Новые модальные окна имеют очень простой синтаксис HTML:</p><pre data-lang="html">&lt;dialog open&gt;Это модальное окно&lt;/dialog&gt;
+</pre><p>Для отображения модального окна, необходимо добавить атрибут<code>open</code></p><p>К сожалению, обойтись совсем без JavaScript здесь невозможно, поэтому далее я приведу пример кода, который минимизирует ваше взаимодействие с JavaScript.Мы можем использовать DATA-атрибуты для задания идентификатора модального окна, которое будет перехватываться JavaScript. Работать с этим просто:</p><pre data-lang="html">&lt;dialog data-modal="my-first-modal"&gt;
+  &lt;button class="close"&gt;&times;&lt;/button&gt;
+&lt;/dialog&gt;
+
+&lt;button data-modal-open="my-first-modal"&gt;Показать модальное окно&lt;/button&gt;
+</pre><p>Здесь, в атрибуте<code>data-modal</code>, мы задаем идентификатор модального окна. А далее, в кнопке, позволяющей показать модальное окно, используя атрибут<code>data-modal-open</code>, мы говорим, что эта кнопка показывает модальное окно с нашим идентификатором.</p><p>Простое решение может выглядеть примерно так:</p><a class="codepen button" data-id="RwwxdOq" data-height="500" data-default-tab="result">Запустить пример</a><h4>Стилизация</h4><p>Модальное окно, открытое с помощью<code>dialog.openModal()</code>, имеет псевдоэлемент<code>::backdrop</code>. Этот элемент является подложкой под модальным окном и растянут на весь экран. Обычно этот элемент красят в прозрачно-чёрный цвет и добавляют к нему<a target="_blank" href="https://developer.mozilla.org/ru/docs/Web/CSS/backdrop-filter">backdrop-filter</a>. Этот набор фильтров позволяет, например, размыть всю страницу кроме модального окна для создания акцента на окно.</p><p>Кроме того, можно добавить эффект появления модального окна. Для этого можно добавить немного CSS-кода:</p><pre data-lang="css">dialog {
+  animation: fadeIn 250ms ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}</pre><p>Этот код позволит модальному окну плавно появляться на экране.</p><p>Рассмотренный выше способ в 2019 году работает далеко не во всех браузерах. Поддержку этого способа браузерами можно посмотреть здесь:<a target="_blank" href="https://caniuse.com/#feat=dialog">Can i use Dialog element?</a></p><h3>Универсальные модальные окна</h3><p>Что делать, если нужно поддерживать большее количество браузеров? Выход один - использовать старые методы. Код будет не так изящен, зато работать будет везде.</p><pre data-lang="html">&lt;button data-modal-open="hello-world"&gt;Открыть модальное окно&lt;/button&gt;
+
+&lt;div class="modal" data-modal="hello-world"&gt;
+  &lt;div class="dialog"&gt;
+    &lt;button class="dialog-close" aria-label="Close modal"&gt;&lt;/button&gt;
+    &lt;section class="dialog-content"&gt;
+
+      &lt;h2&gt;Модальное окно&lt;/h2&gt;
+      &lt;p&gt;Какой-то контент&lt;/p&gt;
+
+    &lt;/section&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre><p>Конечно же, придётся добавить много стилей:</p><pre data-lang="css">.modal {
+  /* Подложка будет занимать 100% площади экрана*/
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 1000;
+  /* Скрываем подложку с модальным окном*/
+  display: none;
+  /* Overflow позволит нам скроллить модальное окно, если контента в нём будет больше, чем может поместиться на экране */
+  overflow-y: auto;
+  /* Цвет подложки */
+  background: rgba(0, 0, 0, 0.8);
+  /* Размытие фона */
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  /* Анимация появления */
+  animation: fadeIn 250ms ease-in-out;
+  /* Добавляем дополнительные стили */
+  align-items: flex-start;
+  justify-content: center;
+  padding: 5vh 0 10vh;
+  /* Через JavaScript мы будем добавлять атрибут open, что должно сделать модальное окно видимым */
+}
+.modal[open] {
+  display: flex;
+}
+.modal .dialog {
+  /* Стилизуем само модальное окно */
+  width: 100%;
+  max-width: 960px;
+  min-height: 100px;
+  border-radius: 4px;
+  position: relative;
+  border: none;
+  color: white;
+  font-weight: 300;
+}
+.modal .dialog .dialog-close {
+  /* Стилизуем кнопку закрытия модального окна */
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 3em;
+  height: 3em;
+  background: none;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+.modal .dialog .dialog-close::before,
+.modal .dialog .dialog-close::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  right: 5px;
+  left: 5px;
+  border-bottom: 1px solid white;
+  transform: rotate(45deg);
+}
+.modal .dialog .dialog-close::after {
+  transform: rotate(-45deg);
+}
+.modal .dialog .dialog-close:focus::before,
+.modal .dialog .dialog-close:hover::before,
+.modal .dialog .dialog-close:focus::after,
+.modal .dialog .dialog-close:hover::after {
+  border-color: tomato;
+}
+.modal .dialog .dialog-content {
+  /* Дополнительные стили для контента*/
+  padding: 2em;
+  background-color: rgba(0, 0, 0, 0.6);
+  border: none;
+}
+/* Анимация появления*/
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}</pre><p>Далее сложно: JavaScript. Чтобы уменьшить количество вашего взаимодействия с JavaScript, был снова сделан модуль, работающий через DATA-атрибуты.Всё, как и в предыдущий раз. С ним можно ознакомиться в коде примера:</p><a class="codepen button" data-id="qBBpGNe" data-height="500" data-default-tab="result">Запустить пример</a><h3>Не изобретай велосипед</h3><p>Часто, лучшим способом является не создание собственного "велосипеда", а использование уже готового продукта. Модальные окна здесь не исключение.Можно просто найти хороший модуль модальных окон, прочитать к нему документацию и использовать его.
+Тогда практически не придется задумываться насчёт JavaScript и вёрстки окна.
+Примером могут послужить<a target="_blank" href="https://robinparisi.github.io/tingle/">Tingle</a>или<a target="_blank" href="https://micromodal.now.sh/">Micromodal</a>.</p></article>
