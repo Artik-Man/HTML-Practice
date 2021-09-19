@@ -26,7 +26,10 @@
     "esbuild": "^0.12.28",
     "node-sass": "^6.0.1",
     "nunjucks": "^3.2.3",
-    "sass": "^1.41.1"
+    "sass": "^1.41.1",
+    "@types/prismjs": "^1.16.6"
   },
-  "dependencies": {}
+  "dependencies": {
+    "prismjs": "^1.25.0"
+  }
 }

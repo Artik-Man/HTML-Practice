@@ -1,22 +1,40 @@
-<article id="margin-0-auto"><h2>Выравнивание блока по центру</h2><p>Этот фокус позволяет центрировать блок заранее определённой ширины, независимо от ширины экрана. Кроме
-того, если использовать max-width вместо width, то, даже если размер экрана пользователя окажется меньше
-ширины этого блока, то блок не выйдет за границы экрана, а будет равен ширине экрана. Это весьма
-распространенная практика</p><h3>Пример:</h3></article><div data-run="auto-margin-1"><p>Код:</p><pre data-lang="html" data-code="auto-margin-1">&lt;div class="block"&gt;&lt;/div&gt;
-</pre><pre data-lang="css" data-code="auto-margin-1">.block {
+<section id="margin-0-auto">
+  <h2>Выравнивание блока по центру</h2>
+  <p>Этот фокус позволяет центрировать блок заранее определённой ширины, независимо от ширины экрана. Кроме
+    того, если использовать max-width вместо width, то, даже если размер экрана пользователя окажется меньше
+    ширины этого блока, то блок не выйдет за границы экрана, а будет равен ширине экрана. Это весьма
+    распространенная практика</p>
+  <h3>Пример:</h3>
+
+  <div data-run="auto-margin-1"></div>
+  <p>Код:</p>
+  <pre data-lang="html" data-code="auto-margin-1">&lt;div class="block"&gt;&lt;/div&gt;</pre>
+  <pre data-lang="css" data-code="auto-margin-1">
+.block {
   max-width: 500px;
   margin: 0 auto; /* центрирует блок так, что правый и левый маргин становятся одинаковыми */
-}</pre><pre data-lang="css" data-code="auto-margin-1" hidden="hidden">.block {
+}
+  </pre>
+  <pre data-lang="css" data-code="auto-margin-1" hidden="hidden">
+.block {
   height: 110px;
   background: teal;
 }
-
-</pre><h3>Задача</h3><p>Сделать шапку для сайта avito.ru. Серый фон шапки должен быть растянут на всю страницу, а элементы меню должны быть в центре, не зависимо от ширины экрана пользователя</p></div><div data-run="auto-margin-2"></div><pre data-lang="html" data-code="auto-margin-2" hidden="hidden">&lt;div class="sol1"&gt;
+</pre>
+  <h3>Задача</h3>
+  <p>Сделать шапку для сайта avito.ru. Серый фон шапки должен быть растянут на всю страницу, а элементы меню должны
+    быть в центре, не зависимо от ширины экрана пользователя</p>
+  <div data-run="auto-margin-2"></div>
+  <pre data-lang="html" data-code="auto-margin-2" hidden>
+&lt;div class="sol1"&gt;
   &lt;div class="content"&gt;
     &lt;div class="left"&gt;&lt;a href="#"&gt;Объявления&lt;/a&gt;&lt;a href="#"&gt;Магазины&lt;/a&gt;&lt;a href="#"&gt;Бизнес&lt;/a&gt;&lt;a href="#"&gt;Помощь&lt;/a&gt;&lt;/div&gt;
     &lt;div class="right"&gt;&lt;a class="primary" href="#"&gt;Вход и регистрация&lt;/a&gt;&lt;a class="button primary" href="#"&gt;Подать объявление&lt;/a&gt;&lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;
-</pre><pre data-lang="css" data-code="auto-margin-2" hidden="hidden">.sol1 {
+</pre>
+  <pre data-lang="css" data-code="auto-margin-2" hidden>
+.sol1 {
   background-color: #f7f7f7;
   font-size: 14px;
   border-bottom: 1px solid #d8d8d8;
@@ -108,3 +126,4 @@
     padding: 0.6vw 1.5vw;
   }
 }</pre>
+</section>

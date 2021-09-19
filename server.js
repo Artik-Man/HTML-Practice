@@ -96,7 +96,9 @@ export class Builder {
         if (errWriteFile) {
           console.error(`Something wrong with writing file ${filePath}`, errWriteFile);
         } else {
-          console.log(`Successful compiling: ${filePath}`);
+          if (config.logLevel === "debug") {
+            console.log(`Successful compiling: ${filePath}`);
+          }
         }
       })
     })
@@ -248,12 +250,13 @@ const config = {
     source: 'src',
     destination: 'docs',
     assets: ['src/assets'],
-    exclude: ['src/templates', 'src/styles']
+    exclude: ['src/templates', 'src/styles', 'src/scripts']
   },
   // logLevel: 'debug',
   nunjucks: {
     autoescape: true,
     trimBlocks: true,
+    noCache: true,
     globals: {
       loadJson: (path) => {
         return JSON.parse(readFileSync(resolve(path), "utf8"))

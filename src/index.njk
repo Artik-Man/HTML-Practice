@@ -4,7 +4,7 @@
   <base href="./">
 {% endblock base %}
 {% block nav %}
-  <div></div>
+  <nav></nav>
 {% endblock nav %}
 {% block main %}
   <h1>
@@ -13,8 +13,10 @@
       <span class="bottom">Practice</span>
     </a>
   </h1>
-  <p>Автор: <a href="//artik.me" target="_blank">Artik Man</a></p>
-  <p><a href="./full">К одностраничной версии</a></p>
+  <div class="flex">
+    <p><a href="./full">К одностраничной версии</a>
+    <p>Автор: <a href="//artik.me" target="_blank">Artik Man</a></p>
+  </div>
 
   <section id="contents">
     <h2>Содержание</h2>
@@ -22,6 +24,17 @@
       {% for article in contents %}
         <li><a href="./articles/{{ article.id }}">{{ article.title }}</a></li>
       {% endfor %}
+    </ul>
+    <p>В будущем появятся следующие главы:</p>
+    <ul>
+      <li>SVG</li>
+      <li>Вёрстка форм</li>
+      <li>Трансформации</li>
+      <li>Анимации</li>
+      <li>Поговорим о семантике</li>
+      <li>Bootstrap</li>
+      <li>Препроцессоры</li>
+      <li>meta и open graph</li>
     </ul>
   </section>
 

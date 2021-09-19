@@ -1,4 +1,4 @@
-<article id="grids"><h2>Сетки</h2><p>Сетки нужны для того, чтобы правильно расположить содержимое на странице.Обычно, системы сеток состоят из контейнеров (container), рядов (row) и колонок (col).
+<section id="grids"><h2>Сетки</h2><p>Сетки нужны для того, чтобы правильно расположить содержимое на странице.Обычно, системы сеток состоят из контейнеров (container), рядов (row) и колонок (col).
 Распространённой практикой являются двеннадцати-колоночные сетки.
 Наиболее известная система сеток среди верстальщиков - это<a target="_blank" href="https://bootstrap-4.ru/docs/4.3.1/layout/grid/">Bootstrap Grid layout</a></p><p>В этой главе мы попробуем самостоятельно создать простую систему сеток.</p><section><h3>Float</h3><p>Когда-то давно существовал лишь один более или менее хороший подход к проектированию сеток &mdash; сетки на флоатах.</p><pre data-lang="html" data-code="grids-1">&lt;div class="container"&gt;
   &lt;div class="row"&gt;
@@ -240,7 +240,7 @@
 .cell:nth-child(4n+1){background: cornflowerblue}
 .cell:nth-child(4n+2){background: darkseagreen}
 .cell:nth-child(4n+3){background: khaki}
-.cell:nth-child(4n+4){background: darksalmon}</pre><div data-run="grids-3"></div><p>Это совершенно иной подход к организации сеток. Как видите, здесь уже нет проблем с расстояниями между колонками, благодаря свойству <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/CSS/gap">gap</a>, кроме того, если вам нужна ровная сетка, кода станет гораздо меньше:</p></pre></section></article><pre data-lang="html" data-code="grids-4">&lt;div class="container"&gt;
+.cell:nth-child(4n+4){background: darksalmon}</pre><div data-run="grids-3"></div><p>Это совершенно иной подход к организации сеток. Как видите, здесь уже нет проблем с расстояниями между колонками, благодаря свойству <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/CSS/gap">gap</a>, кроме того, если вам нужна ровная сетка, кода станет гораздо меньше:</p></pre></section></section><pre data-lang="html" data-code="grids-4">&lt;div class="container"&gt;
   &lt;div class="cell"&gt;
     Ячейка
   &lt;/div&gt;

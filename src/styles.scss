@@ -1,3 +1,4 @@
+@import '../node_modules/prismjs/themes/prism';
 @import "src/styles/typography";
 @import "src/styles/code";
 @import "src/styles/nav";
@@ -137,6 +138,11 @@ h1 {
   }
 }
 
+.flex {
+  display: flex;
+  justify-content: space-between;
+}
+
 .switch {
   display: flex;
 
@@ -176,7 +182,7 @@ h1 {
 
 main {
   flex: 1;
-  @media (min-width: 1300px) {
+  @media (min-width: 1600px) {
     padding-right: var(--menu-width);
   }
 }

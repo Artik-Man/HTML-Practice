@@ -1,24 +1,49 @@
 import { articlesObserver } from "./scripts/articlesObserver";
+import { highlight } from "./scripts/highlight";
+import { initCodePen } from "./scripts/initCodePen";
+import { initInternalCode } from "./scripts/initInternalCode";
+import { runCode } from "./scripts/runCode";
+import { initYoutube } from "./scripts/initYouTube";
 
 const mainMenu = document.querySelector('nav');
 
-
-articlesObserver(entries => {
-  entries.forEach(entry => {
-    const article: HTMLElement = entry.target as HTMLElement;
-    const activeMenuItem = mainMenu.querySelector(`[href$="#${ article.id }"]`);
-
-    if (entry.intersectionRatio > 0) {
-      activeMenuItem?.classList.add('active');
-      if (document.location.hash !== '#' + article.id) {
-        history.pushState(null, null, `${ location.pathname }#${ article.id }`);
+if (location.pathname.indexOf('/articles') === 0) {
+  const path = location.pathname.split('/').filter(x => !!x);
+  const articleId = path[path.length - 1];
+  document.querySelector(`nav [href$="${ articleId }"]`)?.classList.add('active');
+} else {
+  articlesObserver(entries => {
+    entries.forEach(entry => {
+      const article: HTMLElement = entry.target as HTMLElement;
+      const activeMenuItem = mainMenu.querySelector(`[href$="${ article.id }"]`);
+      if (entry.intersectionRatio > 0) {
+        activeMenuItem?.classList.add('active');
+        if (document.location.hash !== '#' + article.id) {
+          history.pushState(null, null, `${ location.pathname }#${ article.id }`);
+        }
+      } else {
+        activeMenuItem?.classList.remove('active');
       }
-    } else {
-      activeMenuItem?.classList.remove('active');
+    });
+  });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const imports = [
+    runCode,
+    highlight,
+    initYoutube,
+    initCodePen,
+    initInternalCode
+  ];
+  imports.forEach(fn => {
+    try {
+      fn();
+    } catch (e) {
+      console.warn(e);
     }
   });
 });
-
 
 (() => {
   if (location.hostname !== 'localhost') {

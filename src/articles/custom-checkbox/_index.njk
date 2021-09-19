@@ -1,7 +1,28 @@
-<article id="custom-checkbox"><h2>Вёрстка чекбоксов</h2><p>Вёрстка почти каждой формы предполагает изменение вида стандартных чекбоксов. Изначально, они выглядят вот так:<input type="checkbox" checked="checked"/> и редко когда вписываются в дизайн. Поэтому каждый верстальщик знает, как кастомизировать чекбоксы. Сейчас и мы научимся это делать.</p><p>В кратце, наша задача - использовать label со скрытым внутри чекбоксом. Дело в том, что в HTML клик по
-label переадресует его на внутенний элемент input. Кроме того, label можно использовать с атрибутом for,
-значением которого выступает id элемента input, находящегося снаружи нашего label, но применения этой
-конструкции я нашел лишь пару раз в своей практике.</p><p><a href="http://htmlbook.ru/html/label" target="_blank">Немного подробнее о label можно почитать здесь</a></p><p>В этом видео Вадим Макеев подробно рассказывает об этой технике вёрстки чекбокса:</p><div class="youtube" data-video="E6kLaaQFctU"></div><section><h3>Пример:</h3><div data-run="custom-checkbox"></div><p>Код:</p><pre data-lang="html" data-code="custom-checkbox">&lt;p&gt;
+<section id="custom-checkbox">
+  <h2>Вёрстка чекбоксов</h2>
+  <p>Вёрстка почти каждой формы предполагает изменение вида стандартных чекбоксов. Изначально, они выглядят вот так:
+    <input type="checkbox" checked="checked"/>
+    и редко когда вписываются в дизайн. Поэтому каждый верстальщик знает, как кастомизировать чекбоксы. Сейчас и мы
+    научимся это делать.
+  </p>
+  <p>
+    В кратце, наша задача - использовать label со скрытым внутри чекбоксом. Дело в том, что в HTML клик по
+    label переадресует его на внутенний элемент input. Кроме того, label можно использовать с атрибутом for,
+    значением которого выступает id элемента input, находящегося снаружи нашего label, но применения этой
+    конструкции я нашел лишь пару раз в своей практике.
+  </p>
+  <p>
+    <a href="http://htmlbook.ru/html/label" target="_blank">Немного подробнее о label можно почитать здесь</a>
+  </p>
+  <p>
+    В этом видео Вадим Макеев подробно рассказывает об этой технике вёрстки чекбокса:
+  </p>
+  <div class="youtube" data-video="E6kLaaQFctU"></div>
+  <section>
+    <h3>Пример:</h3>
+    <div data-run="custom-checkbox"></div>
+    <p>Код:</p>
+    <pre data-lang="html" data-code="custom-checkbox">&lt;p&gt;
   &lt;label class="custom-checkbox"&gt;
     &lt;input class="visually-hidden" type="checkbox"&gt;&lt;span class="checker"&gt;&lt;/span&gt;Checkbox
   &lt;/label&gt;
@@ -15,7 +36,8 @@ label переадресует его на внутенний элемент inp
     &lt;input class="visually-hidden" type="checkbox" checked disabled&gt;&lt;span class="checker"&gt;&lt;/span&gt;Checked disabled
   &lt;/label&gt;
 &lt;/p&gt;
-</pre><pre data-lang="css" data-code="custom-checkbox,custom-checkbox-gmail">.custom-checkbox {
+</pre>
+    <pre data-lang="css" data-code="custom-checkbox,custom-checkbox-gmail">.custom-checkbox {
   /* Контейнер должен быть релятивным, так как внутри него мы разместим два абсолютно спозиционированных элемента */
   position: relative;
   /* скрываем элементы, попадающие за границы label */
@@ -94,7 +116,17 @@ label переадресует его на внутенний элемент inp
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
-</pre><p>Подробнее о visually-hidden можно почитать здесь:<a href="https://allyjs.io/tutorials/hiding-elements.html#how-to-hide-elements-visually" target="_blank">How to hide elements visually</a></p></section><section><h3>Задача</h3><p>Сверстать чекбоксы как в gmail.</p><pre data-lang="css" data-code="custom-checkbox-gmail" hidden="hidden">.sol4 {
+</pre>
+    <p>Подробнее о visually-hidden можно почитать здесь:
+      <a href="https://allyjs.io/tutorials/hiding-elements.html#how-to-hide-elements-visually" target="_blank">
+        How to hide elements visually
+      </a>
+    </p>
+  </section>
+  <section>
+    <h3>Задача</h3>
+    <p>Сверстать чекбоксы как в gmail.</p>
+    <pre data-lang="css" data-code="custom-checkbox-gmail" hidden="hidden">.sol4 {
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -158,7 +190,8 @@ label переадресует его на внутенний элемент inp
 .sol4 .custom-checkbox.label input[type='checkbox']:checked + .checker {
   background-image: url('https://www.gstatic.com/images/icons/material/system/1x/label_important_googyellow500_20dp.png');
 }
-</pre><pre data-lang="html" data-code="custom-checkbox-gmail" hidden="hidden">&lt;div class="sol4"&gt;
+</pre>
+    <pre data-lang="html" data-code="custom-checkbox-gmail" hidden="hidden">&lt;div class="sol4"&gt;
   &lt;div class="row"&gt;
     &lt;label class="custom-checkbox default"&gt;
       &lt;input class="visually-hidden" type="checkbox"&gt;&lt;span class="checker"&gt;&lt;/span&gt;
@@ -182,4 +215,25 @@ label переадресует его на внутенний элемент inp
     &lt;/label&gt;
   &lt;/div&gt;
 &lt;/div&gt;
-</pre><div data-run="custom-checkbox-gmail"></div><p>Картинки для чекбоксов взять отсюда:</p><ul><li><a target="_blank" href="https://www.gstatic.com/images/icons/material/system/1x/check_box_outline_blank_black_20dp.png">Unchecked checkbox</a></li><li><a target="_blank" href="https://www.gstatic.com/images/icons/material/system/1x/check_box_black_20dp.png">Checked checkbox</a></li><li><a target="_blank" href="https://www.gstatic.com/images/icons/material/system/1x/star_border_black_20dp.png">Unchecked star</a></li><li><a target="_blank" href="https://www.gstatic.com/images/icons/material/system/1x/star_googyellow500_20dp.png">Checked star</a></li><li><a target="_blank" href="https://www.gstatic.com/images/icons/material/system/1x/label_important_outline_black_20dp.png">Unchecked label</a></li><li><a target="_blank" href="https://www.gstatic.com/images/icons/material/system/1x/label_important_googyellow500_20dp.png">Checked label</a></li></ul></section></article>
+</pre>
+    <div data-run="custom-checkbox-gmail"></div>
+    <p>Картинки для чекбоксов взять отсюда:</p>
+    <ul>
+      <li><a target="_blank"
+             href="https://www.gstatic.com/images/icons/material/system/1x/check_box_outline_blank_black_20dp.png">Unchecked
+          checkbox</a></li>
+      <li><a target="_blank" href="https://www.gstatic.com/images/icons/material/system/1x/check_box_black_20dp.png">Checked
+          checkbox</a></li>
+      <li><a target="_blank" href="https://www.gstatic.com/images/icons/material/system/1x/star_border_black_20dp.png">Unchecked
+          star</a></li>
+      <li><a target="_blank" href="https://www.gstatic.com/images/icons/material/system/1x/star_googyellow500_20dp.png">Checked
+          star</a></li>
+      <li><a target="_blank"
+             href="https://www.gstatic.com/images/icons/material/system/1x/label_important_outline_black_20dp.png">Unchecked
+          label</a></li>
+      <li><a target="_blank"
+             href="https://www.gstatic.com/images/icons/material/system/1x/label_important_googyellow500_20dp.png">Checked
+          label</a></li>
+    </ul>
+  </section>
+</section>
