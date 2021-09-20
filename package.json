@@ -3,7 +3,8 @@
   "version": "2.0.0",
   "description": "Книга о полезных практиках HTML и CSS",
   "scripts": {
-    "serve": "node server.js"
+    "serve": "node samurai.js --serve",
+    "build": "node samurai.js --build"
   },
   "type": "module",
   "repository": {

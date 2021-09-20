@@ -248,7 +248,7 @@ export class Server {
 const config = {
   paths: {
     source: 'src',
-    destination: 'docs',
+    destination: 'dist',
     assets: ['src/assets'],
     exclude: ['src/templates', 'src/styles', 'src/scripts']
   },
@@ -277,4 +277,10 @@ const config = {
   }
 }
 
-new Server(config);
+if (process.argv.includes('--build')) {
+  new Builder(config).build()
+} else if (process.argv.includes('--serve')) {
+  new Server(config);
+} else {
+  throw 'Unknown action'
+}
