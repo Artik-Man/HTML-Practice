@@ -4,9 +4,15 @@
   <base href="./">
 {% endblock base %}
 {% block nav %}
-  <nav></nav>
 {% endblock nav %}
 {% block main %}
+  <style>
+    @media (min-width: 1600px) {
+      main {
+        padding-left: var(--menu-width);
+      }
+    }
+  </style>
   <h1>
     <a class="logo" href="https://artik-man.github.io/HTML-Practice/">
       <span class="top">HTML</span>
@@ -14,7 +20,7 @@
     </a>
   </h1>
   <div class="flex">
-    <p><a href="./full">К одностраничной версии</a>
+    <p class="no-print"><a href="./full">К одностраничной версии</a>
     <p>Автор: <a href="//artik.me" target="_blank">Artik Man</a></p>
   </div>
 
@@ -29,7 +35,6 @@
     <ul>
       <li>SVG</li>
       <li>Вёрстка форм</li>
-      <li>Трансформации</li>
       <li>Анимации</li>
       <li>Поговорим о семантике</li>
       <li>Bootstrap</li>

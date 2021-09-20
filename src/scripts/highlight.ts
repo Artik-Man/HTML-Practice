@@ -22,6 +22,7 @@ export const highlight = () => {
   document.querySelectorAll('pre[data-lang]:not([hidden])').forEach((block: HTMLElement) => {
     const lang = block.dataset.lang;
     lang && block.classList.add(`language-${ lang }`);
+    block.innerHTML = block.innerHTML.trim()
     Prism.highlightElement(block, false);
   });
 };

@@ -5,7 +5,8 @@
 {% endblock base %}
 
 {% block nav %}
-  <nav style="margin-top: 220vh">
+  <nav class="full no-print">
+    <button>Меню</button>
     <ul>
       {% for article in contents %}
         <li><a href="./full/#{{ article.id }}">{{ article.title }}</a></li>
@@ -20,12 +21,12 @@
       <span class="top">HTML</span>
       <span class="bottom">Practice</span>
     </a>
-    <span class="scroll-down" aria-hidden="true">
+    <span class="scroll-down no-print" aria-hidden="true">
       <span class="wheel"></span>
     </span>
   </h1>
   <div class="flex">
-    <p><a href="./index.html">К многостраничной версии</a></p>
+    <p class="no-print"><a href="./index.html">К многостраничной версии</a></p>
     <p>Автор: <a href="//artik.me" target="_blank">Artik Man</a></p>
   </div>
 

@@ -30,7 +30,8 @@
 <body>
 {% set contents = loadJson('src/index.json').contents %}
 {% block nav %}
-  <nav>
+  <nav class="no-print">
+    <button>Меню</button>
     <ul>
       <li><a href="/" class="accent-font">HTML Practice</a></li>
       {% for article in contents %}

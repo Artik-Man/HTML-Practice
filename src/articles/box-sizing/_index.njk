@@ -2,15 +2,17 @@
   <p>
     Элементы в CSS представляют собой набор слоёв: ширина и высота самого элемента
     (<a target="_blank" href="http://htmlbook.ru/css/width">width</a> и
-    <a target="_blank" href="http://htmlbook.ru/css/height">height</a>), поля элемента
-    (<a target="_blank" href="http://htmlbook.ru/css/padding">padding</a>),
-    граница элемента (<a target="_blank" href="http://htmlbook.ru/css/border">border</a>) и отступы
-    (<a target="_blank" href="http://htmlbook.ru/samlayout/blochnaya-verstka/blochnaya-model" target="_blank">
+    <a target="_blank" href="http://htmlbook.ru/css/height">height</a>),
+    поля элемента (<a target="_blank" href="http://htmlbook.ru/css/padding">padding</a>),
+    граница элемента (<a target="_blank" href="http://htmlbook.ru/css/border">border</a>)
+    и отступы (<a target="_blank" href="http://htmlbook.ru/css/margin">margin</a>).
+    <a target="_blank" href="http://htmlbook.ru/samlayout/blochnaya-verstka/blochnaya-model">
       Подробнее о блочной модели стоит почитать здесь.
     </a>
   </p>
   <div data-run="box-model"></div>
   <pre data-lang="html" data-code="box-model" hidden="hidden">
+
 &lt;div class="box-model"&gt;
   &lt;div class="margin"&gt;margin
     &lt;div class="border"&gt;border
@@ -20,7 +22,8 @@
     &lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;</pre>
-  <pre data-lang="css" data-code="box-model" hidden="hidden">.box-model {
+  <pre data-lang="css" data-code="box-model" hidden="hidden">
+.box-model {
   display: flex;
   justify-content: center;
 }
@@ -69,9 +72,11 @@
       ширине элементас разными по ширине полями, в реальности имели разную ширину. Пример ниже демонстрирует этот
       недуг:
     </p>
-    <pre data-lang="html" data-code="box-z-1,box-z-2">&lt;div class="one"&gt;padding: 0&lt;/div&gt;
+    <pre data-lang="html" data-code="box-z-1,box-z-2">
+&lt;div class="one"&gt;padding: 0&lt;/div&gt;
 &lt;div class="two"&gt;padding: 40px&lt;/div&gt;</pre>
-    <pre data-lang="css" data-code="box-z-1">.one {
+    <pre data-lang="css" data-code="box-z-1">
+.one {
   width: 200px;
   height: 100px;
   padding: 0;
@@ -81,7 +86,8 @@
   height: 100px;
   padding: 40px;
 }</pre>
-    <pre data-lang="css" data-code="box-z-1,box-z-2" hidden="hidden">.one,.two{
+    <pre data-lang="css" data-code="box-z-1,box-z-2" hidden="hidden">
+.one,.two{
   background: teal;
   color: white;
   margin: 20px auto;
@@ -101,7 +107,8 @@
       <a href="http://htmlbook.ru/css/box-sizing" target="_blank">box-sizing</a>.
       Добавим в наши блоки всего по одной строчке кода:
     </p>
-    <pre data-lang="css" data-code="box-z-2">.one {
+    <pre data-lang="css" data-code="box-z-2">
+.one {
   width: 200px;
   height: 100px;
   padding: 0;
@@ -121,7 +128,8 @@
       Так стало гораздо проще работать с CSS, поэтому многие добавляютbox-sizing: border-box всем элементам на
       сайте при помощи этого кода:
     </p>
-    <pre data-lang="css">* {
+    <pre data-lang="css">
+* {
   box-sizing: border-box;
 }</pre>
     <p>

@@ -1,12 +1,14 @@
 <section id="layouts"><h2>Многоколоночные макеты</h2><p>При вёрстке сайта, одной из первых задач верстальщика является создание основного шаблона.Основным шаблоном в данном случае называется вёрстка без контента - это совокупность шапки сайта, меню,
-футера и прочих элементов, которые встречаются на каждой странице.</p><p>Итак, попробуем сверстать простой макет сайта. Сверху у нас будет шапка сайта, слева будет навигация по разделу сайта, справа контент, а снизу футер.Стандартный шаблон, ничего необычного. Начнём с HTML.</p><pre data-lang="html" data-code="lay1,lay2,lay3,lay4,lay5">&lt;div class="main-container"&gt;
+футера и прочих элементов, которые встречаются на каждой странице.</p><p>Итак, попробуем сверстать простой макет сайта. Сверху у нас будет шапка сайта, слева будет навигация по разделу сайта, справа контент, а снизу футер.Стандартный шаблон, ничего необычного. Начнём с HTML.</p><pre data-lang="html" data-code="lay1,lay2,lay3,lay4,lay5">
+&lt;div class="main-container"&gt;
   &lt;header&gt;Header&lt;/header&gt;
   &lt;nav&gt;Site navigation&lt;/nav&gt;
   &lt;main&gt;Site content&lt;/main&gt;
   &lt;footer&gt;Footer&lt;/footer&gt;
 &lt;/div&gt;
 </pre><p>Если мы запустим это прямо сейчас, мы лишь увидим, как все эти элементы расположились друг под другом. Придётся добавить стилей.</p><section><h3>Float</h3><p>В древние времена существовало несколько вариантов вёрстки макетов, а самым адекватным из них был float. Как мы выяснили в одной из предыдущих глав,с помощью float можно сделать так, чтобы картинка обтекалась текстом. То же можно применить и к блокам. Если мы возьмём два блочных элемента
-с определенными заранее шириной и высотой, то, добавив к ним<code>float: left;</code>, мы увидим, как эти два блочных элемента выстроятся в один ряд, если ширина страницы это позволит.</p><pre data-lang="css" data-code="lay1">.main-container {
+с определенными заранее шириной и высотой, то, добавив к ним<code>float: left;</code>, мы увидим, как эти два блочных элемента выстроятся в один ряд, если ширина страницы это позволит.</p><pre data-lang="css" data-code="lay1">
+.main-container {
   margin: 0 auto;
   max-width: 800px;
 }
@@ -31,7 +33,9 @@ footer {
   height: 50px;
   background: darkseagreen;
 }
-</pre><div data-run="lay1"></div><p>Казалось бы, на этом можно закончить наш урок, но, если хорошо подумать, можно увидеть, как много проблем мы породили этим решением:</p><ol><li>Мы не можем жёстко зафиксировать ширину навигационного меню</li><li>Если перед футером нам потребуется вставить какой-то блок, например, рекламный, вёрстка "поедет", ведь мы благополучно забудем про<code>clear: both;</code></li><li>Высота навигации никак не зависит от высоты контента и наоборот. Под более коротким блоком будет пустота.</li></ol><p>Подробнее о float читайте тут:<a target="_blank" href="https://developer.mozilla.org/ru/docs/Web/CSS/float">float</a></p></section><section><h3>Flex</h3><p>Рассмотрим более современный способ. Мы можем использовать<code>display: flex;</code>у<code>.main-container</code>, тогда мы сможем избавиться от пары недостатков предыдущего примера.</p><pre data-lang="css" data-code="lay2,lay4">.main-container {
+</pre><div data-run="lay1"></div><p>Казалось бы, на этом можно закончить наш урок, но, если хорошо подумать, можно увидеть, как много проблем мы породили этим решением:</p><ol><li>Мы не можем жёстко зафиксировать ширину навигационного меню</li><li>Если перед футером нам потребуется вставить какой-то блок, например, рекламный, вёрстка "поедет", ведь мы благополучно забудем про<code>clear: both;</code></li><li>Высота навигации никак не зависит от высоты контента и наоборот. Под более коротким блоком будет пустота.</li></ol><p>Подробнее о float читайте тут:
+<a target="_blank" href="https://developer.mozilla.org/ru/docs/Web/CSS/float">float</a></p></section><section><h3>Flex</h3><p>Рассмотрим более современный способ. Мы можем использовать<code>display: flex;</code>у<code>.main-container</code>, тогда мы сможем избавиться от пары недостатков предыдущего примера.</p><pre data-lang="css" data-code="lay2,lay4">
+.main-container {
   margin: 0 auto;
   max-width: 800px;
   display: flex;        /* Объявляем контейнер флексом */
@@ -56,7 +60,11 @@ footer {
   width: 100%;          /* Обязательно задаём ширину для футера */
   height: 50px;
   background: darkseagreen;
-}</pre><div data-run="lay2"></div><p>Как мы видим, каким бы длинным ни был контент, под навигацией не образуется пробела, а так как больше нет флоатов, то перед футером можно вставить любой блок.К сожалению, таким способом мы не смогли решить последнюю проблему: как задать у меню фиксированную ширину, а ширина контента при этом была переменной?</p><p>Больше о flex здесь:</p><ul><li><a target="_blank" href="https://developer.mozilla.org/ru/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox">Основные понятия Flexbox</a></li><li><a target="_blank" href="https://developer.mozilla.org/ru/docs/Web/CSS/flex-wrap">flex-wrap</a></li><li><a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Aligning_Items_in_a_Flex_Container">align-items and justify-content</a></li></ul></section><section><h3>Grid</h3><p>Самым современным способом вёрстки макетов на сегодняшний день является т.н. Grid layout. Грид позволяет выстраивать элементы внутри себя по заранее заданнойсетке. Для начала разберём пример, а затем разберёмся подробнее, как это работает.</p><pre data-lang="css" data-code="lay3">.main-container {
+}</pre><div data-run="lay2"></div><p>Как мы видим, каким бы длинным ни был контент, под навигацией не образуется пробела, а так как больше нет флоатов, то перед футером можно вставить любой блок.К сожалению, таким способом мы не смогли решить последнюю проблему: как задать у меню фиксированную ширину, а ширина контента при этом была переменной?</p><p>Больше о flex здесь:</p><ul><li>
+<a target="_blank" href="https://developer.mozilla.org/ru/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox">Основные понятия Flexbox</a></li><li>
+<a target="_blank" href="https://developer.mozilla.org/ru/docs/Web/CSS/flex-wrap">flex-wrap</a></li><li>
+<a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Aligning_Items_in_a_Flex_Container">align-items and justify-content</a></li></ul></section><section><h3>Grid</h3><p>Самым современным способом вёрстки макетов на сегодняшний день является т.н. Grid layout. Грид позволяет выстраивать элементы внутри себя по заранее заданнойсетке. Для начала разберём пример, а затем разберёмся подробнее, как это работает.</p><pre data-lang="css" data-code="lay3">
+.main-container {
   margin: 0 auto;
   max-width: 800px;
   display: grid;                        /* Объявляем контейнер гридом */
@@ -85,12 +93,18 @@ footer {
 }</pre><div data-run="lay3"></div><p>Как можно заметить, мы избавились от всех негативных последствий. А теперь разберёмся подробнее, как это работает.</p><ol><li><code>grid-template-rows: 50px 1fr 50px;</code>означает, что если смотреть на сайт по вертикали, то у нас образуются три строки: шапка, навигация с контентом, футер.
 Высоту первой строки, шапки, установим равной 50px, высота второй строки нам неизвестна, а высота третьей, футера, тоже 50px.</li><li><code>grid-template-columns: 200px 1fr;</code>означает, что если смотреть на сайт по горизонтали, то образуются два столбца: слева навигация, справа контент.
 Ширину навигации установим равной 200px, а ширина контента нам неизвестна и она займёт всё доступное пространство.</li><li>Итак, на этом этапе мы поняли, что у нас будет три строки и два столбца. Это и указываем далее:<code> grid-template-areas: 'header header'  'nav content'  'footer footer';</code>. Этот код создаёт три строки и два столбца, состоящие из именованных областей. Именовать эти области можно как угодно,
-их названия будут указаны в дочерних элементах в свойстве<code>grid-area</code>. Здесь мы видим, что шапка займёт две колонки; навигация &mdash; одну, левую колонку; контент &mdash; одну правую; футер &mdash; две колонки.</li></ol><p>Таким образом, мы получили идеальную сетку для нашего сайта. Подробнее о grid layout читать здесь:</p><ul><li><a target="_blank" href="https://developer.mozilla.org/ru/docs/Web/CSS/CSS_Grid_Layout">CSS Grid layout</a></li><li><a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template">grid-template</a></li><li><a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/CSS/grid-area">grid-area</a></li></ul></section><section><h3>Calc</h3><p>А теперь настало время удивляться. Вернёмся к примеру с флексом и добавим еще немного CSS:</p><pre data-lang="css" data-code="lay4">nav {
+их названия будут указаны в дочерних элементах в свойстве<code>grid-area</code>. Здесь мы видим, что шапка займёт две колонки; навигация &mdash; одну, левую колонку; контент &mdash; одну правую; футер &mdash; две колонки.</li></ol><p>Таким образом, мы получили идеальную сетку для нашего сайта. Подробнее о grid layout читать здесь:</p><ul><li>
+<a target="_blank" href="https://developer.mozilla.org/ru/docs/Web/CSS/CSS_Grid_Layout">CSS Grid layout</a></li><li>
+<a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template">grid-template</a></li><li>
+<a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/CSS/grid-area">grid-area</a></li></ul></section><section><h3>Calc</h3><p>А теперь настало время удивляться. Вернёмся к примеру с флексом и добавим еще немного CSS:</p><pre data-lang="css" data-code="lay4">
+nav {
   width: 200px;
 }
 main {
   width: calc(100% - 200px);
-}</pre><div data-run="lay4"></div><p>Таким образом мы избавились от проблемы фиксированной ширины меню. Благодаря функции<code>calc()</code>, мы заставили ширину контента зависеть от ширины блока навигации.<a target="_blank" href="https://developer.mozilla.org/ru/docs/Web/CSS/calc">О calc() можно почитать здесь</a></p></section><section><h3>Ещё один вариант вёрстки шаблона</h3><p>На самом деле, есть еще один вариант. Он сложный и ненадёжный, но для общего развития, стоит упомянуть и его.</p><pre data-lang="css" data-code="lay5">.main-container {
+}</pre><div data-run="lay4"></div><p>Таким образом мы избавились от проблемы фиксированной ширины меню. Благодаря функции<code>calc()</code>, мы заставили ширину контента зависеть от ширины блока навигации.
+<a target="_blank" href="https://developer.mozilla.org/ru/docs/Web/CSS/calc">О calc() можно почитать здесь</a></p></section><section><h3>Ещё один вариант вёрстки шаблона</h3><p>На самом деле, есть еще один вариант. Он сложный и ненадёжный, но для общего развития, стоит упомянуть и его.</p><pre data-lang="css" data-code="lay5">
+.main-container {
   margin: 0 auto;
   max-width: 800px;
   position: relative;

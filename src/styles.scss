@@ -2,6 +2,8 @@
 @import "src/styles/typography";
 @import "src/styles/code";
 @import "src/styles/nav";
+@import "src/styles/balloon";
+@import "src/styles/print";
 
 :root {
   --white-dark: #f2f2f2;
@@ -16,7 +18,7 @@
 
 body {
   display: block;
-  @media (min-width: 700px) {
+  @media (min-width: 750px) {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
@@ -35,13 +37,11 @@ body {
     padding: 0 0 150px;
     border-bottom: 1px solid var(--grey-light);
     min-height: 100vh;
+    @media print {
+      border-bottom: none !important;
+    }
   }
 }
-
-section {
-  page-break-after: always;
-}
-
 
 h1 {
   margin: 5em 0 !important;
@@ -53,7 +53,7 @@ h1 {
   }
 
   &.fullpage {
-    height: 100vh;
+    height: calc(100vh - 100px);
     margin: 0 !important;
 
     .logo {

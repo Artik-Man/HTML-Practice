@@ -24,21 +24,6 @@ body {
   font-size: 16px;
 }
 
-
-section,
-.no-print-break,
-ul li,
-ol li,
-pre,
-[data-run] {
-  page-break-inside: avoid;
-}
-
-.can-print-break {
-  page-break-inside: auto !important;
-}
-
-
 a {
   color: var(--accent);
 
@@ -85,58 +70,6 @@ ol {
 
 .columns-2 {
   column-count: 2;
-}
-
-.print-only {
-  display: none;
-}
-
-@media print {
-  .print-only {
-    display: block;
-  }
-  .no-print,
-  .cp_embed_wrapper {
-    display: none;
-  }
-
-  article {
-    min-height: auto;
-    border-bottom: none;
-    padding: 0;
-    visibility: visible !important;
-  }
-
-  li a[target='_blank'] {
-    vertical-align: top;
-  }
-
-  a[target='_blank'] {
-    display: inline-block;
-  }
-
-  a[target='_blank']::after {
-    content: '[ ' attr(href) ' ]';
-    font-size: 0.8em;
-    margin: 0 1ex;
-    display: inline-block;
-  }
-
-  a.button {
-    background-color: white;
-    color: var(--accent);
-    box-shadow: none;
-    border: none;
-    padding: 0;
-  }
-
-  p {
-    text-align: justify;
-  }
-
-  p a {
-    text-align: left;
-  }
 }
 
 .button,

@@ -1,4 +1,14 @@
-<section id="dropdown"><h2>Выпадающее меню и дропдауны</h2><p>Пользуясь интернетом, вы наверняка уже видели выпадающее меню. Это когда наводишь мышью на элемент меню и появляется подменю.</p><p>Весь секрет в том, чтобы изначально скрыть выпадающее меню, а при наступлении какого-то события (наведение мыши на какую-то кнопку), отобразить выпадающее меню.</p><p>Сразу же перейдём к вёрстке. HTML предельно прост: есть меню, состоящее из четырёх элементов, а во втором элементе, помимо ссылки, есть вложенное меню.</p><pre data-lang="html" data-code="dropdown-menu">&lt;ul&gt;
+<section id="dropdown">
+  <h2>Выпадающее меню и дропдауны</h2>
+  <p>Пользуясь интернетом, вы наверняка уже видели выпадающее меню. Это когда наводишь мышью на элемент меню и
+    появляется подменю.</p>
+  <p>Весь секрет в том, чтобы изначально скрыть выпадающее меню, а при наступлении какого-то события (наведение мыши на
+    какую-то кнопку), отобразить выпадающее меню.</p>
+  <p>Сразу же перейдём к вёрстке. HTML предельно прост: есть меню, состоящее из четырёх элементов, а во втором элементе,
+    помимо ссылки, есть вложенное меню.</p>
+  <pre data-lang="html" data-code="dropdown-menu">
+
+&lt;ul&gt;
   &lt;li&gt;
     &lt;a&gt;Магазины&lt;/a&gt;
   &lt;/li&gt;
@@ -23,7 +33,16 @@
     &lt;a&gt;Контакты&lt;/a&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
-</pre><p>CSS тоже не слишком сложный. Фактически, все стили вертятся вокруг оформления. Единственное - применен "магический" селектор.На самом деле, никакой магии здесь нет.<code>menu li:hover .dropdown</code>означает, что при наведении курсора мыши (<code>:hover</code>), на элемент меню (<code>menu li</code>), дропдаун (<code>.dropdown</code>) получит некоторые стили, в данном случае,<code>display: block</code>.</p><pre data-lang="css" data-code="dropdown-menu">* {
+</pre>
+  <p>
+    CSS тоже не слишком сложный. Фактически, все стили вертятся вокруг оформления. Единственное - применен "магический"
+    селектор. На самом деле, никакой магии здесь нет. <code>menu li:hover .dropdown</code> означает, что при наведении
+    курсора мыши <code>:hover</code>, на элемент меню <code>menu li</code>, дропдаун <code>.dropdown</code>
+    получит некоторые стили, в данном случае, <code>display: block</code>.
+  </p>
+  <pre data-lang="css" data-code="dropdown-menu">
+
+* {
   box-sizing: border-box;
 }
 ul {
@@ -72,7 +91,9 @@ ul li:hover .dropdown { /* Магия здесь */
 .dropdown li a {
   text-align: left;
 }
-<pre data-lang="css" data-code="dropdown,dropdown-menu" hidden="hidden">a {
+  </pre>
+  <pre data-lang="css" data-code="dropdown,dropdown-menu" hidden="hidden">
+a {
   cursor: pointer !important;
 }
 a:hover {
@@ -85,14 +106,22 @@ a:hover {
   ul {
     margin-bottom: 250px;
   }
-}</pre></pre><p>Результат представлен ниже. Попробуйте навести мышью на элементы меню.</p><div data-run="dropdown-menu"></div><p>Похожим способом можно сделать и дропдаун для кнопки</p><pre data-lang="html" data-code="dropdown">&lt;button&gt;О нас
+}</pre>
+  <p>Результат представлен ниже. <span class="no-print">Попробуйте навести мышью на элементы меню.</span></p>
+  <div data-run="dropdown-menu"></div>
+  <p>Похожим способом можно сделать и дропдаун для кнопки</p>
+  <pre data-lang="html" data-code="dropdown">
+&lt;button&gt;О нас
   &lt;ul class="dropdown"&gt;
     &lt;li&gt;&lt;a&gt;О компании прессе&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a&gt;Юридическая информация&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a&gt;Контактная информация&lt;/a&gt;&lt;/li&gt;
   &lt;/ul&gt;
 &lt;/button&gt;
-</pre><pre data-lang="css" data-code="dropdown">button {
+</pre>
+  <pre data-lang="css" data-code="dropdown">
+
+button {
   background: white;
   border: 1px solid gray;
   border-radius: 4px;
@@ -129,4 +158,6 @@ button:hover {
   text-align: left;
 }
 
-</pre><div data-run="dropdown"></div></section>
+</pre>
+  <div data-run="dropdown"></div>
+</section>

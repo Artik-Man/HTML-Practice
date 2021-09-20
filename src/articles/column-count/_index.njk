@@ -2,13 +2,13 @@
   <h2>Многоколоночный текст</h2>
   <p>
     Время от времени возникает задача расположить список или текст в две колонки. Годы идут, CSS развивается, поколения
-    верстальщиков сменяют поколения,но свои костыли люди как делали, так и делают. Мало кто знает, но в CSS появилось
+    верстальщиков сменяют поколения, но свои костыли люди как делали, так и делают. Мало кто знает, но в CSS появилось
     свойство<br/>
     <a href="http://htmlbook.ru/css/column-count" target="_blank">column-count</a>, позволяющее задать количество
     колонок для списка или текста. Также есть свойство<br/>
     <a href="http://htmlbook.ru/css/column-width" target="_blank">column-width</a>, которое задаёт минимальную ширину
     для колонки,<br/>
-    <a href="http://htmlbook.ru/css/column-rule" target="_blank">column-rule</a>, отрисовывающее линию между колонками
+    <a href="http://htmlbook.ru/css/column-rule" target="_blank">column-rule</a>, рисующее линию между колонками
     словно border,<br/>
     <a href="http://htmlbook.ru/css/column-gap" target="_blank">column-gap</a>, задающее расстояние
     между колонками и<br/>
@@ -16,7 +16,8 @@
     column-width и column-count.
   </p>
   <p>Разберемся на примерах из жизни. Простой пример: нужно сделать так, чтобы список располагался в две колонки.</p>
-  <pre data-lang="html" data-code="col-count-1,col-count-2" hidden="hidden">&lt;ul&gt;
+  <pre data-lang="html" data-code="col-count-1,col-count-2" hidden="hidden">
+&lt;ul&gt;
   &lt;li&gt;Lorem&lt;/li&gt;
   &lt;li&gt;ipsum&lt;/li&gt;
   &lt;li&gt;dolor&lt;/li&gt;
@@ -28,7 +29,8 @@
 &lt;/ul&gt;</pre>
   <div data-run="col-count-1"></div>
   <p>Добавим следующий CSS-код:</p>
-  <pre data-lang="css" data-code="col-count-2">ul {
+  <pre data-lang="css" data-code="col-count-2">
+ul {
   column-count: 2;
 }</pre>
   <p>В результате получим это:</p>
@@ -44,7 +46,8 @@
     должно быть отображено три колонки.Для начала, создадим контейнер, который бы занимал весь экран и имел прокрутку
     слева направо.
   </p>
-  <pre data-lang="css">.overflow-container {
+  <pre data-lang="css">
+.overflow-container {
   height: 100vh;      /* занимает 100% высоты экрана */
   overflow-x: auto;   /* показывает горизонтальный скролл в том случае, если он нужен */
   overflow-y: hidden; /* скрывает вертикальный скролл даже если он нужен */
@@ -57,11 +60,13 @@
     ширина будет такой, какой мы её зададим.
     Давайте зададим ширину колонки в 30vw - это ровное число, которое меньше 33.3333vw.
   </p>
-  <pre data-lang="css">.col-3 {
+  <pre data-lang="css">
+.col-3 {
   column-width: 30vw;
 }</pre>
   <p>И добавим немного стиля. К примеру, расстояние между колонками и тонкую серую линию между ними.</p>
-  <pre data-lang="css">.col-3 {
+  <pre data-lang="css">
+.col-3 {
   column-width: 30vw;
   column-gap: 2vw;
   column-rule: 1px solid #ccc;

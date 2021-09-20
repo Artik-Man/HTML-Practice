@@ -1,9 +1,50 @@
-<section id="relative-absolute"><h2>Горизонтальное и вертикальное центрирование блока</h2><p>Эта техника применяется, в основном, для вёрстки модальных окон. Основывается на том, что блокс position: absolute смещается относительно ближайшего родителя с position: relative | absolute | fixed.
-Смещение задаётся при помощи CSS-свойств</p><ul><li><a href="http://htmlbook.ru/css/top" target="_blank">top</a></li><li><a href="http://htmlbook.ru/css/right" target="_blank">right</a></li><li><a href="http://htmlbook.ru/css/bottom" target="_blank">bottom</a></li><li><a href="http://htmlbook.ru/css/left" target="_blank">left</a></li></ul><p>Если мы используем единицу измерения % для задания смещения, важно помнить, что процент берётся относительно родительского контейнера.Это значит, что left: 50% сместит блок на 50% от ширины родителя, а не от собственной ширины.
-Для того, чтобы сместить блок на 50% относительно собственной ширины, необходимо использовать свойство<a href="http://htmlbook.ru/css/transform" target="_blank">transform</a> с функцией translateX(50%) - движение по оси X, translateY(50%) - движение по оси Y или translate(50%, 50%) - движение по обеим осям.</p><p>В примере ниже показано, как мы сначала смещаем абсолютно спозиционированный блок на 50% слева направо (left) и на 50% сверху вниз (top) относительно контейнера,а затем, смещаем на 50% вверх и на 50% вправо относительно самого себя (transform: translate(-50%, -50%)), чтобы блок встал ровно по центру контейнера.</p><p>Дело в том, что в CSS, началом координат является верхняя левая точка элемента, а не центр элемента.Поэтому нам не достаточно просто подвинуть блок на 50% вниз и вправо, так как тогда в центре контейнера окажется левый верхний угол блока, а не центр блока.</p><section><h3>Пример:</h3><div data-run="rel-abs-center"></div><p>Код:</p><pre data-lang="html" data-code="rel-abs-center">&lt;div class="container"&gt;
+<section id="relative-absolute">
+  <h2>Горизонтальное и вертикальное центрирование блока</h2>
+  <p>
+    Эта техника применяется, в основном, для вёрстки модальных окон. Основывается на том, что блокс position: absolute
+    смещается относительно ближайшего родителя с position: relative | absolute | fixed.
+    Смещение задаётся при помощи CSS-свойств
+  </p>
+  <ul>
+    <li>
+      <a href="http://htmlbook.ru/css/top" target="_blank">top</a></li>
+    <li>
+      <a href="http://htmlbook.ru/css/right" target="_blank">right</a></li>
+    <li>
+      <a href="http://htmlbook.ru/css/bottom" target="_blank">bottom</a></li>
+    <li>
+      <a href="http://htmlbook.ru/css/left" target="_blank">left</a>
+    </li>
+  </ul>
+  <p>
+    Если мы используем единицу измерения % для задания смещения, важно помнить, что процент берётся относительно
+    родительского контейнера.Это значит, что left: 50% сместит блок на 50% от ширины родителя, а не от собственной
+    ширины.
+    Для того, чтобы сместить блок на 50% относительно собственной ширины, необходимо использовать свойство
+    <a href="http://htmlbook.ru/css/transform" target="_blank">transform</a>
+    с функцией translateX(50%) - движение по оси
+    X, translateY(50%) - движение по оси Y или translate(50%, 50%) - движение по обеим осям.
+  </p>
+  <p>
+    В примере ниже показано, как мы сначала смещаем абсолютно спозиционированный блок на 50% слева направо (left) и на
+    50% сверху вниз (top) относительно контейнера,а затем, смещаем на 50% вверх и на 50% вправо относительно самого себя
+    (transform: translate(-50%, -50%)), чтобы блок встал ровно по центру контейнера.
+  </p>
+  <p>
+    Дело в том, что в CSS, началом координат является верхняя левая точка элемента, а не центр элемента.Поэтому нам не
+    достаточно просто подвинуть блок на 50% вниз и вправо, так как тогда в центре контейнера окажется левый верхний угол
+    блока, а не центр блока.
+  </p>
+  <section>
+    <h3>Пример:</h3>
+    <div data-run="rel-abs-center"></div>
+    <p>Код:</p>
+    <pre data-lang="html" data-code="rel-abs-center">
+&lt;div class="container"&gt;
   &lt;div class="block"&gt;&lt;/div&gt;
-&lt;/div&gt;
-<pre data-lang="css" data-code="rel-abs-center">.container {
+&lt;/div&gt;</pre>
+    <pre data-lang="css" data-code="rel-abs-center">
+.container {
   position: relative;
   width: 100%;
   height: 250px;
@@ -17,7 +58,9 @@
   width: 120px;
   height: 80px;
 }
-</pre><pre data-lang="css" data-code="rel-abs-center" hidden="hidden">.container {
+</pre>
+    <pre data-lang="css" data-code="rel-abs-center" hidden="hidden">
+.container {
   background: lightblue;
 }
 
@@ -25,7 +68,27 @@
   background: teal;
 }
 
-</pre></pre></section></section><section><h3>Задача</h3><p>Сделать просмотр изображений как на dns-shop.ru</p><ul><li>Размер внешнего контейнера: 100% * 100vh</li><li>Вместо картинок можно использовать цветные блоки</li><li>Стрелочки:<a href="./assets/images/angle-left-sm.svg" target="_blank">arrow-left</a>,<a href="./assets/images/angle-right-sm.svg" target="_blank">arrow-right</a>; изображение кнопки "закрыть":<a href="./assets/images/times-sm.svg" target="_blank">close</a>.</li></ul></section><div class="no-print-break" data-run="dns-modal" data-height="90vh"></div><pre data-lang="html" data-code="dns-modal" hidden="hidden">&lt;div class="sol3"&gt;
+</pre>
+  </section>
+</section>
+<section>
+  <h3>Задача</h3>
+  <p>Сделать просмотр изображений как на dns-shop.ru</p>
+  <ul>
+    <li>Размер внешнего контейнера: 100% * 100vh</li>
+    <li>Вместо картинок можно использовать цветные блоки</li>
+    <li>Стрелочки:
+      <a href="./assets/images/angle-left-sm.svg" target="_blank">arrow-left</a>,
+      <a
+        href="./assets/images/angle-right-sm.svg" target="_blank">arrow-right</a>; изображение кнопки "закрыть":
+      <a
+        href="./assets/images/times-sm.svg" target="_blank">close</a>.
+    </li>
+  </ul>
+
+  <div class="no-print-break" data-run="dns-modal" data-height="90vh"></div>
+  <pre data-lang="html" data-code="dns-modal" hidden="hidden">
+&lt;div class="sol3"&gt;
   &lt;div class="title"&gt;iPhone Xs Max&lt;/div&gt;
   &lt;button class="button close"&gt;&lt;/button&gt;
   &lt;button class="button left"&gt;&lt;/button&gt;
@@ -39,7 +102,9 @@
     &lt;button class="thumb"&gt;&lt;img src="./assets/images/iphonexsmax-5.jpg" alt="Next"&gt;&lt;/button&gt;
     &lt;button class="button right"&gt;&lt;/button&gt;
   &lt;/div&gt;
-&lt;/div&gt;</pre><pre data-lang="css" data-code="dns-modal" hidden="hidden">.sol3 {
+&lt;/div&gt;</pre>
+  <pre data-lang="css" data-code="dns-modal" hidden="hidden">
+.sol3 {
   position: relative;
   width: 100%;
   height: 100%;
@@ -176,3 +241,4 @@
     transform: scale(0.8);
   }
 }</pre>
+</section>

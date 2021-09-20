@@ -4,6 +4,8 @@ import { initCodePen } from "./scripts/initCodePen";
 import { initInternalCode } from "./scripts/initInternalCode";
 import { runCode } from "./scripts/runCode";
 import { initYoutube } from "./scripts/initYouTube";
+import { createIssue } from "./scripts/createIssue";
+import { openMenu } from "./scripts/openMenu";
 
 const mainMenu = document.querySelector('nav');
 
@@ -34,7 +36,9 @@ document.addEventListener('DOMContentLoaded', () => {
     highlight,
     initYoutube,
     initCodePen,
-    initInternalCode
+    initInternalCode,
+    createIssue,
+    openMenu
   ];
   imports.forEach(fn => {
     try {
