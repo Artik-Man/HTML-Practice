@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/icons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./assets/icons/favicon-16x16.png">
+  
+  <link rel="mask-icon" href="./assets/icons/favicon.svg" color="#5bbad5">
+  <link rel="shortcut icon" href="./assets/icons/favicon.ico">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  
+  <meta name="theme-color" content="#ffffff">
+
+  <title>HTML Practice</title>
+
+      <base href="../../">
+  
+  <link href="https://fonts.googleapis.com/css?family=Philosopher&amp;display=swap&amp;subset=cyrillic"
+        rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600&amp;display=swap&amp;subset=cyrillic"
+        rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <nav class="no-print">
+    <button>Меню</button>
+    <ul>
+      <li><a href="/" class="accent-font">HTML Practice</a></li>
+              <li><a href="./articles/introduction">Введение</a></li>
+              <li><a href="./articles/git">Кратко о GIT</a></li>
+              <li><a href="./articles/units">Единицы измерения в CSS</a></li>
+              <li><a href="./articles/fonts">Форматирование текста</a></li>
+              <li><a href="./articles/column-count">Многоколоночный текст</a></li>
+              <li><a href="./articles/display">Свойство display</a></li>
+              <li><a href="./articles/box-sizing">Блочная модель и box-sizing</a></li>
+              <li><a href="./articles/position">Позиционирование</a></li>
+              <li><a href="./articles/pseudo">Псевдо-классы и псевдо-элементы</a></li>
+              <li><a href="./articles/image">Картинка в тексте</a></li>
+              <li><a href="./articles/css-variables">CSS переменные</a></li>
+              <li><a href="./articles/margin-0-auto">Выравнивание блока по центру</a></li>
+              <li><a href="./articles/flex">Самый правильный способ разнести блоки в разные стороны</a></li>
+              <li><a href="./articles/relative-absolute">Горизонтальное и вертикальное центрирование блока</a></li>
+              <li><a href="./articles/layouts">Многоколоночные макеты</a></li>
+              <li><a href="./articles/grids">Сетки</a></li>
+              <li><a href="./articles/media-queries">Отзывчивый дизайн и медиа-выражения</a></li>
+              <li><a href="./articles/gradients-shadows-filters">Градиенты, тени и фильтры</a></li>
+              <li><a href="./articles/transforms">Трансформации</a></li>
+              <li><a href="./articles/tooltip">Вёрстка тултипов</a></li>
+              <li><a href="./articles/dropdown">Выпадающее меню и дропдауны</a></li>
+              <li><a href="./articles/modals">Вёрстка модальных окон</a></li>
+              <li><a href="./articles/custom-checkbox">Вёрстка чекбоксов</a></li>
+              <li><a href="./articles/audio-video">Audio и Video</a></li>
+              <li><a href="./articles/do-u-know">Знаете ли вы?</a></li>
+              <li><a href="./articles/practice">Практика</a></li>
+          </ul>
+  </nav>
+
+<main>
+  <div class="main-content">
+    <div class="container">
+        <section id="media-queries"><h2>Отзывчивый дизайн и медиа-выражения</h2><p>Практически любой сайт (или веб-приложение) проектируется как для компьютера, так и для мобильного телефона. На сегодняшний день мобильный трафик несколько обходит трафик персональных компьютеров, что означает, что нашей задачей, как разработчиков интерфейсов, является адаптация интерфейса как под экраны компьютеров, так и под экраны телевизоров и мобильных телефонов.</p><p>CSS содержит специальные правила, которые могут включаться в зависимости от разрешения экрана пользователя. Здесь мы рассмотрим лишь базовые примеры, но настоятельно рекомендую углубиться в эту тему.</p><p>Существует два подхода к вёрстке: desktop-first и mobile-first. Когда мы говорим о desktop-first, это означает, что сайт изначально проектируется под большой экран, а далее видоизменяется к меньшим разрешениям, подключая дополнительные правила. При использовании подхода mobile-first, сайт проектируется под экраны мобильных телефонов, а затем, если разрешение экрана позволяет, подключает дополнительные правила расположения блоков на странице, чтобы сайт перестраивался под большие экраны. Общепринятым стандартом является использование подхода mobile-first. Дело в том, что мобильные устройства считаются более слабыми, поэтому мы можем сэкономить их вычислительный ресурс, не давая включать правила для больших экранов. Пойдём от обратного. Представим, что мы используем подход desktop-first. Тогда, при открытии сайта с телефона, браузер сначала рассчитает все правила для больших экранов, затем поймет, что разрешение экрана маленькое и включит еще слой дополнительных правил. Именно в этом месте у нас и произойдет экономия. Пусть устройства с большими экранами подключают дополнительные правила, ведь почти всегда эти устройства имеют большую вычислительную мощность.</p><p>Для задания правила используется ключевое слово @media, где указывается, например, минимальная (для подхода mobile-first) ширина экрана.</p><p>Рассмотрим пример:</p><pre data-lang="css">
+@media(min-width: 720px) {
+  ...
+}
+</pre><p>Здесь мы видим, что если разрешение экрана больше 720 точек, мы включим дополнительные CSS-правила, позволяющие иначе расположить блоки на странице. Внутри фигурных скобок мы можем писать обычный CSS-код.</p><p>Разберём задачу. Пусть нам необходимо расположить 6 прямоугольных блоков на странице таким образом, чтобы на экране мобильного телефона они располагались друг под другом, на экране планшета мы видели по два блока на строку, а на экране компьютера — по три блока на строку.</p><p>Используем подход mobile-first. Опишем изначальный HTML:</p><pre data-lang="html">
+&lt;ul&gt;
+  &lt;li&gt;1&lt;/li&gt;
+  &lt;li&gt;2&lt;/li&gt;
+  &lt;li&gt;3&lt;/li&gt;
+  &lt;li&gt;4&lt;/li&gt;
+  &lt;li&gt;5&lt;/li&gt;
+  &lt;li&gt;6&lt;/li&gt;
+&lt;/ul&gt;</pre><p>И CSS:</p><pre data-lang="css">
+ul {
+  display: block;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+li {
+  display: block;
+  width: 100%;
+  float: left;
+}</pre><p>Теперь сделаем так, чтобы на планшетах в одной строке было два блока. Сделаем предположение, что планшеты - это устройства с экранами более 720 точек в ширину.</p><pre data-lang="css">
+@media(min-width: 720px) {
+  li {
+    width: 50%;
+  }
+}</pre><p>И сделаем ещё одно правило для крупных устройств:</p><pre data-lang="css">
+@media(min-width: 1200px) {
+  li {
+    width: 33%;
+  }
+}
+</pre><p>Таким образом мы реализовали отзывчивый список, который подстраивается под любое разрешение экранов. Проверить его работы можно ниже. Изменяйте размер примера с помощью ресайзера внизу справа или изменяйте размер окна браузера, чтобы увидеть пример в действии.</p>
+<a class="codepen button" data-id="oNgVqXp" data-default-tab="result">Запустить пример</a></section>
+    </div>
+  </div>
+</main>
+<script src="./scripts.js"></script>
+</body>
+</html>

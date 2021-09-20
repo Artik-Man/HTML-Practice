@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/icons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./assets/icons/favicon-16x16.png">
+  
+  <link rel="mask-icon" href="./assets/icons/favicon.svg" color="#5bbad5">
+  <link rel="shortcut icon" href="./assets/icons/favicon.ico">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  
+  <meta name="theme-color" content="#ffffff">
+
+  <title>HTML Practice</title>
+
+      <base href="../../">
+  
+  <link href="https://fonts.googleapis.com/css?family=Philosopher&amp;display=swap&amp;subset=cyrillic"
+        rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600&amp;display=swap&amp;subset=cyrillic"
+        rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <nav class="no-print">
+    <button>Меню</button>
+    <ul>
+      <li><a href="/" class="accent-font">HTML Practice</a></li>
+              <li><a href="./articles/introduction">Введение</a></li>
+              <li><a href="./articles/git">Кратко о GIT</a></li>
+              <li><a href="./articles/units">Единицы измерения в CSS</a></li>
+              <li><a href="./articles/fonts">Форматирование текста</a></li>
+              <li><a href="./articles/column-count">Многоколоночный текст</a></li>
+              <li><a href="./articles/display">Свойство display</a></li>
+              <li><a href="./articles/box-sizing">Блочная модель и box-sizing</a></li>
+              <li><a href="./articles/position">Позиционирование</a></li>
+              <li><a href="./articles/pseudo">Псевдо-классы и псевдо-элементы</a></li>
+              <li><a href="./articles/image">Картинка в тексте</a></li>
+              <li><a href="./articles/css-variables">CSS переменные</a></li>
+              <li><a href="./articles/margin-0-auto">Выравнивание блока по центру</a></li>
+              <li><a href="./articles/flex">Самый правильный способ разнести блоки в разные стороны</a></li>
+              <li><a href="./articles/relative-absolute">Горизонтальное и вертикальное центрирование блока</a></li>
+              <li><a href="./articles/layouts">Многоколоночные макеты</a></li>
+              <li><a href="./articles/grids">Сетки</a></li>
+              <li><a href="./articles/media-queries">Отзывчивый дизайн и медиа-выражения</a></li>
+              <li><a href="./articles/gradients-shadows-filters">Градиенты, тени и фильтры</a></li>
+              <li><a href="./articles/transforms">Трансформации</a></li>
+              <li><a href="./articles/tooltip">Вёрстка тултипов</a></li>
+              <li><a href="./articles/dropdown">Выпадающее меню и дропдауны</a></li>
+              <li><a href="./articles/modals">Вёрстка модальных окон</a></li>
+              <li><a href="./articles/custom-checkbox">Вёрстка чекбоксов</a></li>
+              <li><a href="./articles/audio-video">Audio и Video</a></li>
+              <li><a href="./articles/do-u-know">Знаете ли вы?</a></li>
+              <li><a href="./articles/practice">Практика</a></li>
+          </ul>
+  </nav>
+
+<main>
+  <div class="main-content">
+    <div class="container">
+        <section id="audio-video">
+  <h2>Audio и Video</h2>
+  <p>
+    К этому моменту вы уже точно познакомились со вставкой изображений в HTML-документ. А что с медиа-файлами? Как
+    сервисы позволяют нам слушать музыку и смотреть фильмы прямо на сайте? Раньше для этого было необходимо встраивать в
+    страницу Flash Player от Adobe. На данный момент, все корпорации отказываются от этого способа и слишком поздно его
+    рассматривать.
+  </p>
+  <section>
+    <h3>&lt;audio&gt;</h3>
+    <p>
+      Благодаря тегу audio, мы можем воспроизводить звуки на странице. Этот тег можно использовать как одиночно, так и
+      совместно с тегом source. В тегах source можно указывать разные одинаковые звуки в разных форматах для обеспечения
+      наибольшей поддержки. Звук может быть представлен в одном из следующих форматов: mp3, ogg, wav, aac. Наибольшую
+      поддержку на данный момент имеет формат mp3. Рассмотрим примеры:
+    </p>
+    <pre data-lang="html">
+&lt;audio src="sound.mp3" controls&gt;&lt;/audio&gt;
+&lt;audio contols autoplay&gt;
+  &lt;source src="sound.mp3" type="audio/mpeg" &gt;
+  &lt;source src="sound.ogg " type="audio/ogg" &gt;
+&lt;/audio&gt;</pre>
+    <p>Как видите, тег source обязан иметь путь к файлу в атрибуте src, а так же mime-тип, содержащийся в атрибуте type.
+      Если использовать тег audio без source, то он обязан иметь атрибут src, значением которого будет путь к файлу.</p>
+    <p>Кроме того, тег audio может содержать следующие атрибуты:</p>
+    <ul>
+      <li>controls - добавляет элементы управления (пауза/воспроизведение, громкость, пр.);</li>
+      <li>autoplay - проигрывает звук после загрузки страницы;</li>
+      <li>loop - циклично повторяет звук;</li>
+      <li>preload - предзагружает аудиофайл до того, как пользователь нажал на воспроизведение.</li>
+    </ul>
+  </section>
+  <section>
+    <h3>&lt;video&gt;</h3>
+    <p>Как это следует из названия, тег video служит для вставки видео на страницу. В отличие от тега audio, его нельзя
+      использовать без source.</p>
+    <pre data-lang="html">
+&lt;video controls autoplay muted&gt;
+  &lt;source src="movie.mp4" type="video/mp4"&gt;
+  &lt;source src="movie.webm" type="video/webm"&gt;
+&lt;/video&gt;</pre>
+    <p>
+      Здесь всё очень похоже на то, что есть в теге audio, но поддерживаемых атрибутов больше.
+      Рассмотрим некоторые из них:
+    </p>
+    <ul>
+      <li>controls - добавляет элементы управления (пауза/воспроизведение, громкость, на весь экран, пр.);</li>
+      <li>autoplay - проигрывает видео после загрузки страницы (почти никогда не работает без атрибута muted);</li>
+      <li>muted - воспроизводит видео без звука;</li>
+      <li>loop - циклично проигрывает видео;</li>
+      <li>preload - предзагружает видеофайл до того, как пользователь нажал на воспроизведение;</li>
+      <li>poster - позволяет указать изображение заставки.</li>
+    </ul>
+    <p>
+      Существует три наиболее поддерживаемых видео-формата: mp4, webm, ogv, наибольшее распространение среди которых
+      получил mp4, незначительно обогнав webm.
+    </p>
+
+    <h4>CSS и пропорции</h4>
+    <p>
+      Иногда требуется задать высоту видео ещё перед его загрузкой, притом, что ширина тоже неизвестна. К примеру,
+      ширина видео будет равна ширине какого-то контейнера, а ширина этого контейнера зависит от кучи других параметров.
+      Для решения этой проблемы, нам понадобится знать лишь соотношение сторон видеофайла. Почти всегда он равен 16/9
+      или 4/3, но бывают и исключения. Итак, как динамически вычислить высоту ролика до его загрузки, имея только его
+      aspect-ratio (соотношение сторон)? Для этого будет необходимо создать для видео внешний контейнер с position:
+      relative, самому тегу &lt;video&gt; задать position: absolute, а так же передать с помощью CSS-переменных
+      соотношение сторон.
+    </p>
+    <p>Рассмотрим код:</p>
+    <pre data-lang="html">
+&lt;div class="video" style="--aspect-ratio: calc(16 / 9)"&gt;
+  &lt;video&gt;
+    &lt;source src="....mp4" type="video/mp4"&gt;
+  &lt;/video&gt;
+&lt;/div&gt;</pre>
+    <p>И CSS:</p>
+    <pre data-lang="css">
+.video {
+  position: relative;
+  padding-top: calc(100% / var(--aspect-ratio, 1.77));
+}
+.video video {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+}</pre>
+    <p>
+      Что здесь происходит? Мы задаём padding-top или padding-bottom у контейнера, содержащего видео равным его ширине
+      делённой на соотношение сторон. Дело в том, что в свойстве padding при задании значения в процентах, всегда
+      берётся ширина этого блока. Именно из-за этого и работает наш пример.
+    </p>
+    <p>Изучить его подробнее можно тут:</p>
+    <a class="codepen button" data-id="qBdgoKO">Посмотреть пример</a>
+  </section>
+  <section>
+    <h3>Что ещё почитать?</h3>
+    <p>Для более плотного ознакомления с этими тегами, рекомендую почитать
+      <a target="_blank" href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/audio">MDN: &lt;audio&gt;</a>
+      и
+      <a target="_blank" href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/video">MDN: &lt;video&gt;</a>.
+    </p>
+  </section>
+</section>
+    </div>
+  </div>
+</main>
+<script src="./scripts.js"></script>
+</body>
+</html>

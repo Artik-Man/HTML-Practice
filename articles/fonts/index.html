@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/icons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./assets/icons/favicon-16x16.png">
+  
+  <link rel="mask-icon" href="./assets/icons/favicon.svg" color="#5bbad5">
+  <link rel="shortcut icon" href="./assets/icons/favicon.ico">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  
+  <meta name="theme-color" content="#ffffff">
+
+  <title>HTML Practice</title>
+
+      <base href="../../">
+  
+  <link href="https://fonts.googleapis.com/css?family=Philosopher&amp;display=swap&amp;subset=cyrillic"
+        rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600&amp;display=swap&amp;subset=cyrillic"
+        rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <nav class="no-print">
+    <button>Меню</button>
+    <ul>
+      <li><a href="/" class="accent-font">HTML Practice</a></li>
+              <li><a href="./articles/introduction">Введение</a></li>
+              <li><a href="./articles/git">Кратко о GIT</a></li>
+              <li><a href="./articles/units">Единицы измерения в CSS</a></li>
+              <li><a href="./articles/fonts">Форматирование текста</a></li>
+              <li><a href="./articles/column-count">Многоколоночный текст</a></li>
+              <li><a href="./articles/display">Свойство display</a></li>
+              <li><a href="./articles/box-sizing">Блочная модель и box-sizing</a></li>
+              <li><a href="./articles/position">Позиционирование</a></li>
+              <li><a href="./articles/pseudo">Псевдо-классы и псевдо-элементы</a></li>
+              <li><a href="./articles/image">Картинка в тексте</a></li>
+              <li><a href="./articles/css-variables">CSS переменные</a></li>
+              <li><a href="./articles/margin-0-auto">Выравнивание блока по центру</a></li>
+              <li><a href="./articles/flex">Самый правильный способ разнести блоки в разные стороны</a></li>
+              <li><a href="./articles/relative-absolute">Горизонтальное и вертикальное центрирование блока</a></li>
+              <li><a href="./articles/layouts">Многоколоночные макеты</a></li>
+              <li><a href="./articles/grids">Сетки</a></li>
+              <li><a href="./articles/media-queries">Отзывчивый дизайн и медиа-выражения</a></li>
+              <li><a href="./articles/gradients-shadows-filters">Градиенты, тени и фильтры</a></li>
+              <li><a href="./articles/transforms">Трансформации</a></li>
+              <li><a href="./articles/tooltip">Вёрстка тултипов</a></li>
+              <li><a href="./articles/dropdown">Выпадающее меню и дропдауны</a></li>
+              <li><a href="./articles/modals">Вёрстка модальных окон</a></li>
+              <li><a href="./articles/custom-checkbox">Вёрстка чекбоксов</a></li>
+              <li><a href="./articles/audio-video">Audio и Video</a></li>
+              <li><a href="./articles/do-u-know">Знаете ли вы?</a></li>
+              <li><a href="./articles/practice">Практика</a></li>
+          </ul>
+  </nav>
+
+<main>
+  <div class="main-content">
+    <div class="container">
+        <section id="fonts"><h2>Форматирование текста</h2><p>Знаете ли вы, что CSS имеет средства форматирования текста не хуже чем у Microsoft Word? Вы можете задать свой шрифт, жирность, начертание, цвет, тень,размер и еще множество параметров, чтобы получить идеально отформатированный текст. Для форматирования текста используется следующий основной набор свойств:</p><ul class="can-print-break"><li>
+<a href="http://htmlbook.ru/css/font-family" target="_blank">font-family</a><br/>Задаёт шрифт для элемента. К примеру,<code>font-family: Arial, sans-serif</code> Изменяет шрифт на Arial, а если этого шрифта в системе нет, то берёт любой из установленных шрифтов семейства sans-serif.</li><li>
+<a href="http://htmlbook.ru/css/font-size" target="_blank">font-size</a><br/>Задаёт кегль для текста (размер шрифта).<code>font-size: 18px</code> Задаёт размер шрифта в 18px. Могут быть использованы относительные значения: "larger" и "smaller", указывающие, что размер должен быть больше или меньше стандартного значения.</li><li>
+<a href="http://htmlbook.ru/css/font-weight" target="_blank">font-weight</a><br/>Устанавливает насыщенность (жирность) шрифта. Значением могут быть числа от 100 до 900 с шагом 100, а также bold, bolder, lighter и normal.<br/><b>Примечание:</b> значения должны поддерживаться шрифтом! Если шрифт не поддерживает какие-то значения насыщенности, то вы не сможете задать эти значения и будет выбрано ближайшее поддерживающееся.</li><li>
+<a href="http://htmlbook.ru/css/font-style" target="_blank">font-style</a><br/>Определяет начертание шрифта. Может быть обычным (normal), курсивным (italic) и наклонным (oblique).<br/>Наклонное начертание хоть и похоже на курсивное, однако, это разные вещи. Курсивным текст станет только в том случае, если шрифт поддерживает курсивное начертание.
+Наклонный текст образуется путём программного наклона букв обычного шрифта.</li><li>
+<a href="http://htmlbook.ru/css/font-variant" target="_blank">font-variant</a><br/>Благодаря этому свойству, можно отображать текст капителью. Это означает, что строчные буквы будут отображены как прописные, но уменьшенного размера.</li><li>
+<a href="http://htmlbook.ru/css/letter-spacing" target="_blank">letter-spacing</a><br/>Определяет интервал между символами. Желательно задавать значения в em. Принимает и отрицательные значения.</li><li>
+<a href="http://htmlbook.ru/css/word-spacing" target="_blank">word-spacing</a><br/>Устанавливает интервал между словами (ширина пробела)</li><li>
+<a href="http://htmlbook.ru/css/text-indent" target="_blank">text-indent</a><br/>Устанавливает ширину первой строки абзаца (красной строки)</li><li>
+<a href="http://htmlbook.ru/css/text-transform" target="_blank">text-transform</a><br/>Управляет регистром текста. К примеру, значение uppercase устанавливает все символы текста прописными.</li><li>
+<a href="http://htmlbook.ru/css/text-decoration" target="_blank">text-decoration</a><br/>Добавляет подчёркивание (underline), перечёркивание (line-through) или линию над текстом (overline).
+Кроме того, значение none полностью убирает стандартные подчёркивания у ссылок.</li><li>
+<a href="http://htmlbook.ru/css/text-align" target="_blank">text-align</a><br/>Выравнивание текста. Доступные значения:<b>center</b>(по центру),<b>justify</b>(по ширине строки),<b>start</b>(по левому краю, для тех языков, где текст идёт слева направо),<b>end</b>(по правому краю, для тех языков, где текст идёт слева направо)</li><li>
+<a href="http://htmlbook.ru/css/text-shadow" target="_blank">text-shadow</a><br/>Добавляет тень тексту. К примеру,<code>text-shadow: 1px 2px 3px black</code>, где<br/>первое значение (1px) &mdash; сдвиг по оси x,<br/>второе значение (2px) &mdash; сдвиг по оси y,<br/>третье значение (3px) &mdash; радиус размытия тени,<br/>четвертое значение (black) &mdash; цвет тени.<br/>Кроме того, таких групп значений может быть сколько угодно. К примеру,<code>text-shadow: 1px 2px 3px black, 0 0 1em red</code></li><li>
+<a href="http://htmlbook.ru/css/column-count" target="_blank">column-count</a><br/>Задаёт количество колонок в тексте. Применяется, в основном, для газетной вёрстки.</li><li>
+<a href="http://htmlbook.ru/css/line-height" target="_blank">line-height</a><br/>Задаёт высоту строки. Если задавать без единиц измерения, например,<code>line-height: 2</code>, значение будет воспринято как множитель.</li></ul><section><h3>Собственные шрифты</h3><p>Для подключения собственного шрифта используется правило
+<a href="http://htmlbook.ru/css/font-face" target="_blank">@font-face.</a></p><pre data-lang="css">
+@font-face {
+  font-family: 'Philosopher'; /* Название шрифта*/
+  font-style: normal;         /* Начертание */
+  font-weight: 400;           /* Насыщенность */
+  src: url(./fonts/philosopher.woff2) format('woff2'); /* Путь к файлу шрифта и его формат */
+}</pre><p>Для подключение такого шрифта к элементу, используют код:</p><pre data-lang="css">
+.selector {
+  font-family: 'Philosopher', sans-serif;
+}</pre></section><section><h3>Google Fonts</h3><p>Для упрощения подключения шрифтов, используют различные библиотеки шрифтов. К примеру,
+<a target="_blank" href="https://fonts.google.com/">Google Fonts</a>. Такие библиотеки содержат сотни шрифтов, а так же оптимизаторы для браузеров.
+Всё что нам нужно &mdash; выбрать требуемый шрифт, выбрать, какие начертания и языки нам требуются (для русского языка Cyrillic),
+подключить в<code>&lt;head&gt;</code> стиль шрифта, имеющий примерно такой вид:</p><pre data-lang="html">
+&lt;head&gt;
+  ...
+  &lt;link href="https://fonts.googleapis.com/css?family=Philosopher:400,700&display=swap&subset=cyrillic" rel="stylesheet"&gt;
+  ...
+&lt;/head&gt;</pre></section></section>
+    </div>
+  </div>
+</main>
+<script src="./scripts.js"></script>
+</body>
+</html>

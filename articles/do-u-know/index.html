@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/icons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./assets/icons/favicon-16x16.png">
+  
+  <link rel="mask-icon" href="./assets/icons/favicon.svg" color="#5bbad5">
+  <link rel="shortcut icon" href="./assets/icons/favicon.ico">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  
+  <meta name="theme-color" content="#ffffff">
+
+  <title>HTML Practice</title>
+
+      <base href="../../">
+  
+  <link href="https://fonts.googleapis.com/css?family=Philosopher&amp;display=swap&amp;subset=cyrillic"
+        rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600&amp;display=swap&amp;subset=cyrillic"
+        rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <nav class="no-print">
+    <button>Меню</button>
+    <ul>
+      <li><a href="/" class="accent-font">HTML Practice</a></li>
+              <li><a href="./articles/introduction">Введение</a></li>
+              <li><a href="./articles/git">Кратко о GIT</a></li>
+              <li><a href="./articles/units">Единицы измерения в CSS</a></li>
+              <li><a href="./articles/fonts">Форматирование текста</a></li>
+              <li><a href="./articles/column-count">Многоколоночный текст</a></li>
+              <li><a href="./articles/display">Свойство display</a></li>
+              <li><a href="./articles/box-sizing">Блочная модель и box-sizing</a></li>
+              <li><a href="./articles/position">Позиционирование</a></li>
+              <li><a href="./articles/pseudo">Псевдо-классы и псевдо-элементы</a></li>
+              <li><a href="./articles/image">Картинка в тексте</a></li>
+              <li><a href="./articles/css-variables">CSS переменные</a></li>
+              <li><a href="./articles/margin-0-auto">Выравнивание блока по центру</a></li>
+              <li><a href="./articles/flex">Самый правильный способ разнести блоки в разные стороны</a></li>
+              <li><a href="./articles/relative-absolute">Горизонтальное и вертикальное центрирование блока</a></li>
+              <li><a href="./articles/layouts">Многоколоночные макеты</a></li>
+              <li><a href="./articles/grids">Сетки</a></li>
+              <li><a href="./articles/media-queries">Отзывчивый дизайн и медиа-выражения</a></li>
+              <li><a href="./articles/gradients-shadows-filters">Градиенты, тени и фильтры</a></li>
+              <li><a href="./articles/transforms">Трансформации</a></li>
+              <li><a href="./articles/tooltip">Вёрстка тултипов</a></li>
+              <li><a href="./articles/dropdown">Выпадающее меню и дропдауны</a></li>
+              <li><a href="./articles/modals">Вёрстка модальных окон</a></li>
+              <li><a href="./articles/custom-checkbox">Вёрстка чекбоксов</a></li>
+              <li><a href="./articles/audio-video">Audio и Video</a></li>
+              <li><a href="./articles/do-u-know">Знаете ли вы?</a></li>
+              <li><a href="./articles/practice">Практика</a></li>
+          </ul>
+  </nav>
+
+<main>
+  <div class="main-content">
+    <div class="container">
+        <section id="do-u-know">
+  <h2>Знаете ли вы?</h2>
+  <p>В этой статье приведены нестандартные и неоднозначные решения тех или иных проблем, связанных с вёрсткой.</p>
+  <section>
+    <h3>Знаете ли вы, что картинки можно хранить прямо в css-файле?</h3>
+    <p>Небольшие картинки, используемые, например, в свойстве background-image, можно хранить прямо в css. Лучше всего
+      это работает с SVG-графикой. Для того, чтобы вставить картинку в css, нам придется воспользоваться
+      <a target="_blank" href="http://yoksel.github.io/url-encoder/ru/">простеньким энкодером</a>,
+      который, к тому же, сразу же сгенерирует код для вставки в css.
+    </p>
+    <p>
+      Если же у вас растровая иконка и вы используете
+      <a target="_blank" href="https://lesscss.ru/">LESS</a>,
+      то обратите внимание на
+      <a target="_blank" href="https://lesscss.ru/functions/#misc-functions-data-uri">функцию data-uri</a>,
+      которая принимает в качестве параметра путь к файлу с картинкой, а скомпилированный css-файл уже будет содержать
+      закодированную картинку.
+    </p>
+  </section>
+  <section>
+    <h3>Знаете ли вы, что можно совмещать CSS-variables с HSL и calc?</h3>
+    <p>
+      Мы можем создавать темы для сайта, основанные на CSS-переменных. Это будет выглядеть так: все цвета мы задаём на
+      сайте не конкретно, а абстрактно, задавая формулу, по которой в дальнейшем будет вычисляться цвет. Так, изменяя
+      всего три CSS-переменные, мы можем полностью перекрасить весь сайт.
+      Цвета можно изменять на основе времени суток на часах пользователя или же в зависимости от его особенностей
+      зрения. Для нас главная возможность &mdash;
+      упростить с этим нашу работу. Задать три переменные проще, чем подключить огромный CSS-файл, который может
+      содержать ошибки по сравнению с главной темой.
+    </p>
+    <p>Чуть больше конкретики. Цвета в CSS можно задавать при помощи HEX-палитры
+      <i>(#c00)</i>, RGB-палитры <i>(rgb(204,0,0))</i> и HSL-палитры <i>(hsl(0,100%,40%))</i>.
+      Нас интересует сейчас именно палитра HSL. Она позволяет задавать цвет на основе трёх составляющих: Hue, Saturation
+      и Lightness. Hue изменяет цвет от красного до фиолетового, Saturation изменяет насыщенность цвета, Lightness
+      изменяет яркость цвета.
+    </p>
+    <pre data-lang="css" data-code="css-vars-hsl-calc">
+.theme-1 {
+  --primary-h: 0;
+  --primary-s: 75;
+  --primary-l: 60;
+}
+
+.theme-2 {
+  --primary-h: 200;
+  --primary-s: 100;
+  --primary-l: 65;
+}
+
+.palette {
+  --primary: hsl(
+    var(--primary-h),
+    calc(var(--primary-s) * 1%),
+    calc(var(--primary-l) * 1%)
+  );
+
+  --primary-100: hsl(
+    var(--primary-h),
+    calc(var(--primary-s) * 1.4 * 1%),
+    calc(var(--primary-l) * 1.4 * 1%)
+  );
+
+  --primary-200: hsl(
+    var(--primary-h),
+    calc(var(--primary-s) * 1.3 * 1%),
+    calc(var(--primary-l) * 1.3 * 1%)
+  );
+
+  --primary-300: hsl(
+    var(--primary-h),
+    calc(var(--primary-s) * 1.2 * 1%),
+    calc(var(--primary-l) * 1.2 * 1%)
+  );
+
+  --primary-400: hsl(
+    var(--primary-h),
+    calc(var(--primary-s) * 1.1 * 1%),
+    calc(var(--primary-l) * 1.1 * 1%)
+  );
+
+  --primary-500: var(--primary);
+
+  --primary-600: hsl(
+    var(--primary-h),
+    calc(var(--primary-s) * 0.9 * 1%),
+    calc(var(--primary-l) * 0.9 * 1%)
+  );
+
+  --primary-700: hsl(
+    var(--primary-h),
+    calc(var(--primary-s) * 0.8 * 1%),
+    calc(var(--primary-l) * 0.8 * 1%)
+  );
+
+  --primary-800: hsl(
+    var(--primary-h),
+    calc(var(--primary-s) * 0.7 * 1%),
+    calc(var(--primary-l) * 0.7 * 1%)
+  );
+
+  --primary-900: hsl(
+    var(--primary-h),
+    calc(var(--primary-s) * 0.6 * 1%),
+    calc(var(--primary-l) * 0.6 * 1%)
+  );
+}
+
+ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px;
+}
+
+ul li {
+  display: block;
+  padding: 20px;
+  margin-right: 5px;
+  color: white;
+  text-shadow: 0 0 5px black;
+}</pre>
+    <pre data-lang="html" data-code="css-vars-hsl-calc">
+&lt;div class="theme-1"&gt;
+  Theme 1
+  &lt;ul class="palette"&gt;
+    &lt;li style="background: var(--primary-100)"&gt;100&lt;/li&gt;
+    &lt;li style="background: var(--primary-200)"&gt;200&lt;/li&gt;
+    &lt;li style="background: var(--primary-300)"&gt;300&lt;/li&gt;
+    &lt;li style="background: var(--primary-400)"&gt;400&lt;/li&gt;
+    &lt;li style="background: var(--primary-500)"&gt;500&lt;/li&gt;
+    &lt;li style="background: var(--primary-600)"&gt;600&lt;/li&gt;
+    &lt;li style="background: var(--primary-700)"&gt;700&lt;/li&gt;
+    &lt;li style="background: var(--primary-800)"&gt;800&lt;/li&gt;
+    &lt;li style="background: var(--primary-900)"&gt;900&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="theme-2"&gt;
+  Theme 2
+  &lt;ul class="palette"&gt;
+    &lt;li style="background: var(--primary-100)"&gt;100&lt;/li&gt;
+    &lt;li style="background: var(--primary-200)"&gt;200&lt;/li&gt;
+    &lt;li style="background: var(--primary-300)"&gt;300&lt;/li&gt;
+    &lt;li style="background: var(--primary-400)"&gt;400&lt;/li&gt;
+    &lt;li style="background: var(--primary-500)"&gt;500&lt;/li&gt;
+    &lt;li style="background: var(--primary-600)"&gt;600&lt;/li&gt;
+    &lt;li style="background: var(--primary-700)"&gt;700&lt;/li&gt;
+    &lt;li style="background: var(--primary-800)"&gt;800&lt;/li&gt;
+    &lt;li style="background: var(--primary-900)"&gt;900&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+</pre>
+    <div data-run="css-vars-hsl-calc"></div>
+  </section>
+</section>
+    </div>
+  </div>
+</main>
+<script src="./scripts.js"></script>
+</body>
+</html>

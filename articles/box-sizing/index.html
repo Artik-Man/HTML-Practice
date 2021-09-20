@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/icons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./assets/icons/favicon-16x16.png">
+  
+  <link rel="mask-icon" href="./assets/icons/favicon.svg" color="#5bbad5">
+  <link rel="shortcut icon" href="./assets/icons/favicon.ico">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  
+  <meta name="theme-color" content="#ffffff">
+
+  <title>HTML Practice</title>
+
+      <base href="../../">
+  
+  <link href="https://fonts.googleapis.com/css?family=Philosopher&amp;display=swap&amp;subset=cyrillic"
+        rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600&amp;display=swap&amp;subset=cyrillic"
+        rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <nav class="no-print">
+    <button>Меню</button>
+    <ul>
+      <li><a href="/" class="accent-font">HTML Practice</a></li>
+              <li><a href="./articles/introduction">Введение</a></li>
+              <li><a href="./articles/git">Кратко о GIT</a></li>
+              <li><a href="./articles/units">Единицы измерения в CSS</a></li>
+              <li><a href="./articles/fonts">Форматирование текста</a></li>
+              <li><a href="./articles/column-count">Многоколоночный текст</a></li>
+              <li><a href="./articles/display">Свойство display</a></li>
+              <li><a href="./articles/box-sizing">Блочная модель и box-sizing</a></li>
+              <li><a href="./articles/position">Позиционирование</a></li>
+              <li><a href="./articles/pseudo">Псевдо-классы и псевдо-элементы</a></li>
+              <li><a href="./articles/image">Картинка в тексте</a></li>
+              <li><a href="./articles/css-variables">CSS переменные</a></li>
+              <li><a href="./articles/margin-0-auto">Выравнивание блока по центру</a></li>
+              <li><a href="./articles/flex">Самый правильный способ разнести блоки в разные стороны</a></li>
+              <li><a href="./articles/relative-absolute">Горизонтальное и вертикальное центрирование блока</a></li>
+              <li><a href="./articles/layouts">Многоколоночные макеты</a></li>
+              <li><a href="./articles/grids">Сетки</a></li>
+              <li><a href="./articles/media-queries">Отзывчивый дизайн и медиа-выражения</a></li>
+              <li><a href="./articles/gradients-shadows-filters">Градиенты, тени и фильтры</a></li>
+              <li><a href="./articles/transforms">Трансформации</a></li>
+              <li><a href="./articles/tooltip">Вёрстка тултипов</a></li>
+              <li><a href="./articles/dropdown">Выпадающее меню и дропдауны</a></li>
+              <li><a href="./articles/modals">Вёрстка модальных окон</a></li>
+              <li><a href="./articles/custom-checkbox">Вёрстка чекбоксов</a></li>
+              <li><a href="./articles/audio-video">Audio и Video</a></li>
+              <li><a href="./articles/do-u-know">Знаете ли вы?</a></li>
+              <li><a href="./articles/practice">Практика</a></li>
+          </ul>
+  </nav>
+
+<main>
+  <div class="main-content">
+    <div class="container">
+        <section id="box-sizing"><h2>Блочная модель и box-sizing</h2>
+  <p>
+    Элементы в CSS представляют собой набор слоёв: ширина и высота самого элемента
+    (<a target="_blank" href="http://htmlbook.ru/css/width">width</a> и
+    <a target="_blank" href="http://htmlbook.ru/css/height">height</a>),
+    поля элемента (<a target="_blank" href="http://htmlbook.ru/css/padding">padding</a>),
+    граница элемента (<a target="_blank" href="http://htmlbook.ru/css/border">border</a>)
+    и отступы (<a target="_blank" href="http://htmlbook.ru/css/margin">margin</a>).
+    <a target="_blank" href="http://htmlbook.ru/samlayout/blochnaya-verstka/blochnaya-model">
+      Подробнее о блочной модели стоит почитать здесь.
+    </a>
+  </p>
+  <div data-run="box-model"></div>
+  <pre data-lang="html" data-code="box-model" hidden="hidden">
+
+&lt;div class="box-model"&gt;
+  &lt;div class="margin"&gt;margin
+    &lt;div class="border"&gt;border
+      &lt;div class="padding"&gt;padding
+        &lt;div class="size"&gt;width&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+  <pre data-lang="css" data-code="box-model" hidden="hidden">
+.box-model {
+  display: flex;
+  justify-content: center;
+}
+
+.box-model * {
+  text-align: center;
+  border: 1px dashed black;
+  padding: 10px;
+  margin: 10px 24px 24px;
+  font-size: 14px;
+  font-family: monospace;
+}
+
+.box-model .margin {
+  background: lightsalmon;
+}
+
+.box-model .border {
+  background: navajowhite;
+}
+
+.box-model .padding {
+  background: lightgreen;
+}
+
+.box-model .size {
+  background: lightblue;
+  width: 90px;
+  height: 80px;
+  position: relative;
+  padding: 0 10px;
+  text-align: left;
+}
+
+.box-model .size::after {
+  content: 'height';
+  position: absolute;
+  writing-mode: vertical-lr;
+  top: 10px;
+  right: 0;
+}
+</pre>
+  <section>
+    <p>
+      Долгое время в CSS изменение padding приводило к изменению width у элементов, из-за чего два одинаковых по
+      ширине элементас разными по ширине полями, в реальности имели разную ширину. Пример ниже демонстрирует этот
+      недуг:
+    </p>
+    <pre data-lang="html" data-code="box-z-1,box-z-2">
+&lt;div class="one"&gt;padding: 0&lt;/div&gt;
+&lt;div class="two"&gt;padding: 40px&lt;/div&gt;</pre>
+    <pre data-lang="css" data-code="box-z-1">
+.one {
+  width: 200px;
+  height: 100px;
+  padding: 0;
+}
+.two {
+  width: 200px;
+  height: 100px;
+  padding: 40px;
+}</pre>
+    <pre data-lang="css" data-code="box-z-1,box-z-2" hidden="hidden">
+.one,.two{
+  background: teal;
+  color: white;
+  margin: 20px auto;
+}
+.two{
+  box-shadow: inset 0 0 0 40px darkcyan;
+}</pre>
+    <div data-run="box-z-1"></div>
+    <p>
+      <i>Для визуализации, padding был окрашен с помощью свойства box-shadow. В действительности же, задать цвет для
+        padding невозможно!</i>
+    </p>
+  </section>
+  <section>
+    <p>
+      На помощь в борьбе с этим нелогичным, казалось бы, поведением пришел
+      <a href="http://htmlbook.ru/css/box-sizing" target="_blank">box-sizing</a>.
+      Добавим в наши блоки всего по одной строчке кода:
+    </p>
+    <pre data-lang="css" data-code="box-z-2">
+.one {
+  width: 200px;
+  height: 100px;
+  padding: 0;
+  box-sizing: border-box;
+}
+.two {
+  width: 200px;
+  height: 100px;
+  padding: 40px;
+  box-sizing: border-box;
+}
+</pre>
+    <div data-run="box-z-2"></div>
+  </section>
+  <section>
+    <p>
+      Так стало гораздо проще работать с CSS, поэтому многие добавляютbox-sizing: border-box всем элементам на
+      сайте при помощи этого кода:
+    </p>
+    <pre data-lang="css">
+* {
+  box-sizing: border-box;
+}</pre>
+    <p>
+      Это стало хорошей и распространённой практикой, однако по умолчанию значением свойстваbox-sizing является
+      стандартная модель content-box, возвращающий нас в те времена,
+      когда приходилось вычислять ширину элемента по его полям.
+    </p>
+  </section>
+</section>
+    </div>
+  </div>
+</main>
+<script src="./scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/icons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./assets/icons/favicon-16x16.png">
+  
+  <link rel="mask-icon" href="./assets/icons/favicon.svg" color="#5bbad5">
+  <link rel="shortcut icon" href="./assets/icons/favicon.ico">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  
+  <meta name="theme-color" content="#ffffff">
+
+  <title>HTML Practice</title>
+
+      <base href="../../">
+  
+  <link href="https://fonts.googleapis.com/css?family=Philosopher&amp;display=swap&amp;subset=cyrillic"
+        rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600&amp;display=swap&amp;subset=cyrillic"
+        rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <nav class="no-print">
+    <button>Меню</button>
+    <ul>
+      <li><a href="/" class="accent-font">HTML Practice</a></li>
+              <li><a href="./articles/introduction">Введение</a></li>
+              <li><a href="./articles/git">Кратко о GIT</a></li>
+              <li><a href="./articles/units">Единицы измерения в CSS</a></li>
+              <li><a href="./articles/fonts">Форматирование текста</a></li>
+              <li><a href="./articles/column-count">Многоколоночный текст</a></li>
+              <li><a href="./articles/display">Свойство display</a></li>
+              <li><a href="./articles/box-sizing">Блочная модель и box-sizing</a></li>
+              <li><a href="./articles/position">Позиционирование</a></li>
+              <li><a href="./articles/pseudo">Псевдо-классы и псевдо-элементы</a></li>
+              <li><a href="./articles/image">Картинка в тексте</a></li>
+              <li><a href="./articles/css-variables">CSS переменные</a></li>
+              <li><a href="./articles/margin-0-auto">Выравнивание блока по центру</a></li>
+              <li><a href="./articles/flex">Самый правильный способ разнести блоки в разные стороны</a></li>
+              <li><a href="./articles/relative-absolute">Горизонтальное и вертикальное центрирование блока</a></li>
+              <li><a href="./articles/layouts">Многоколоночные макеты</a></li>
+              <li><a href="./articles/grids">Сетки</a></li>
+              <li><a href="./articles/media-queries">Отзывчивый дизайн и медиа-выражения</a></li>
+              <li><a href="./articles/gradients-shadows-filters">Градиенты, тени и фильтры</a></li>
+              <li><a href="./articles/transforms">Трансформации</a></li>
+              <li><a href="./articles/tooltip">Вёрстка тултипов</a></li>
+              <li><a href="./articles/dropdown">Выпадающее меню и дропдауны</a></li>
+              <li><a href="./articles/modals">Вёрстка модальных окон</a></li>
+              <li><a href="./articles/custom-checkbox">Вёрстка чекбоксов</a></li>
+              <li><a href="./articles/audio-video">Audio и Video</a></li>
+              <li><a href="./articles/do-u-know">Знаете ли вы?</a></li>
+              <li><a href="./articles/practice">Практика</a></li>
+          </ul>
+  </nav>
+
+<main>
+  <div class="main-content">
+    <div class="container">
+        <section id="flex"><h2>Самый правильный способ разнести блоки в разные стороны</h2>
+  <p>Способ основывается на применении
+    <a href="https://developer.mozilla.org/ru/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox"
+       target="_blank">флекс-контейнера</a>, внутри которого находятся два блока. Оперируя свойством
+    <a href="http://htmlbook.ru/css/justify-content" target="_blank">justify-content</a>, можно добиться различных
+    вариантов размещения этих двух блоков внутри флекс-контейнера. Нас же сейчас интересует
+    значение "space-between", равномерно распределяющее блоки по ширине флекс-контейнера, прижимая к его краям первый и
+    последний блоки.
+    Ширина блоков будет выбираться автоматически, в зависимости от контента, содержащегося внутри блока.
+    Кроме того, ширину блока, при необходимости, можно зафиксировать свойством
+    <a href="http://htmlbook.ru/css/width" target="_blank">width</a>, если это потребуется.</p>
+  <p>Этот метод используется, в основном, для построения "шапки" сайта, но может быть использован и в других частях
+    сайта или
+    <nobr>веб-приложения.</nobr>
+    Для полного понимания работы флекс-контейнеров, рекомендую поиграть в игру
+    <a href="https://flexboxfroggy.com/" target="_blank">Flexbox Froggy</a></p>
+  <section><p>Пример:</p>
+    <div data-run="flex-justify-1"></div>
+    <p>Код:</p>
+    <pre data-lang="html" data-code="flex-justify-1">
+&lt;div class="container"&gt;
+  &lt;div class="box-left"&gt;
+    &lt;span&gt;Brand&lt;/span&gt;
+    &lt;span&gt;Stores&lt;/span&gt;
+    &lt;span&gt;Actions&lt;/span&gt;
+    &lt;span&gt;Contacts&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;div class="box-right"&gt;
+    &lt;span&gt;Settings&lt;/span&gt;
+    &lt;span&gt;Account&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+    <pre data-lang="css" data-code="flex-justify-1">
+{
+ /* Задаём флекс-бокс (позволяет влиять на расположение дочерних элементов) */
+ display: flex;
+ /* Говорим элементам встать так, чтобы между ними, по возможности, образовывалось расстояние */
+ justify-content: space-between;
+}
+
+  .box-left {
+    /* Здесь можно задать какие-то стили для левого блока */
+  }
+
+  .box-right {
+    /* Здесь можно задать какие-то стили для правого блока */
+  }</pre>
+    <pre data-lang="css" data-code="flex-justify-1" hidden="hidden">
+.container {
+  background: lightblue;
+  padding: 5px;
+}
+
+.box-left {
+  background: teal;
+}
+
+.box-right {
+  background: blueviolet;
+}
+
+.container span {
+  display: inline-block;
+  padding: 10px 20px;
+  background: rgba(255, 255, 255, 0.5);
+  margin: 5px;
+}
+
+@media (max-width: 720px) {
+  .container {
+    padding: 5px 1px;
+    font-size: 3.5vw;
+  }
+
+  .container span {
+    margin: 2px;
+    padding: 10px 2px;
+  }
+}
+</pre>
+  </section>
+  <section><h3>Задача</h3>
+    <p>Сделать шапку для сайта habr.com так, чтобы правая и левая часть меню были разнесены при помощи
+      флекс-бокса</p></section>
+  <pre data-lang="html" data-code="habr-header" hidden="hidden">
+&lt;div class="sol2"&gt;
+  &lt;div class="content"&gt;
+    &lt;div class="left"&gt;&lt;a class="current" href="#"&gt;Публикации&lt;/a&gt;&lt;a href="#"&gt;Новости&lt;/a&gt;&lt;a href="#"&gt;Пользователи&lt;/a&gt;&lt;a href="#"&gt;Хабы&lt;/a&gt;&lt;a href="#"&gt;Компании&lt;/a&gt;&lt;a href="#"&gt;Песочница&lt;/a&gt;&lt;/div&gt;
+    &lt;div class="right"&gt;&lt;a class="button default" href="#"&gt;Войти&lt;/a&gt;&lt;a class="button primary" href="#"&gt;Регистрация&lt;/a&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+  <pre data-lang="css" data-code="habr-header" hidden="hidden">
+.sol2 {
+  border-bottom: 1px solid #d5dddf;
+  border-top: 1px solid #d5dddf;
+  font-size: 15px;
+  background: white;
+  margin-top:10px;
+}
+
+.sol2 .content {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 32px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.sol2 .right {
+  padding: 16px;
+  white-space: nowrap;
+}
+
+.sol2 .right .button {
+  margin: 0 0 0 10px;
+}
+
+.sol2 a {
+  display: inline-block;
+  padding: 23px 0;
+  margin-right: 28px;
+  text-decoration: none;
+  color: #838a92;
+}
+
+.sol2 a:hover {
+  color: #5096b1;
+}
+
+.sol2 a.current {
+  color: #464646;
+}
+
+.sol2 .button {
+  padding: 8px 13px;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  font-size: 13px;
+  box-shadow: none;
+}
+
+.sol2 .button.default {
+  border-color: #a4afba;
+  background-color: white;
+}
+
+.sol2 .button.default:hover {
+  border-color: #65a3be;
+}
+
+.sol2 .button.primary {
+  background-color: #65a3be;
+  border-color: transparent;
+  color: white;
+}
+
+.sol2 .button.primary:hover {
+  background-color: #4986a1;
+}
+
+@media (max-width: 900px) {
+  .sol2 {
+    font-size: 1.5vw;
+  }
+
+  .sol2 .content {
+    padding: 0 3.5vw;
+  }
+
+  .sol2 .right {
+    padding: 1.5vw;
+  }
+
+  .sol2 .right .button {
+    margin: 0 0 0 0.5vw;
+  }
+
+  .sol2 a {
+    padding: 2.5vw 0;
+    margin-right: 1.4vw;
+  }
+
+  .sol2 .button {
+    padding: 0.8vw 1.4vw;
+    font-size: 1.4vw;
+  }
+}
+</pre>
+  <div data-run="habr-header"></div>
+</section>
+
+    </div>
+  </div>
+</main>
+<script src="./scripts.js"></script>
+</body>
+</html>

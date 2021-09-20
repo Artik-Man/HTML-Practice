@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/icons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./assets/icons/favicon-16x16.png">
+  
+  <link rel="mask-icon" href="./assets/icons/favicon.svg" color="#5bbad5">
+  <link rel="shortcut icon" href="./assets/icons/favicon.ico">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  
+  <meta name="theme-color" content="#ffffff">
+
+  <title>HTML Practice</title>
+
+      <base href="../../">
+  
+  <link href="https://fonts.googleapis.com/css?family=Philosopher&amp;display=swap&amp;subset=cyrillic"
+        rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600&amp;display=swap&amp;subset=cyrillic"
+        rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <nav class="no-print">
+    <button>Меню</button>
+    <ul>
+      <li><a href="/" class="accent-font">HTML Practice</a></li>
+              <li><a href="./articles/introduction">Введение</a></li>
+              <li><a href="./articles/git">Кратко о GIT</a></li>
+              <li><a href="./articles/units">Единицы измерения в CSS</a></li>
+              <li><a href="./articles/fonts">Форматирование текста</a></li>
+              <li><a href="./articles/column-count">Многоколоночный текст</a></li>
+              <li><a href="./articles/display">Свойство display</a></li>
+              <li><a href="./articles/box-sizing">Блочная модель и box-sizing</a></li>
+              <li><a href="./articles/position">Позиционирование</a></li>
+              <li><a href="./articles/pseudo">Псевдо-классы и псевдо-элементы</a></li>
+              <li><a href="./articles/image">Картинка в тексте</a></li>
+              <li><a href="./articles/css-variables">CSS переменные</a></li>
+              <li><a href="./articles/margin-0-auto">Выравнивание блока по центру</a></li>
+              <li><a href="./articles/flex">Самый правильный способ разнести блоки в разные стороны</a></li>
+              <li><a href="./articles/relative-absolute">Горизонтальное и вертикальное центрирование блока</a></li>
+              <li><a href="./articles/layouts">Многоколоночные макеты</a></li>
+              <li><a href="./articles/grids">Сетки</a></li>
+              <li><a href="./articles/media-queries">Отзывчивый дизайн и медиа-выражения</a></li>
+              <li><a href="./articles/gradients-shadows-filters">Градиенты, тени и фильтры</a></li>
+              <li><a href="./articles/transforms">Трансформации</a></li>
+              <li><a href="./articles/tooltip">Вёрстка тултипов</a></li>
+              <li><a href="./articles/dropdown">Выпадающее меню и дропдауны</a></li>
+              <li><a href="./articles/modals">Вёрстка модальных окон</a></li>
+              <li><a href="./articles/custom-checkbox">Вёрстка чекбоксов</a></li>
+              <li><a href="./articles/audio-video">Audio и Video</a></li>
+              <li><a href="./articles/do-u-know">Знаете ли вы?</a></li>
+              <li><a href="./articles/practice">Практика</a></li>
+          </ul>
+  </nav>
+
+<main>
+  <div class="main-content">
+    <div class="container">
+        <section id="pseudo"><h2>Псевдо-классы и псевдо-элементы</h2>
+  <p>
+    Псевдо-классы и псевдо-элементы решают группу задач, связанных с выбором конкретного элемента списка или с
+    изменением
+    поведения объекта в связи с возникновением какого-либо события.
+    Здесь мы разберём лишь часть из существующих псевдо-элементов и псевдо-классов, а больше вы всегда сможете узнать
+    здесь:
+
+    <a href="https://developer.mozilla.org/ru/docs/Learn/CSS/Introduction_to_CSS/Pseudo-classes_and_pseudo-elements"
+       target="_blank">
+      Псевдо-классы и псевдо-элементы
+    </a>
+  </p>
+  <h3>Псевдо-классы</h3>
+  <p>
+    Псевдо-классы представляют собой ключевое слово, начинающееся с двоеточия (:), которое добавляют после селектора:
+  </p>
+  <pre data-lang="css">selector:pseudo-class { ... }</pre>
+
+  <p>Ниже приведён список наиболее популярных псевдо-классов</p>
+  <ul>
+    <li>
+
+      <a target="_blank" href="https://developer.mozilla.org/ru/docs/Web/CSS/:hover">:hover</a><br/>
+      Срабатывает при наведении курсора на элемент
+    </li>
+    <li>
+
+      <a target="_blank" href="https://developer.mozilla.org/ru/docs/Web/CSS/:visited">:visited</a><br/>
+      Позволяет выбрать посещённые ссылки
+    </li>
+    <li>
+
+      <a target="_blank" href="https://developer.mozilla.org/ru/docs/Web/CSS/:active">:active</a><br/>
+      Срабатывает при нажатии на элемент, но может быть применим только к элементам<code>&lt;a&gt;</code> и<code>&lt;button&gt;</code>
+    </li>
+    <li>
+
+      <a target="_blank" href="https://developer.mozilla.org/ru/docs/Web/CSS/:focus">:focus</a><br/>
+      Срабатывает при получении элементом фокуса. Работает только для элементов<code>&lt;a&gt;</code>,<code>&lt;button&gt;</code>,<code>&lt;input&gt;</code>,<code>&lt;textarea&gt;</code>
+    </li>
+    <li>
+
+      <a target="_blank" href="https://developer.mozilla.org/ru/docs/Web/CSS/:checked">:checked</a><br/>
+      Срабатывает для элемента<code>&lt;input type="checkbox"&gt;</code> или<code> &lt;input type="radio"&gt;</code>.
+      Позволяет
+      применять стили в том случае, если на элементе стоит отметка
+    </li>
+    <li>
+
+      <a target="_blank" href="https://developer.mozilla.org/ru/docs/Web/CSS/:disabled">:disabled</a><br/>
+      Срабатывает, если элемент имеет атрибут<code>disabled</code>, к примеру, элемент
+      <code>&lt;input type="..." disabled&gt;</code>или<code>&lt;button disabled&gt;</code>
+    </li>
+    <li>
+
+      <a target="_blank" href="https://developer.mozilla.org/ru/docs/Web/CSS/:required">:required</a><br/>
+      Срабатывает, если элемент имеет атрибут<code>required</code>, всегда для элемента
+      <code>&lt;input required&gt;</code>
+    </li>
+    <li>
+
+      <a target="_blank" href="https://developer.mozilla.org/ru/docs/Web/CSS/:first-child">:first-child</a><br/>
+      Позволяет выбрать первый элемент в своем родителе
+    </li>
+    <li>
+      <a target="_blank" href="https://developer.mozilla.org/ru/docs/Web/CSS/:last-child">:last-child</a><br/>
+      Позволяет выбрать последний элемент в своем родителе
+    </li>
+    <li>
+
+      <a target="_blank" href="https://developer.mozilla.org/ru/docs/Web/CSS/:nth-child">:nth-child</a><br/>
+      Позволяет выбирать один или более элементов, основываясь на их позиции среди группы соседних элементов.<br/>
+      <b>Примеры:</b><br/>
+      <code>ul li:nth-child(2)</code>Выберет второй элемент<br/>
+      <code>ul li:nth-child(2n)</code>Выберет каждый второй элемент (через один)<br/>
+      <code>ul li:nth-child(3n+1)</code>Выберет 1,4,7,9 ... и так далее, через два элементы.
+    </li>
+    <li>
+      <a target="_blank" href="https://developer.mozilla.org/ru/docs/Web/CSS/:nth-last-child">:nth-last-child</a><br/>Точно
+      так же, но счёт идёт с последнего элемента к первому. К примеру, для выбора предпоследнего элемента списка:<code>ul
+        li:nth-last-child(2)</code></li>
+    <li>
+      <a target="_blank" href="https://developer.mozilla.org/ru/docs/Web/CSS/:not">:not()</a><br/>"НЕ". Это функция,
+      принимающая селектор внутрь скобок. К примеру, нам нужно найти все ссылки, у которых нет
+      атрибута<code>target</code>:<br/><code>a:not([target])</code><br/>Ещё пример: требуется найти все статьи, не
+      имеющие класса<code>.top</code>:<br/><code>article:not(.top)</code></li>
+  </ul>
+  <h3>Псевдо-элементы</h3>
+  <p>Псевдо-элементов значительно меньше, а отличить их можно по двойному двоеточию (::), которое добавляется к
+    селектору.</p>
+  <pre data-lang="css">selector::pseudo-element { ... }</pre>
+
+  <p>Браузерами поддерживается и устаревший синтаксис с одинарным двоеточием.</p>
+  <p>Псевдо-элементы ведут себя как элементы, то есть, у них есть размеры, они могут быть спозиционированы, их видно.
+    Псевдо-классы же мы увидеть не могли,могли лишь только увидеть их влияние на элементы. Рассмотрим псевдо-элементы
+    подробнее:</p>
+  <ul>
+    <li>
+      <a href="https://developer.mozilla.org/ru/docs/Web/CSS/::before" target="_blank">::before</a><br/>Создаёт
+      псевдо-элемент, который будет являться первым потомком элемента. Не работает без свойства<code>content:
+        '';</code><br/><code>a::before{
+        content: '♥';
+        }</code>В этом примере, перед каждой ссылкой на сайте будет добавляться сердечко.
+    </li>
+    <li>
+      <a href="https://developer.mozilla.org/ru/docs/Web/CSS/::after" target="_blank">::after</a><br/>Работает точно
+      так же, как и ::before, но псевдо-элемент создаётся в самом конце и будет являться последним потомком.
+    </li>
+  </ul>
+  <div class="no-print-break"><p>С остальными псевдо-элементами вы познакомитесь позже, на личной практике. Они
+      используются заметно реже. Конечно, ссылки на них я приведу:</p>
+    <ul>
+      <li>
+        <a href="https://developer.mozilla.org/ru/docs/Web/CSS/::first-letter" target="_blank">::first-letter</a></li>
+      <li>
+        <a href="https://developer.mozilla.org/ru/docs/Web/CSS/::first-line" target="_blank">::first-line</a></li>
+      <li>
+        <a href="https://developer.mozilla.org/ru/docs/Web/CSS/::selection" target="_blank">::selection</a></li>
+      <li>
+        <a href="https://developer.mozilla.org/ru/docs/Web/CSS/::backdrop" target="_blank">::backdrop</a></li>
+    </ul>
+  </div>
+</section>
+    </div>
+  </div>
+</main>
+<script src="./scripts.js"></script>
+</body>
+</html>

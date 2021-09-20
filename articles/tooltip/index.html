@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/icons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./assets/icons/favicon-16x16.png">
+  
+  <link rel="mask-icon" href="./assets/icons/favicon.svg" color="#5bbad5">
+  <link rel="shortcut icon" href="./assets/icons/favicon.ico">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  
+  <meta name="theme-color" content="#ffffff">
+
+  <title>HTML Practice</title>
+
+      <base href="../../">
+  
+  <link href="https://fonts.googleapis.com/css?family=Philosopher&amp;display=swap&amp;subset=cyrillic"
+        rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600&amp;display=swap&amp;subset=cyrillic"
+        rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <nav class="no-print">
+    <button>Меню</button>
+    <ul>
+      <li><a href="/" class="accent-font">HTML Practice</a></li>
+              <li><a href="./articles/introduction">Введение</a></li>
+              <li><a href="./articles/git">Кратко о GIT</a></li>
+              <li><a href="./articles/units">Единицы измерения в CSS</a></li>
+              <li><a href="./articles/fonts">Форматирование текста</a></li>
+              <li><a href="./articles/column-count">Многоколоночный текст</a></li>
+              <li><a href="./articles/display">Свойство display</a></li>
+              <li><a href="./articles/box-sizing">Блочная модель и box-sizing</a></li>
+              <li><a href="./articles/position">Позиционирование</a></li>
+              <li><a href="./articles/pseudo">Псевдо-классы и псевдо-элементы</a></li>
+              <li><a href="./articles/image">Картинка в тексте</a></li>
+              <li><a href="./articles/css-variables">CSS переменные</a></li>
+              <li><a href="./articles/margin-0-auto">Выравнивание блока по центру</a></li>
+              <li><a href="./articles/flex">Самый правильный способ разнести блоки в разные стороны</a></li>
+              <li><a href="./articles/relative-absolute">Горизонтальное и вертикальное центрирование блока</a></li>
+              <li><a href="./articles/layouts">Многоколоночные макеты</a></li>
+              <li><a href="./articles/grids">Сетки</a></li>
+              <li><a href="./articles/media-queries">Отзывчивый дизайн и медиа-выражения</a></li>
+              <li><a href="./articles/gradients-shadows-filters">Градиенты, тени и фильтры</a></li>
+              <li><a href="./articles/transforms">Трансформации</a></li>
+              <li><a href="./articles/tooltip">Вёрстка тултипов</a></li>
+              <li><a href="./articles/dropdown">Выпадающее меню и дропдауны</a></li>
+              <li><a href="./articles/modals">Вёрстка модальных окон</a></li>
+              <li><a href="./articles/custom-checkbox">Вёрстка чекбоксов</a></li>
+              <li><a href="./articles/audio-video">Audio и Video</a></li>
+              <li><a href="./articles/do-u-know">Знаете ли вы?</a></li>
+              <li><a href="./articles/practice">Практика</a></li>
+          </ul>
+  </nav>
+
+<main>
+  <div class="main-content">
+    <div class="container">
+        <section id="tooltip"><h2>Вёрстка тултипов</h2>
+  <p>
+    HTML имеет свои встроенные тултипы, но часто их дизайн не соответствует требованиям стиля макета. Наведите мышь на
+    следующее предложение, чтобы понять,что такое тултип и как он выглядит по умолчанию.
+    <span title="Тултип" style="border-bottom: 1px dotted black">Это предложение имеет тултип.</span>
+    Сейчас мы научимся стилизовать тултипы. Для начала, нужно понять, что стандартный тултип - это своеобразное описание
+    для элемента.</p>
+  <p>
+    Самый простой вид тултипа, который мы здесь будем рассматривать, не требует от HTML практически ничего. Мы будем
+    использовать атрибут
+    <a target="_blank"
+       href="https://developer.mozilla.org/ru/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-label_attribute">aria-label</a>,
+    который служит для описания элементов скринридерам (в основном, для людей с нарушениями зрения).</p>
+  <p>
+    Для того, чтобы через CSS "захватить" значение атрибута, необходимо использовать свойство
+    <a target="_blank" href="http://htmlbook.ru/css/content">content</a>,
+    использующееся с псевдо-элементами
+    <a target="_blank" href="http://htmlbook.ru/css/before">::before</a> и
+    <a target="_blank" href="http://htmlbook.ru/css/after">::after</a>.
+  </p>
+  <section><h3>Итак, рассмотрим код:</h3>
+    <pre data-lang="css" data-code="tooltip-1">
+.tooltip {
+  position: relative; /* Элемент должен быть спозиционирован не статично, чтобы внутри него можно было разместить абсолютно-спозиционированный элемент */
+}
+.tooltip:hover::after {
+  content: attr(aria-label); /* Захватываем атрибут aria-label и отображаем его в ::after псевдо-элементе */
+
+  position: absolute; /* Позиционируем псевдо-элемент абсолютно */
+  bottom: 100%;
+  left: 0;
+
+  background: rgba(0,0,0,.5);
+  color: white;
+  border-radius: 4px;
+  padding: 8px 16px;
+  font-size: 12px;
+  cursor: default;
+}
+
+.like-button {
+  /* Какие-то стили для кнопки */
+}
+</pre>
+    <pre data-lang="css" data-code="tooltip-1,tooltip-2" hidden="hidden">
+.like-button {
+  position: relative;
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: 24px;
+  color: tomato;
+  margin: 40px 0;
+  cursor: pointer;
+}
+.like-button:hover {
+  color: darkred;
+}
+a {
+  color: white;
+  font-size: inherit;
+}
+a:hover {
+  text-decoration: none;
+}
+@media print {
+  .like-button.tooltip::after {
+    content: attr(aria-label);
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    background: rgba(0,0,0,.5);
+    color: white;
+    border-radius: 4px;
+    padding: 8px 16px;
+    font-size: 12px;
+    cursor: default;
+  }
+  .like-button .tooltip {
+    display: inline-block !important;
+  }
+}
+</pre>
+    <pre data-lang="html" data-code="tooltip-1">
+&lt;button class="like-button tooltip" aria-label="Like"&gt;❤&lt;/button&gt;
+</pre>
+    <p class="no-print">Наведи на сердечко, чтобы увидеть тултип</p>
+    <div data-run="tooltip-1"></div>
+  </section>
+  <section>
+    <h3>Тултип в виде HTML-элемента</h3>
+    <p>
+      К сожалению, рассмотренный выше тултип не идеален. Что делать, если внутри него нужно разместить ссылку? А
+      многострочный текст? Да, бывают и такие задачи.Чтобы решить эту задачу, нам придётся использовать тултип в виде
+      HTML-элемента.
+    </p>
+    <pre data-lang="css" data-code="tooltip-2">
+.has-tooltip {
+  position: relative;
+}
+.has-tooltip:hover .tooltip {
+  display: inline-block; /* Отображаем тултип только если навели мышью на элемент, его содержащий */
+}
+
+.tooltip {
+  display: none; /* Скрываем тултип по умолчанию */
+
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+
+  min-width: 350px;
+  text-align: left;
+  background: rgba(0,0,0,.5);
+  color: white;
+  border-radius: 4px;
+  padding: 8px 16px;
+  font-size: 12px;
+  margin-bottom: 8px;
+  cursor: default;
+}
+.tooltip::after {
+  /* Это уголок */
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 4px;
+  border: 8px solid transparent;
+  border-top-color: rgba(0,0,0,.5);
+}
+</pre>
+    <pre data-lang="html" data-code="tooltip-2">
+&lt;button class="like-button has-tooltip" aria-label="Like"&gt;
+  ❤
+  &lt;span class="tooltip"&gt;
+    А здесь мы уже можем размещать различную информацию,
+    &lt;br&gt;
+    в том числе многострочный текст и даже
+    &lt;a&gt;ссылки&lt;/a&gt;
+  &lt;/span&gt;
+&lt;/button&gt;
+</pre>
+    <div data-run="tooltip-2"></div>
+    <p>В примере показано не совсем корректное скрытие тултипа. Рекомендую использовать
+      <a
+        href="https://allyjs.io/tutorials/hiding-elements.html#how-to-hide-elements-visually" target="_blank">.visually-hidden</a>.
+    </p>
+    <p>
+      Существует еще множество способов сделать тултип, но многие из них подразумевают использование JavaScript, а эта
+      книга не о нём. На мой взгляд, то, что можно сделать без JavaScript, нужно делать без JavaScript. Конечно, и из
+      этого правила есть исключения.
+    </p>
+  </section>
+</section>
+    </div>
+  </div>
+</main>
+<script src="./scripts.js"></script>
+</body>
+</html>

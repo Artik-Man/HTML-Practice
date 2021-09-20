@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/icons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./assets/icons/favicon-16x16.png">
+  
+  <link rel="mask-icon" href="./assets/icons/favicon.svg" color="#5bbad5">
+  <link rel="shortcut icon" href="./assets/icons/favicon.ico">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  
+  <meta name="theme-color" content="#ffffff">
+
+  <title>HTML Practice</title>
+
+      <base href="../../">
+  
+  <link href="https://fonts.googleapis.com/css?family=Philosopher&amp;display=swap&amp;subset=cyrillic"
+        rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600&amp;display=swap&amp;subset=cyrillic"
+        rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <nav class="no-print">
+    <button>Меню</button>
+    <ul>
+      <li><a href="/" class="accent-font">HTML Practice</a></li>
+              <li><a href="./articles/introduction">Введение</a></li>
+              <li><a href="./articles/git">Кратко о GIT</a></li>
+              <li><a href="./articles/units">Единицы измерения в CSS</a></li>
+              <li><a href="./articles/fonts">Форматирование текста</a></li>
+              <li><a href="./articles/column-count">Многоколоночный текст</a></li>
+              <li><a href="./articles/display">Свойство display</a></li>
+              <li><a href="./articles/box-sizing">Блочная модель и box-sizing</a></li>
+              <li><a href="./articles/position">Позиционирование</a></li>
+              <li><a href="./articles/pseudo">Псевдо-классы и псевдо-элементы</a></li>
+              <li><a href="./articles/image">Картинка в тексте</a></li>
+              <li><a href="./articles/css-variables">CSS переменные</a></li>
+              <li><a href="./articles/margin-0-auto">Выравнивание блока по центру</a></li>
+              <li><a href="./articles/flex">Самый правильный способ разнести блоки в разные стороны</a></li>
+              <li><a href="./articles/relative-absolute">Горизонтальное и вертикальное центрирование блока</a></li>
+              <li><a href="./articles/layouts">Многоколоночные макеты</a></li>
+              <li><a href="./articles/grids">Сетки</a></li>
+              <li><a href="./articles/media-queries">Отзывчивый дизайн и медиа-выражения</a></li>
+              <li><a href="./articles/gradients-shadows-filters">Градиенты, тени и фильтры</a></li>
+              <li><a href="./articles/transforms">Трансформации</a></li>
+              <li><a href="./articles/tooltip">Вёрстка тултипов</a></li>
+              <li><a href="./articles/dropdown">Выпадающее меню и дропдауны</a></li>
+              <li><a href="./articles/modals">Вёрстка модальных окон</a></li>
+              <li><a href="./articles/custom-checkbox">Вёрстка чекбоксов</a></li>
+              <li><a href="./articles/audio-video">Audio и Video</a></li>
+              <li><a href="./articles/do-u-know">Знаете ли вы?</a></li>
+              <li><a href="./articles/practice">Практика</a></li>
+          </ul>
+  </nav>
+
+<main>
+  <div class="main-content">
+    <div class="container">
+        <section id="position">
+  <h2>Позиционирование</h2>
+  <p>position - это фундаментальное свойство CSS, которое позволяет определить, в каком месте браузер будет отрисовывать
+    элементы.</p>
+  <p>Свойство position обладает следующими значениями:</p>
+  <ul>
+    <li>static - значение по умолчанию. Элемент будет отрисован "нормально"</li>
+    <li>relative - позволяет отрисовать элемент "нормально", но, благодаря CSS-свойствам top, right, bottom и
+      left,появляется возможность сместить блок из "нормальной" позиции.
+    </li>
+    <li>absolute - самое интересное свойство. Положение блока рассчитывается при помощи top, right, bottom и left,но не
+      относительно изначального места, а относительно ближайшего родителя с position не равным static или элемента body.
+    </li>
+    <li>fixed - положение относительно границ экрана. Также рассчитывается с помощью top, right, bottom и left, но
+      родителем является сам экран.
+    </li>
+    <li>sticky - "прилипает" к границам экрана в том случае, если выходит за границы экрана. Также устанавливается при
+      помощи top, right, bottom и left.Подробнее тут:
+      <a target="_blank" href="https://medium.com/web-standards/sticky-bc7ff7088693">
+        Как на самом деле работает position: sticky в CSS
+      </a>
+    </li>
+  </ul>
+  <p>Поэкспериментировать с position: absolute можно здесь:</p>
+  <a class="codepen button" data-id="gOYwLmY" data-height="400">Запустить пример</a>
+  <p>Поэкспериментировать с position: sticky можно тут:</p>
+  <a class="codepen button" data-id="rNBMWzp" data-height="400">Запустить пример</a>
+  <section><h3>Смещение блока: top, right, bottom и left</h3>
+    <p>По умолчанию значением этих свойств является auto. Мы можем использовать для задания положения, например, px или
+      %.</p>Используются в купе с не статично спозиционированными блоками.
+    <ul>
+      <li>top смещает блок сверху вниз;</li>
+      <li>bottom смещает блок снизу вверх;</li>
+      <li>left смещает блок слева направо;</li>
+      <li>right смещает блок справа налево.</li>
+    </ul>
+  </section>
+  <section>
+    <h3>Слои и z-index</h3>
+    <p>Иногда, сместив один блок относительно другого, они начинают "наезжать" друг на друга. Причём, не всегда так, как
+      мы этого хотим.Что если мы хотим, чтобы блок, который отрисовался "под" вторым блоком, был отрисован "над" ним?
+      Для этого на помощь приходит свойство z-index. Значением этого свойства может быть просто любое число, без единиц
+      измерения.
+      Установив z-index: 2 для первого блока и z-index: 1 для второго, мы точно будем знать, что первый блок будет
+      отрисован "над" вторым, так как
+      его z-index больше. По умолчанию же, "над" отрисовывается тот блок, который в структуре HTML был ближе к концу
+      документа.</p>
+    <p>Если вы математик, то вам будет понятно следующее объяснение: наш экран имеет две координаты: X и Y. Координаты
+      начинаются из верхнего левого угла.X направлен вправо. Y &mdash; вниз. А теперь представим себе ещё одну
+      координату &mdash; Z.
+      Она направлена из той же точки, но перпендикулярно экрану, на зрителя. Это и есть z-index.</p>
+    <p>Если вы работали с фотошопом или какими-то другими графическими редакторами, то вам знакомо понятие "слои". Мы
+      можем располагать различные изображения на этих слоях, а в случае перекрытия, показан будет тот слой, что
+      находится выше. И это тоже z-index.</p>
+    <p>Раскомментируйте строку с z-index, чтобы понять, как работает это свойство.</p>
+    <a class="codepen button" data-id="KKPgNrX" data-height="400">Посмотреть задание</a>
+  </section>
+</section>
+    </div>
+  </div>
+</main>
+<script src="./scripts.js"></script>
+</body>
+</html>

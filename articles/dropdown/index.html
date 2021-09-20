@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/icons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./assets/icons/favicon-16x16.png">
+  
+  <link rel="mask-icon" href="./assets/icons/favicon.svg" color="#5bbad5">
+  <link rel="shortcut icon" href="./assets/icons/favicon.ico">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  
+  <meta name="theme-color" content="#ffffff">
+
+  <title>HTML Practice</title>
+
+      <base href="../../">
+  
+  <link href="https://fonts.googleapis.com/css?family=Philosopher&amp;display=swap&amp;subset=cyrillic"
+        rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600&amp;display=swap&amp;subset=cyrillic"
+        rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <nav class="no-print">
+    <button>Меню</button>
+    <ul>
+      <li><a href="/" class="accent-font">HTML Practice</a></li>
+              <li><a href="./articles/introduction">Введение</a></li>
+              <li><a href="./articles/git">Кратко о GIT</a></li>
+              <li><a href="./articles/units">Единицы измерения в CSS</a></li>
+              <li><a href="./articles/fonts">Форматирование текста</a></li>
+              <li><a href="./articles/column-count">Многоколоночный текст</a></li>
+              <li><a href="./articles/display">Свойство display</a></li>
+              <li><a href="./articles/box-sizing">Блочная модель и box-sizing</a></li>
+              <li><a href="./articles/position">Позиционирование</a></li>
+              <li><a href="./articles/pseudo">Псевдо-классы и псевдо-элементы</a></li>
+              <li><a href="./articles/image">Картинка в тексте</a></li>
+              <li><a href="./articles/css-variables">CSS переменные</a></li>
+              <li><a href="./articles/margin-0-auto">Выравнивание блока по центру</a></li>
+              <li><a href="./articles/flex">Самый правильный способ разнести блоки в разные стороны</a></li>
+              <li><a href="./articles/relative-absolute">Горизонтальное и вертикальное центрирование блока</a></li>
+              <li><a href="./articles/layouts">Многоколоночные макеты</a></li>
+              <li><a href="./articles/grids">Сетки</a></li>
+              <li><a href="./articles/media-queries">Отзывчивый дизайн и медиа-выражения</a></li>
+              <li><a href="./articles/gradients-shadows-filters">Градиенты, тени и фильтры</a></li>
+              <li><a href="./articles/transforms">Трансформации</a></li>
+              <li><a href="./articles/tooltip">Вёрстка тултипов</a></li>
+              <li><a href="./articles/dropdown">Выпадающее меню и дропдауны</a></li>
+              <li><a href="./articles/modals">Вёрстка модальных окон</a></li>
+              <li><a href="./articles/custom-checkbox">Вёрстка чекбоксов</a></li>
+              <li><a href="./articles/audio-video">Audio и Video</a></li>
+              <li><a href="./articles/do-u-know">Знаете ли вы?</a></li>
+              <li><a href="./articles/practice">Практика</a></li>
+          </ul>
+  </nav>
+
+<main>
+  <div class="main-content">
+    <div class="container">
+        <section id="dropdown">
+  <h2>Выпадающее меню и дропдауны</h2>
+  <p>Пользуясь интернетом, вы наверняка уже видели выпадающее меню. Это когда наводишь мышью на элемент меню и
+    появляется подменю.</p>
+  <p>Весь секрет в том, чтобы изначально скрыть выпадающее меню, а при наступлении какого-то события (наведение мыши на
+    какую-то кнопку), отобразить выпадающее меню.</p>
+  <p>Сразу же перейдём к вёрстке. HTML предельно прост: есть меню, состоящее из четырёх элементов, а во втором элементе,
+    помимо ссылки, есть вложенное меню.</p>
+  <pre data-lang="html" data-code="dropdown-menu">
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;a&gt;Магазины&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;a&gt;Покупателям&lt;/a&gt;
+    &lt;ul class="dropdown"&gt;
+      &lt;li&gt;
+        &lt;a&gt;Бонусная программа&lt;/a&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;a&gt;Подарочные карты&lt;/a&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;a&gt;Доставка&lt;/a&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;a&gt;Юридическим лицам&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;a&gt;Контакты&lt;/a&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+  <p>
+    CSS тоже не слишком сложный. Фактически, все стили вертятся вокруг оформления. Единственное - применен "магический"
+    селектор. На самом деле, никакой магии здесь нет. <code>menu li:hover .dropdown</code> означает, что при наведении
+    курсора мыши <code>:hover</code>, на элемент меню <code>menu li</code>, дропдаун <code>.dropdown</code>
+    получит некоторые стили, в данном случае, <code>display: block</code>.
+  </p>
+  <pre data-lang="css" data-code="dropdown-menu">
+
+* {
+  box-sizing: border-box;
+}
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto 100px;
+  max-width: 800px;
+  display: flex;
+}
+ul li {
+  display: block;
+  position: relative;
+  width: 25%;
+}
+ul li a {
+  padding: 8px 16px;
+  background: lightblue;
+  display: inline-block;
+  width: 100%;
+  text-decoration: none;
+  color: black;
+  text-align: center;
+}
+ul li a:hover {
+  background: teal;
+  color: white;
+}
+ul li:hover .dropdown { /* Магия здесь */
+  display: block;
+}
+
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  padding: 0;
+  margin: 0;
+  min-width: 100%;
+  list-style: none;
+}
+.dropdown li {
+  display: block;
+  width: auto;
+}
+.dropdown li a {
+  text-align: left;
+}
+  </pre>
+  <pre data-lang="css" data-code="dropdown,dropdown-menu" hidden="hidden">
+a {
+  cursor: pointer !important;
+}
+a:hover {
+  text-decoration: underline;
+}
+@media print {
+  .dropdown {
+    display: block !important;
+  }
+  ul {
+    margin-bottom: 250px;
+  }
+}</pre>
+  <p>Результат представлен ниже. <span class="no-print">Попробуйте навести мышью на элементы меню.</span></p>
+  <div data-run="dropdown-menu"></div>
+  <p>Похожим способом можно сделать и дропдаун для кнопки</p>
+  <pre data-lang="html" data-code="dropdown">
+&lt;button&gt;О нас
+  &lt;ul class="dropdown"&gt;
+    &lt;li&gt;&lt;a&gt;О компании прессе&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a&gt;Юридическая информация&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a&gt;Контактная информация&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/button&gt;
+</pre>
+  <pre data-lang="css" data-code="dropdown">
+
+button {
+  background: white;
+  border: 1px solid gray;
+  border-radius: 4px;
+  padding: 8px 16px;
+  position: relative;
+  margin-bottom: 100px;
+}
+
+button:hover {
+  background: lightblue;
+}
+
+*:hover &gt; .dropdown { /* при наведении на любой элемент, содержащий .dropdown ... */
+  display: block;
+}
+
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  padding: 16px;
+  margin: 0;
+  list-style: none;
+  box-shadow: 0 0 5px 0 black;
+  border-radius: 4px;
+  background: white;
+  min-width: 200px;
+}
+
+.dropdown li {
+  display: block;
+  margin-bottom: 8px;
+  text-align: left;
+}
+
+</pre>
+  <div data-run="dropdown"></div>
+</section>
+    </div>
+  </div>
+</main>
+<script src="./scripts.js"></script>
+</body>
+</html>
