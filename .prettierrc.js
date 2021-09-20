@@ -7,4 +7,12 @@ module.exports = {
   bracketSpacing: true,
   printWidth: 140,
   endOfLine: 'lf',
+  overrides: [
+    {
+      "files": "*.njk",
+      options: {
+        parser: "xhtml"
+      }
+    }
+  ]
 };
