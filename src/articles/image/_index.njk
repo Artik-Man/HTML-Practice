@@ -1,0 +1,104 @@
+<section id="image">
+  <h2>Картинка в тексте</h2>
+  <p>Часто, бывает нужно вставить картинку в текст. Но работает это не всегда так, как мы это задумывали. Попробуем
+    вставить картинку без стилей и посмотрим, что получится.</p>
+  <section>
+    <p>Код примера предельно прост:</p>
+    <pre data-lang="html" data-code="image-in-text-1,image-in-text-2,image-in-text-4">
+&lt;p&gt;
+  &lt;img src="./assets/images/image.svg" alt="Just image"&gt;
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic commodi maiores excepturi dolore cupiditate sit obcaecati,
+  repellat doloribus rerum! Dicta eius aliquid eaque sed sequi obcaecati debitis quos veniam placeat.
+&lt;/p&gt;
+&lt;p&gt;
+  Itaque voluptates eum nihil minima quo iure voluptas, atque amet molestias, perspiciatis sed cupiditate nemo inventore velit
+  soluta iste ut nesciunt! Qui fuga nesciunt accusantium magnam officiis corrupti, quibusdam amet.
+&lt;/p&gt;
+&lt;p&gt;
+  Soluta, laudantium in. Dolorem laboriosam nobis nihil iste eum sapiente maxime, facilis minus atque debitis corporis quasi,
+  molestias delectus magni placeat ipsum iure perspiciatis doloremque repudiandae rem tenetur, in dolorum.
+&lt;/p&gt;
+</pre>
+    <div data-run="image-in-text-1"></div>
+  </section>
+  <section><p>Как видите, картинка стала частью первой строки текста. Нам редко нужно, чтобы поведение было именно
+      таким. Чаще нам необходимо сделать так, чтобы картинка обтекалась текстом. Для этого существует свойство
+      float.</p>
+    <p>Добавим к нашему примеру
+      <a href="http://htmlbook.ru/css/float" target="_blank">float</a>: left и посмотрим, что получится</p>
+    <pre data-lang="css" data-code="image-in-text-2">
+img {
+  float: left;
+}
+</pre>
+    <div data-run="image-in-text-2"></div>
+    <p>Здесь мы видим, что картинка стала обтекаться текстом. Правда, из-за того, что текста много, мы не видим одного
+      подводного камня этого решения.</p></section>
+  <section><p>Давайте уберём последние два абзаца и посмотрим, что будет</p>
+    <div style="background: #f2f2f2; padding: 15px;">
+      <p style="margin: 10px 0;">
+        <img src="./assets/images/image.svg" alt="Just image" style="float:left;"/>
+        Lorem ipsum
+        dolor...</p>
+    </div>
+    <p>Обратите внимание, что-то пошло не так и даже этот абзац, не относящийся к примеру, всё равно обтекается
+      картинкой. Явно не то, чего мы ожидали. Всё дело в том, что флоаты (поплавки) "всплывают" над родительским
+      элементом, поэтому его высота больше не зависит от нашей картинки.</p></section>
+  <section>
+    <p>
+      Для того, чтобы исправить подобное поведение, нужно воспользоваться "очисткой" &mdash;
+      <a href="http://htmlbook.ru/css/clear" target="_blank">clear</a>.
+      Изменим наш код следующим образом:
+    </p>
+    <pre data-lang="html" data-code="image-in-text-3">
+&lt;p&gt;
+  &lt;img src="./assets/images/image.svg" alt="Just image"&gt;
+  Lorem ipsum dolor...
+&lt;/p&gt;
+&lt;div class="clear"&gt;&lt;/div&gt;</pre>
+    <pre data-lang="css" data-code="image-in-text-3">
+img {
+  float: left;
+}
+.clear {
+  clear: both;
+}</pre>
+  </section>
+  <section>
+    <div data-run="image-in-text-3"></div>
+    <p>Как видите, абзац, который вы сейчас читаете, находится уже за пределами примера. Добавив такой чистящий элемент
+      в самый конец родительского контейнера, мы смогли вернуть высоту контейнера к нормальному уровню.</p>
+  </section>
+  <section>
+    <p>В предыдущих примерах мы увидели, как задать обтекание картинки текстом так, чтобы картинка оказалась
+      слева.Точно так же мы можем обтекать её и с другой стороны.</p>
+    <pre data-lang="css" data-code="image-in-text-4">
+img {
+  float: right;
+}
+</pre>
+    <div data-run="image-in-text-4"></div>
+    <p>И если мы не уверены, что текста будет достаточно, не забудем добавить в конец контейнера clear: both.</p>
+    <pre data-lang="css" data-code="image-in-text-5">
+img {
+  float: left;
+}
+.clear {
+  clear: both;
+}</pre>
+    <pre data-lang="html" data-code="image-in-text-5" hidden="hidden">
+&lt;p&gt;
+  &lt;img src="./assets/images/image.svg" alt="Just image"&gt;
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic commodi maiores excepturi dolore cupiditate sit obcaecati,
+  repellat doloribus rerum! Dicta eius aliquid eaque sed sequi obcaecati debitis quos veniam placeat.
+&lt;/p&gt;
+    </pre>
+    <div data-run="image-in-text-5"></div>
+  </section>
+  <section><p>Подведём итоги. Для того, чтобы вставить картинку в текст и сделать так, чтобы она обтекалась, нужно
+      воспользоваться свойством</p>
+    <a href="http://htmlbook.ru/css/float" target="_blank">float</a>, а для того, чтобы восстановить размер контейнера в
+    том случае, если картинка стала вылезать за его пределы, нужно использовать свойство
+    <a href="http://htmlbook.ru/css/clear" target="_blank">clear</a>.
+  </section>
+</section>

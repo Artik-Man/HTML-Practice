@@ -1,0 +1,134 @@
+<section id="margin-0-auto">
+  <h2>Выравнивание блока по центру</h2>
+  <p>Этот фокус позволяет центрировать блок заранее определённой ширины, независимо от ширины экрана. Кроме
+    того, если использовать max-width вместо width, то, даже если размер экрана пользователя окажется меньше
+    ширины этого блока, то блок не выйдет за границы экрана, а будет равен ширине экрана. Это весьма
+    распространенная практика</p>
+  <h3>Пример:</h3>
+
+  <div data-run="auto-margin-1"></div>
+  <p>Код:</p>
+  <pre data-lang="html" data-code="auto-margin-1">&lt;div class="block"&gt;&lt;/div&gt;</pre>
+
+  <pre data-lang="css" data-code="auto-margin-1">
+
+.block {
+  max-width: 500px;
+  margin: 0 auto; /* центрирует блок так, что правый и левый маргин становятся одинаковыми */
+}
+  </pre>
+  <pre data-lang="css" data-code="auto-margin-1" hidden="hidden">
+
+.block {
+  height: 110px;
+  background: teal;
+}
+</pre>
+  <h3>Задача</h3>
+  <p>Сделать шапку для сайта avito.ru. Серый фон шапки должен быть растянут на всю страницу, а элементы меню должны
+    быть в центре, не зависимо от ширины экрана пользователя</p>
+  <div data-run="auto-margin-2"></div>
+  <pre data-lang="html" data-code="auto-margin-2" hidden>
+
+&lt;div class="sol1"&gt;
+  &lt;div class="content"&gt;
+    &lt;div class="left"&gt;&lt;a href="#"&gt;Объявления&lt;/a&gt;&lt;a href="#"&gt;Магазины&lt;/a&gt;&lt;a href="#"&gt;Бизнес&lt;/a&gt;&lt;a href="#"&gt;Помощь&lt;/a&gt;&lt;/div&gt;
+    &lt;div class="right"&gt;&lt;a class="primary" href="#"&gt;Вход и регистрация&lt;/a&gt;&lt;a class="button primary" href="#"&gt;Подать объявление&lt;/a&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+  <pre data-lang="css" data-code="auto-margin-2" hidden>
+
+.sol1 {
+  background-color: #f7f7f7;
+  font-size: 14px;
+  border-bottom: 1px solid #d8d8d8;
+  border-top: 1px solid #d8d8d8;
+}
+
+.sol1 .content {
+  margin: 0 auto;
+  max-width: 900px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 32px;
+}
+
+.sol1 .content .left {
+  padding: 14px 0;
+}
+
+.sol1 .content .left a {
+  margin-right: 18px;
+}
+
+.sol1 .content .right {
+  padding: 7px 0;
+}
+
+.sol1 .content .right a.button {
+  margin-left: 29px;
+}
+
+.sol1 a {
+  color: #a1a1a1;
+  text-decoration: none;
+}
+
+.sol1 a:hover {
+  color: #ff6163;
+}
+
+.sol1 .button {
+  display: inline-block;
+  padding: 6px 13px;
+  border-radius: 3px;
+  border: 1px solid transparent;
+  box-shadow: none;
+}
+
+.sol1 a.primary {
+  color: #0091d9;
+}
+
+.sol1 a.primary:hover {
+  color: #ff6163;
+}
+
+.sol1 .button.primary {
+  background-color: #01aaff;
+  color: white;
+}
+
+.sol1 .button.primary:hover {
+  color: white;
+  background-color: #0099e6;
+}
+
+@media (max-width: 720px) {
+  .sol1 {
+    font-size: 1.5vw;
+  }
+
+  .sol1 .content {
+    padding: 0 3.5vw;
+  }
+
+  .sol1 .content .left {
+    padding: 1.5vw 0;
+  }
+
+  .sol1 .content .left a {
+    margin-right: 2vw;
+  }
+
+  .sol1 .content .right {
+    padding: 0.7vw 0;
+  }
+
+  .sol1 .content .right a.button {
+    margin-left: 3.2vw;
+    padding: 0.6vw 1.5vw;
+  }
+}</pre>
+</section>

@@ -1,0 +1,66 @@
+$break: 1100px;
+nav {
+  position: fixed;
+  z-index: 2;
+  background-color: white;
+  top: 0;
+  left: calc(0px - var(--menu-width));
+  width: 100%;
+  height: 100vh;
+  transition: left 250ms ease-in-out;
+  max-width: var(--menu-width);
+
+  @media (min-width: $break) {
+    position: sticky;
+    min-width: var(--menu-width);
+    overflow-y: auto;
+  }
+
+  &.full {
+    margin-top: 0;
+    @media (min-width: $break) {
+      margin-top: 220vh;
+    }
+  }
+
+  &.opened {
+    @media (max-width: $break - 1) {
+      overflow-y: auto;
+      left: 0;
+      button {
+        right: 0;
+        left: auto;
+      }
+    }
+  }
+
+  button {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    @media (min-width: $break) {
+      display: none;
+    }
+  }
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 1em 0 2em;
+
+    li {
+
+      a {
+        display: inline-block;
+        padding: 0.5em 1em;
+        border-left: 0.3em solid transparent;
+        color: var(--grey);
+        text-decoration: none;
+
+        &.active {
+          border-color: var(--accent);
+        }
+      }
+    }
+  }
+}

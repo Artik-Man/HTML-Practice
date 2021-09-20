@@ -1,0 +1,244 @@
+<section id="relative-absolute">
+  <h2>Горизонтальное и вертикальное центрирование блока</h2>
+  <p>
+    Эта техника применяется, в основном, для вёрстки модальных окон. Основывается на том, что блокс position: absolute
+    смещается относительно ближайшего родителя с position: relative | absolute | fixed.
+    Смещение задаётся при помощи CSS-свойств
+  </p>
+  <ul>
+    <li>
+      <a href="http://htmlbook.ru/css/top" target="_blank">top</a></li>
+    <li>
+      <a href="http://htmlbook.ru/css/right" target="_blank">right</a></li>
+    <li>
+      <a href="http://htmlbook.ru/css/bottom" target="_blank">bottom</a></li>
+    <li>
+      <a href="http://htmlbook.ru/css/left" target="_blank">left</a>
+    </li>
+  </ul>
+  <p>
+    Если мы используем единицу измерения % для задания смещения, важно помнить, что процент берётся относительно
+    родительского контейнера.Это значит, что left: 50% сместит блок на 50% от ширины родителя, а не от собственной
+    ширины.
+    Для того, чтобы сместить блок на 50% относительно собственной ширины, необходимо использовать свойство
+    <a href="http://htmlbook.ru/css/transform" target="_blank">transform</a>
+    с функцией translateX(50%) - движение по оси
+    X, translateY(50%) - движение по оси Y или translate(50%, 50%) - движение по обеим осям.
+  </p>
+  <p>
+    В примере ниже показано, как мы сначала смещаем абсолютно спозиционированный блок на 50% слева направо (left) и на
+    50% сверху вниз (top) относительно контейнера,а затем, смещаем на 50% вверх и на 50% вправо относительно самого себя
+    (transform: translate(-50%, -50%)), чтобы блок встал ровно по центру контейнера.
+  </p>
+  <p>
+    Дело в том, что в CSS, началом координат является верхняя левая точка элемента, а не центр элемента.Поэтому нам не
+    достаточно просто подвинуть блок на 50% вниз и вправо, так как тогда в центре контейнера окажется левый верхний угол
+    блока, а не центр блока.
+  </p>
+  <section>
+    <h3>Пример:</h3>
+    <div data-run="rel-abs-center"></div>
+    <p>Код:</p>
+    <pre data-lang="html" data-code="rel-abs-center">
+&lt;div class="container"&gt;
+  &lt;div class="block"&gt;&lt;/div&gt;
+&lt;/div&gt;</pre>
+    <pre data-lang="css" data-code="rel-abs-center">
+.container {
+  position: relative;
+  width: 100%;
+  height: 250px;
+}
+
+.block {
+  position: absolute; /* позволяет двигать блок относительно родительского релятивного контейнера */
+  top: 50%; /* смещаем блок на 50% от высоты родителя */
+  left: 50%; /* смещаем блок на 50% от ширины родителя */
+  transform: translate(-50%, -50%); /* смещаем блок на 50% от ширины и высоты этого блока */
+  width: 120px;
+  height: 80px;
+}
+</pre>
+    <pre data-lang="css" data-code="rel-abs-center" hidden="hidden">
+.container {
+  background: lightblue;
+}
+
+.block {
+  background: teal;
+}
+
+</pre>
+  </section>
+</section>
+<section>
+  <h3>Задача</h3>
+  <p>Сделать просмотр изображений как на dns-shop.ru</p>
+  <ul>
+    <li>Размер внешнего контейнера: 100% * 100vh</li>
+    <li>Вместо картинок можно использовать цветные блоки</li>
+    <li>Стрелочки:
+      <a href="./assets/images/angle-left-sm.svg" target="_blank">arrow-left</a>,
+      <a
+        href="./assets/images/angle-right-sm.svg" target="_blank">arrow-right</a>; изображение кнопки "закрыть":
+      <a
+        href="./assets/images/times-sm.svg" target="_blank">close</a>.
+    </li>
+  </ul>
+
+  <div class="no-print-break" data-run="dns-modal" data-height="90vh"></div>
+  <pre data-lang="html" data-code="dns-modal" hidden="hidden">
+&lt;div class="sol3"&gt;
+  &lt;div class="title"&gt;iPhone Xs Max&lt;/div&gt;
+  &lt;button class="button close"&gt;&lt;/button&gt;
+  &lt;button class="button left"&gt;&lt;/button&gt;
+  &lt;button class="button right"&gt;&lt;/button&gt;
+  &lt;div class="image-container"&gt;&lt;img src="./assets/images/iphonexsmax-1.jpg" alt="iPhone Xs Max"&gt;&lt;/div&gt;
+  &lt;div class="slider-container"&gt;
+    &lt;button class="button left"&gt;&lt;/button&gt;
+    &lt;button class="thumb active"&gt;&lt;img src="./assets/images/iphonexsmax-2.jpg" alt="Next"&gt;&lt;/button&gt;
+    &lt;button class="thumb"&gt;&lt;img src="./assets/images/iphonexsmax-3.jpg" alt="Next"&gt;&lt;/button&gt;
+    &lt;button class="thumb"&gt;&lt;img src="./assets/images/iphonexsmax-4.jpg" alt="Next"&gt;&lt;/button&gt;
+    &lt;button class="thumb"&gt;&lt;img src="./assets/images/iphonexsmax-5.jpg" alt="Next"&gt;&lt;/button&gt;
+    &lt;button class="button right"&gt;&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+  <pre data-lang="css" data-code="dns-modal" hidden="hidden">
+.sol3 {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 550px;
+  overflow: hidden;
+  background: white;
+}
+
+.sol3 .title {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #444;
+}
+
+.sol3 .image-container {
+  position: absolute;
+  bottom: 50%;
+  right: 50%;
+  transform: translate(50%, 50%);
+  width: 70%;
+  height: 60%;
+  text-align: center;
+}
+
+.sol3 .image-container img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.sol3 .slider-container {
+  position: absolute;
+  bottom: 30px;
+  right: 50%;
+  width: 320px;
+  height: 80px;
+  margin-right: -160px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.sol3 .slider-container .thumb {
+  text-align: center;
+  padding: 8px;
+  background: white;
+  border: 1px solid #d8d8d8;
+  margin: 5px;
+  width: 70px;
+  height: 70px;
+  border-radius: 4px;
+  cursor: pointer;
+  box-shadow: none;
+}
+
+.sol3 .slider-container .thumb img {
+  display: inline-block;
+  max-width: 100%;
+  max-height: 100%;
+  opacity: 0.7;
+}
+
+.sol3 .slider-container .thumb.active {
+  border-color: #464646;
+}
+
+.sol3 .slider-container .thumb.active img,
+.sol3 .slider-container .thumb:hover img {
+  opacity: 1;
+}
+
+.sol3 .slider-container .button {
+  width: 60px;
+}
+
+.sol3 .slider-container .button.left {
+  left: auto;
+  right: 100%;
+  width: 40px;
+}
+
+.sol3 .slider-container .button.right {
+  right: auto;
+  left: 100%;
+  width: 40px;
+}
+
+.sol3 .button {
+  position: absolute;
+  bottom: 50%;
+  transform: translateY(50%);
+  background: white;
+  min-width: 30px;
+  min-height: 30px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.4;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+  width: 80px;
+  height: 80px;
+  box-shadow: none;
+}
+
+.sol3 .button:hover {
+  opacity: 1;
+}
+
+.sol3 .button.left {
+  left: 0;
+  background-image: url('./assets/images/angle-left-sm.svg');
+}
+
+.sol3 .button.right {
+  right: 0;
+  background-image: url('./assets/images/angle-right-sm.svg');
+}
+
+.sol3 .button.close {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  transform: none;
+  width: 30px;
+  height: 30px;
+  background-image: url('./assets/images/times-sm.svg');
+}
+
+@media (max-width: 500px) {
+  .sol3 .slider-container {
+    transform: scale(0.8);
+  }
+}</pre>
+</section>

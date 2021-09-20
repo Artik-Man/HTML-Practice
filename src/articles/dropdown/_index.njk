@@ -1,0 +1,163 @@
+<section id="dropdown">
+  <h2>Выпадающее меню и дропдауны</h2>
+  <p>Пользуясь интернетом, вы наверняка уже видели выпадающее меню. Это когда наводишь мышью на элемент меню и
+    появляется подменю.</p>
+  <p>Весь секрет в том, чтобы изначально скрыть выпадающее меню, а при наступлении какого-то события (наведение мыши на
+    какую-то кнопку), отобразить выпадающее меню.</p>
+  <p>Сразу же перейдём к вёрстке. HTML предельно прост: есть меню, состоящее из четырёх элементов, а во втором элементе,
+    помимо ссылки, есть вложенное меню.</p>
+  <pre data-lang="html" data-code="dropdown-menu">
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;a&gt;Магазины&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;a&gt;Покупателям&lt;/a&gt;
+    &lt;ul class="dropdown"&gt;
+      &lt;li&gt;
+        &lt;a&gt;Бонусная программа&lt;/a&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;a&gt;Подарочные карты&lt;/a&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;a&gt;Доставка&lt;/a&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;a&gt;Юридическим лицам&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;a&gt;Контакты&lt;/a&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+  <p>
+    CSS тоже не слишком сложный. Фактически, все стили вертятся вокруг оформления. Единственное - применен "магический"
+    селектор. На самом деле, никакой магии здесь нет. <code>menu li:hover .dropdown</code> означает, что при наведении
+    курсора мыши <code>:hover</code>, на элемент меню <code>menu li</code>, дропдаун <code>.dropdown</code>
+    получит некоторые стили, в данном случае, <code>display: block</code>.
+  </p>
+  <pre data-lang="css" data-code="dropdown-menu">
+
+* {
+  box-sizing: border-box;
+}
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto 100px;
+  max-width: 800px;
+  display: flex;
+}
+ul li {
+  display: block;
+  position: relative;
+  width: 25%;
+}
+ul li a {
+  padding: 8px 16px;
+  background: lightblue;
+  display: inline-block;
+  width: 100%;
+  text-decoration: none;
+  color: black;
+  text-align: center;
+}
+ul li a:hover {
+  background: teal;
+  color: white;
+}
+ul li:hover .dropdown { /* Магия здесь */
+  display: block;
+}
+
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  padding: 0;
+  margin: 0;
+  min-width: 100%;
+  list-style: none;
+}
+.dropdown li {
+  display: block;
+  width: auto;
+}
+.dropdown li a {
+  text-align: left;
+}
+  </pre>
+  <pre data-lang="css" data-code="dropdown,dropdown-menu" hidden="hidden">
+a {
+  cursor: pointer !important;
+}
+a:hover {
+  text-decoration: underline;
+}
+@media print {
+  .dropdown {
+    display: block !important;
+  }
+  ul {
+    margin-bottom: 250px;
+  }
+}</pre>
+  <p>Результат представлен ниже. <span class="no-print">Попробуйте навести мышью на элементы меню.</span></p>
+  <div data-run="dropdown-menu"></div>
+  <p>Похожим способом можно сделать и дропдаун для кнопки</p>
+  <pre data-lang="html" data-code="dropdown">
+&lt;button&gt;О нас
+  &lt;ul class="dropdown"&gt;
+    &lt;li&gt;&lt;a&gt;О компании прессе&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a&gt;Юридическая информация&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a&gt;Контактная информация&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/button&gt;
+</pre>
+  <pre data-lang="css" data-code="dropdown">
+
+button {
+  background: white;
+  border: 1px solid gray;
+  border-radius: 4px;
+  padding: 8px 16px;
+  position: relative;
+  margin-bottom: 100px;
+}
+
+button:hover {
+  background: lightblue;
+}
+
+*:hover &gt; .dropdown { /* при наведении на любой элемент, содержащий .dropdown ... */
+  display: block;
+}
+
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  padding: 16px;
+  margin: 0;
+  list-style: none;
+  box-shadow: 0 0 5px 0 black;
+  border-radius: 4px;
+  background: white;
+  min-width: 200px;
+}
+
+.dropdown li {
+  display: block;
+  margin-bottom: 8px;
+  text-align: left;
+}
+
+</pre>
+  <div data-run="dropdown"></div>
+</section>

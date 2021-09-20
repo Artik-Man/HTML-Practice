@@ -1,0 +1,47 @@
+{% extends "./templates/_main.njk" %}
+
+{% block base %}
+  <base href="./">
+{% endblock base %}
+{% block nav %}
+{% endblock nav %}
+{% block main %}
+  <style>
+    @media (min-width: 1600px) {
+      main {
+        padding-left: var(--menu-width);
+      }
+    }
+  </style>
+  <h1>
+    <a class="logo" href="https://artik-man.github.io/HTML-Practice/">
+      <span class="top">HTML</span>
+      <span class="bottom">Practice</span>
+    </a>
+  </h1>
+  <div class="flex">
+    <p class="no-print"><a href="./full">К одностраничной версии</a>
+    <p>Автор: <a href="//artik.me" target="_blank">Artik Man</a></p>
+  </div>
+
+  <section id="contents">
+    <h2>Содержание</h2>
+    <ul>
+      {% for article in contents %}
+        <li><a href="./articles/{{ article.id }}">{{ article.title }}</a></li>
+      {% endfor %}
+    </ul>
+    <p>В будущем появятся следующие главы:</p>
+    <ul>
+      <li>SVG</li>
+      <li>Вёрстка форм</li>
+      <li>Анимации</li>
+      <li>Поговорим о семантике</li>
+      <li>Bootstrap</li>
+      <li>Препроцессоры</li>
+      <li>meta и open graph</li>
+    </ul>
+  </section>
+
+{% endblock %}
+

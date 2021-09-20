@@ -1,0 +1,35 @@
+<section id="fonts"><h2>Форматирование текста</h2><p>Знаете ли вы, что CSS имеет средства форматирования текста не хуже чем у Microsoft Word? Вы можете задать свой шрифт, жирность, начертание, цвет, тень,размер и еще множество параметров, чтобы получить идеально отформатированный текст. Для форматирования текста используется следующий основной набор свойств:</p><ul class="can-print-break"><li>
+<a href="http://htmlbook.ru/css/font-family" target="_blank">font-family</a><br/>Задаёт шрифт для элемента. К примеру,<code>font-family: Arial, sans-serif</code> Изменяет шрифт на Arial, а если этого шрифта в системе нет, то берёт любой из установленных шрифтов семейства sans-serif.</li><li>
+<a href="http://htmlbook.ru/css/font-size" target="_blank">font-size</a><br/>Задаёт кегль для текста (размер шрифта).<code>font-size: 18px</code> Задаёт размер шрифта в 18px. Могут быть использованы относительные значения: "larger" и "smaller", указывающие, что размер должен быть больше или меньше стандартного значения.</li><li>
+<a href="http://htmlbook.ru/css/font-weight" target="_blank">font-weight</a><br/>Устанавливает насыщенность (жирность) шрифта. Значением могут быть числа от 100 до 900 с шагом 100, а также bold, bolder, lighter и normal.<br/><b>Примечание:</b> значения должны поддерживаться шрифтом! Если шрифт не поддерживает какие-то значения насыщенности, то вы не сможете задать эти значения и будет выбрано ближайшее поддерживающееся.</li><li>
+<a href="http://htmlbook.ru/css/font-style" target="_blank">font-style</a><br/>Определяет начертание шрифта. Может быть обычным (normal), курсивным (italic) и наклонным (oblique).<br/>Наклонное начертание хоть и похоже на курсивное, однако, это разные вещи. Курсивным текст станет только в том случае, если шрифт поддерживает курсивное начертание.
+Наклонный текст образуется путём программного наклона букв обычного шрифта.</li><li>
+<a href="http://htmlbook.ru/css/font-variant" target="_blank">font-variant</a><br/>Благодаря этому свойству, можно отображать текст капителью. Это означает, что строчные буквы будут отображены как прописные, но уменьшенного размера.</li><li>
+<a href="http://htmlbook.ru/css/letter-spacing" target="_blank">letter-spacing</a><br/>Определяет интервал между символами. Желательно задавать значения в em. Принимает и отрицательные значения.</li><li>
+<a href="http://htmlbook.ru/css/word-spacing" target="_blank">word-spacing</a><br/>Устанавливает интервал между словами (ширина пробела)</li><li>
+<a href="http://htmlbook.ru/css/text-indent" target="_blank">text-indent</a><br/>Устанавливает ширину первой строки абзаца (красной строки)</li><li>
+<a href="http://htmlbook.ru/css/text-transform" target="_blank">text-transform</a><br/>Управляет регистром текста. К примеру, значение uppercase устанавливает все символы текста прописными.</li><li>
+<a href="http://htmlbook.ru/css/text-decoration" target="_blank">text-decoration</a><br/>Добавляет подчёркивание (underline), перечёркивание (line-through) или линию над текстом (overline).
+Кроме того, значение none полностью убирает стандартные подчёркивания у ссылок.</li><li>
+<a href="http://htmlbook.ru/css/text-align" target="_blank">text-align</a><br/>Выравнивание текста. Доступные значения:<b>center</b>(по центру),<b>justify</b>(по ширине строки),<b>start</b>(по левому краю, для тех языков, где текст идёт слева направо),<b>end</b>(по правому краю, для тех языков, где текст идёт слева направо)</li><li>
+<a href="http://htmlbook.ru/css/text-shadow" target="_blank">text-shadow</a><br/>Добавляет тень тексту. К примеру,<code>text-shadow: 1px 2px 3px black</code>, где<br/>первое значение (1px) &mdash; сдвиг по оси x,<br/>второе значение (2px) &mdash; сдвиг по оси y,<br/>третье значение (3px) &mdash; радиус размытия тени,<br/>четвертое значение (black) &mdash; цвет тени.<br/>Кроме того, таких групп значений может быть сколько угодно. К примеру,<code>text-shadow: 1px 2px 3px black, 0 0 1em red</code></li><li>
+<a href="http://htmlbook.ru/css/column-count" target="_blank">column-count</a><br/>Задаёт количество колонок в тексте. Применяется, в основном, для газетной вёрстки.</li><li>
+<a href="http://htmlbook.ru/css/line-height" target="_blank">line-height</a><br/>Задаёт высоту строки. Если задавать без единиц измерения, например,<code>line-height: 2</code>, значение будет воспринято как множитель.</li></ul><section><h3>Собственные шрифты</h3><p>Для подключения собственного шрифта используется правило
+<a href="http://htmlbook.ru/css/font-face" target="_blank">@font-face.</a></p><pre data-lang="css">
+@font-face {
+  font-family: 'Philosopher'; /* Название шрифта*/
+  font-style: normal;         /* Начертание */
+  font-weight: 400;           /* Насыщенность */
+  src: url(./fonts/philosopher.woff2) format('woff2'); /* Путь к файлу шрифта и его формат */
+}</pre><p>Для подключение такого шрифта к элементу, используют код:</p><pre data-lang="css">
+.selector {
+  font-family: 'Philosopher', sans-serif;
+}</pre></section><section><h3>Google Fonts</h3><p>Для упрощения подключения шрифтов, используют различные библиотеки шрифтов. К примеру,
+<a target="_blank" href="https://fonts.google.com/">Google Fonts</a>. Такие библиотеки содержат сотни шрифтов, а так же оптимизаторы для браузеров.
+Всё что нам нужно &mdash; выбрать требуемый шрифт, выбрать, какие начертания и языки нам требуются (для русского языка Cyrillic),
+подключить в<code>&lt;head&gt;</code> стиль шрифта, имеющий примерно такой вид:</p><pre data-lang="html">
+&lt;head&gt;
+  ...
+  &lt;link href="https://fonts.googleapis.com/css?family=Philosopher:400,700&display=swap&subset=cyrillic" rel="stylesheet"&gt;
+  ...
+&lt;/head&gt;</pre></section></section>
