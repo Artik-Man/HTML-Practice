@@ -1,8 +1,8 @@
-import {readFileSync} from 'fs';
-import {resolve} from 'path';
-import {Builder, Server} from "./lib/samurai/public_api.js";
+import { readFileSync } from 'fs';
+import { resolve } from 'path';
+import { Samurai } from "samuraijs";
 
-const config = {
+new Samurai({
   paths: {
     source: 'src',
     destination: 'dist',
@@ -32,12 +32,4 @@ const config = {
     port: 3000,
     open: false
   }
-}
-
-if (process.argv.includes('--build')) {
-  new Builder(config).build()
-} else if (process.argv.includes('--serve')) {
-  new Server(config);
-} else {
-  throw 'Unknown action'
-}
+});
