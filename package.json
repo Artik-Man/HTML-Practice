@@ -34,7 +34,7 @@
     "sass": "^1.41.1",
     "ts-node": "^10.2.1",
     "typescript": "^4.4.3",
-    "samuraijs": "^0.0.5"
+    "samuraijs": "^0.0.6"
   },
   "dependencies": {
     "prismjs": "^1.25.0"
