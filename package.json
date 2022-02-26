@@ -37,6 +37,6 @@
     "samuraijs": "^0.0.6"
   },
   "dependencies": {
-    "prismjs": "^1.25.0"
+    "prismjs": "^1.27.0"
   }
 }
